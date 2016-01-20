@@ -3,7 +3,7 @@
   // angular.module is a global place for creating, registering and retrieving Angular modules
   // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
   // the 2nd parameter is an array of 'requires'
-  angular.module('app.projectX', ['ionic', 'ui.router'])
+  angular.module('app.projectX', ['ionic', 'ui.router','ngAnimate'])
 
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -25,7 +25,7 @@
 
   .config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise("/main/booking");
+    $urlRouterProvider.otherwise("/login/started");
 
     $stateProvider
 
@@ -33,6 +33,24 @@
       url: "/login",
       templateUrl: "templates/login.html",
       controller: 'loginCtrl' 
+   })
+
+    .state('login.getStarted', {
+      url: "/started",
+      views: {
+            "mainContent": {
+              templateUrl: "templates/getStarted.html"
+            }
+        }
+   })
+
+    .state('login.form', {
+      url: "/form",
+      views: {
+            "mainContent": {
+              templateUrl: "templates/loginForm.html"
+            }
+        }
    })
 
     .state('main', {
@@ -52,7 +70,6 @@
 
             'fabContent': {
                 template: '<h1> Booking Footer</h1>',
-                
             }
         }
    })
@@ -62,6 +79,7 @@
       views: {
             'mainContent': {
                 templateUrl: "templates/pricing.html",
+                controller: 'pricingCtrl'
             },
 
              'fabContent': {
@@ -75,6 +93,7 @@
      views: {
             "mainContent": {
               templateUrl: "templates/contactUs.html",
+              controller: 'contactCtrl'
             }
         }
    })

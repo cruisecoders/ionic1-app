@@ -1,1 +1,31 @@
 /* Empty. Add your own CSS if you like */
+
+.row .login-field{
+	margin-top: 60px;
+}
+
+.mdl-textfield.mdl-js-textfield > input {
+	border-bottom: 1px solid #f2f2f2;
+	width: 94%;
+	margin-left: 32px;
+	margin-top: -10px;
+}
+.mdl-textfield.mdl-js-textfield > input:hover {
+	border-bottom: 1px solid blue;
+	width: 94%;
+}
+.row .col-offset-33 {
+    margin-left: 120px;
+    margin-top: 4px;
+}
+.box {
+	background-color:#ffffff;
+	margin-bottom:15px;
+	margin-top: 30px;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px #777;
+}
+.item-complex, a.item.item-complex, 
+button.item.item-complex:hover{
+	background-color: teal;
+}
