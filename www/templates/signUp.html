@@ -1,0 +1,32 @@
+<ion-view view-title="Register">
+  <ion-content class="padding">
+   	<div class="list list-inset" ng-hide="isSignUpSubmit">
+   		<label class="item item-input">
+   			<input type="text" placeholder="First name">
+   		</label>
+   		<br>
+   		<label class="item item-input">
+   			<input type="text" placeholder="Last Name">
+   		</label>
+   		<br>
+   		<label class="item item-input">
+   			<input type="text" placeholder="Email ID">
+   		</label>
+   		<br>
+   		<label class="item item-input">
+   			<input type="text" placeholder="Mobile Number">
+   		</label>
+         <button class="button button-block button-calm" ng-click="isSignUpSubmit='true'">Register</button>
+   	</div>
+   	<div class="list" ng-show="isSignUpSubmit">
+         <label class="item item-floating-label">
+            <span class="input-label">OTP</span>
+            <input type="text" placeholder="OTP">
+         </label>
+         <button class="button button-block button-calm">Submit OTP</button>
+         <button class="button button-block button-calm">Resend OTP</button>
+      </div>
+
+
+  </ion-content>
+</ion-view>

@@ -27,5 +27,6 @@
 }
 .item-complex, a.item.item-complex, 
 button.item.item-complex:hover{
-	background-color: teal;
+	background-color: #ffffff;
+	border: none;
 }
