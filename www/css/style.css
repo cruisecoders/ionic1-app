@@ -1,25 +1,24 @@
 /* Empty. Add your own CSS if you like */
-
 .row .login-field{
 	margin-top: 60px;
 }
 
 .mdl-textfield.mdl-js-textfield > input {
-	border-bottom: 1px solid #f2f2f2;
-	width: 94%;
-	margin-left: 32px;
-	margin-top: -10px;
+	border-bottom: 1px solid #777;
+	width: 90%;
+	margin-left: 28px;
+	margin-top: -7px;
 }
 .mdl-textfield.mdl-js-textfield > input:hover {
 	border-bottom: 1px solid blue;
-	width: 94%;
+	width: 90%;
 }
 .row .col-offset-33 {
     margin-left: 120px;
     margin-top: 4px;
 }
 .box {
-	background-color:#ffffff;
+	background-color:#f2f2f2;
 	margin-bottom:15px;
 	margin-top: 30px;
 	border-radius: 3px;
@@ -27,6 +26,106 @@
 }
 .item-complex, a.item.item-complex, 
 button.item.item-complex:hover{
-	background-color: #ffffff;
+	background-color: transparent;
 	border: none;
+}
+.head-effects {
+	box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.14), 
+	0 1px 3px 0 rgba(0, 0, 0, 0.12), 
+	0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+.item-content .menu-name.ng-binding {
+	margin-left: 10px;
+}
+.image-slide {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 80%;
+    height: 246px;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+}
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('../assets/demos/dog.png') no-repeat ;
+}
+.i > .application-icon {
+	color: #777;
+}
+.booking-box {
+	background-color: transparent;
+	color: #fff;
+}
+.booking-box-text {
+	color: #fff;
+}
+.get-started {
+	background: url("../img/getstarted.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+.booking-page{
+    background: url("../img/incredible-india1.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.login-form {
+	background: url("../img/loginform.jpg") no-repeat fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+.pricing-page{
+    background: url("../img/pricing-page.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.aboutUs-page{
+    background: url("../img/about-us.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.contact-page{
+    background: url("../img/getstarted2.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.slide-img {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+.profile-box {
+    padding: 28px 16px;
+    position: relative;
+
+    background: url("../img/wallpaper-material-design-5.jpg") repeat;
+	/*-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;*/
+}
+.profile-box-thumb {
+    width: 65px;
+    border-radius: 500px;
+    border: 5px solid rgba(255,255,255,.1);
+    position: absolute;
+}
+.profile-box .profile-box-details {
+    margin-left: 80px;
+}
+.profile-box-details > h4 {
+	color: #fff;
 }
