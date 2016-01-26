@@ -1,15 +1,5 @@
 <ion-view view-title="Booking">
   <ion-content ng-controller="bookingCtrl" class="booking-page">
-	Test Booking
-	<h1>Welcome to the ngEurope sample!</h1>
-    <h2 ng-show="jwt">Your JWT is:</h2>
-    <pre ng-show="jwt" class="jwt"><code>{{jwt}}</code></pre>
-    <pre ng-show="jwt" class="jwt"><code>{{decodedJwt | json}}</code></pre>
-
-    <button ng-click="testBooking()"> Test Button</button>
-
-	{{testVar}}
-
   	<div class="card booking-box">
 	  <div class="item item-divider booking-box">
 	   <i class="ion-earth" style="color:blue;"></i> City
