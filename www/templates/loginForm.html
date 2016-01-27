@@ -3,39 +3,27 @@
    		<h1 class="title">Login</h1>
 	</ion-header-bar>
 	<ion-content class="padding">
-	   	<div class="row responsive-sm" ng-hide="isLoginSubmit">
+	   	<form name="loginForm" class="row responsive-sm">
 	   		<div class="row box">
 	   			<div class="mdl-textfield mdl-js-textfield">
 	   				 <svg style="width:24px;height:24px;position:absolute;" viewBox="0 0 24 24">
 					    <path fill="#000000" d="M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z" />
 					</svg>
-				    <input class="mdl-textfield__input" type="text" placeholder="Mobile Number">
+				    <input class="mdl-textfield__input" type="text" placeholder="Mobile Number" name="userNumber" ng-model="user.number" type="text" ng-required="true" ng-maxlength="10" 	ng-minlength="10" ng-pattern="/^[0-9]{1,10}$/"/>
 				</div>
-			      <!-- <div class="mdl-textfield mdl-js-textfield">
-			        <svg style="width:24px;height:24px;position:absolute;" viewBox="0 0 24 24">
-					    <path fill="#000000" d="M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z" />
-					</svg>
-						<input placeholder="Mobile Number" type="text"/>
-			      </div> -->
+
+			    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.pattern">Not a valid phone number!</span>
+				<span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.required">This field is required!</span>
+				<span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.minlength">This field is minlength!</span>
+				<span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.maxlength">This field is maxlength!</span>
 			</div>		   
 	    	<div class="row">
-			  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" ui-sref="main.booking">
+			  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" ui-sref="main.booking" ng-disabled="loginForm.$invalid || loginForm.$pristine" ng-click="login()">
 				<svg style="width:24px;height:24px" viewBox="0 0 24 24">
 				<path fill="#000000" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
 				</svg>
 			  </button>
 			</div>
-	   </div>
-	   <div class="list" ng-show="isLoginSubmit">
-		   	<div class="row">
-		   		<div class="input-field col s6">
-				  <input placeholder="OTP" id="first_name" type="text"/>
-				</div>
-		   	</div>
-		   	<div class="row">
-		   		<button class="button button-block button-calm">Submit OTP</button>
-			   	<button class="button button-block button-calm">Resend OTP</button>
-		   	</div>
-	   </div>
+	   </form>
 	</ion-content>
 </ion-view>
