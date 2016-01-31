@@ -1,5 +1,5 @@
 angular.module('app.projectX')
-  .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper){
+  .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi){
 	     
        $scope.model ="";
        $scope.clickValueModel = "";
@@ -49,9 +49,36 @@ angular.module('app.projectX')
           });
 	}
 
-	$scope.jwt = store.get('jwt');
+	  $scope.jwt = store.get('jwt');
   	$scope.decodedJwt = $scope.jwt && jwtHelper.decodeToken($scope.jwt);
 
+    $scope.getPickUpStreets = function(exp){
+      projectApi.getResource('pickUpStreets', id, exp).then(function(response){
+        console.log("Suuccess Handler");
+      }, function(error){
+        console.log("Failure Handler");
+      })
+    }
+
+    $scope.getDropStreets = function(exp){
+      projectApi.getResource('dropStreets', id, exp).then(function(response){
+        console.log("Suuccess Handler");
+      }, function(error){
+        console.log("Failure Handler");
+      })
+    }
+
+    $scope.getCities = function(){
+      projectApi.getResource('cities').then(function(response){
+        console.log("Suuccess Handler");
+      }, function(error){
+        console.log("Failure Handler");
+      })
+    }
+
+    $scope.booking = function(){
+      
+    }
 
 	//$scope.testBooking();	
 	

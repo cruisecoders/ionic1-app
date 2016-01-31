@@ -8,6 +8,10 @@
     "material-design-lite": "~1.0.6",
     "ion-autocomplete": "~0.3.1",
     "angular-jwt": "~0.0.9",
-    "a0-angular-storage": "~0.0.13"
+    "a0-angular-storage": "~0.0.13",
+    "angular-resource": "~1.4.9"
+  },
+  "resolutions": {
+    "angular": "1.4.9"
   }
 }
