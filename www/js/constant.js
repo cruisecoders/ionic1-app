@@ -17,3 +17,11 @@ angular.module('app.projectX').constant('menuConstant', {
 		state: "main.aboutUs"
 	}]
 })
+
+.constant('AUTH_EVENTS', {
+  notAuthenticated: 'auth-not-authenticated',
+  notAuthorized: 'auth-not-authorized'
+})
+.constant('CONTEXT_URL', {
+  url: 'http://localhost:8080/web-service/api/'
+})

@@ -4,7 +4,7 @@
   // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
   // the 2nd parameter is an array of 'requires'
   angular.module('app.projectX', ['ionic', 'ui.router','ngAnimate', 'angular-jwt', 'ion-autocomplete',
-  'angular-storage'])
+  'angular-storage', 'ngResource'])
 
       .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
@@ -26,7 +26,7 @@
 
   .config(function($stateProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider) {
 
-    $urlRouterProvider.otherwise("/login/started");
+    $urlRouterProvider.otherwise("/main/booking");
 
     jwtInterceptorProvider.tokenGetter = function(store) {
       return store.get('jwt');
@@ -62,6 +62,15 @@
 
   .state('login.otp', {
       url: "/otp",
+      views: {
+            "mainContent": {
+              templateUrl: "templates/loginOtp.html"
+            }
+        }
+   })
+
+  .state('login.signUp', {
+      url: "/signUp",
       views: {
             "mainContent": {
               templateUrl: "templates/loginOtp.html"
@@ -126,9 +135,9 @@
       }
    })
 
-  }).
+  })
 
-run(function($rootScope, $state, store, jwtHelper) {
+.run(function($rootScope, $state, store, jwtHelper) {
   $rootScope.$on('$stateChangeStart', function(e, to) {
     if (to.data && to.data.requiresLogin) {
       console.log("JWT token is "+store.get('jwt'));
@@ -139,3 +148,21 @@ run(function($rootScope, $state, store, jwtHelper) {
     }
   });
 })
+
+.factory('AuthInterceptor', function ($rootScope, $q, AUTH_EVENTS) {
+  return {
+    responseError: function (response) {
+      $rootScope.$broadcast({
+        401: AUTH_EVENTS.notAuthenticated,
+        403: AUTH_EVENTS.notAuthorized
+      }[response.status], response);
+      return $q.reject(response);
+    }
+  };
+})
+
+.config(function ($httpProvider) {
+  $httpProvider.interceptors.push('AuthInterceptor');
+});
+
+

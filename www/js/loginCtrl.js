@@ -6,10 +6,14 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
     	
     	loginService.login($scope.user).then(
     		function(response){
-          console.log("Login done");
-           $state.go('login.otp');
+           if(response.data.isExist){
+            $state.go('login.otp');
+           }else{
+            $state.go('login.signUp');
+           }
     		},function(error){
           console.log("Login failed");
+          //TODO Ionic Alert
     		});
   }
 
@@ -18,32 +22,55 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
       loginService.submitOTP($scope.user).then(
         function(response){
           console.log("OTP Done");
-          store.set('jwt', response.data.data);
-          $state.go('main.booking');
+          store.set('jwt', response.data.user.jwt);
+          loginService.storeUserCredentials(response.data.user);
+          loginService.storeToken(response.data.user.jwt);
+          $state.go('main.booking', {}, {reload: true});
         },function(error){
           console.log("OTP failed");
+          //TODO ionic alert
         });
   }
 
 })
 
-.service('loginService', function ($http, $q) {
+.service('loginService', function ($http, $q, CONTEXT_URL) {
 
-  var username = '';
+  var userCredentials = {};
   var isAuthenticated = false;
   var authToken;
 
   function loadUserCredentials() {
+    return userCredentials;
   }
 
-  function storeUserCredentials(token) {}
+  function isAuthorized() {
+    return isAuthenticated;
+  }
 
-  function useCredentials(token) {}
+  function loadToken() {
+    return authToken;
+  }
 
-  function destroyUserCredentials() {}
+  function storeUserCredentials(user) {
+    userCredentials.userId = user.userId;
+    userCredentials.username = user.username; 
+    userCredentials.number= user.number;
+  }
+
+  function storeToken(token) {
+    authToken = token;
+    isAuthenticated = true;
+  }
+
+  function destroyUserCredentials() {
+    userCredentials = {};
+    authToken = undefined;
+    isAuthenticated = false;
+  }
 
   var login = function(user) {
-    return $http.get("http://localhost:8080/web-service/api/login", {
+      return $http.get(CONTEXT_URL.url + "login", {
             params : {
               number : user.number
             }
@@ -51,27 +78,22 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
     }
 
   var submitOTP = function(user) {
-    return $http.get("http://localhost:8080/web-service/api/submitOtp", {
-            params : {
-              otp : user.otp
-            }
-          });
+      return $http.post(CONTEXT_URL.url + "submitOtp", user , {});
     }
 
   var logout = function() {
   };
-
-  var isAuthorized = function(authorizedRoles) {};
-
-  loadUserCredentials();
 
   return {
     login: login,
     submitOTP : submitOTP,
     logout: logout,
     isAuthorized: isAuthorized,
-    isAuthenticated: function() {return isAuthenticated;},
-    username: function() {return username;}
+    loadUserCredentials : loadUserCredentials,
+    loadToken : loadToken,
+    storeUserCredentials : storeUserCredentials,
+    storeToken : storeToken,
+    destroyUserCredentials : destroyUserCredentials
   };
 
 });
