@@ -1,24 +1,27 @@
 <ion-view view-title="Booking">
   <ion-content ng-controller="bookingCtrl" class="booking-page">
-	Test Booking
+	<!-- Test Booking
 	<h1>Welcome to the ngEurope sample!</h1>
     <h2 ng-show="jwt">Your JWT is:</h2>
     <pre ng-show="jwt" class="jwt"><code>{{jwt}}</code></pre>
     <pre ng-show="jwt" class="jwt"><code>{{decodedJwt | json}}</code></pre>
 
     <button ng-click="testBooking()"> Test Button</button>
+	{{testVar}} -->
+	<!-- <h1>Twattt</h1>
+	{{validTokenObj.sub}}
+	{{validTokenObj.userId}} -->
 
-	{{testVar}}
-
+	<!-- <button ng-click="testBooking()"> Test Button</button> -->
   	<div class="card booking-box">
 	  <div class="item item-divider booking-box">
 	   <i class="ion-earth" style="color:blue;"></i> City
 	  </div>
 	  <div class="item-text-wrap booking-box">
 	   	<div class="item-input-inset booking-box">
-		  <label class="item-input-wrapper booking-box" style="color:#fff;">
+		  <label class="item-input-wrapper booking-box">
 		    <i class="icon ion-ios-search placeholder-icon"></i>
-		    <input ion-autocomplete type="text" class="ion-autocomplete booking-box-text" autocomplete="off" placeholder="Enter City Name"
+		    <input ion-autocomplete type="text" style="color:#fff;" class="ion-autocomplete booking-box-text" autocomplete="off" placeholder="Enter City Name"
                ng-model="model"
                item-value-key="name"
                item-view-value-key="view"
@@ -34,15 +37,14 @@
 		  </button>
 		</div>
 	  </div>
-
 	<div class="item-divider booking-box" style="padding-left:16px;">
 	   <i class="ion-home" style="color:#1E90FF;"></i> Pick Up Point
 	</div>
 	<div class="item item-text-wrap booking-box">
 		<div class="item-input-inset booking-box">
 		   <i class="ion-edit"></i>
-		  <label class="item-input-wrapper booking-box" style="color:#fff;">
-		    <input ion-autocomplete type="text" class="ion-autocomplete booking-box-text" autocomplete="off" placeholder="Enter Pick Up Point"
+		  <label class="item-input-wrapper booking-box">
+		    <input ion-autocomplete type="text"  style="color:#fff;" class="ion-autocomplete booking-box-text" autocomplete="off" placeholder="Enter Pick Up Point"
                ng-model="model"
                item-value-key="name"
                item-view-value-key="view"
@@ -55,15 +57,14 @@
 		  </label>
 		</div>
 	</div>
-
 	<div class="item item-divider booking-box">
 	   <i class="ion-ios-location" style="color:#FF0000;"></i> Drop Point
 	</div>
 	<div class="item item-text-wrap booking-box">
 	  	<div class="item-input-inset booking-box">
 	  		<i class="ion-edit"></i>
-		  <label class="item-input-wrapper booking-box" style="color:#fff;">
-		    <input ion-autocomplete type="text" class="ion-autocomplete booking-box-text" autocomplete="off" placeholder="Enter Drop Point"
+		  <label class="item-input-wrapper booking-box">
+		    <input ion-autocomplete type="text" style="color:#fff;" class="ion-autocomplete booking-box-text" autocomplete="off" placeholder="Enter Drop Point"
                ng-model="model"
                item-value-key="name"
                item-view-value-key="view"
@@ -76,7 +77,33 @@
 		  </label>
 		</div>
 	</div>	
+	<div class="item item-divider booking-box">
+	   <i class="ion-calendar" style="color:#FF0000;"></i>Select Drop Date
+	</div>
+	<div class="item item-text-wrap booking-box">
+		<div class="item-input-inset booking-box">
+			<onezone-datepicker datepicker-object="onezoneDatepicker">
+			    <button class="button button-outline button-positive show-onezone-datepicker">
+			        {{onezoneDatepicker.date | date:'dd MMMM yyyy'}} 
+			    </button>
+			</onezone-datepicker>
 
+		</div>
+	</div>
+	<!-- <div class="item item-divider booking-box">
+	   <i class="ion-calendar" style="color:#FF0000;"></i>Select Drop Time
+	</div>
+	
+	<div class="item item-text-wrap booking-box">
+		<div class="item-input-inset booking-box">
+			<ng-timepicker ng-model="ctrl.time2" show-meridian="true"></ng-timepicker>
+			<ionic-timepicker input-obj="timePickerObject12Hour">
+				<button class="button button-block button-positive overflowShow">
+				 	<standard-time-meridian etime="timePickerObject12Hour.inputEpoch"></standard-time-meridian>
+				</button>
+			</ionic-timepicker>
+		</div>
+	</div> -->
 	<div class="row row-bottom col-offset-10">
 		<div class="col col-60">
 			<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored ">Estimate Charge

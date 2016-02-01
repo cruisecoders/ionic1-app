@@ -7759,7 +7759,7 @@ input[type="file"] {
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #777; }
+  color: #000; }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {

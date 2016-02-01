@@ -8,6 +8,7 @@
 	width: 90%;
 	margin-left: 28px;
 	margin-top: -7px;
+    background-color: transparent;
 }
 .mdl-textfield.mdl-js-textfield > input:hover {
 	border-bottom: 1px solid blue;
@@ -79,7 +80,7 @@ button.item.item-complex:hover{
     background-size: cover;
 }
 .login-form {
-	background: url("../img/loginform.jpg") no-repeat fixed;
+	background: url("../img/getstarted.jpg") no-repeat fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -128,4 +129,86 @@ button.item.item-complex:hover{
 }
 .profile-box-details > h4 {
 	color: #fff;
+}
+.my-form {
+   transition:all linear 0.5s;
+   background: transparent;
+ }
+ .my-form.ng-invalid {
+   background: transparent!important;
+ }
+
+ .royal, a.royal {
+    color: rgb(136, 106, 234);
+}
+.royal {
+    border-color: #8a6de9;
+}
+.royal i {
+    color: #8a6de9;
+}
+.cd-timeline-block {
+    position: relative;
+    margin: 2em 0;
+}
+.cd-timeline-content {
+    position: relative;
+    margin-left: 48px;
+    background: white;
+    border-radius: 0.25em;
+  /*  border-color: #BDDFB3;*/
+    border-style: solid;
+    border-width: 2px;
+    margin-bottom: 10px;
+}
+.timelineIcon {
+    font-size: 25px;
+    color: white;
+}
+.text-center{
+    text-align: center;
+}
+.cd-timeline-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-color: #8a6de9;
+    border-style: solid;
+    border-width: 2px;
+    padding-top: 5px;
+    background: white;
+}
+.cd-container {
+    width: 93%;
+    max-width: 1132px;
+    margin: 0 auto;
+}
+
+#cd-timeline {
+    position: relative;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 10px !important;
+}
+#cd-timeline::before {
+    content: '';
+    position: absolute;
+    top: 39px;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: gray;
+}
+.cd-timeline-content::before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-right: 7px solid white;
+    border-right-color: inherit;
 }
