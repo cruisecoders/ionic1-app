@@ -26,11 +26,26 @@
 
   .config(function($stateProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider) {
 
-    $urlRouterProvider.otherwise("/main/booking");
+    //$urlRouterProvider.otherwise("/main/booking");
 
-    jwtInterceptorProvider.tokenGetter = function(store) {
+    $urlRouterProvider.otherwise( function($injector, $location) {
+            var $state = $injector.get("$state");
+            $state.go("main.booking");
+        });
+
+    /*jwtInterceptorProvider.tokenGetter = function(store) {
       return store.get('jwt');
-    }
+    }*/
+
+    jwtInterceptorProvider.tokenGetter = ['config', 'store', function(config, store) {
+        // Skip authentication for any requests ending in .html
+        if (config.url.substr(config.url.length - 5) == '.html') {
+          return null;
+        }
+
+        return store.get('jwt');
+    }];
+
 
     $httpProvider.interceptors.push('jwtInterceptor');
 
@@ -138,8 +153,8 @@
   })
 
 .run(function($rootScope, $state, store, jwtHelper) {
-  $rootScope.$on('$stateChangeStart', function(e, to) {
-    if (to.data && to.data.requiresLogin) {
+  $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+    if (toState.data && toState.data.requiresLogin) {
       console.log("JWT token is "+store.get('jwt'));
       if (!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
         e.preventDefault();
