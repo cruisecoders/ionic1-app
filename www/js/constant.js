@@ -15,6 +15,10 @@ angular.module('app.projectX').constant('menuConstant', {
 		imagepath:"img/icons/alert-circle.png",
 		name:"About Us", 
 		state: "main.aboutUs"
+	},{
+		imagepath:"img/icons/alert-circle.png",
+		name:"My Profile", 
+		state: "main.account"
 	}]
 })
 

@@ -150,6 +150,16 @@
       }
    })
 
+   .state('main.account',{
+      url:"/account",
+      views:{
+        "mainContent":{
+          templateUrl: "templates/account.html",
+          controller: 'accountCtrl'
+        }
+      }
+   })
+
   })
 
 .run(function($rootScope, $state, store, jwtHelper) {

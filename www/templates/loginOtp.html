@@ -9,12 +9,13 @@
 			        <svg style="width:24px;height:24px;position:absolute;" viewBox="0 0 24 24">
 					    <path fill="#000000" d="M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z" />
 					</svg>
-			        <input placeholder="Enter OTP" name="otp" ng-model="user.otp" type="text" ng-required="true"/>
+			        <input placeholder="Enter OTP" name="otp" ng-model="user.otp" type="text" ng-required="true" ng-pattern="/^[0-9]{1,6}$/" ng-minlength="6"/>
 			    </div>
 
 			    
 				<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.required">This field is required!</span>
-				
+				<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.pattern">Not a valid OTP! Only Numeric</span>
+				<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.minlength">This field is minlength!</span>
 
 			</div>		   
 	    	<div class="row">
