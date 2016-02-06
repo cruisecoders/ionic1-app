@@ -68,7 +68,7 @@ angular.module('app.projectX')
         console.log("Failure Handler");
       })
     }
-	
+
     $scope.getCities = function(){
       projectApi.getResource('cities').then(function(response){
         console.log("Suuccess Handler");
@@ -77,78 +77,42 @@ angular.module('app.projectX')
       })
     }
 
-    $scope.booking = function(){
-      
+    $scope.booking = function(){      
+    
     }
 
-	//$scope.testBooking();	
-	
-	$scope.timePickerObject12Hour = {
-      inputEpochTime: ((new Date()).getHours() * 60 * 60),  //Optional
-      step: 15,  //Optional
-      format: 12,  //Optional
-      titleLabel: '12-hour Format',  //Optional
-      closeLabel: 'Close',  //Optional
-      setLabel: 'Set',  //Optional
-      setButtonType: 'button-positive',  //Optional
-      closeButtonType: 'button-stable',  //Optional
-      callback: function (val) {    //Mandatory
-        
-        $scope.timePickerObject12Hour.inputEpoch = val;
+    // $scope.datepickerObject = {
+      
+    //   templateType: 'POPUP',
 
-        if (typeof (val) === 'undefined') {
-          console.log('Time not selected');
-        } else {
-          console.log($scope.timePickerObject12Hour.inputEpochTime);
-          $scope.timePickerObject12Hour.inputEpochTime = val;
-          console.log($scope.timePickerObject12Hour.inputEpochTime);
-          $scope.epochVal = val;
+    //   selectedDates : [],
 
-          var selectedTime = new Date(val * 1000);
-          console.log('Selected epoch is : ', val, 'and the time is ', selectedTime.getUTCHours(), ':', selectedTime.getUTCMinutes(), 'in UTC');
-        }
+    //   callback: function (dates) {  
+    //     this.retSelectedDates(dates);
+    //   },
+
+    //   retSelectedDates : function (dates) {
+    //     this.selectedDates.length = 0;
+    //     for (var i = 0; i < dates.length; i++) {
+    //           this.selectedDates.push(angular.copy(dates[i]));
+    //         }
+    //   }
+
+    // };
+
+    $scope.currentDate = new Date();
+    $scope.minDate = new Date(2105, 6, 1);
+    $scope.maxDate = new Date(2015, 6, 31);
+ 
+    $scope.datePickerCallback = function (val) {
+      if (!val) { 
+        console.log('Date not selected');
+      } else {
+        console.log('Selected date is : ', val);
       }
     };
 
-    function timePicker12Callback(val) {
-      if (typeof (val) === 'undefined') {
-        console.log('Time not selected');
-      } else {
-        $scope.timePickerObject12Hour.inputEpochTime = val;
-        var selectedTime = new Date(val * 1000);
-        console.log('Selected epoch is : ', val, 'and the time is ', selectedTime.getUTCHours(), ':', selectedTime.getUTCMinutes(), 'in UTC');
-      }
-	};
-	
-  $scope.onezoneDatepicker = {
-    date: new Date(),
-    
-    callback: function(value){
-      $scope.onezoneDatepicker.date = value;
-     }
-  };
 
-  /*$scope.timePickerObject =  {
-    inputEpochTime: ((new Date()).getHours() * 60 * 60),
-    setLabel: 'Set',
-    titleLabel: '12-hour Format',
 
-  callback: function(val){
-      timePickerCallback(val);
-    }
-  };*/
-
-	/*function timePickerCallback(val) {
-	  if (typeof (val) === 'undefined') {
-		console.log('Time not selected');
-	  } else {
-		
-		//$scope.timePickerObject.inputEpochTime = val;
-		$scope.timePickerObject.inputEpochTime = val; 
-		var selectedTime = new Date(val * 1000);
-		console.log('Selected epoch is : ', val,
-		 'and the time is ', selectedTime.getUTCHours(), ':',
-		  selectedTime.getUTCMinutes(), 'in UTC');
-	  }
-	};*/
+	//$scope.testBooking();	
 });

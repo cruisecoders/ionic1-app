@@ -7663,7 +7663,7 @@ textarea {
       -webkit-transition: opacity 0.15s ease-in, top 0.2s linear;
       transition: opacity 0.15s ease-in, top 0.2s linear; }
 
-textarea,
+/*textarea,
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -7685,7 +7685,7 @@ input[type="color"] {
   color: #111;
   vertical-align: middle;
   font-size: 14px;
-  line-height: 16px; }
+  line-height: 16px; }*/
 
 .platform-ios input[type="datetime-local"],
 .platform-ios input[type="date"],
@@ -7731,7 +7731,7 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-  border: 0; }
+  border-bottom: 1px solid #fff; }
 
 input[type="radio"],
 input[type="checkbox"] {

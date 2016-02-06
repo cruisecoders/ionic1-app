@@ -12,7 +12,10 @@
     "onezone-datepicker": "*",
     "ionic-timepicker": "^0.4.0",
     "angular-resource": "~1.4.9",
-    "ngTimepicker": "*"
+    "ngTimepicker": "*",
+    "ionic-multi-date-picker": "^2.0.0",
+    "datepicker-for-ionic": "^1.1.7",
+    "ionic-material": "^0.4.2"
   },
   "resolutions": {
     "angular": "1.4.9"

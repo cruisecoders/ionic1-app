@@ -4,20 +4,38 @@
 }
 
 .mdl-textfield.mdl-js-textfield > input {
-	border-bottom: 1px solid #777;
+	border-bottom: 1px solid #fff;
 	width: 90%;
-	margin-left: 28px;
-	margin-top: -7px;
+	margin-left: 12px;
+	margin-top: 3px;
     background-color: transparent;
 }
 .mdl-textfield.mdl-js-textfield > input:hover {
 	border-bottom: 1px solid blue;
 	width: 90%;
 }
-.row .col-offset-33 {
-    margin-left: 120px;
-    margin-top: 4px;
+
+@media all and (orientation:portrait) {
+    .row .col-offset-33 {
+        margin-left: 110px;
+        margin-top: 4px;
+    }
 }
+
+@media all and (orientation:landscape) {
+    .row .col-offset-33 {
+        margin-left: 224px;
+        margin-top: 4px;
+    }
+}
+For Tablet
+@media screen (max-width:1024px){
+    .row .col-offset-33 {
+        margin-left: 75px;
+        margin-top: 4px;
+    }
+}
+
 .box {
 	background-color:#f2f2f2;
 	margin-bottom:15px;
@@ -63,6 +81,7 @@ button.item.item-complex:hover{
 .booking-box {
 	background-color: transparent;
 	color: #fff;
+    margin-left: 5px;
 }
 .booking-box-text {
 	color: #fff;
@@ -74,7 +93,7 @@ button.item.item-complex:hover{
 	background-size: cover;
 }
 .booking-page{
-    background: url("../img/incredible-india1.jpg") no-repeat center center fixed; 
+    background: url("../img/incredible-india3.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -211,4 +230,22 @@ button.item.item-complex:hover{
     border: 7px solid transparent;
     border-right: 7px solid white;
     border-right-color: inherit;
+}
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.slider-slide {
+  height: 350px;
+  text-align:center;
+}
+
+.slider-slide img{
+  height: 350px;
+  width: auto;
+}
+.date-time-select{
+    margin-left: 2px;
+    margin-top: -18px;
 }
