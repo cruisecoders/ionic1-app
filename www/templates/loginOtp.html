@@ -1,30 +1,35 @@
 <ion-modal-view>
-   <ion-header-bar class="bar-positive">
-   		<h1 class="title">OTP</h1>
-	</ion-header-bar>
 	<ion-content class="padding" style="background-color:#f2f2f2;">
-	   	<form name="otpForm" class="row responsive-sm">
-	   		<div class="row box">	   	
-			    <div class="mdl-textfield mdl-js-textfield">
-			        <svg style="width:24px;height:24px;position:absolute;" viewBox="0 0 24 24">
-					    <path fill="#000000" d="M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z" />
+		<div class="list card">
+			<div class="bar bar-header bar-calm" style="position: static;">
+	            <div class="h1 title">OTP</div>
+	        </div>
+		   	<form name="otpForm" class="row responsive-sm">
+		   		<div class="item item-body">
+				    <div class="item-input-inset date-time-select">
+				    	<i class="ion-android-phone-portrait" style="color:grey; font-size: 14px; margin-top:41px;"></i>
+				    	<ion-md-input ng-model="user.otp" class="select-date-time" placeholder="OTP"
+				    	 type="text" type="text" ng-required="true" ng-pattern="/^[0-9]{1,6}$/"
+				    	 ng-minlength="6"></ion-md-input>
+				    </div>
+					<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.required">
+						This field is required!</span>
+					<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.pattern">
+						Not a valid OTP! Only Numeric</span>
+					<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.minlength">
+						This field is minlength!</span>
+				</div>
+				<div class="col">
+		            <button class="button button-block button-calm" ui-sref="main.booking" ng-disabled="otpForm.$invalid || otpForm.$pristine" ng-click="submitOTP()">
+		            	Register</button>
+		        </div>		   
+				  <!-- <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" ui-sref="main.booking" ng-disabled="otpForm.$invalid || otpForm.$pristine" 
+				  ng-click="submitOTP()">
+					<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+						<path fill="#000000" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
 					</svg>
-			        <input placeholder="Enter OTP" name="otp" ng-model="user.otp" type="text" ng-required="true" ng-pattern="/^[0-9]{1,6}$/" ng-minlength="6"/>
-			    </div>
-
-			    
-				<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.required">This field is required!</span>
-				<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.pattern">Not a valid OTP! Only Numeric</span>
-				<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.minlength">This field is minlength!</span>
-
-			</div>		   
-	    	<div class="row">
-			  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" ui-sref="main.booking" ng-disabled="otpForm.$invalid || otpForm.$pristine" ng-click="submitOTP()">
-				<svg style="width:24px;height:24px" viewBox="0 0 24 24">
-					<path fill="#000000" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-				</svg>
-			  </button>
-			</div>
-	   </form>
+				  </button> -->
+		    </form>
+		</div>
 	</ion-content>
 </ion-view>

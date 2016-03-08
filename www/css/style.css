@@ -93,7 +93,7 @@ button.item.item-complex:hover{
 	background-size: cover;
 }
 .booking-page{
-    background: url("../img/incredible-india2.jpg") no-repeat center center fixed; 
+    background: url("../img/getstarted2.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -237,15 +237,67 @@ button.item.item-complex:hover{
 }
 
 .slider-slide {
-  height: 350px;
+  height: auto;
   text-align:center;
 }
 
 .slider-slide img{
-  height: 350px;
+  height: 589px;
   width: auto;
 }
 .date-time-select{
     margin-left: 2px;
     margin-top: -18px;
 }
+.row > span {
+    margin:-13px 36px;
+    color: red;
+    font-size: 16px;
+}
+.select-date-time {
+    background-color: transparent !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #f2f2f2;
+}
+.all-input-field {
+    width: 100%;
+}
+
+.profile-text-label {
+    margin-top: 15px;
+}
+.signUp-page {
+    background-color: white;
+}
+.tmargin {
+    margin-top: 50px !important;
+}
+.lbl_span-field {
+    font-size:13px !important; 
+    letter-spacing: 0 !important;
+    color:#777 !important;
+}
+.all_icon {
+    color:grey; 
+    font-size: 14px;
+    margin-top:41px;
+}
+.lbl_span-field_text {
+    font-size: 13px !important;
+    letter-spacing: 0 !important;
+    color: white !important;
+}
+.getstarted-row {
+    background-color: #B71C1C;
+    margin-top: -5px;
+}
+.login_btn {
+    margin: 30px 120px !important;
+}
+.text_input {
+    color: black !important;
+    letter-spacing: 0 !important;
+}
+

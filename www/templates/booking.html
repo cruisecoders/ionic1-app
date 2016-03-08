@@ -1,16 +1,16 @@
 <ion-view view-title="Booking">
 	<ion-content ng-controller="bookingCtrl" class="booking-page">
-		<div class="card booking-box">
+		<div class="card booking-box tmargin">
 			<!-- City Section -->
-			<div class="item item-divider">
-			   <i class="ion-earth" style="color:blue; font-size: 18px;"></i> 
+			<div class="item-divider" style="padding-left:16px;">
+			   <i class="ion-home" style="color:blue; font-size: 18px;"></i> 
 			   <span style="font-size: 16px;">City</span>
 			</div>
-			<div class="item-text-wrap booking-box">
-			   	<div class="item-input-inset mdl-textfield mdl-js-textfield booking-box">
-				  <label class="item-input-wrapper booking-box">
-				    <i class="icon ion-ios-search placeholder-icon" style="color:#fff; font-size: 18px;"></i>
-				    <input ion-autocomplete type="text" style="color:#fff;" class="ion-autocomplete mdl-textfield__input booking-box-text" autocomplete="off" placeholder="Search City Name"
+			<div class="item-text-wrap booking-box">	
+				<label class="item">
+					<input class="all-input-field select-date-time lbl_span-field" ion-autocomplete type="text" 
+					   autocomplete="off" 
+					   placeholder="Search City Name"
 		               ng-model="model"
 		               item-value-key="name"
 		               item-view-value-key="view"
@@ -20,88 +20,99 @@
 		               items-clicked-method="itemsClicked(callback)"
 		               items-removed-method="itemsRemoved(callback)"
 		               max-selected-items="3"/>
-				  </label>
-				</div>
+				</label>
 		  	</div>
 		  	<!-- Pick Up Point Section -->
 		  	<div class="item-divider" style="padding-left:16px;">
 			   <i class="ion-home" style="color:blue; font-size: 18px;"></i> 
 			   <span style="font-size: 16px;">Pick Up Point</span>
 			</div>
+			<!-- <div class="item item-divider">
+			   <i class="ion-earth" style="color:blue; font-size: 18px;"></i> 
+			   <span style="font-size: 16px;">City</span>
+			</div> -->
 			<div class="item-text-wrap booking-box">
-			   	<div class="mdl-textfield mdl-js-textfield booking-box">
-				  <label class="item-input-wrapper booking-box">
-				   <i class="ion-edit icon-edit" style="color:#fff; margin-right:10px; font-size: 18px;"></i>
-				    <input ion-autocomplete type="text" style="color:#fff;" class="ion-autocomplete mdl-textfield__input booking-box-text" autocomplete="off" placeholder="Enter Pick Up Point"
-		            ng-model="model"
-		            item-value-key="name"
-		            item-view-value-key="view"
-		            items-method="getTestItems(query)"
-		            items-method-value-key="items"
-		            placeholder="Enter test query ..."
-		            items-clicked-method="itemsClicked(callback)"
-		            items-removed-method="itemsRemoved(callback)"
-		            max-selected-items="3"/>
-				  </label>
-				</div>
+			   	<label class="item">
+					<input class="all-input-field select-date-time lbl_span-field_text" ion-autocomplete type="text"
+					   autocomplete="off" 
+					   placeholder="Search Pick Up Point"
+		               ng-model="model"
+		               item-value-key="name"
+		               item-view-value-key="view"
+		               items-method="getTestItems(query)"
+		               items-method-value-key="items"
+		               placeholder="Enter test query ..."
+		               items-clicked-method="itemsClicked(callback)"
+		               items-removed-method="itemsRemoved(callback)"
+		               max-selected-items="3"/>
+				</label>
 		  	</div>
 		  	<div class="item-input-inset date-time-select">
 				<div class="col col-50">
-					<div class="mdl-textfield mdl-js-textfield">
+					<!-- <div class="mdl-textfield mdl-js-textfield">
 					  <input class="mdl-textfield__input" type="text" placeholder="Select Date" id="fname">
-					</div>
+					</div> -->
+					<label class="item item-input item-md-label" placeholder="Select Date">
+						<input class="select-date-time" type="text" id="fname"/>
+						<span class="input-label lbl_span-field_text">Select Date</span>
+					</label>
 					<!-- <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
-				    	<button class="button button-positive">
-				     	{{ currentDate | date:'MMMM/dd/yyyy' }} </button>
-			        </ionic-datepicker> -->
+					    <button class="button button-block button-positive"> {{ currentDate | date:'MMMM/dd/yyyy' }} </button>
+					</ionic-datepicker> -->
 				</div>
-				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" placeholder="Select Time" id="fname">
-				</div>
+				<label class="item item-input item-md-label" placeholder="Select Time">
+					<input class="select-date-time" type="text" id="fname"/>
+					<span class="input-label lbl_span-field_text">Select Time</span>
+				</label>
 			</div>
-			<div class="item-input-inset date-time-select">
+
+			<!-- <div class="item-input-inset date-time-select">
 				<div class="mdl-textfield mdl-js-textfield">					
 					<input class="mdl-textfield__input" type="text" placeholder="Number of Items" id="fname">
 				</div>
 				<div class="mdl-textfield mdl-js-textfield">
 				    <input class="mdl-textfield__input" type="text" placeholder="Weight of Items" id="fname">
 				</div>
-			</div>
+			</div> -->
 			<!-- Drop Point Section -->
 			<div class="item-divider" style="padding-left:16px;">
 			   <i class="ion-ios-location" style="color:blue; font-size: 18px;"></i> 
 			   <span style="font-size: 16px;">Drop Point</span>
 			</div>
 			<div class="item-text-wrap booking-box">
-			   	<div class="mdl-textfield mdl-js-textfield booking-box">
-				  <label class="item-input-wrapper booking-box">
-				   <i class="ion-edit icon-edit" style="color:#fff; margin-right:10px; font-size: 18px;"></i>
-				    <input ion-autocomplete type="text" style="color:#fff;" class="ion-autocomplete mdl-textfield__input booking-box-text" autocomplete="off" placeholder="Enter Drop Point"
-		            ng-model="model"
-		            item-value-key="name"
-		            item-view-value-key="view"
-		            items-method="getTestItems(query)"
-		            items-method-value-key="items"
-		            placeholder="Enter test query ..."
-		            items-clicked-method="itemsClicked(callback)"
-		            items-removed-method="itemsRemoved(callback)"
-		            max-selected-items="3"/>
-				  </label>
-				</div>
+			   	<label class="item">
+					<input class="all-input-field select-date-time lbl_span-field_text" ion-autocomplete type="text"
+					   autocomplete="off" 
+					   placeholder="Search Drop Point"
+		               ng-model="model"
+		               item-value-key="name"
+		               item-view-value-key="view"
+		               items-method="getTestItems(query)"
+		               items-method-value-key="items"
+		               placeholder="Enter test query ..."
+		               items-clicked-method="itemsClicked(callback)"
+		               items-removed-method="itemsRemoved(callback)"
+		               max-selected-items="3"/>
+				</label>
 		  	</div>
 		  	<div class="item-input-inset date-time-select">
 				<div class="col col-50">
-					<div class="mdl-textfield mdl-js-textfield">
-					  <input class="mdl-textfield__input" type="text" placeholder="Select Date" id="fname">
-					</div>
+					<label class="item item-input item-md-label" placeholder="Select Date">
+						<input class="select-date-time" type="text" id="fname"/>
+						<span class="input-label lbl_span-field_text">Select Date</span>
+					</label>
 					<!-- <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
 				    	<button class="button button-positive">
 				     	{{ currentDate | date:'MMMM/dd/yyyy' }} </button>
 			        </ionic-datepicker> -->
 				</div>
-				<div class="mdl-textfield mdl-js-textfield">
+				<label class="item item-input item-md-label" placeholder="Select Time">
+					<input class="select-date-time" type="text" id="fname"/>
+					<span class="input-label lbl_span-field_text">Select Time</span>
+				</label>
+				<!-- <div class="mdl-textfield mdl-js-textfield">
 				  <input class="mdl-textfield__input" type="text" placeholder="Select Time" id="fname">
-				</div>
+				</div> -->
 			</div>
 
 		</div>
@@ -149,16 +160,21 @@
 	        </div>
 		  </div> -->
 
-	<ion-footer-bar align-title="left" class="bar-positive">
+	<!-- <ion-footer-bar align-title="left" class="bar-positive">
 		<a>
 			<button class="button button-outline button-stable mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
 			    Estimated Charge<span class="mdl-button__ripple-container">
-				<span class="mdl-ripple is-animating" transform: translate(-50%, -50%) translate(49px, 37px);">
+				<span class="mdl-ripple is-animating" 
+				  transform: "translate(-50%, -50%) translate(49px, 37px);">
 				</span></span>
 			</button>
 		</a>
 		<a>
-		   <button class="button button-outline button-stable mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">book<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 285.535px; height: 285.535px; transform: translate(-50%, -50%) translate(49px, 37px);"></span></span></button>
+		   <button class="button button-outline button-stable mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">book<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 285.535px; height: 285.535px"; transform: "translate(-50%, -50%) translate(49px, 37px);"></span></span></button>
 	 	</a>
-	</ion-footer-bar>
+	</ion-footer-bar> -->
+	<div class="tabs tabs-dark">
+		<a class="tab-item" href="">Estimated Charge</a>
+		<a class="tab-item" href="">Book Now</a>
+	</div>
 </ion-view>

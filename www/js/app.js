@@ -4,7 +4,7 @@
   // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
   // the 2nd parameter is an array of 'requires'
   angular.module('app.projectX', ['ionic', 'ui.router','ngAnimate', 'angular-jwt', 'ion-autocomplete',
-  'angular-storage', 'ngResource'])
+  'angular-storage', 'ngResource','ionic-datepicker','ionMdInput'])
 
       .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
@@ -88,7 +88,7 @@
       url: "/signUp",
       views: {
             "mainContent": {
-              templateUrl: "templates/loginOtp.html"
+              templateUrl: "templates/signUp.html"
             }
         }
    })
@@ -99,7 +99,7 @@
       templateUrl: "templates/main.html",
       controller: 'mainCtrl',
       data: {
-                requiresLogin: true
+              requiresLogin: true
             }
    })
 
@@ -159,7 +159,7 @@
         }
       }
    })
-
+   
   })
 
 .run(function($rootScope, $state, store, jwtHelper) {

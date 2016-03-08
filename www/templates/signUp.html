@@ -1,31 +1,53 @@
 <ion-view view-title="Register">
-  <ion-content class="padding">
-   	<div class="list list-inset" ng-hide="isSignUpSubmit">
-   		<label class="item item-input">
-   			<input type="text" placeholder="First name">
-   		</label>
-   		<br>
-   		<label class="item item-input">
-   			<input type="text" placeholder="Last Name">
-   		</label>
-   		<br>
-   		<label class="item item-input">
-   			<input type="text" placeholder="Email ID">
-   		</label>
-   		<br>
-   		<label class="item item-input">
-   			<input type="text" placeholder="Mobile Number">
-   		</label>
-         <button class="button button-block button-calm" ng-click="isSignUpSubmit='true'">Register</button>
+  <ion-content class="signUp-page">
+   	<div class="card booking-box tmargin" ng-hide="isSignUpSubmit">
+         <div class="bar bar-header bar-calm" style="position: static;">
+            <div class="h1 title">Sign Up</div>
+         </div>
+         <div class="item item-body">
+            <div class="item-input-inset date-time-select">
+               <i class="ion-android-person" style="color:grey; font-size: 14px; margin-top:32px;"></i> 
+               <ion-md-input ng-model="user.firstName" class="select-date-time" placeholder="First Name" 
+               type="text"></ion-md-input>
+            </div> 
+            <div class="item-input-inset date-time-select"> 
+              <i class="ion-android-person" style="color:grey; font-size: 14px; margin-top:32px;"></i> 
+              <ion-md-input ng-model="user.lastName" class="select-date-time"  placeholder="Last Name" 
+              type="text"></ion-md-input>
+            </div>
+            <div class="item-input-inset date-time-select">
+              <i class="ion-android-mail" style="color:grey; font-size: 14px; margin-top:32px;"></i>
+              <ion-md-input ng-model="user.email" class="select-date-time" placeholder="Email" type="email">
+              </ion-md-input>
+            </div>
+            <div class="item-input-inset date-time-select">
+              <i class="ion-android-phone-portrait" style="color:grey; font-size: 14px; margin-top:32px;"></i>
+              <ion-md-input ng-model="user.number" class="select-date-time" placeholder="Mobile Number" 
+              type="text"></ion-md-input>
+            </div>
+            <div class="item-input-inset date-time-select">
+              <ion-md-input ng-model="user.otp" class="select-date-time" placeholder="OTP" type="text">
+              </ion-md-input>
+            </div>
+         </div>
+         <div class="col">
+            <button class="button button-block button-calm" ng-click="isSignUpSubmit='true'">Register</button>
+         </div>
    	</div>
-   	<div class="list" ng-show="isSignUpSubmit">
-         <label class="item item-floating-label">
-            <span class="input-label">OTP</span>
-            <input type="text" placeholder="OTP">
-         </label>
-         <button class="button button-block button-calm">Submit OTP</button>
-         <button class="button button-block button-calm">Resend OTP</button>
-      </div>
+   	<!-- <div class="list" ng-show="isSignUpSubmit">
+         <div class="item-input-inset date-time-select">
+            <label class="item item-input item-md-label profile-text-label" placeholder="OTP">
+               <input class="select-date-time" type="text"/>
+               <span class="input-label">OTP</span>
+            </label>
+         </div>
+          <div class="col">
+            <button class="button button-block button-calm">
+               Submit OTP
+            </button>
+         </div>  
+         <span class="input-label">Resend OTP</span>
+      </div> -->
 
 
   </ion-content>
