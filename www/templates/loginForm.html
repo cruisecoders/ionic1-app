@@ -13,10 +13,14 @@
 			        <div class="item-input-inset date-time-select">
 				        <i class="ion-android-phone-portrait" style="color:grey; font-size: 14px;
 				        margin-top:41px;"></i>
-				        <label class="item item-input item-md-label profile-text-label">
+				        <ion-md-input type="text" name="userNumber" ng-model="user.number" ng-required="true"
+				         ng-maxlength="10" ng-minlength="10" ng-pattern="/^[0-9]{1,10}$/"
+				         placeholder="Mobile Number">
+				     	</ion-md-input>
+				        <!-- <label class="item item-input item-md-label profile-text-label">
 			        		<input class="select-date-time" type="text" name="userNumber" ng-model="user.number" type="text" ng-required="true" ng-maxlength="10" ng-minlength="10" ng-pattern="/^[0-9]{1,10}$/"/>
 			        		<span class="input-label lbl_span-field">Mobile Number</span>
-			        	</label>
+			        	</label> -->
 			    	</div>
 			    	<!-- <div class="item-input-inset date-time-select">
 				    	<i class="ion-android-phone-portrait" style="color:grey; font-size: 14px;

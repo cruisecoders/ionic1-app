@@ -2,26 +2,12 @@
 .row .login-field{
 	margin-top: 60px;
 }
-
-.mdl-textfield.mdl-js-textfield > input {
-	border-bottom: 1px solid #fff;
-	width: 90%;
-	margin-left: 12px;
-	margin-top: 3px;
-    background-color: transparent;
-}
-.mdl-textfield.mdl-js-textfield > input:hover {
-	border-bottom: 1px solid blue;
-	width: 90%;
-}
-
 @media all and (orientation:portrait) {
     .row .col-offset-33 {
         margin-left: 110px;
         margin-top: 4px;
     }
 }
-
 @media all and (orientation:landscape) {
     .row .col-offset-33 {
         margin-left: 224px;
@@ -35,7 +21,6 @@ For Tablet
         margin-top: 4px;
     }
 }
-
 .box {
 	background-color:#f2f2f2;
 	margin-bottom:15px;
@@ -122,7 +107,6 @@ button.item.item-complex:hover{
     -moz-background-size: cover;
     background-size: cover;
 }
-
 .slide-img {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -156,7 +140,6 @@ button.item.item-complex:hover{
  .my-form.ng-invalid {
    background: transparent!important;
  }
-
  .royal, a.royal {
     color: rgb(136, 106, 234);
 }
@@ -205,7 +188,6 @@ button.item.item-complex:hover{
     max-width: 1132px;
     margin: 0 auto;
 }
-
 #cd-timeline {
     position: relative;
     margin-top: 2em;
@@ -235,19 +217,17 @@ button.item.item-complex:hover{
   margin: 0 auto;
   max-width: 600px;
 }
-
 .slider-slide {
   height: auto;
   text-align:center;
 }
-
 .slider-slide img{
   height: 589px;
   width: auto;
 }
 .date-time-select{
     margin-left: 2px;
-    margin-top: -18px;
+    margin-top: -4px;
 }
 .row > span {
     margin:-13px 36px;

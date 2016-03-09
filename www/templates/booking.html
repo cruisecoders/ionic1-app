@@ -8,7 +8,7 @@
 			</div>
 			<div class="item-text-wrap booking-box">	
 				<label class="item">
-					<input class="all-input-field select-date-time lbl_span-field" ion-autocomplete type="text" 
+					<input class="all-input-field select-date-time lbl_span-field" ion-autocomplete type="text"
 					   autocomplete="off" 
 					   placeholder="Search City Name"
 		               ng-model="model"
@@ -49,31 +49,25 @@
 		  	</div>
 		  	<div class="item-input-inset date-time-select">
 				<div class="col col-50">
-					<!-- <div class="mdl-textfield mdl-js-textfield">
-					  <input class="mdl-textfield__input" type="text" placeholder="Select Date" id="fname">
-					</div> -->
-					<label class="item item-input item-md-label" placeholder="Select Date">
+					<div class="item-input-inset date-time-select"> 
+		              <i class="ion-calendar" style="color:white; font-size: 14px; margin-top:32px;"></i>
+		              <ion-md-input class="lbl_span-field_text" placeholder="Select Date" type="text">
+		              </ion-md-input>
+		            </div>
+					<!-- <label class="item item-input item-md-label" placeholder="Select Date">
 						<input class="select-date-time" type="text" id="fname"/>
 						<span class="input-label lbl_span-field_text">Select Date</span>
-					</label>
+					</label> -->
 					<!-- <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
 					    <button class="button button-block button-positive"> {{ currentDate | date:'MMMM/dd/yyyy' }} </button>
 					</ionic-datepicker> -->
 				</div>
-				<label class="item item-input item-md-label" placeholder="Select Time">
-					<input class="select-date-time" type="text" id="fname"/>
-					<span class="input-label lbl_span-field_text">Select Time</span>
-				</label>
+				<div class="item-input-inset date-time-select"> 
+		            <i class="ion-clock" style="color:white; font-size: 14px; margin-top:32px;"></i> 
+		            <ion-md-input class=" lbl_span-field_text" placeholder="Select Time" type="text">
+		            </ion-md-input>
+		        </div>
 			</div>
-
-			<!-- <div class="item-input-inset date-time-select">
-				<div class="mdl-textfield mdl-js-textfield">					
-					<input class="mdl-textfield__input" type="text" placeholder="Number of Items" id="fname">
-				</div>
-				<div class="mdl-textfield mdl-js-textfield">
-				    <input class="mdl-textfield__input" type="text" placeholder="Weight of Items" id="fname">
-				</div>
-			</div> -->
 			<!-- Drop Point Section -->
 			<div class="item-divider" style="padding-left:16px;">
 			   <i class="ion-ios-location" style="color:blue; font-size: 18px;"></i> 
@@ -97,19 +91,21 @@
 		  	</div>
 		  	<div class="item-input-inset date-time-select">
 				<div class="col col-50">
-					<label class="item item-input item-md-label" placeholder="Select Date">
-						<input class="select-date-time" type="text" id="fname"/>
-						<span class="input-label lbl_span-field_text">Select Date</span>
-					</label>
+					<div class="item-input-inset date-time-select"> 
+		              <i class="ion-calendar" style="color:black; font-size: 14px; margin-top:32px;"></i>
+		              <ion-md-input class="lbl_span-field_text" placeholder="Select Date" type="text">
+		              </ion-md-input>
+		            </div>
 					<!-- <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
 				    	<button class="button button-positive">
 				     	{{ currentDate | date:'MMMM/dd/yyyy' }} </button>
 			        </ionic-datepicker> -->
 				</div>
-				<label class="item item-input item-md-label" placeholder="Select Time">
-					<input class="select-date-time" type="text" id="fname"/>
-					<span class="input-label lbl_span-field_text">Select Time</span>
-				</label>
+				<div class="item-input-inset date-time-select"> 
+	                <i class="ion-clock" style="color:black; font-size: 14px; margin-top:32px;"></i> 
+	                <ion-md-input class="lbl_span-field_text" placeholder="Select Time" type="text">
+	                </ion-md-input>
+	            </div>
 				<!-- <div class="mdl-textfield mdl-js-textfield">
 				  <input class="mdl-textfield__input" type="text" placeholder="Select Time" id="fname">
 				</div> -->
