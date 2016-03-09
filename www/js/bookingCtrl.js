@@ -36,7 +36,7 @@ angular.module('app.projectX')
 
 	$scope.testBooking = function(){
 
-		store.set('jwt', "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ODc2NTQzMjEwIiwidXNlcklkIjoiMTIzNDU2In0.Cqf2T8UiDdX0m4oMqgNJhqWpWYfwwQ6cjmoqeBAcIKM");
+		//store.set('jwt', "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ODc2NTQzMjEwIiwidXNlcklkIjoiMTIzNDU2In0.Cqf2T8UiDdX0m4oMqgNJhqWpWYfwwQ6cjmoqeBAcIKM");
 
 		$http.get("http://localhost:8080/web-service/api/test", {
             params : {
@@ -50,8 +50,8 @@ angular.module('app.projectX')
           });
 	}
 
-	  $scope.jwt = store.get('jwt');
-  	$scope.decodedJwt = $scope.jwt && jwtHelper.decodeToken($scope.jwt);
+	  //$scope.jwt = store.get('jwt');
+  	//$scope.decodedJwt = $scope.jwt && jwtHelper.decodeToken($scope.jwt);
 
     $scope.getPickUpStreets = function(exp){
       projectApi.getResource('pickUpStreets', id, exp).then(function(response){
@@ -111,8 +111,4 @@ angular.module('app.projectX')
         console.log('Selected date is : ', val);
       }
     };
-
-
-
-	//$scope.testBooking();	
 });

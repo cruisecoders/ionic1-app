@@ -1,4 +1,4 @@
-angular.module('app.projectX').controller('loginCtrl', function($scope, loginService, $state, store){
+angular.module('app.projectX').controller('loginCtrl', function($scope, loginService, $state, store, $ionicPopup){
 	
   $scope.user = {};
 
@@ -15,8 +15,8 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
            }
     		},function(error){
           console.log("Login failed");
-          $scope.error = error.data.data;
-          //TODO IONIC Alert
+         //$scope.error = error.data.data;
+          showAlertBox('Please try again' , error.data.errorMsg);
     		});
   }
 
@@ -32,9 +32,19 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
           $state.go('main.booking', {}, {reload: true});
         },function(error){
           console.log("OTP failed");
-           $scope.error = error.data.data;
-           //TODO IONIC Alert
+           //$scope.error = error.data.data;
+           showAlertBox('Please try again' , error.data.errorMsg);
         });
+  }
+
+  function showAlertBox(title, msg){
+    var alertPopup = $ionicPopup.alert({
+       title: title,
+       template: msg
+     });
+     alertPopup.then(function(res) {
+       console.log('Please try again later ');
+     });
   }
 
 })
