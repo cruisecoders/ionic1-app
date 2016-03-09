@@ -1,0 +1,12 @@
+{
+  "local": {
+    "EnvironmentConfig": {
+      "api": "http://localhost:8080/web-service/api/"
+    }
+  },
+  "production": {
+    "EnvironmentConfig": {
+      "api": "https://api.production.com/"
+    }
+  }
+}

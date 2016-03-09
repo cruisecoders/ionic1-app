@@ -26,6 +26,6 @@ angular.module('app.projectX').constant('menuConstant', {
   notAuthenticated: 'auth-not-authenticated',
   notAuthorized: 'auth-not-authorized'
 })
-.constant('CONTEXT_URL', {
+/*.constant('CONTEXT_URL', {
   url: 'http://localhost:8080/web-service/api/'
-})
+})*/

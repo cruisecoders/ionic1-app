@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var gulpNgConfig = require('gulp-ng-config');
 
 var paths = {
   sass: ['./scss/**/*.scss']
@@ -35,6 +36,14 @@ gulp.task('install', ['git-check'], function() {
     .on('log', function(data) {
       gutil.log('bower', gutil.colors.cyan(data.id), data.message);
     });
+});
+
+gulp.task('replaceConfig', function () {
+  gulp.src('config.json')
+  .pipe(gulpNgConfig('app.env.config', {
+    environment: 'local'
+    }))
+  .pipe(gulp.dest('./www/js'))
 });
 
 gulp.task('git-check', function(done) {

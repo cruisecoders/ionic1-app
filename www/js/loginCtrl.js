@@ -49,7 +49,7 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
 
 })
 
-.service('loginService', function ($http, $q, CONTEXT_URL) {
+.service('loginService', function ($http, $q, EnvironmentConfig) {
 
   var userCredentials = {};
   var isAuthenticated = false;
@@ -83,7 +83,7 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
   }
 
   var login = function(user) {
-      return $http.get(CONTEXT_URL.url + "login", {
+      return $http.get(EnvironmentConfig.api + "login", {
             params : {
               number : user.number
             }
@@ -91,7 +91,7 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
     }
 
   var submitOTP = function(user) {
-      return $http.post(CONTEXT_URL.url + "submitOtp", user , {});
+      return $http.post(EnvironmentConfig.api + "submitOtp", user , {});
     }
 
   var logout = function() {

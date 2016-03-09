@@ -1,6 +1,6 @@
-angular.module('app.projectX').service('projectApi', function ($http, $q, CONTEXT_URL, $resource) {
+angular.module('app.projectX').service('projectApi', function ($http, $q, EnvironmentConfig, $resource) {
 
-  var genResource = $resource(CONTEXT_URL.url + ':type/:id', {id:'@id'});
+  var genResource = $resource(EnvironmentConfig.api + ':type/:id', {id:'@id'});
 
   function createResource(type){
       var resourceType = genResource.bind({type : type});
