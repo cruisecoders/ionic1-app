@@ -6,14 +6,17 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
     	
     	loginService.login($scope.user).then(
     		function(response){
-           if(response.data.isExist){
+           $scope.user = response.data.data;
+           console.log("Inside success login");
+           if($scope.user.numberExist == true || $scope.user.numberExist == "true"){
             $state.go('login.otp');
            }else{
             $state.go('login.signUp');
            }
     		},function(error){
           console.log("Login failed");
-          //TODO Ionic Alert
+          $scope.error = error.data.data;
+          //TODO IONIC Alert
     		});
   }
 
@@ -22,13 +25,15 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
       loginService.submitOTP($scope.user).then(
         function(response){
           console.log("OTP Done");
-          store.set('jwt', response.data.user.jwt);
-          loginService.storeUserCredentials(response.data.user);
-          loginService.storeToken(response.data.user.jwt);
+          store.set('jwt', response.data.data.token);
+          store.set('userInfo', response.data.data.userInfo);
+          loginService.storeUserCredentials(response.data.data.userInfo);
+          loginService.storeToken(response.data.data.token);
           $state.go('main.booking', {}, {reload: true});
         },function(error){
           console.log("OTP failed");
-          //TODO ionic alert
+           $scope.error = error.data.data;
+           //TODO IONIC Alert
         });
   }
 
@@ -53,9 +58,7 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
   }
 
   function storeUserCredentials(user) {
-    userCredentials.userId = user.userId;
-    userCredentials.username = user.username; 
-    userCredentials.number= user.number;
+    userCredentials = user;
   }
 
   function storeToken(token) {

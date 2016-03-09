@@ -9,6 +9,7 @@ angular.module('app.projectX').controller('appCtrl', function($scope, $ionicPopu
   	loginService.destroyUserCredentials();
 
   	store.remove('jwt');
+    store.remove('userInfo');
 
   	$state.go('login.form', {}, {reload : true});
 
@@ -23,6 +24,7 @@ angular.module('app.projectX').controller('appCtrl', function($scope, $ionicPopu
     loginService.destroyUserCredentials();
 
   	store.remove('jwt');
+    store.remove('userInfo');
     
     $state.go('login.form', {}, {reload : true});
     
@@ -33,5 +35,14 @@ angular.module('app.projectX').controller('appCtrl', function($scope, $ionicPopu
   });
 
   $scope.app.userCredentials = loginService.loadUserCredentials();
+
+  if(!$scope.app.userCredentials){
+    $scope.app.userCredentials = store.get('userInfo');
+  }else{
+    if($scope.app.userCredentials.id == "" || $scope.app.userCredentials.id == null || $scope.app.userCredentials.id == undefined){
+      $scope.app.userCredentials = store.get('userInfo');
+    }
+  }
+
 
 });

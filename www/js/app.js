@@ -54,7 +54,10 @@
     .state('login', {
       url: "/login",
       templateUrl: "templates/login.html",
-      controller: 'loginCtrl' 
+      controller: 'loginCtrl',
+      data: {
+              requiresLogin: false
+            }
    })
 
     .state('login.getStarted', {
