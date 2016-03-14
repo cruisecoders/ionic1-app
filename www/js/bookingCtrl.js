@@ -81,10 +81,10 @@ angular.module('app.projectX')
     }
     
     if (!$window.navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/i)) {
-    $window.datePicker = {
-        show: function(options, callback) { callback(new Date());}
-    };
-}
+        $window.datePicker = {
+            show: function(options, callback) { callback(new Date());}
+        };
+    }
      // ONLY SUBMIT IF I HAVE VALID DATA
   $scope.doSubmit = function() {
     alert(JSON.stringify($scope.formData, null, 2));
@@ -144,6 +144,14 @@ angular.module('app.projectX')
        /* $cordovaDatePicker.show(options).then(function(date) {
           $modelValue[$options.key] = date;
         });*/
+
+      /*document.addEventListener("deviceready", function () {
+
+          $cordovaDatePicker.show(options).then(function(date){
+              $modelValue[$options.key] = date;
+          });
+
+        }, false);*/
 
  $ionicPlatform.ready(function () {
             $cordovaDatePicker.show(options).then(function (date) {
