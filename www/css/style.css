@@ -66,6 +66,9 @@ button.item.item-complex:hover{
 .i > .application-icon {
 	color: #777;
 }
+.full-image {
+    width: 45% !important;
+}
 .booking-box {
 	background-color: transparent;
 	color: #fff;
@@ -225,7 +228,7 @@ button.item.item-complex:hover{
   text-align:center;
 }
 .slider-slide img{
-  height: 589px;
+  height: 480px;
   width: auto;
 }
 .date-time-select{
@@ -272,9 +275,13 @@ button.item.item-complex:hover{
     letter-spacing: 0 !important;
     color: white !important;
 }
+.col-getStarted {
+    padding: 16px !important;
+}
 .getstarted-row {
     background-color: #B71C1C;
-    margin-top: -5px;
+    margin-top: 7px;
+    height: 110px;
 }
 .login_btn {
     margin: 30px 120px !important;

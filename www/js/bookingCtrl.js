@@ -105,24 +105,24 @@ angular.module('app.projectX')
    createFormlyType()
  
   $scope.formFields = [{
-    /*"type": "input",
-    "key": "name",*/
+    "type": "input",
+    "key": "name",
     "templateOptions": {
-      /*"type": "text",
+      "type": "text",
       "placeholder": "Aaron Saunders",
       "icon": "ion-person",
       required: true,
-      "iconPlaceholder": true*/
+      "iconPlaceholder": true
     }
   }, {
-    /*"type": "input",
-    "key": "email",*/
+    "type": "input",
+    "key": "email",
     "templateOptions": {
-      /*"type": "email",
+      "type": "email",
       "placeholder": "jane.doe@apple.com",
       "icon": "ion-email",
       required: true,
-      "iconPlaceholder": true*/
+      "iconPlaceholder": true
     }
   }, {
     key: 'startDateTime',

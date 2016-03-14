@@ -1,15 +1,19 @@
 <ion-modal-view class="signUp-page">
-    <div class="bar bar-header bar-calm" style="position: static;">
-        <div class="h1 title">Login</div>
-    </div>
+   <ion-header-bar class="bar-positive head-effects">
+   		<h1 class="title">Login</h1>
+	</ion-header-bar>
 	<ion-content class="padding">
-		<div class="list card" style="margin-top: 60px;">		
+		<div class="list card" style="margin-top: 60px;">
+			<!-- <div class="bar bar-header bar-calm" style="position: static;">
+	            <div class="h1 title">Login</div>
+	        </div> -->
 			<form name="loginForm" class="row responsive-sm my-form">
 				<div class="item item-body">
-					<img src="img/logo11.png" width="130px" height="100px" style="margin-left: 75px;">
+					<img class="full-image" src="img/logo11.png" width="100px" height="100px"
+					 style="margin-left:75px;">
 			        <div class="item-input-inset date-time-select">
-				        <i class="ion-android-phone-portrait" style="color:grey; font-size: 14px;
-				        margin-top:41px;"></i>
+				        <i class="ion-android-phone-portrait" style="color:grey; font-size: 15px;
+				        margin-top:36px;"></i>
 				        <ion-md-input type="text" name="userNumber" ng-model="user.number" ng-required="true"
 				         ng-maxlength="10" ng-minlength="10" ng-pattern="/^[0-9]{1,10}$/"
 				         placeholder="Mobile Number">

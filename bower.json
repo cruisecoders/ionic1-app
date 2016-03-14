@@ -5,18 +5,11 @@
     "ionic": "driftyco/ionic-bower#1.2.4"
   },
   "dependencies": {
-    "material-design-lite": "~1.0.6",
     "ion-autocomplete": "~0.3.1",
     "angular-jwt": "~0.0.9",
     "a0-angular-storage": "~0.0.13",
-    "onezone-datepicker": "*",
-    "ionic-timepicker": "^0.4.0",
     "angular-resource": "~1.4.9",
-    "ngTimepicker": "*",
-    "ionic-multi-date-picker": "^2.0.0",
-    "datepicker-for-ionic": "^1.1.7",
     "ionic-material": "^0.4.2",
-    "sc-date-time": "^1.1.6",
     "ngCordova": "^0.1.24-alpha",
     "api-check": "^7.5.5",
     "angular-formly": "^8.0.4",
