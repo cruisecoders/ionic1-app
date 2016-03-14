@@ -1,9 +1,5 @@
 angular.module('app.projectX').controller('appCtrl', function($scope, $ionicPopup, loginService, $state, store, AUTH_EVENTS){
-	
-
   $scope.app = {};
-
-
   $scope.$on(AUTH_EVENTS.notAuthorized, function(event) {
 
   	loginService.destroyUserCredentials();

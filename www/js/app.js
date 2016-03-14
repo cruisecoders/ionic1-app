@@ -4,7 +4,7 @@
   // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
   // the 2nd parameter is an array of 'requires'
   angular.module('app.projectX', ['ionic', 'ui.router','ngAnimate', 'angular-jwt', 'ion-autocomplete',
-  'angular-storage', 'ngResource','ionic-datepicker','ionMdInput', 'app.env.config'])
+  'angular-storage', 'ngResource','ionMdInput', 'app.env.config' , 'formlyIonic','ngCordova'])
 
       .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
@@ -119,7 +119,6 @@
             }
         }
    })
-
    .state('main.pricing', {
       url: "/pricing",
       views: {
@@ -133,7 +132,6 @@
             }
         }
    })
-
    .state('main.contactUs',{
      url: "/contactUs",
      views: {
@@ -143,7 +141,6 @@
             }
         }
    })
-
    .state('main.aboutUs',{
       url:"/aboutUs",
       views:{
@@ -152,7 +149,6 @@
         }
       }
    })
-
    .state('main.account',{
       url:"/account",
       views:{

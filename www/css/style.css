@@ -60,19 +60,22 @@ button.item.item-complex:hover{
   background:
     url('../assets/demos/dog.png') no-repeat ;
 }
+.item-divider {
+    background-color: gainsboro !important;
+}
 .i > .application-icon {
 	color: #777;
 }
 .booking-box {
 	background-color: transparent;
 	color: #fff;
-    margin-left: 5px;
+    margin: 10px;
 }
 .booking-box-text {
 	color: #fff;
 }
 .get-started {
-	background: url("../img/getstarted.jpg") no-repeat center center fixed;
+	/*background: url("../img/getstarted.jpg") no-repeat center center fixed;*/
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -230,7 +233,7 @@ button.item.item-complex:hover{
     margin-top: -4px;
 }
 .row > span {
-    margin:-13px 36px;
+    margin-left: 30px;
     color: red;
     font-size: 16px;
 }
@@ -249,7 +252,7 @@ button.item.item-complex:hover{
     margin-top: 15px;
 }
 .signUp-page {
-    background-color: white;
+    background-color: rgba(239, 241, 245, 0.44);
 }
 .tmargin {
     margin-top: 50px !important;

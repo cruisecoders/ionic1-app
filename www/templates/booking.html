@@ -1,5 +1,5 @@
 <ion-view view-title="Booking">
-	<ion-content ng-controller="bookingCtrl" class="booking-page">
+	<ion-content ng-controller="bookingCtrl" class="signUp-page">
 		<div class="card booking-box tmargin">
 			<!-- City Section -->
 			<div class="item-divider" style="padding-left:16px;">
@@ -27,10 +27,6 @@
 			   <i class="ion-home" style="color:blue; font-size: 18px;"></i> 
 			   <span style="font-size: 16px;">Pick Up Point</span>
 			</div>
-			<!-- <div class="item item-divider">
-			   <i class="ion-earth" style="color:blue; font-size: 18px;"></i> 
-			   <span style="font-size: 16px;">City</span>
-			</div> -->
 			<div class="item-text-wrap booking-box">
 			   	<label class="item">
 					<input class="all-input-field select-date-time lbl_span-field_text" ion-autocomplete type="text"
@@ -47,27 +43,29 @@
 		               max-selected-items="3"/>
 				</label>
 		  	</div>
-		  	<div class="item-input-inset date-time-select">
+		  	<div class="item-input-inset date-time-select" style="margin-top:-33px;">
+				<div class="col">
+		            <formly-form model="formData" fields="formFields" form="mainInputForm">
+			          <!-- <button class="button button-block button-assertive"
+			            ng-disabled="mainInputForm.$invalid"
+			            ng-click="doSubmit()">SUBMIT</button> -->
+			        </formly-form>
+				</div>
+			</div>
+		  	<!-- <div class="item-input-inset date-time-select" style="margin-top:-48px;">
 				<div class="col col-50">
 					<div class="item-input-inset date-time-select"> 
 		              <i class="ion-calendar" style="color:white; font-size: 14px; margin-top:32px;"></i>
 		              <ion-md-input class="lbl_span-field_text" placeholder="Select Date" type="text">
 		              </ion-md-input>
 		            </div>
-					<!-- <label class="item item-input item-md-label" placeholder="Select Date">
-						<input class="select-date-time" type="text" id="fname"/>
-						<span class="input-label lbl_span-field_text">Select Date</span>
-					</label> -->
-					<!-- <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
-					    <button class="button button-block button-positive"> {{ currentDate | date:'MMMM/dd/yyyy' }} </button>
-					</ionic-datepicker> -->
 				</div>
 				<div class="item-input-inset date-time-select"> 
 		            <i class="ion-clock" style="color:white; font-size: 14px; margin-top:32px;"></i> 
 		            <ion-md-input class=" lbl_span-field_text" placeholder="Select Time" type="text">
 		            </ion-md-input>
 		        </div>
-			</div>
+			</div> -->
 			<!-- Drop Point Section -->
 			<div class="item-divider" style="padding-left:16px;">
 			   <i class="ion-ios-location" style="color:blue; font-size: 18px;"></i> 
@@ -89,88 +87,34 @@
 		               max-selected-items="3"/>
 				</label>
 		  	</div>
-		  	<div class="item-input-inset date-time-select">
-				<div class="col col-50">
-					<div class="item-input-inset date-time-select"> 
-		              <i class="ion-calendar" style="color:black; font-size: 14px; margin-top:32px;"></i>
-		              <ion-md-input class="lbl_span-field_text" placeholder="Select Date" type="text">
-		              </ion-md-input>
-		            </div>
-					<!-- <ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
-				    	<button class="button button-positive">
-				     	{{ currentDate | date:'MMMM/dd/yyyy' }} </button>
-			        </ionic-datepicker> -->
+		  	<div class="item-input-inset date-time-select" style="margin-top:-33px;">
+				<div class="col">
+		            <formly-form model="formData" fields="formFields" form="mainInputForm">
+			          <!-- <button class="button button-block button-assertive"
+			            ng-disabled="mainInputForm.$invalid"
+			            ng-click="doSubmit()">SUBMIT</button> -->
+			        </formly-form>
 				</div>
-				<div class="item-input-inset date-time-select"> 
-	                <i class="ion-clock" style="color:black; font-size: 14px; margin-top:32px;"></i> 
-	                <ion-md-input class="lbl_span-field_text" placeholder="Select Time" type="text">
-	                </ion-md-input>
-	            </div>
-				<!-- <div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" placeholder="Select Time" id="fname">
-				</div> -->
 			</div>
-
 		</div>
+		<!--<formly-form model="formData" fields="formFields" form="mainInputForm">
+          <button class="button button-block button-assertive"
+            ng-disabled="mainInputForm.$invalid"
+            ng-click="doSubmit()">SUBMIT</button>
+        </formly-form>
+         <pre> {{formData | json}} </pre>
+        <pre> {{mainInputForm | json}} </pre> -->
 	</ion-content>
-  	<!-- <ion-footer-bar align-title="left" class="bar-assertive">
-	  	<div class="col col-50 buttons">
-		   <button class="button">Left Button</button>
-		</div>
-		<div class="col col-50 buttons" ng-click="doSomething()">
-		   <button class="button">Right Button</button>
-		</div>
-	</ion-footer-bar> -->
-	<!-- <div class="bar bar-footer bar-stable">
-	  <div class="row">
-	  	<div class="col col-50">
-	  		<button class="button button-positive">
-			  button-positive
-			</button>
-	  	</div>
-	  	<div class="col col-50">
-	  		<button class="button button-positive">
-			  button-positive
-			</button>
-	  	</div>
-	  </div>
-	</div> -->
-	<!-- <div class="item item-text-wrap">
-		    <div class="list">
-        	  <label class="item item-input booking-box">
-				 <input ion-autocomplete type="text"  style="color:#fff;" class="ion-autocomplete booking-box-text" autocomplete="off" placeholder="Enter Pick Up Point"
-	               ng-model="model"
-	               item-value-key="name"
-	               item-view-value-key="view"
-	               items-method="getTestItems(query)"
-	               items-method-value-key="items"
-	               placeholder="Enter test query ..."
-	               items-clicked-method="itemsClicked(callback)"
-	               items-removed-method="itemsRemoved(callback)"
-	               max-selected-items="3"/>
-	           </label>
-	          <label class="item item-input">
-				 <span class="input-label">Date</span>
-				 <input type="date">
-			  </label>
-	        </div>
-		  </div> -->
-
-	<!-- <ion-footer-bar align-title="left" class="bar-positive">
-		<a>
-			<button class="button button-outline button-stable mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
-			    Estimated Charge<span class="mdl-button__ripple-container">
-				<span class="mdl-ripple is-animating" 
-				  transform: "translate(-50%, -50%) translate(49px, 37px);">
-				</span></span>
-			</button>
-		</a>
-		<a>
-		   <button class="button button-outline button-stable mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">book<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 285.535px; height: 285.535px"; transform: "translate(-50%, -50%) translate(49px, 37px);"></span></span></button>
-	 	</a>
-	</ion-footer-bar> -->
-	<div class="tabs tabs-dark">
+	<div class="tabs tabs-dark"
 		<a class="tab-item" href="">Estimated Charge</a>
 		<a class="tab-item" href="">Book Now</a>
 	</div>
 </ion-view>
+
+<script type="text/ng-template" id="inputDatePicker.html">
+  <ion-item class="item-icon-right">
+    <i ng-click="to.onclick(model,options)" 
+       class="icon ion-ios-calendar-outline"></i>
+    {{ model[options.key] | date : to.dateFormat }}
+  </ion-item>
+</script>

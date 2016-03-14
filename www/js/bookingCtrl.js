@@ -1,5 +1,5 @@
 angular.module('app.projectX')
-  .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi){
+  .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi, formlyConfig, $cordovaDatePicker, $window, $ionicPlatform){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
 	     
        $scope.model ="";
@@ -78,37 +78,84 @@ angular.module('app.projectX')
     }
 
     $scope.booking = function(){      
-    
     }
-
-    // $scope.datepickerObject = {
-      
-    //   templateType: 'POPUP',
-
-    //   selectedDates : [],
-
-    //   callback: function (dates) {  
-    //     this.retSelectedDates(dates);
-    //   },
-
-    //   retSelectedDates : function (dates) {
-    //     this.selectedDates.length = 0;
-    //     for (var i = 0; i < dates.length; i++) {
-    //           this.selectedDates.push(angular.copy(dates[i]));
-    //         }
-    //   }
-
-    // };
-
-    $scope.currentDate = new Date();
-    $scope.minDate = new Date(2105, 6, 1);
-    $scope.maxDate = new Date(2015, 6, 31);
- 
-    $scope.datePickerCallback = function (val) {
-      if (!val) { 
-        console.log('Date not selected');
-      } else {
-        console.log('Selected date is : ', val);
-      }
+    
+    if (!$window.navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/i)) {
+    $window.datePicker = {
+        show: function(options, callback) { callback(new Date());}
     };
+}
+     // ONLY SUBMIT IF I HAVE VALID DATA
+  $scope.doSubmit = function() {
+    alert(JSON.stringify($scope.formData, null, 2));
+  }
+ 
+  function createFormlyType() {
+    formlyConfig.setType({
+      name: 'inputDatePicker',
+      templateUrl: 'inputDatePicker.html',
+      defaultOptions: {}
+    });
+  }
+ 
+  $scope.formData = {
+    startDateTime : new Date()
+  };
+ 
+   createFormlyType()
+ 
+  $scope.formFields = [{
+    /*"type": "input",
+    "key": "name",*/
+    "templateOptions": {
+      /*"type": "text",
+      "placeholder": "Aaron Saunders",
+      "icon": "ion-person",
+      required: true,
+      "iconPlaceholder": true*/
+    }
+  }, {
+    /*"type": "input",
+    "key": "email",*/
+    "templateOptions": {
+      /*"type": "email",
+      "placeholder": "jane.doe@apple.com",
+      "icon": "ion-email",
+      required: true,
+      "iconPlaceholder": true*/
+    }
+  }, {
+    key: 'startDateTime',
+    type: 'inputDatePicker',
+    templateOptions: {
+      dateFormat: 'medium',
+      onclick: function($modelValue, $options) {
+        var options = {
+          date: new Date(),
+          mode: 'datetime', // 'date' or 'time'
+          minDate: new Date(),
+          allowOldDates: false,
+          allowFutureDates: true,
+          doneButtonLabel: 'DONE',
+          doneButtonColor: '#F2F3F4',
+          cancelButtonLabel: 'CANCEL',
+          cancelButtonColor: '#000000'
+        };
+       /* $cordovaDatePicker.show(options).then(function(date) {
+          $modelValue[$options.key] = date;
+        });*/
+
+ $ionicPlatform.ready(function () {
+            $cordovaDatePicker.show(options).then(function (date) {
+                $modelValue[$options.key] = date;
+            });
+        });
+      }
+    }
+  }, ]
+
+
+  
+
+
 });
