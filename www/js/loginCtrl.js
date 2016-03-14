@@ -16,7 +16,11 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
     		},function(error){
           console.log("Login failed");
          //$scope.error = error.data.data;
+         if(error.data.errorMsg){
           showAlertBox('Please try again' , error.data.errorMsg);
+        }else{
+          showAlertBox('Please try again' , error.data);
+        }
     		});
   }
 
@@ -33,7 +37,13 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
         },function(error){
           console.log("OTP failed");
            //$scope.error = error.data.data;
-           showAlertBox('Please try again' , error.data.errorMsg);
+          
+           if(error.data.errorMsg){
+               showAlertBox('Please try again' , error.data.errorMsg);
+            }else{
+              showAlertBox('Please try again' , error.data);
+            }
+           
         });
   }
 

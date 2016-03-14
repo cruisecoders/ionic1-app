@@ -41,7 +41,7 @@ gulp.task('install', ['git-check'], function() {
 gulp.task('replaceConfig', function () {
   gulp.src('config.json')
   .pipe(gulpNgConfig('app.env.config', {
-    environment: 'local'
+    environment: 'dev'
     }))
   .pipe(gulp.dest('./www/js'))
 });

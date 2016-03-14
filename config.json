@@ -4,6 +4,11 @@
       "api": "http://localhost:8080/web-service/api/"
     }
   },
+  "dev": {
+    "EnvironmentConfig": {
+      "api": "http://ec2-52-36-173-21.us-west-2.compute.amazonaws.com:8080/web-service/api/"
+    }
+  },
   "production": {
     "EnvironmentConfig": {
       "api": "https://api.production.com/"
