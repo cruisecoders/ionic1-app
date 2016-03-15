@@ -24,11 +24,11 @@
   transform-origin: 0; }
 
 .item-md-label input {
-  /*background-color: rgba(0, 0, 0, 0.6);*/
+  background-color: rgba(0, 0, 0, 0.6);
   bottom: 0;
-  color: black;
-  letter-spacing: 0;
-  padding: 7px;
+  color: #fff;
+  letter-spacing: 0.25rem;
+  padding: 20px 10px;
   position: relative;
   z-index: 1; }
 
@@ -72,7 +72,7 @@
   background: #444; }
 
 .item-md-label .input-label {
-  letter-spacing: 0;
+  letter-spacing: 0.25rem;
   padding: 0 10px; }
 
 .item-md-label input:focus ~ .input-label, .item-md-label input.used ~ .input-label {
@@ -1172,7 +1172,7 @@
   background-size: 100%; }
 
 .has-expanded-header {
-/*  top: 150px !important;*/ }
+  top: 150px !important; }
 
 .motion {
   -webkit-transition: all 0.5s ease-out;

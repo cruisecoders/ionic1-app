@@ -16,6 +16,9 @@
     "angular-formly-templates-ionic": "^1.2.2"
   },
   "resolutions": {
-    "angular": "1.4.9"
+    "angular": "1.4.9",
+    "ionic": ">=0.9.27",
+    "angular-animate": "1.4.3",
+    "angular-sanitize": "1.4.3"
   }
 }

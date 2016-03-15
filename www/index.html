@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+-->
+   <!--  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *">
+ -->
+
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">  -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
@@ -11,7 +24,7 @@
     <link href="lib/ionic-material/dist/ionic.material.css" rel="stylesheet" type="text/css"/>
     <link href="lib/ion-autocomplete/dist/ion-autocomplete.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/ion-md-input.css"/>
+    <link rel="stylesheet" href="lib/ion-md-input/css/ion-md-input.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="lib/ngTimepicker/src/css/ngTimepicker.css"/>
     <link rel="stylesheet" href="css/ion-md-input.css"/>-->
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -23,7 +36,7 @@
    <!-- <script src="lib/material-design-lite/material.js" type="text/javascript"></script>
     <script src="lib/datepicker-for-ionic/dist/templates.min.js"></script>
     <script src="lib/datepicker-for-ionic/dist/ionic-datepicker.min.js"></script> -->
-    <script src="https://cdn.rawgit.com/mhartington/ion-md-input/master/js/ion-md-input.js">
+    <script src="lib/ion-md-input/js/ion-md-input.js">
     </script>
     <script src="lib/ionic-material/dist/ionic.material.js" type="text/javascript"></script>
     <script src="lib/a0-angular-storage/dist/angular-storage.js" type="text/javascript"> </script>

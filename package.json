@@ -20,7 +20,9 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "cordova-plugin-datepicker",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-network-information"
   ],
   "cordovaPlatforms": [
     "android"
