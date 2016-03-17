@@ -30,6 +30,16 @@ angular.module('app.projectX').controller('appCtrl', function($scope, $ionicPopu
     });
   });
 
+  
+
+  $scope.$on(AUTH_EVENTS.httpNotFound, function(event) {
+
+    var alertPopup = $ionicPopup.alert({
+      title: 'I am Sorry!',
+      template: 'Service not found.'
+    });
+  });
+
   $scope.app.userCredentials = loginService.loadUserCredentials();
 
   if(!$scope.app.userCredentials){

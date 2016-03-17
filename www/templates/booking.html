@@ -1,5 +1,5 @@
 <ion-view view-title="Booking">
-	<ion-content ng-controller="bookingCtrl" class="signUp-page">
+	<ion-content class="signUp-page">
 		<div class="card">
 			
 			<!-- <ion-list>
@@ -16,7 +16,7 @@
 			</div>
 			<div class="list drop_down">
 			  <label class="item item-input item-select">
-			    <select ng-model="booking.city" ng-options="city.name for city in refData.cities">
+			    <select ng-model="booking.city" ng-options="city.name for city in refData.cities" ng-change="getStreets(booking.city.id)">
 			      <option value="">Select City</option>
 			    </select>
 			  </label>
@@ -28,7 +28,7 @@
 			</div>
 		  	<div class="list drop_down">
 			  <label class="item item-input item-select">
-			    <select ng-model="booking.street" ng-options="street.name for street in refData.streets">
+			    <select ng-model="booking.street" ng-options="street.name for street in refData.streets" ng-change="getSubStreets(booking.street.id)">
 			      <option value="">Select Major Streets</option>
 			    </select>
 			  </label>

@@ -1,107 +1,68 @@
 angular.module('app.projectX')
-  .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi, formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicActionSheet){
+  .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi, 
+    formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
-	     
-       $scope.model ="";
-       $scope.clickValueModel = "";
-       $scope.removeValueModel = "";
-
-       $scope.getTestItems = function (query) {
-        if (query) {
-            return {
-              items: [{
-                id: "1",
-                name: query + "1",
-                view: "view:" + query + "1"
-              },{
-                id: "2",
-                name: query + "2",
-                view: "view" + query + "2"               
-              },{
-                id: "1",
-                name: query + "2",
-                view: "view"  + query + "3"
-              }]
-          };
-       }
-       return {items: []}; 
-     };
-
-     $scope.refData = {};
-
-     $scope.itemClicked = function (callback) {
-        $scope.clickValueModel = callback;
-     }
-     $scope.itemRemoved = function (callback) {
-        $scope.removeValueModel = callback;
-     }
-
-	$scope.testBooking = function(){
-
-		//store.set('jwt', "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ODc2NTQzMjEwIiwidXNlcklkIjoiMTIzNDU2In0.Cqf2T8UiDdX0m4oMqgNJhqWpWYfwwQ6cjmoqeBAcIKM");
-
-		$http.get("http://localhost:8080/web-service/api/test", {
-            params : {
-              number : 9876543210
-            }
-          }).then(function(res){
-          	$scope.testVar = res.data.data;
-          	$state.go('main.booking', {}, {reload: true});
-          }, function(err){
-          	alert("authorization failed");
-          });
-	}
-
-	  //$scope.jwt = store.get('jwt');
-  	//$scope.decodedJwt = $scope.jwt && jwtHelper.decodeToken($scope.jwt);
-
-    $scope.getPickUpStreets = function(exp){
-      projectApi.getResource('pickUpStreets', id, exp).then(function(response){
+ $scope.booking = {};
+ $scope.refData = {};
+  
+  $scope.getCities = function(id, exp){
+    projectApi.getResource('cities', id, exp).then(function(response){
         console.log("Suuccess Handler");
+        $scope.refData.cities = response.data;
       }, function(error){
         console.log("Failure Handler");
+         if(error.data.errorMsg){
+             showAlertBox('Please try again' , error.data.errorMsg);
+          }else{
+            //showAlertBox('Please try again' , error.data);
+          }
       })
-    }
+  }
 
-    $scope.getDropStreets = function(exp){
-      projectApi.getResource('dropStreets', id, exp).then(function(response){
+  $scope.getStreets = function(cityId, exp){
+    projectApi.getResource('streets', cityId, exp).then(function(response){
         console.log("Suuccess Handler");
+        $scope.refData.streets = response.data;
       }, function(error){
         console.log("Failure Handler");
+         if(error.data.errorMsg){
+             showAlertBox('Please try again' , error.data.errorMsg);
+          }else{
+            //showAlertBox('Please try again' , error.data);
+          }
       })
-    }
+  }
 
-    $scope.showDetails = function() {
-      $ionicActionSheet.show({
-       buttons: [
-         { text: 'Complete' }
-       ],
-       destructiveText: 'Delete',
-       titleText: 'Update Todo',
-       cancelText: 'Cancel',
-       buttonClicked: function(index) {
-         return true;
-       }
+  $scope.getSubStreets = function(streetId, exp){
+    projectApi.getResource('subStreets', streetId, exp).then(function(response){
+        console.log("Suuccess Handler");
+        $scope.refData.subStreets = response.data;
+      }, function(error){
+        console.log("Failure Handler");
+         if(error.data.errorMsg){
+             showAlertBox('Please try again' , error.data.errorMsg);
+          }else{
+            //showAlertBox('Please try again' , error.data);
+          }
+      })
+  }
+
+  function showAlertBox(title, msg){
+    var alertPopup = $ionicPopup.alert({
+       title: title,
+       template: msg
      });
+     alertPopup.then(function(res) {
+       console.log('Please try again later ');
+     });
+  }
 
-   }
-
-    $scope.getCities = function(){
-      projectApi.getResource('cities').then(function(response){
-        console.log("Suuccess Handler");
-      }, function(error){
-        console.log("Failure Handler");
-      })
-    }
-
-    $scope.booking = function(){      
-    }
-    
-    if (!$window.navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/i)) {
-        $window.datePicker = {
-            show: function(options, callback) { callback(new Date());}
-        };
-    }
+   // Date and Time Picker Start
+  if (!$window.navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/i)) {
+      $window.datePicker = {
+          show: function(options, callback) { callback(new Date());}
+      };
+  }
      // ONLY SUBMIT IF I HAVE VALID DATA
   $scope.doSubmit = function() {
     alert(JSON.stringify($scope.formData, null, 2));
@@ -118,8 +79,6 @@ angular.module('app.projectX')
   $scope.formData = {
     startDateTime : new Date()
   };
- 
-   createFormlyType()
  
   $scope.formFields = [{
     "type": "input",
@@ -177,63 +136,12 @@ angular.module('app.projectX')
         });
       }
     }
-  }, ]
-
-$scope.selectItemsFilterCriteria = [
-    {id:1 , name:"Majestic"},
-    {id:2 , name:"Silk Board"},
-    {id:2 , name:"BTM"}
-
-  ];
-
-  $scope.booking = {};
-
-  $scope.refData.cities = [{
-    id : 1,
-    name : "Bengaluru"
-  },{
-    id : 2,
-    name : "Tirupati"
   }];
 
-  $scope.refData.streets = [{
-    id : 1,
-    name : "BTM",
-    city : {
-      id : 1
-    }
-  },{
-    id : 2,
-    name : "Majestic",
-    city : {
-      id : 1
-    }
-  },{
-    id : 3,
-    name : "Marathalli",
-    city : {
-      id : 1
-    }
-  }];
-  
-$scope.refData.subStreets = [{
-    id : 1,
-    name : "BTM 1st stage",
-    city : {
-      id : 1
-    }
-  },{
-    id : 2,
-    name : "Udupi Garden",
-    city : {
-      id : 1
-    }
-  },{
-    id : 3,
-    name : "Mico Layout Police Station",
-    city : {
-      id : 1
-    }
-  }];
+  // Date and Time Picker End
+
+
+  createFormlyType();
+  $scope.getCities();
 
 });

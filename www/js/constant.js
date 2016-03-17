@@ -24,7 +24,8 @@ angular.module('app.projectX').constant('menuConstant', {
 
 .constant('AUTH_EVENTS', {
   notAuthenticated: 'auth-not-authenticated',
-  notAuthorized: 'auth-not-authorized'
+  notAuthorized: 'auth-not-authorized',
+  httpNotFound:'http-not-found'
 })
 /*.constant('CONTEXT_URL', {
   url: 'http://localhost:8080/web-service/api/'
