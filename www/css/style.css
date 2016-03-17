@@ -40,6 +40,44 @@ button.item.item-complex:hover{
 }
 .item-content .menu-name.ng-binding {
 	margin-left: 10px;
+    position: absolute;
+    top: 2px;
+}
+.item-select select {
+    right: 67px; 
+    background: transparent !important;
+}
+.item-select:after {
+    right: 78px;
+}
+.drop_down {
+    margin-bottom: 75px !important;
+}
+.list .item {
+    min-height: 38px !important;
+}
+.list {
+    padding-top: 17px !important;
+}
+.item.item-radio.ng-valid {
+    float: left !important;
+    width: 18% !important;
+    border: 1px solid #11C1F3;
+    margin-left: 5px;
+    border-radius: 3px !important;
+}
+.item-complex .item-content, 
+.item-radio .item-content {
+    padding: 7px 37px 10px 12px !important; 
+}
+.item-radio .radio-icon {
+    font-size: 14px !important;
+}
+.ion-checkmark:before {
+    content: "";
+    top: 9px !important;
+    position: absolute !important;
+    left: -4px !important;
 }
 .image-slide {
     background-repeat: no-repeat;
@@ -227,6 +265,68 @@ button.item.item-complex:hover{
   height: auto;
   text-align:center;
 }
+.input-label {
+   margin-top: -8px !important;
+  /* margin-left: -5px !important;*/
+   font-size: 24px !important; 
+}
+.item-md-label {
+    border: none;
+}
+.item {
+    border: none;
+}
+.all-input-field {
+    width: 100%;
+    margin-top: -15px !important;
+    margin-bottom: -10px !important;
+}
+.item.item-input {
+    left: -18px;
+}
+input:required {
+    /*background-color: yellow;*/
+    border-color: blue !important;
+}
+:required.required {
+    border: none !important;
+}
+input.ng-pristine {
+    /*background-color:yellow;*/
+}
+input.ng-touched.ng-invalid {
+    background-color:white;
+}
+input.ng-touched.ng-valid {
+    background-color:green;
+}
+.item-input input, .item-input textarea {
+    width: 93% !important;
+}
+.item-input input {
+    display: inline-block;
+    position: relative;
+    right: -10px;
+}
+.item-md-label input {
+    background-color: #F8F9FB !important;
+    padding: 9px !important;
+    letter-spacing: 0px !important;
+    color: black !important;
+    border-bottom: 1px solid silver;
+}
+.item-md-label input:focus 
+~ .input-label, .item-md-label input.used ~ 
+.input-label {
+    font-weight: normal !important;
+    text-transform: none !important;
+    color: #444 !important;
+}
+.item-md-label .input-label {
+    color: #444 !important;
+    letter-spacing: 0px !important;
+    margin: 12px;
+}
 .slider-slide img{
   height: 480px;
   width: auto;
@@ -236,7 +336,8 @@ button.item.item-complex:hover{
     margin-top: -4px;
 }
 .row > span {
-    margin-left: 30px;
+    margin-left: 75px;
+    margin-top: -18px;
     color: red;
     font-size: 16px;
 }
@@ -247,10 +348,6 @@ button.item.item-complex:hover{
     border-right: none;
     border-bottom: 1px solid #f2f2f2;
 }
-.all-input-field {
-    width: 100%;
-}
-
 .profile-text-label {
     margin-top: 15px;
 }
@@ -258,7 +355,7 @@ button.item.item-complex:hover{
     background-color: rgba(239, 241, 245, 0.44);
 }
 .tmargin {
-    margin-top: 50px !important;
+    margin-top: 15px !important;
 }
 .lbl_span-field {
     font-size:13px !important; 

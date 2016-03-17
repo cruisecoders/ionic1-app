@@ -1,57 +1,60 @@
 <ion-view view-title="Booking">
 	<ion-content ng-controller="bookingCtrl" class="signUp-page">
+		<div class="card">
+			
+			<!-- <ion-list>
+			  <ion-item on-hold="showDetails()">Tap and Hold</ion-item>
+			</ion-list> -->
+
+		</div>
 		<div class="card booking-box tmargin">
+
 			<!-- City Section -->
 			<div class="item-divider" style="padding-left:16px;">
 			   <i class="ion-home" style="color:blue; font-size: 18px;"></i> 
-			   <span style="font-size: 16px;">City</span>
+			   <span style="font-size: 16px;">City {{booking}}</span>
 			</div>
-			<div class="item-text-wrap booking-box">	
-				<label class="item">
-					<input class="all-input-field select-date-time lbl_span-field" ion-autocomplete type="text"
-					   autocomplete="off" 
-					   placeholder="Search City Name"
-		               ng-model="model"
-		               item-value-key="name"
-		               item-view-value-key="view"
-		               items-method="getTestItems(query)"
-		               items-method-value-key="items"
-		               placeholder="Enter test query ..."
-		               items-clicked-method="itemsClicked(callback)"
-		               items-removed-method="itemsRemoved(callback)"
-		               max-selected-items="3"/>
-				</label>
-		  	</div>
+			<div class="list drop_down">
+			  <label class="item item-input item-select">
+			    <select ng-model="booking.city" ng-options="city.name for city in refData.cities">
+			      <option value="">Select City</option>
+			    </select>
+			  </label>
+			</div>
 		  	<!-- Pick Up Point Section -->
 		  	<div class="item-divider" style="padding-left:16px;">
 			   <i class="ion-home" style="color:blue; font-size: 18px;"></i> 
 			   <span style="font-size: 16px;">Pick Up Point</span>
 			</div>
-			<div class="item-text-wrap booking-box">
-			   	<label class="item">
-					<input class="all-input-field select-date-time lbl_span-field_text" ion-autocomplete type="text"
-					   autocomplete="off" 
-					   placeholder="Search Pick Up Point"
-		               ng-model="model"
-		               item-value-key="name"
-		               item-view-value-key="view"
-		               items-method="getTestItems(query)"
-		               items-method-value-key="items"
-		               placeholder="Enter test query ..."
-		               items-clicked-method="itemsClicked(callback)"
-		               items-removed-method="itemsRemoved(callback)"
-		               max-selected-items="3"/>
-				</label>
-		  	</div>
-		  	<div class="item-input-inset date-time-select" style="margin-top:-33px;">
+		  	<div class="list drop_down">
+			  <label class="item item-input item-select">
+			    <select ng-model="booking.street" ng-options="street.name for street in refData.streets">
+			      <option value="">Select Major Streets</option>
+			    </select>
+			  </label>
+			</div>
+		  	<div class="item-input-inset date-time-select" style="margin-top:-33px;" ng-show="booking.street">
 				<div class="col">
-		            <formly-form model="formData" fields="formFields" form="mainInputForm">
-			          <!-- <button class="button button-block button-assertive"
-			            ng-disabled="mainInputForm.$invalid"
-			            ng-click="doSubmit()">SUBMIT</button> -->
-			        </formly-form>
+		            <ion-list>
+					  <ion-radio ng-repeat="subStreet in refData.subStreets" ng-model="booking.substreet" ng-value="subStreet">
+					  	{{subStreet.name}}
+					  </ion-radio>
+					</ion-list>
 				</div>
 			</div>
+			<div class="col">
+				<span style="font-size: 16px; color: grey; margin-left: 5px;"> Select Number of Items</span>
+				<ion-list>
+				  <ion-radio ng-model="booking.itemCount" ng-value="1">1</ion-radio>
+				  <ion-radio ng-model="booking.itemCount" ng-value="2">2</ion-radio>
+				  <ion-radio ng-model="booking.itemCount" ng-value="3">3</ion-radio>
+				  <ion-radio ng-model="booking.itemCount" ng-value="4">4</ion-radio>
+				  <ion-radio ng-model="booking.itemCount" ng-value="5">>5</ion-radio>
+				</ion-list>
+
+
+			</div>
+			
 		  	<!-- <div class="item-input-inset date-time-select" style="margin-top:-48px;">
 				<div class="col col-50">
 					<div class="item-input-inset date-time-select"> 
@@ -67,7 +70,7 @@
 		        </div>
 			</div> -->
 			<!-- Drop Point Section -->
-			<div class="item-divider" style="padding-left:16px;">
+			<div class="item-divider" style="padding-left:16px; margin-top: 70px;">
 			   <i class="ion-ios-location" style="color:blue; font-size: 18px;"></i> 
 			   <span style="font-size: 16px;">Drop Point</span>
 			</div>

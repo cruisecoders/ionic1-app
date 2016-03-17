@@ -1,5 +1,5 @@
 angular.module('app.projectX')
-  .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi, formlyConfig, $cordovaDatePicker, $window, $ionicPlatform){
+  .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi, formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicActionSheet){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
 	     
        $scope.model ="";
@@ -26,6 +26,8 @@ angular.module('app.projectX')
        }
        return {items: []}; 
      };
+
+     $scope.refData = {};
 
      $scope.itemClicked = function (callback) {
         $scope.clickValueModel = callback;
@@ -68,6 +70,21 @@ angular.module('app.projectX')
         console.log("Failure Handler");
       })
     }
+
+    $scope.showDetails = function() {
+      $ionicActionSheet.show({
+       buttons: [
+         { text: 'Complete' }
+       ],
+       destructiveText: 'Delete',
+       titleText: 'Update Todo',
+       cancelText: 'Cancel',
+       buttonClicked: function(index) {
+         return true;
+       }
+     });
+
+   }
 
     $scope.getCities = function(){
       projectApi.getResource('cities').then(function(response){
@@ -162,8 +179,61 @@ angular.module('app.projectX')
     }
   }, ]
 
+$scope.selectItemsFilterCriteria = [
+    {id:1 , name:"Majestic"},
+    {id:2 , name:"Silk Board"},
+    {id:2 , name:"BTM"}
 
+  ];
+
+  $scope.booking = {};
+
+  $scope.refData.cities = [{
+    id : 1,
+    name : "Bengaluru"
+  },{
+    id : 2,
+    name : "Tirupati"
+  }];
+
+  $scope.refData.streets = [{
+    id : 1,
+    name : "BTM",
+    city : {
+      id : 1
+    }
+  },{
+    id : 2,
+    name : "Majestic",
+    city : {
+      id : 1
+    }
+  },{
+    id : 3,
+    name : "Marathalli",
+    city : {
+      id : 1
+    }
+  }];
   
-
+$scope.refData.subStreets = [{
+    id : 1,
+    name : "BTM 1st stage",
+    city : {
+      id : 1
+    }
+  },{
+    id : 2,
+    name : "Udupi Garden",
+    city : {
+      id : 1
+    }
+  },{
+    id : 3,
+    name : "Mico Layout Police Station",
+    city : {
+      id : 1
+    }
+  }];
 
 });
