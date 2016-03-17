@@ -44,14 +44,15 @@ button.item.item-complex:hover{
     top: 2px;
 }
 .item-select select {
-    right: 67px; 
+    right: 84px; 
     background: transparent !important;
+    border: 1px solid lightskyblue; 
 }
 .item-select:after {
-    right: 78px;
+    right: 102px;
 }
 .drop_down {
-    margin-bottom: 75px !important;
+   /* margin-bottom: 75px !important;*/
 }
 .list .item {
     min-height: 38px !important;
@@ -282,7 +283,7 @@ button.item.item-complex:hover{
     margin-bottom: -10px !important;
 }
 .item.item-input {
-    left: -18px;
+   /* left: -18px;*/
 }
 input:required {
     /*background-color: yellow;*/
