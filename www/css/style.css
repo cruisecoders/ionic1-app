@@ -60,6 +60,9 @@ button.item.item-complex:hover{
 .list {
     padding-top: 17px !important;
 }
+.subStreets {
+    width: 100% !important;
+}
 .item.item-radio.ng-valid {
     float: left !important;
     width: 18% !important;
@@ -387,5 +390,24 @@ input.ng-touched.ng-valid {
 .text_input {
     color: black !important;
     letter-spacing: 0 !important;
+}
+.select-city {
+    border: 1px solid gainsboro !important;
+    margin: 5px !important;
+    padding: 8px !important;
+    width: 97% !important;
+}
+.cur-pointer {
+    cursor: pointer!important;
+}
+.popup {
+  width: 400px;
+  height: 430px !important;
+}
+.subStreets {
+    border-bottom: 1px solid gainsboro !important;
+}
+.streets-h3 {
+    margin-left: 5px !important;
 }
 

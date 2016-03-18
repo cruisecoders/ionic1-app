@@ -3,6 +3,8 @@ angular.module('app.projectX')
     formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
  $scope.booking = {};
+ $scope.booking.pickupDetail = {};
+ $scope.booking.dropDetail = {};
  $scope.refData = {};
   
   $scope.getCities = function(id, exp){
@@ -80,27 +82,7 @@ angular.module('app.projectX')
     startDateTime : new Date()
   };
  
-  $scope.formFields = [{
-    "type": "input",
-    "key": "name",
-    "templateOptions": {
-      "type": "text",
-      "placeholder": "Aaron Saunders",
-      "icon": "ion-person",
-      required: true,
-      "iconPlaceholder": true
-    }
-  }, {
-    "type": "input",
-    "key": "email",
-    "templateOptions": {
-      "type": "email",
-      "placeholder": "jane.doe@apple.com",
-      "icon": "ion-email",
-      required: true,
-      "iconPlaceholder": true
-    }
-  }, {
+  $scope.pickupFormFields = [{
     key: 'startDateTime',
     type: 'inputDatePicker',
     templateOptions: {
@@ -117,29 +99,78 @@ angular.module('app.projectX')
           cancelButtonLabel: 'CANCEL',
           cancelButtonColor: '#000000'
         };
-       /* $cordovaDatePicker.show(options).then(function(date) {
-          $modelValue[$options.key] = date;
-        });*/
-
-      /*document.addEventListener("deviceready", function () {
-
-          $cordovaDatePicker.show(options).then(function(date){
-              $modelValue[$options.key] = date;
-          });
-
-        }, false);*/
-
- $ionicPlatform.ready(function () {
+      $ionicPlatform.ready(function () {
             $cordovaDatePicker.show(options).then(function (date) {
                 $modelValue[$options.key] = date;
+                $scope.booking.pickupDateTime = date;
             });
         });
+        }
       }
-    }
+  }];
+
+  $scope.dropFormFields = [{
+    key: 'startDateTime',
+    type: 'inputDatePicker',
+    templateOptions: {
+      dateFormat: 'medium',
+      onclick: function($modelValue, $options) {
+        var options = {
+          date: new Date(),
+          mode: 'datetime', // 'date' or 'time'
+          minDate: new Date(),
+          allowOldDates: false,
+          allowFutureDates: true,
+          doneButtonLabel: 'DONE',
+          doneButtonColor: '#F2F3F4',
+          cancelButtonLabel: 'CANCEL',
+          cancelButtonColor: '#000000'
+        };
+      $ionicPlatform.ready(function () {
+            $cordovaDatePicker.show(options).then(function (date) {
+                $modelValue[$options.key] = date;
+                $scope.booking.dropDateTime = date;
+            });
+        });
+        }
+      }
   }];
 
   // Date and Time Picker End
 
+  var genericPopup;
+
+   $scope.genericPopup = function(title, subTitle, templateURL) {
+      //$scope.data = {}
+    
+      // Custom popup
+      genericPopup = $ionicPopup.show({
+         templateUrl: templateURL,
+         title: title,
+        // subTitle: subTitle,
+         scope: $scope,
+      });
+
+      genericPopup.then(function(res) {
+         console.log('Tapped!', res);
+      });    
+   };
+
+  $scope.closeGenericPopup = function(){
+    genericPopup.close();
+  };
+
+  $scope.showCityPopUP = function(){
+    $scope.genericPopup('Select City','Select City', 'city.html');
+  };
+
+  $scope.showPickupStreetPopUP = function(){
+    $scope.genericPopup('Select Street/Landmark','Select City', 'pickupStreet.html');
+  };
+
+   $scope.showDropStreetPopUP = function(){
+    $scope.genericPopup('Select Street/Landmark','Select City', 'dropStreet.html');
+  };
 
   createFormlyType();
   $scope.getCities();
