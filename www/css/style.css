@@ -55,7 +55,7 @@ button.item.item-complex:hover{
    /* margin-bottom: 75px !important;*/
 }
 .list .item {
-    min-height: 38px !important;
+    min-height: 30px !important;
 }
 .list {
     padding-top: 17px !important;
@@ -63,25 +63,47 @@ button.item.item-complex:hover{
 .subStreets {
     width: 100% !important;
 }
+.mob-coupon-code {
+    margin-top: -28px !important;
+}
+.mob-coupon-code-input {
+    border-bottom: 1px solid gainsboro!important;
+}
+.mob-coupon-code-label {
+    width: 90% !important;
+}
 .item.item-radio.ng-valid {
     float: left !important;
-    width: 18% !important;
+    width: 11% !important;
     border: 1px solid #11C1F3;
     margin-left: 5px;
     border-radius: 3px !important;
 }
 .item-complex .item-content, 
 .item-radio .item-content {
-    padding: 7px 37px 10px 12px !important; 
+    padding: 3px 29px 5px 10px !important
 }
 .item-radio .radio-icon {
     font-size: 14px !important;
 }
 .ion-checkmark:before {
     content: "";
-    top: 9px !important;
+    top: 8px !important;
+    font-size: 10px;
     position: absolute !important;
-    left: -4px !important;
+    left: 14px !important;
+}
+.item-icon-right .icon {
+    left: 3px !important;
+    font-size: 20px!important;
+}
+.item-icon-right.item.ng-binding{
+    padding-left: 46px !important;
+}
+.ionicons-icons {
+    color:black !important; 
+    font-size: 14px !important; 
+    margin-top:32px !important;
 }
 .image-slide {
     background-repeat: no-repeat;
@@ -163,7 +185,6 @@ button.item.item-complex:hover{
 .profile-box {
     padding: 28px 16px;
     position: relative;
-
     background: url("../img/wallpaper-material-design-5.jpg") repeat;
 	/*-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -277,6 +298,7 @@ button.item.item-complex:hover{
 .item-md-label {
     border: none;
 }
+
 .item {
     border: none;
 }
@@ -393,7 +415,7 @@ input.ng-touched.ng-valid {
 }
 .select-city {
     border: 1px solid gainsboro !important;
-    margin: 5px !important;
+    margin: 13px  5px !important;
     padding: 8px !important;
     width: 97% !important;
 }

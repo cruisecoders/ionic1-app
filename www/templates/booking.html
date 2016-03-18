@@ -20,7 +20,7 @@
 			   <i class="ion-home" style="color:blue; font-size: 18px;"></i> 
 			   <span style="font-size: 16px;">Pick Up Point</span>
 			</div>
-			<div class="item select-city cur-pointer" ng-click="showPickupStreetPopUP()">
+			<div class="item select-city cur-pointer pickup-drop-details" ng-click="showPickupStreetPopUP()">
 			   <i class="ion-ios-search-strong"></i>
 		    	<span class="cur-pointer" style="margin-left: 10px;">
 		    		<span ng-hide="booking.pickupDetail.street">Search by Street/Landmark</span> <span ng-show="booking.pickupDetail.street">{{booking.pickupDetail.street.name}} / {{booking.pickupDetail.substreet.name}}</span>
@@ -34,17 +34,15 @@
 				  <ion-radio ng-model="booking.itemCount" ng-value="2">2</ion-radio>
 				  <ion-radio ng-model="booking.itemCount" ng-value="3">3</ion-radio>
 				  <ion-radio ng-model="booking.itemCount" ng-value="4">4</ion-radio>
-				  <ion-radio ng-model="booking.itemCount" ng-value="5">>5</ion-radio>
+				  <ion-radio ng-model="booking.itemCount" ng-value="5">5</ion-radio>
 				</ion-list>
 			</div>
-			<div class="item-input-inset date-time-select">
-				<div class="col">
-		            <formly-form model="formData" fields="pickupFormFields" form="mainInputForm">
-			          <!-- <button class="button button-block button-assertive"
-			            ng-disabled="mainInputForm.$invalid"
-			            ng-click="doSubmit()">SUBMIT</button> -->
-			        </formly-form>
-				</div>
+			<div class="col">
+	            <formly-form model="formData" fields="pickupFormFields" form="mainInputForm">
+		          <!-- <button class="button button-block button-assertive"
+		            ng-disabled="mainInputForm.$invalid"
+		            ng-click="doSubmit()">SUBMIT</button> -->
+		        </formly-form>
 			</div>
 		  	<!-- <div class="item-input-inset date-time-select" style="margin-top:-48px;">
 				<div class="col col-50">
@@ -61,17 +59,16 @@
 		        </div>
 			</div> -->
 			<!-- Drop Point Section -->
-			<div class="item-divider" style="padding-left:16px; margin-top: 70px;">
+			<div class="item-divider" style="padding-left:16px;">
 			   <i class="ion-ios-location" style="color:blue; font-size: 18px;"></i> 
 			   <span style="font-size: 16px;">Drop Point</span>
 			</div>
-			<div class="item select-city cur-pointer" ng-click="showDropStreetPopUP()">
+			<div class="item select-city cur-pointer pickup-drop-details" ng-click="showDropStreetPopUP()">
 			   <i class="ion-ios-search-strong"></i>
 		    	<span class="cur-pointer" style="margin-left: 10px;">
 		    		<span ng-hide="booking.dropDetail.street">Search by Street/Landmark</span> <span ng-show="booking.dropDetail.street">{{booking.dropDetail.street.name}} / {{booking.dropDetail.substreet.name}}</span>
 	     		</span>
 			</div>
-			
 		  	<div class="item-input-inset date-time-select" style="margin-top:-33px;">
 				<div class="col">
 		            <formly-form model="formData" fields="dropFormFields" form="mainInputForm">
@@ -81,6 +78,30 @@
 			        </formly-form>
 				</div>
 			</div>
+			<div class="list mob-coupon-code">
+			  <label class="item item-input mob-coupon-code-label">
+			    <input class="mob-coupon-code-input" type="text" placeholder="Mobile Number">
+			  </label>
+			  <label class="item item-input mob-coupon-code-label">
+			    <input class="mob-coupon-code-input" type="text" placeholder="Enter Coupon Code here">
+			  </label>
+			</div>
+			<!-- <div class="col mob-coupon-code">
+				<div class="item-input-inset date-time-select"> 
+	              <i class="ion-android-phone-portrait ionicons-icons"></i>
+	              <ion-md-input class="lbl_span-field_text" placeholder="Mobile Number" type="text" 
+	               style="font-size: 12px;">
+	              </ion-md-input>
+	            </div>
+			</div>
+			<div class="col mob-coupon-code">
+				<div class="item-input-inset date-time-select"> 
+		            <i class="ion-clock ionicons-icons"></i> 
+		            <ion-md-input class=" lbl_span-field_text" placeholder="Enter Coupon Code here" type="text"
+		             style="font-size: 12px;">
+		            </ion-md-input>
+		        </div>
+			</div> -->
 		</div>
 		<!--<formly-form model="formData" fields="formFields" form="mainInputForm">
           <button class="button button-block button-assertive"
