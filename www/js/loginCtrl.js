@@ -1,4 +1,4 @@
-angular.module('app.projectX').controller('loginCtrl', function($scope, loginService, $state, store, $ionicPopup){
+angular.module('app.projectX').controller('loginCtrl', function($scope, loginService, $state, store, $ionicPopup, $rootScope){
 	
   $scope.user = {};
 
@@ -17,9 +17,9 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
           console.log("Login failed");
          //$scope.error = error.data.data;
          if(error.data.errorMsg){
-          showAlertBox('Please try again' , error.data.errorMsg);
+          $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
         }else{
-          showAlertBox('Please try again' , error.data);
+          $rootScope.showAlertBox('Please try again' , error.data);
         }
     		});
   }
@@ -39,22 +39,12 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
            //$scope.error = error.data.data;
           
            if(error.data.errorMsg){
-               showAlertBox('Please try again' , error.data.errorMsg);
+               $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
             }else{
-              showAlertBox('Please try again' , error.data);
+              $rootScope.showAlertBox('Please try again' , error.data);
             }
            
         });
-  }
-
-  function showAlertBox(title, msg){
-    var alertPopup = $ionicPopup.alert({
-       title: title,
-       template: msg
-     });
-     alertPopup.then(function(res) {
-       console.log('Please try again later ');
-     });
   }
 
 })

@@ -13,7 +13,7 @@ angular.module('app.projectX').controller('yourBookingCtrl', function($scope, st
 	      	 $rootScope.hideLoader();
 	         console.log("Failure Handler");
 	         if(error.data.errorMsg){
-	             showAlertBox('Please try again' , error.data.errorMsg);
+	             $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
 	          }else{
 	            //showAlertBox('Please try again' , error.data);
 	          }
@@ -25,16 +25,6 @@ angular.module('app.projectX').controller('yourBookingCtrl', function($scope, st
 		$state.go('main.bookingDetail');
 	}
 
-	function showAlertBox(title, msg){
-	    var alertPopup = $ionicPopup.alert({
-	       title: title,
-	       template: msg
-	     });
-	     alertPopup.then(function(res) {
-	       console.log('Please try again later ');
-	     });
-	  }
-
-	  $scope.getBookingsByUserId($scope.app.userCredentials.id);
+	$scope.getBookingsByUserId($scope.app.userCredentials.id);
 
 });

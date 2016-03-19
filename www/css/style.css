@@ -461,14 +461,24 @@ input.ng-touched.ng-valid {
 .cur-pointer {
     cursor: pointer!important;
 }
-.popup {
+/*.popup {
   width: 400px;
   height: 430px !important;
+}*/
+
+.booking-popup .popup {
+      /*width: auto;*/
+      height: 430px !important;
 }
+
 .subStreets {
     border-bottom: 1px solid gainsboro !important;
 }
 .streets-h3 {
     margin-left: 5px !important;
+}
+
+.error-alert-popup {
+   
 }
 

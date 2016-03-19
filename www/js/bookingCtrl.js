@@ -23,6 +23,11 @@ angular.module('app.projectX')
     }, function(error){
       $rootScope.hideLoader();
       console.log("booking failed");
+      if(error.data.errorMsg){
+          $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
+        }else{
+            //showAlertBox('Please try again' , error.data);
+       }
     })
  }
   
@@ -33,7 +38,7 @@ angular.module('app.projectX')
       }, function(error){
         console.log("Failure Handler");
          if(error.data.errorMsg){
-             showAlertBox('Please try again' , error.data.errorMsg);
+             $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
           }else{
             //showAlertBox('Please try again' , error.data);
           }
@@ -50,7 +55,7 @@ angular.module('app.projectX')
         $rootScope.hideLoader();
         console.log("Failure Handler");
          if(error.data.errorMsg){
-             showAlertBox('Please try again' , error.data.errorMsg);
+             $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
           }else{
             //showAlertBox('Please try again' , error.data);
           }
@@ -64,21 +69,11 @@ angular.module('app.projectX')
       }, function(error){
         console.log("Failure Handler");
          if(error.data.errorMsg){
-             showAlertBox('Please try again' , error.data.errorMsg);
+             $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
           }else{
             //showAlertBox('Please try again' , error.data);
           }
       })
-  }
-
-  function showAlertBox(title, msg){
-    var alertPopup = $ionicPopup.alert({
-       title: title,
-       template: msg
-     });
-     alertPopup.then(function(res) {
-       console.log('Please try again later ');
-     });
   }
 
    // Date and Time Picker Start
@@ -177,6 +172,7 @@ angular.module('app.projectX')
       genericPopup = $ionicPopup.show({
          templateUrl: templateURL,
          title: title,
+         cssClass : 'booking-popup',
         // subTitle: subTitle,
          scope: $scope,
       });

@@ -199,7 +199,7 @@
    
   })
 
-.run(function($rootScope, $state, store, jwtHelper, $ionicLoading) {
+.run(function($rootScope, $state, store, jwtHelper, $ionicLoading, $ionicPopup) {
 
   $rootScope.showLoader = function() {
     $ionicLoading.show({
@@ -208,6 +208,17 @@
   };
   $rootScope.hideLoader = function(){
     $ionicLoading.hide();
+  };
+
+  $rootScope.showAlertBox = function(title, msg){
+    var alertPopup = $ionicPopup.alert({
+       title: title,
+       cssClass: 'error-alert-popup',
+       template: msg
+     });
+     alertPopup.then(function(res) {
+       console.log('Please try again later ');
+     });
   };
 
   $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
