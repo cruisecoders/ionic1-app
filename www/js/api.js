@@ -13,9 +13,14 @@ angular.module('app.projectX').service('projectApi', function ($http, $q, Enviro
       return genResource.bind({type: type}).get(options).$promise;
   };
 
+   function submitBookingForm(booking){
+      return $http.post(EnvironmentConfig.api + "submitBooking", booking , {});
+   }
+
   return {
     createResource : createResource,
-    getResource : getResource
+    getResource : getResource,
+    submitBookingForm : submitBookingForm
   };
 
 });

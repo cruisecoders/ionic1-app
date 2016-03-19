@@ -5,6 +5,10 @@ angular.module('app.projectX').constant('menuConstant', {
 		state: "main.booking"
 	},{
 		imagepath:"img/icons/currency-inr.png",
+		name:"Your Bookings", 
+		state: "main.yourBookings"
+	},{
+		imagepath:"img/icons/currency-inr.png",
 		name:"Rate Card", 
 		state: "main.pricing"
 	},{

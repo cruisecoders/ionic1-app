@@ -1,11 +1,6 @@
 <ion-view view-title="Booking">
-	<ion-content class="signUp-page">
+	<ion-content class="signUp-page" ng-init="booking.number = app.userCredentials.number;booking.userId = app.userCredentials.id">
 		<div class="card">
-			
-			<!-- <ion-list>
-			  <ion-item on-hold="showDetails()">Tap and Hold</ion-item>
-			</ion-list> -->
-
 		</div>
 		<div class="card booking-box tmargin">
 			<!-- City Section -->
@@ -38,26 +33,11 @@
 				</ion-list>
 			</div>
 			<div class="col">
-	            <formly-form model="formData" fields="pickupFormFields" form="mainInputForm">
-		          <!-- <button class="button button-block button-assertive"
-		            ng-disabled="mainInputForm.$invalid"
-		            ng-click="doSubmit()">SUBMIT</button> -->
+	            <formly-form model="pickupFormData" fields="pickupFormFields" form="mainInputForm">
+		        
 		        </formly-form>
 			</div>
-		  	<!-- <div class="item-input-inset date-time-select" style="margin-top:-48px;">
-				<div class="col col-50">
-					<div class="item-input-inset date-time-select"> 
-		              <i class="ion-calendar" style="color:white; font-size: 14px; margin-top:32px;"></i>
-		              <ion-md-input class="lbl_span-field_text" placeholder="Select Date" type="text">
-		              </ion-md-input>
-		            </div>
-				</div>
-				<div class="item-input-inset date-time-select"> 
-		            <i class="ion-clock" style="color:white; font-size: 14px; margin-top:32px;"></i> 
-		            <ion-md-input class=" lbl_span-field_text" placeholder="Select Time" type="text">
-		            </ion-md-input>
-		        </div>
-			</div> -->
+		  
 			<!-- Drop Point Section -->
 			<div class="item-divider" style="padding-left:16px;">
 			   <i class="ion-ios-location" style="color:blue; font-size: 18px;"></i> 
@@ -71,49 +51,24 @@
 			</div>
 		  	<div class="item-input-inset date-time-select" style="margin-top:-33px;">
 				<div class="col">
-		            <formly-form model="formData" fields="dropFormFields" form="mainInputForm">
-			          <!-- <button class="button button-block button-assertive"
-			            ng-disabled="mainInputForm.$invalid"
-			            ng-click="doSubmit()">SUBMIT</button> -->
+		            <formly-form model="dropFormData" fields="dropFormFields" form="mainInputForm">
+			          
 			        </formly-form>
 				</div>
 			</div>
 			<div class="list mob-coupon-code">
 			  <label class="item item-input mob-coupon-code-label">
-			    <input class="mob-coupon-code-input" type="text" placeholder="Mobile Number">
+			    <input ng-model="booking.number" class="mob-coupon-code-input" type="text" placeholder="Mobile Number"/> 
 			  </label>
 			  <label class="item item-input mob-coupon-code-label">
-			    <input class="mob-coupon-code-input" type="text" placeholder="Enter Coupon Code here">
+			    <input ng-model="booking.coupon" class="mob-coupon-code-input" type="text" placeholder="Enter Coupon Code here"/>
 			  </label>
 			</div>
-			<!-- <div class="col mob-coupon-code">
-				<div class="item-input-inset date-time-select"> 
-	              <i class="ion-android-phone-portrait ionicons-icons"></i>
-	              <ion-md-input class="lbl_span-field_text" placeholder="Mobile Number" type="text" 
-	               style="font-size: 12px;">
-	              </ion-md-input>
-	            </div>
-			</div>
-			<div class="col mob-coupon-code">
-				<div class="item-input-inset date-time-select"> 
-		            <i class="ion-clock ionicons-icons"></i> 
-		            <ion-md-input class=" lbl_span-field_text" placeholder="Enter Coupon Code here" type="text"
-		             style="font-size: 12px;">
-		            </ion-md-input>
-		        </div>
-			</div> -->
 		</div>
-		<!--<formly-form model="formData" fields="formFields" form="mainInputForm">
-          <button class="button button-block button-assertive"
-            ng-disabled="mainInputForm.$invalid"
-            ng-click="doSubmit()">SUBMIT</button>
-        </formly-form>
-         <pre> {{formData | json}} </pre>
-        <pre> {{mainInputForm | json}} </pre> -->
 	</ion-content>
 	<div class="tabs tabs-dark"
 		<a class="tab-item" href="">Estimated Charge</a>
-		<a class="tab-item" href="">Book Now</a>
+		<a class="tab-item" href="" ng-click="submitBookingForm()">Book Now</a>
 	</div>
 </ion-view>
 

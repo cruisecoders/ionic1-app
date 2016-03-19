@@ -1,0 +1,51 @@
+<ion-view view-title="Confirmation">
+	<ion-header-bar class="bar-positive head-effects">
+		<a ui-sref="main.booking" class="button icon-left ion-ios-arrow-thin-left button-clear button-dark back-icon"></a>
+   		<h1 class="title">Confirmation</h1>
+	</ion-header-bar>
+	<ion-content class="confirmation-page signUp-page padding">
+		<!-- <div class="bar bar-header bar-positive">
+		  <h1 class="title">Confirmation</h1>
+		</div> -->
+		<div class="card">
+			<div class="list">
+				    <!-- {{bookingModel}} -->
+			  <div class="bookingConfirmation">
+			    <b>Confirmed</b>,{{bookingModel.bookingDate | date:'medium'}}<br>
+			    <span>Your Mobile Number: {{bookingModel.number}}</span><br>
+			    <div class="col col-50">
+			    	<span>Booking ID: {{bookingModel.id}}</span>
+			    </div>
+			    <div class="col">
+			    	<span>Status: {{bookingModel.bookingStatus.activity}}-{{bookingModel.bookingStatus.status}}</span>
+			    </div>
+			  </div>
+			  <div class="pickup-details">
+			  	<i class="icon ion-ios-location-outline" style="float: left;"></i>
+			  	<h5 class="pickup-details-h5">PickUp Details</h5>
+			  		<span class="StreetSubstreetName">{{bookingModel.pickup.street.city.name}}</span><br>
+			  		<span class="StreetSubstreetName">{{bookingModel.pickup.street.name}}</span><br>
+			  		<span class="StreetSubstreetName">{{bookingModel.pickup.substreet.name}}</span><br>
+			  		<span style="color: #575757;margin-left: 12px;">{{bookingModel.pickup.pickupDate  | date:'medium'}}
+			  		</span><br>
+			  		<span class="StreetSubstreetName">No. of Items: {{bookingModel.itemCount}}</span><br>
+			  </div>
+			  <div class="col pickup-details">
+			  	<i class="icon ion-ios-location-outline" style="float: left;"></i>
+			  	<h5 class="pickup-details-h5">Drop Details</h5>
+			  		<span class="StreetSubstreetName">{{bookingModel.drop.street.city.name}}</span><br>
+			  		<span class="StreetSubstreetName">{{bookingModel.drop.street.name}}</span><br>
+			  		<span class="StreetSubstreetName">{{bookingModel.drop.substreet.name}}</span><br>
+			  		<span style="color: #575757;margin-left: 12px;">{{bookingModel.drop.dropDate  | date:'medium'}}
+			  		</span>
+			  		
+			  </div>
+			  <div class="col">
+			  	<h5 class="pickup-details-h5">Estimated Price</h5>
+			  	<h4 style="color: #575757;margin-left: 12px;">Your approximate payment will be 100-250Rs.</h4>
+			  </div>
+			</div>  
+		</div>
+
+	</ion-content>
+</ion-view>

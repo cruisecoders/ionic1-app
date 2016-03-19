@@ -100,6 +100,27 @@ button.item.item-complex:hover{
 .item-icon-right.item.ng-binding{
     padding-left: 46px !important;
 }
+.bookingConfirmation {
+    background: #F4F8F9;
+    padding: 10px;
+}
+.pickup-details {
+    padding: 10px;
+}
+.back-icon {
+    margin-left: 12px !important;
+    margin-top: 5px !important;
+}
+.pickup-details-h5 {
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 6px;
+    color: #85888A;
+    margin: 2px 12px;
+}
+.StreetSubstreetName {
+    color: #575757;
+    margin-left: 12px;
+}
 .ionicons-icons {
     color:black !important; 
     font-size: 14px !important; 

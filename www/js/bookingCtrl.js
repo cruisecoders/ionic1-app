@@ -1,11 +1,23 @@
 angular.module('app.projectX')
   .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi, 
-    formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup){
+    formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
  $scope.booking = {};
  $scope.booking.pickupDetail = {};
  $scope.booking.dropDetail = {};
  $scope.refData = {};
+
+ $scope.submitBookingForm = function(){
+    projectApi.submitBookingForm($scope.booking).then(function(response){
+      console.log("booking successful");
+      store.set('bookingModel', response.data.data);
+      $location.path('confirmation');
+      $location.replace();
+      //$state.go('confirmation', {}, {reload: true});
+    }, function(error){
+      console.log("booking failed");
+    })
+ }
   
   $scope.getCities = function(id, exp){
     projectApi.getResource('cities', id, exp).then(function(response){
@@ -78,10 +90,14 @@ angular.module('app.projectX')
     });
   }
  
-  $scope.formData = {
+  $scope.pickupFormData = {
     startDateTime : new Date()
   };
  
+  $scope.dropFormData = {
+    startDateTime : new Date()
+  };
+
   $scope.pickupFormFields = [{
     key: 'startDateTime',
     type: 'inputDatePicker',
@@ -102,7 +118,7 @@ angular.module('app.projectX')
       $ionicPlatform.ready(function () {
             $cordovaDatePicker.show(options).then(function (date) {
                 $modelValue[$options.key] = date;
-                $scope.booking.pickupDateTime = date;
+                $scope.booking.pickupDetail.date = date;
             });
         });
         }
@@ -129,7 +145,7 @@ angular.module('app.projectX')
       $ionicPlatform.ready(function () {
             $cordovaDatePicker.show(options).then(function (date) {
                 $modelValue[$options.key] = date;
-                $scope.booking.dropDateTime = date;
+                $scope.booking.dropDetail.date = date;
             });
         });
         }

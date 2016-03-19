@@ -163,6 +163,11 @@
         }
       }
    })
+   .state('confirmation',{
+      url:"/confirmation",
+      templateUrl: "templates/confirmation.html",
+      controller : "confirmationCtrl"
+   })
    .state('main.account',{
       url:"/account",
       views:{
@@ -171,6 +176,23 @@
           controller: 'accountCtrl'
         }
       }
+   })
+   .state('main.yourBookings',{
+     url: "/yourBookings",
+     views: {
+            "mainContent": {
+              templateUrl: "templates/yourBookings.html",
+              controller: 'yourBookingCtrl'
+            }
+        }
+   })
+   .state('main.bookingDetail',{
+     url: "/detail",
+     views: {
+            "mainContent": {
+              templateUrl: "templates/yourBookingDetail.html",
+            }
+        }
    })
    
   })
