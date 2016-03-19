@@ -7,19 +7,19 @@ angular.module('app.projectX')
  $scope.booking.dropDetail = {};
  $scope.refData = {};
 
-  //$scope.booking.number = $scope.app.userCredentials.number;
-  //$scope.booking.userId = $scope.app.userCredentials.id
+$scope.userInfo = store.get('userInfo');
+$scope.booking.number = $scope.userInfo.number;
 
  $scope.submitBookingForm = function(){
      $rootScope.showLoader();
-     $scope.booking.userId = $scope.app.userCredentials.id;
+     $scope.booking.userId = $scope.userInfo.id;
     projectApi.submitBookingForm($scope.booking).then(function(response){
       $rootScope.hideLoader();
       console.log("booking successful");
       store.set('bookingModel', response.data.data);
-      $location.path('confirmation');
-      $location.replace();
-      //$state.go('confirmation', {}, {reload: true});
+     //$location.path('confirmation');
+      //$location.replace();
+      $state.go('confirmation', {}, {reload: true});
     }, function(error){
       $rootScope.hideLoader();
       console.log("booking failed");

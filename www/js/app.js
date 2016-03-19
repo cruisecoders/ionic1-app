@@ -224,7 +224,7 @@
   $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
     $rootScope.showLoader();
     if (toState.data && toState.data.requiresLogin) {
-      console.log("JWT token is "+store.get('jwt'));
+      //console.log("JWT token is "+store.get('jwt'));
       if (!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
         e.preventDefault();
         $state.go('login.getStarted', {}, {reload: true});

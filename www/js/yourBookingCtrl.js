@@ -2,6 +2,8 @@ angular.module('app.projectX').controller('yourBookingCtrl', function($scope, st
 	
 	$scope.yourBooking = {};
 
+	$scope.userInfo = store.get('userInfo');
+
 	$scope.getBookingsByUserId = function(userId, exp){
 		$rootScope.showLoader();
 		projectApi.getResource('getBookings', userId, exp).then(function(response){
@@ -25,6 +27,6 @@ angular.module('app.projectX').controller('yourBookingCtrl', function($scope, st
 		$state.go('main.bookingDetail');
 	}
 
-	$scope.getBookingsByUserId($scope.app.userCredentials.id);
+	$scope.getBookingsByUserId($scope.userInfo.id);
 
 });

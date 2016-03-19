@@ -2,11 +2,15 @@
   <ion-content class="yourbooking-page">
   	 <ion-refresher
 	    pulling-text="Pull to refresh..."
-	    on-refresh="getBookingsByUserId(app.userCredentials.id);">
+	    on-refresh="getBookingsByUserId(userInfo.id);">
 	  </ion-refresher>
   	<div class="card">
 		<div class="list">
 			    <!-- {{bookingModel}} -->
+			<div ng-show="yourBooking.List.length==0">
+				Booking history is empty.
+			</div>
+
 		  	<div class="item item-avatar yourbooking" ng-repeat = "booking in yourBooking.List"
 		  	 	ng-click="selectBooking(booking)">
 		  		<img src="img/userIcon.png" width="30px" height="30px">
