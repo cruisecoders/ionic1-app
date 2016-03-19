@@ -121,6 +121,7 @@
    })
 
    .state('main.booking', {
+      cache: false,
       url: "/booking",
       views: {
             'mainContent': {
@@ -178,6 +179,7 @@
       }
    })
    .state('main.yourBookings',{
+    cache: false,
      url: "/yourBookings",
      views: {
             "mainContent": {
@@ -198,10 +200,18 @@
   })
 
 .run(function($rootScope, $state, store, jwtHelper, $ionicLoading) {
-  $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+
+  $rootScope.showLoader = function() {
     $ionicLoading.show({
       template: 'Loading...'
     });
+  };
+  $rootScope.hideLoader = function(){
+    $ionicLoading.hide();
+  };
+
+  $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+    $rootScope.showLoader();
     if (toState.data && toState.data.requiresLogin) {
       console.log("JWT token is "+store.get('jwt'));
       if (!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
@@ -212,7 +222,7 @@
   });
 
   $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-    $ionicLoading.hide();
+    $rootScope.hideLoader();
   });
 })
 

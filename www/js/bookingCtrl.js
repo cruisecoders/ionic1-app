@@ -1,37 +1,27 @@
 angular.module('app.projectX')
   .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi, 
-    formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $ionicLoading){
+    formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $rootScope){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
  $scope.booking = {};
  $scope.booking.pickupDetail = {};
  $scope.booking.dropDetail = {};
  $scope.refData = {};
 
- $scope.showLoader = function() {
-    $ionicLoading.show({
-      template: 'Loading...'
-    });
-  };
-  $scope.hideLoader = function(){
-    $ionicLoading.hide();
-  };
-
   //$scope.booking.number = $scope.app.userCredentials.number;
   //$scope.booking.userId = $scope.app.userCredentials.id
 
  $scope.submitBookingForm = function(){
-    $scope.showLoader();
+     $rootScope.showLoader();
      $scope.booking.userId = $scope.app.userCredentials.id;
     projectApi.submitBookingForm($scope.booking).then(function(response){
-      $scope.hideLoader();
+      $rootScope.hideLoader();
       console.log("booking successful");
       store.set('bookingModel', response.data.data);
-      $scope.booking = {};
       $location.path('confirmation');
       $location.replace();
       //$state.go('confirmation', {}, {reload: true});
     }, function(error){
-      $scope.hideLoader();
+      $rootScope.hideLoader();
       console.log("booking failed");
     })
  }
@@ -51,13 +41,13 @@ angular.module('app.projectX')
   }
 
   $scope.getStreets = function(cityId, exp){
-    $scope.showLoader();
+    $rootScope.showLoader();
     projectApi.getResource('streets', cityId, exp).then(function(response){
-        $scope.hideLoader();
+        $rootScope.hideLoader();
         console.log("Suuccess Handler");
         $scope.refData.streets = response.data;
       }, function(error){
-        $scope.hideLoader();
+        $rootScope.hideLoader();
         console.log("Failure Handler");
          if(error.data.errorMsg){
              showAlertBox('Please try again' , error.data.errorMsg);
