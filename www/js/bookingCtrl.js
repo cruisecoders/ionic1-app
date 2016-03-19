@@ -16,8 +16,12 @@ angular.module('app.projectX')
     $ionicLoading.hide();
   };
 
+  //$scope.booking.number = $scope.app.userCredentials.number;
+  //$scope.booking.userId = $scope.app.userCredentials.id
+
  $scope.submitBookingForm = function(){
     $scope.showLoader();
+     $scope.booking.userId = $scope.app.userCredentials.id;
     projectApi.submitBookingForm($scope.booking).then(function(response){
       $scope.hideLoader();
       console.log("booking successful");

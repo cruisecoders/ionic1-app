@@ -6,6 +6,7 @@ angular.module('app.projectX').controller('yourBookingCtrl', function($scope, st
 		projectApi.getResource('getBookings', userId, exp).then(function(response){
 	        console.log("Suuccess Handler");
 	        $scope.yourBooking.List = response.data;
+	        $scope.$broadcast('scroll.refreshComplete');
 	      }, function(error){
 	        console.log("Failure Handler");
 	         if(error.data.errorMsg){
