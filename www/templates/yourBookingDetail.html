@@ -1,7 +1,50 @@
 <ion-view view-title="Your Booking Detail">
   <ion-content class="yourbookingdetail-page">
-
-  	{{mainData.selectedBooking}}
-    
+  	<!-- {{mainData.selectedBooking}} -->
+    <div class="card">
+			<div class="list">
+				    <!-- {{mainData.selectedBooking}} -->
+			  <div class="bookingConfirmation">
+			    {{mainData.selectedBooking.bookingDate | date:'medium'}}<br>
+			    <span>Your Mobile Number: {{mainData.selectedBooking.number}}</span><br>
+			    <div class="col col-50">
+			    	<span>Booking ID: {{mainData.selectedBooking.id}}</span>
+			    </div>
+			    <div class="col">
+			    	<span>Status: {{mainData.selectedBooking.bookingStatus.activity}}-{{mainData.selectedBooking.bookingStatus.status}}</span>
+			    </div>
+			  </div>
+			  <div class="pickup-details">
+			  	<i class="icon ion-ios-location-outline" style="float: left;"></i>
+			  	<h5 class="pickup-details-h5">PickUp Details</h5>
+			  		<span class="StreetSubstreetName">{{mainData.selectedBooking.pickup.street.city.name}}</span><br>
+			  		<span class="StreetSubstreetName">{{mainData.selectedBooking.pickup.street.name}}</span><br>
+			  		<span class="StreetSubstreetName">{{mainData.selectedBooking.pickup.substreet.name}}</span><br>
+			  		<span style="color: #575757;margin-left: 12px;">{{mainData.selectedBooking.pickup.pickupDate  | date:'medium'}}
+			  		</span><br>
+			  		<span class="StreetSubstreetName">No. of Items: {{mainData.selectedBooking.itemCount}}</span><br>
+			  </div>
+			  <div class="col pickup-details">
+			  	<i class="icon ion-ios-location-outline" style="float: left;"></i>
+			  	<h5 class="pickup-details-h5">Drop Details</h5>
+			  		<span class="StreetSubstreetName">{{mainData.selectedBooking.drop.street.city.name}}</span><br>
+			  		<span class="StreetSubstreetName">{{mainData.selectedBooking.drop.street.name}}</span><br>
+			  		<span class="StreetSubstreetName">{{mainData.selectedBooking.drop.substreet.name}}</span><br>
+			  		<span style="color: #575757;margin-left: 12px;">{{mainData.selectedBooking.drop.dropDate  | date:'medium'}}
+			  		</span>
+			  </div>
+			  <div class="col">
+			  	<h5 class="pickup-details-h5">Payment Details</h5>
+			  		<span class="StreetSubstreetName">Payment mode is: {{mainData.selectedBooking.payment.payMode}}
+			  		</span>
+			  		<span class="StreetSubstreetName" ng-show="mainData.selectedBooking.payment.payAmount">Total Payment is: {{mainData.selectedBooking.payment.payAmount}}
+			  		</span>
+			  		<span class="StreetSubstreetName" ng-show="mainData.selectedBooking.payment.payAmount">Payment Status is: {{mainData.selectedBooking.payment.payStatus}}
+			  		</span><br>
+			  		<span class="StreetSubstreetName" ng-hide="mainData.selectedBooking.payment.payAmount">Final Cost will get Confirmed at the time of pick up.
+			  		</span><br>
+			  </div>
+			</div>  
+		</div>
   </ion-content>
 </ion-view>

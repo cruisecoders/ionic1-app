@@ -58,7 +58,7 @@ button.item.item-complex:hover{
     min-height: 30px !important;
 }
 .list {
-    padding-top: 17px !important;
+    padding-top: 5px !important;
 }
 .subStreets {
     width: 100% !important;
@@ -72,16 +72,22 @@ button.item.item-complex:hover{
 .mob-coupon-code-label {
     width: 90% !important;
 }
+.popup-icon {
+    position: absolute; 
+    top: 13px; 
+    right: 10px;
+    cursor: pointer;
+}
 .item.item-radio.ng-valid {
     float: left !important;
-    width: 11% !important;
-    border: 1px solid #11C1F3;
+    width: 9% !important;
+    border: 1px solid gainsboro;
     margin-left: 5px;
     border-radius: 3px !important;
 }
 .item-complex .item-content, 
 .item-radio .item-content {
-    padding: 3px 29px 5px 10px !important
+    padding: 3px 29px 5px 6px !important
 }
 .item-radio .radio-icon {
     font-size: 14px !important;
@@ -125,6 +131,18 @@ button.item.item-complex:hover{
     color:black !important; 
     font-size: 14px !important; 
     margin-top:32px !important;
+}
+.yourbooking{
+    /*background: #F4F8F9;*/
+    padding: 10px;
+}
+.yourbooking-all {
+    margin-left: 16px;
+    font-size: 13px;
+    border-bottom: 1px solid gainsboro;
+}
+.yourbooking-status {
+    padding-left: 0px;
 }
 .image-slide {
     background-repeat: no-repeat;

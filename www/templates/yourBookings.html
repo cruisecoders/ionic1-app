@@ -1,9 +1,47 @@
 <ion-view view-title="Your Booking">
   <ion-content class="yourbooking-page">
-
-  	<div ng-repeat = "booking in yourBooking.List" style="border-style: ridge;" ng-click="selectBooking(booking)">
+  	<!-- <div ng-repeat = "booking in yourBooking.List" style="border-style: ridge;" ng-click="selectBooking(booking)">
   		{{booking.id}} | {{booking.bookingDate | date:'medium'}} |  {{booking.itemCount}} | {{booking.number}} | {{booking.bookingStatus.status}} | {{booking.bookingStatus.activity}}
-  	</div>
-    
+  	</div> -->
+  	<div class="card">
+		<div class="list">
+			    <!-- {{bookingModel}} -->
+		  	<div class="item item-avatar yourbooking" ng-repeat = "booking in yourBooking.List"
+		  	 	ng-click="selectBooking(booking)">
+		  		<img src="img/userIcon.png" width="30px" height="30px">
+		  		<i class="icon ion-ios-briefcase-outline"></i>
+			    <span><b>{{booking.bookingDate | date:'medium'}}</b></span><br>
+			    <div class="yourbooking-all">
+				    <span>BID: {{booking.id}}</span><br>
+				    <span>No. of Items: {{booking.itemCount}}</span><br>
+			        <span>Status: {{booking.bookingStatus.activity}}-{{booking.bookingStatus.status}}</span><br>
+					<span class="yourbooking-status">Your Mobile Number: {{booking.number}}</span><br>
+				</div>
+		  	</div>
+		  	<!-- <div class="pickup-details">
+		  		<i class="icon ion-ios-location-outline" style="float: left;"></i>
+		  		<h5 class="pickup-details-h5">PickUp Details</h5>
+		  		<span class="StreetSubstreetName">{{bookingModel.pickup.street.city.name}}</span><br>
+		  		<span class="StreetSubstreetName">{{bookingModel.pickup.street.name}}</span><br>
+		  		<span class="StreetSubstreetName">{{bookingModel.pickup.substreet.name}}</span><br>
+		  		<span style="color: #575757;margin-left: 12px;">{{bookingModel.pickup.pickupDate  | date:'medium'}}
+		  		</span><br>
+		  		<span class="StreetSubstreetName">No. of Items: {{bookingModel.itemCount}}</span><br>
+		  	</div>
+		  	<div class="col pickup-details">
+		  		<i class="icon ion-ios-location-outline" style="float: left;"></i>
+		  		<h5 class="pickup-details-h5">Drop Details</h5>
+		  		<span class="StreetSubstreetName">{{bookingModel.drop.street.city.name}}</span><br>
+		  		<span class="StreetSubstreetName">{{bookingModel.drop.street.name}}</span><br>
+		  		<span class="StreetSubstreetName">{{bookingModel.drop.substreet.name}}</span><br>
+		  		<span style="color: #575757;margin-left: 12px;">{{bookingModel.drop.dropDate  | date:'medium'}}
+		  		</span>
+		  	</div>
+		  	<div class="col">
+			  	<h5 class="pickup-details-h5">Estimated Price</h5>
+			  	<h4 style="color: #575757;margin-left: 12px;">Your approximate payment will be 100-250Rs.</h4>
+		 	</div> -->
+		</div>  
+	</div>
   </ion-content>
 </ion-view>

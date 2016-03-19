@@ -4,8 +4,8 @@ angular.module('app.projectX').constant('menuConstant', {
 		name:"Booking", 
 		state: "main.booking"
 	},{
-		imagepath:"img/icons/currency-inr.png",
-		name:"Your Bookings", 
+		imagepath:"img/icons/ic_card_travel_black_24dp.png",
+		name:"Booking History", 
 		state: "main.yourBookings"
 	},{
 		imagepath:"img/icons/currency-inr.png",

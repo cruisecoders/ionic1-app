@@ -16,14 +16,13 @@
 			   <span style="font-size: 16px;">Pick Up Point</span>
 			</div>
 			<div class="item select-city cur-pointer pickup-drop-details" ng-click="showPickupStreetPopUP()">
-			   <i class="ion-ios-search-strong"></i>
+			    <i class="ion-ios-search-strong"></i>
 		    	<span class="cur-pointer" style="margin-left: 10px;">
 		    		<span ng-hide="booking.pickupDetail.street">Search by Street/Landmark</span> <span ng-show="booking.pickupDetail.street">{{booking.pickupDetail.street.name}} / {{booking.pickupDetail.substreet.name}}</span>
 	     		</span>
 			</div>
-
 			<div class="col">
-				<span style="font-size: 16px; color: grey; margin-left: 5px;"> Select Number of Items</span>
+				<span style="font-size:100%; color: #444; margin-left: 5px;"> Select Number of Items</span>
 				<ion-list>
 				  <ion-radio ng-model="booking.itemCount" ng-value="1">1</ion-radio>
 				  <ion-radio ng-model="booking.itemCount" ng-value="2">2</ion-radio>
@@ -52,7 +51,6 @@
 		  	<div class="item-input-inset date-time-select" style="margin-top:-33px;">
 				<div class="col cur-pointer">
 		            <formly-form model="dropFormData" fields="dropFormFields" form="mainInputForm">
-			          
 			        </formly-form>
 				</div>
 			</div>
@@ -81,17 +79,22 @@
 </script>
 
 <script id = "city.html" type = "text/ng-template">
-      <ion-content>
-      	<div class="list">
+	<div class="popup-icon" ng-Click="closeGenericPopup();">
+		<i class="ion-ios-close-empty" style="font-size: 25px;"></i>
+	</div>
+   <ion-content>
+  		<div class="list">
 			<a class="item item-icon-left cur-pointer" ng-model="booking.city" ng-value="city" 
 			  ng-repeat="city in refData.cities" ng-click="closeGenericPopup(); booking.city=city; getStreets(city.id)">
-			  <i class="icon ion-android-pin" style="font-size: 18px;"></i> {{city.name}}
+		  	<i class="icon ion-android-pin" style="font-size: 18px;"></i> {{city.name}}
 			</a>
 		</div>
-      </ion-content>
+   </ion-content>
 </script>
-
 <script id = "pickupStreet.html" type = "text/ng-template">
+	  <div class="popup-icon" ng-Click="closeGenericPopup();">
+		<i class="ion-ios-close-empty" style="font-size: 25px;"></i>
+	  </div>
       <ion-content>
       	<div class="list">
       		<div ng-repeat="street in refData.streets">
@@ -107,22 +110,28 @@
 </script>
 
 <script id = "dropStreet.html" type = "text/ng-template">
-      <ion-content>
-      	<div class="list">
-      		<div ng-repeat="street in refData.streets">
-      			<span ng-repeat="substreet in street.substreets" ng-click="closeGenericPopup(); booking.dropDetail.street=street;booking.dropDetail.substreet=substreet;">
-      				<label class="item item-input item-stacked-label subStreets">
-      				 	<span class="col input-label cur-pointer"><h3 class="streets-h3"> {{street.name}} </h3></span>
-      					<span class="col cur-pointer"><h5>{{substreet.name}}</h5></span>
-      				</label>	
-      			<span>
-      		<div>
+	<div class="popup-icon" ng-Click="closeGenericPopup();">
+		<i class="ion-ios-close-empty" style="font-size: 25px;"></i>
+	</div>
+	<ion-content>
+  		<div class="list">
+  			<div ng-repeat="street in refData.streets">
+  				<span ng-repeat="substreet in street.substreets" ng-click="closeGenericPopup(); booking.	dropDetail.street=street;booking.dropDetail.substreet=substreet;">
+  					<label class="item item-input item-stacked-label subStreets">
+  				 		<span class="col input-label cur-pointer"><h3 class="streets-h3"> {{street.name}} </h3></span>
+  						<span class="col cur-pointer"><h5>{{substreet.name}}</h5></span>
+  					</label>	
+  				<span>
+  			<div>
 		</div>
-      </ion-content>
+  </ion-content>
 </script>
 
 <script id = "estimate.html" type = "text/ng-template">
-      <ion-content>
-      		Hello
-      </ion-content>
+	<div class="popup-icon" ng-Click="closeGenericPopup();">
+		<i class="ion-ios-close-empty" style="font-size: 25px;"></i>
+	</div>
+  	<ion-content>
+  		Hello
+  	</ion-content>
 </script>
