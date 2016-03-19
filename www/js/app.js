@@ -197,8 +197,11 @@
    
   })
 
-.run(function($rootScope, $state, store, jwtHelper) {
+.run(function($rootScope, $state, store, jwtHelper, $ionicLoading) {
   $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+    $ionicLoading.show({
+      template: 'Loading...'
+    });
     if (toState.data && toState.data.requiresLogin) {
       console.log("JWT token is "+store.get('jwt'));
       if (!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
@@ -206,6 +209,10 @@
         $state.go('login.getStarted', {}, {reload: true});
       }
     }
+  });
+
+  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    $ionicLoading.hide();
   });
 })
 
