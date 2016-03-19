@@ -32,7 +32,7 @@
 				  <ion-radio ng-model="booking.itemCount" ng-value="5">5</ion-radio>
 				</ion-list>
 			</div>
-			<div class="col">
+			<div class="col cur-pointer">
 	            <formly-form model="pickupFormData" fields="pickupFormFields" form="mainInputForm">
 		        
 		        </formly-form>
@@ -50,7 +50,7 @@
 	     		</span>
 			</div>
 		  	<div class="item-input-inset date-time-select" style="margin-top:-33px;">
-				<div class="col">
+				<div class="col cur-pointer">
 		            <formly-form model="dropFormData" fields="dropFormFields" form="mainInputForm">
 			          
 			        </formly-form>
@@ -66,8 +66,8 @@
 			</div>
 		</div>
 	</ion-content>
-	<div class="tabs tabs-dark"
-		<a class="tab-item" href="">Estimated Charge</a>
+	<div class="tabs tabs-dark">
+		<a class="tab-item" href="" ng-click="showEstimatePopup()">Estimated Charge</a>
 		<a class="tab-item" href="" ng-click="submitBookingForm()">Book Now</a>
 	</div>
 </ion-view>
@@ -118,5 +118,11 @@
       			<span>
       		<div>
 		</div>
+      </ion-content>
+</script>
+
+<script id = "estimate.html" type = "text/ng-template">
+      <ion-content>
+      		Hello
       </ion-content>
 </script>

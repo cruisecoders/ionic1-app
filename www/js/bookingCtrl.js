@@ -1,20 +1,33 @@
 angular.module('app.projectX')
   .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi, 
-    formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location){
+    formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $ionicLoading){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
  $scope.booking = {};
  $scope.booking.pickupDetail = {};
  $scope.booking.dropDetail = {};
  $scope.refData = {};
 
+ $scope.showLoader = function() {
+    $ionicLoading.show({
+      template: 'Loading...'
+    });
+  };
+  $scope.hideLoader = function(){
+    $ionicLoading.hide();
+  };
+
  $scope.submitBookingForm = function(){
+    $scope.showLoader();
     projectApi.submitBookingForm($scope.booking).then(function(response){
+      $scope.hideLoader();
       console.log("booking successful");
       store.set('bookingModel', response.data.data);
+      $scope.booking = {};
       $location.path('confirmation');
       $location.replace();
       //$state.go('confirmation', {}, {reload: true});
     }, function(error){
+      $scope.hideLoader();
       console.log("booking failed");
     })
  }
@@ -34,10 +47,13 @@ angular.module('app.projectX')
   }
 
   $scope.getStreets = function(cityId, exp){
+    $scope.showLoader();
     projectApi.getResource('streets', cityId, exp).then(function(response){
+        $scope.hideLoader();
         console.log("Suuccess Handler");
         $scope.refData.streets = response.data;
       }, function(error){
+        $scope.hideLoader();
         console.log("Failure Handler");
          if(error.data.errorMsg){
              showAlertBox('Please try again' , error.data.errorMsg);
@@ -97,6 +113,10 @@ angular.module('app.projectX')
   $scope.dropFormData = {
     startDateTime : new Date()
   };
+
+  $scope.booking.pickupDetail.date = $scope.pickupFormData.startDateTime;
+  $scope.booking.dropDetail.date = $scope.dropFormData.startDateTime;
+
 
   $scope.pickupFormFields = [{
     key: 'startDateTime',
@@ -175,6 +195,10 @@ angular.module('app.projectX')
   $scope.closeGenericPopup = function(){
     genericPopup.close();
   };
+
+  $scope.showEstimatePopup = function(){
+    $scope.genericPopup('Estimated Cost','Estimated Cost', 'estimate.html');
+  }
 
   $scope.showCityPopUP = function(){
     $scope.genericPopup('Select City','Select City', 'city.html');
