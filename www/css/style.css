@@ -80,14 +80,14 @@ button.item.item-complex:hover{
 }
 .item.item-radio.ng-valid {
     float: left !important;
-    width: 9% !important;
+    width: 11% !important;
     border: 1px solid gainsboro;
     margin-left: 5px;
     border-radius: 3px !important;
 }
 .item-complex .item-content, 
 .item-radio .item-content {
-    padding: 3px 29px 5px 6px !important
+    padding: 3px 29px 5px 6px !important;
 }
 .item-radio .radio-icon {
     font-size: 14px !important;
@@ -477,8 +477,35 @@ input.ng-touched.ng-valid {
 .streets-h3 {
     margin-left: 5px !important;
 }
-
 .error-alert-popup {
    
 }
-
+.estimate-pricing-span {
+    font-size: 100%;
+    color: #444;
+    margin-left: 5px;
+    float: left;
+}
+.estimate-ion_list {
+    float: left !important;
+    border-bottom: 1px solid gainsboro;
+    background-color: #F8F9FB !important;
+    margin-bottom: 20px;
+    padding-bottom: 17px;
+}
+.pricing-span {
+    border-bottom: 1px solid gainsboro!important;
+    padding: 10px;
+    color: #444!important;
+}
+.estimate-ion-radio {
+    background-color: #F8F9FB !important;
+}
+.estimate-ion-radio:hover,
+.estimate-ion-radio:active,
+.estimate-ion-radio.active {
+    background-color: #e6e6e6 !important;
+}
+.ionic .item-radio input:checked + .radio-content .item-content{
+    background-color: #e6e6e6 !important;
+}

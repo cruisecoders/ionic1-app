@@ -1,0 +1,74 @@
+<ion-view view-title="Estimate Price">
+  <ion-content class="signUp-page">
+   		<!-- City Section -->
+		<div class="item select-city cur-pointer" ng-click="showCityPopUP()">
+		   <i class="ion-ios-search-strong"></i>
+	    	<span class="cur-pointer" style="margin-left: 10px;">
+	    		<span ng-hide="estimate.city">Select City</span> <span ng-show="estimate.city">{{estimate.city.name}}</span>
+     		</span>
+		</div>
+		<div class="col">
+			<span class="col estimate-pricing-span" ng-show="refData.rate">
+				Charges for 0-15Kg: {{refData.rate.zeroToFifCount}} Rs.</span>
+			<span class="col estimate-pricing-span" ng-show="refData.rate">
+				Charges for 15-30Kg: {{refData.rate.fifToThirCount}} Rs.</span>
+			<span class="col estimate-ion_list" ng-show="refData.rate">
+				Charges for above 30Kg: {{refData.rate.aboveThirty}} Rs.</span>
+		</div>
+		<div class="col" ng-show="refData.rate">
+			<span class="estimate-pricing-span"> Select Number of Items between 1kg - 15kg</span>
+			<ion-list class="estimate-ion_list">
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="0">0</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="1">1</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="2">2</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="3">3</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="4">4</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="5">5</ion-radio>
+			</ion-list>
+		</div>
+
+		<div class="col" ng-show="refData.rate">
+			<span class="estimate-pricing-span"> Select Number of Items between 15kg - 30kg</span>
+			<ion-list class="estimate-ion_list">
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="0">0</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="1">1</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="2">2</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="3">3</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="4">4</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="5">5</ion-radio>
+			</ion-list>
+		</div>
+		<div class="col" ng-show="refData.rate">
+			<span class="estimate-pricing-span"> Select Number of Items above 30kg</span>
+			<ion-list class="estimate-ion_list">
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="0">0</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="1">1</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="2">2</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="3">3</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="4">4</ion-radio>
+			  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="5">5</ion-radio>
+			</ion-list>
+		</div>
+
+		<div class="col">
+			<span class="col estimate-pricing-span" ng-show="refData.rate">
+			Approximate Charges: {{getApproximateRate()}}</span>
+		</div>
+
+
+  </ion-content>
+</ion-view>
+
+<script id = "city.html" type = "text/ng-template">
+	<div class="popup-icon" ng-Click="closeGenericPopup();">
+		<i class="ion-ios-close-empty" style="font-size: 25px;"></i>
+	</div>
+   <ion-content>
+  		<div class="list">
+			<a class="item item-icon-left cur-pointer" ng-model="estimate.city" ng-value="city" 
+			  ng-repeat="city in refData.cities" ng-click="closeGenericPopup(); estimate.city=city; getPrice(city.id)">
+		  	<i class="icon ion-android-pin" style="font-size: 18px;"></i> {{city.name}}
+			</a>
+		</div>
+   </ion-content>
+</script>

@@ -1,5 +1,10 @@
 <ion-view view-title="Pricing">
-  <ion-content class="pricing-page">
-    Test Pricing
+  <ion-content class="signUp-page">
+    <div class="card booking-box tmargin" ng-repeat="rate in refData.rates">
+    	<span class="col pricing-span select-city">City : {{rate.city.name}}</span>
+  		<span class="col estimate-pricing-span">Charges for 0-15Kg: {{rate.zeroToFifCount}} Rs.</span>
+		<span class="col estimate-pricing-span">Charges for 15-30Kg: {{rate.fifToThirCount}} Rs.</span>
+		<span class="col estimate-pricing-span">Charges for above 30Kg: {{rate.aboveThirty}} Rs.</span>
+	</div>
   </ion-content>
 </ion-view>

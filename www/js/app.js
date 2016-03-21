@@ -196,6 +196,16 @@
             }
         }
    })
+
+   .state('main.estimatePrice',{
+     url: "/estimate",
+     views: {
+            "mainContent": {
+              templateUrl: "templates/estimate.html",
+              controller : 'estimateCtrl',
+            }
+        }
+   })
    
   })
 

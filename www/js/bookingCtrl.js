@@ -92,11 +92,14 @@ $scope.booking.number = $scope.userInfo.number;
     return true;
 
  }
+
+ $scope.refData.cities = store.get("cities");
   
-  $scope.getCities = function(id, exp){
+  /*$scope.getCities = function(id, exp){
     projectApi.getResource('cities', id, exp).then(function(response){
         console.log("Suuccess Handler");
         $scope.refData.cities = response.data;
+        store.set('cities', response.data);
       }, function(error){
         console.log("Failure Handler");
          if(error.data.errorMsg){
@@ -105,7 +108,7 @@ $scope.booking.number = $scope.userInfo.number;
             //showAlertBox('Please try again' , error.data);
           }
       })
-  }
+  }*/
 
   $scope.getStreets = function(cityId, exp){
     $rootScope.showLoader();
@@ -252,10 +255,6 @@ $scope.booking.number = $scope.userInfo.number;
     genericPopup.close();
   };
 
-  $scope.showEstimatePopup = function(){
-    $scope.genericPopup('Estimated Cost','Estimated Cost', 'estimate.html');
-  }
-
   $scope.showCityPopUP = function(){
     $scope.genericPopup('Select City','Select City', 'city.html');
   };
@@ -280,6 +279,7 @@ $scope.booking.number = $scope.userInfo.number;
   };
 
   createFormlyType();
-  $scope.getCities();
+
+  //$scope.getCities();
 
 });
