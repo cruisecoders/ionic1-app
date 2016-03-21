@@ -162,27 +162,20 @@ $scope.booking.number = $scope.userInfo.number;
     });
   }
  
-  $scope.pickupFormData = {
+  /*$scope.pickupFormData = {
     //startDateTime : new Date()
-  };
+  };*/
  
   $scope.dropFormData = {
     //startDateTime : new Date()
   };
 
-  $scope.booking.pickupDetail.date = $scope.pickupFormData.startDateTime;
+  $scope.booking.pickupDetail.date = undefined;
   $scope.booking.dropDetail.date = $scope.dropFormData.startDateTime;
 
   var minDate = ionic.Platform.isIOS() ? new Date() : (new Date()).valueOf();
 
-
-  $scope.pickupFormFields = [{
-    key: 'startDateTime',
-    type: 'inputDatePicker',
-    templateOptions: {
-      dateFormat: 'medium',
-      onclick: function($modelValue, $options) {
-        var options = {
+   var options = {
           date: new Date(),
           mode: 'datetime', // 'date' or 'time'
           minDate: minDate,
@@ -193,42 +186,26 @@ $scope.booking.number = $scope.userInfo.number;
           cancelButtonLabel: 'CANCEL',
           cancelButtonColor: '#000000'
         };
-      $ionicPlatform.ready(function () {
-            $cordovaDatePicker.show(options).then(function (date) {
-                $modelValue[$options.key] = date;
-                $scope.booking.pickupDetail.date = date;
-            });
+
+$scope.showPickupDatePicker = function() {
+ $ionicPlatform.ready(function () {
+        $cordovaDatePicker.show(options).then(function (date) {
+            //$modelValue[$options.key] = date;
+            $scope.booking.pickupDetail.date = date;
+            //alert(date);
         });
-        }
-      }
-  }];
+    });
+}
 
-  $scope.dropFormFields = [{
-    key: 'startDateTime',
-    type: 'inputDatePicker',
-    templateOptions: {
-      dateFormat: 'medium',
-      onclick: function($modelValue, $options) {
-        var options = {
-          date: new Date(),
-          mode: 'datetime', // 'date' or 'time'
-          minDate: minDate,
-          allowOldDates: false,
-          allowFutureDates: true,
-          doneButtonLabel: 'DONE',
-          doneButtonColor: '#F2F3F4',
-          cancelButtonLabel: 'CANCEL',
-          cancelButtonColor: '#000000'
-        };
-      $ionicPlatform.ready(function () {
+$scope.showDropDatePicker = function(){
+  $ionicPlatform.ready(function () {
             $cordovaDatePicker.show(options).then(function (date) {
-                $modelValue[$options.key] = date;
+                //$modelValue[$options.key] = date;
                 $scope.booking.dropDetail.date = date;
+                //alert(date);
             });
         });
-        }
-      }
-  }];
+}
 
   // Date and Time Picker End
 

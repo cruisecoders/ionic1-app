@@ -51,9 +51,6 @@ button.item.item-complex:hover{
 .item-select:after {
     right: 102px;
 }
-.drop_down {
-   /* margin-bottom: 75px !important;*/
-}
 .list .item {
     min-height: 30px !important;
 }
@@ -77,6 +74,9 @@ button.item.item-complex:hover{
     top: 13px; 
     right: 10px;
     cursor: pointer;
+}
+.stable-bg {
+    background: #F8F9FB !important;
 }
 .item.item-radio.ng-valid {
     float: left !important;
@@ -132,17 +132,10 @@ button.item.item-complex:hover{
     font-size: 14px !important; 
     margin-top:32px !important;
 }
-.yourbooking{
-    /*background: #F4F8F9;*/
-    padding: 10px;
-}
 .yourbooking-all {
-    margin-left: 16px;
+   /* margin-left: 16px;*/
     font-size: 13px;
     border-bottom: 1px solid gainsboro;
-}
-.yourbooking-status {
-    padding-left: 0px;
 }
 .image-slide {
     background-repeat: no-repeat;
@@ -153,6 +146,12 @@ button.item.item-complex:hover{
     margin: auto;
     z-index: 2;
     position: relative;
+}
+.menu-img {
+    width:17px !important;
+    color:#757575 !important;
+    margin-top:0px !important;
+    margin-left: 12px !important;
 }
 .demo-card-square.mdl-card {
   width: 320px;
@@ -229,6 +228,14 @@ button.item.item-complex:hover{
 	-moz-background-size: cover;
 	background-size: cover;*/
 }
+.profile-box-info {
+    padding: 28px 16px;
+    position: relative;
+    background: url("../img/ds.png") repeat;
+    /*-webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;*/
+}
 .profile-box-thumb {
     width: 65px;
     border-radius: 500px;
@@ -237,9 +244,15 @@ button.item.item-complex:hover{
 }
 .profile-box .profile-box-details {
     margin-left: 80px;
+    margin-top: 21px;
 }
 .profile-box-details > h4 {
 	color: #fff;
+}
+.settings-icon {
+    float: right !important;
+    font-size: 26px !important;
+    color: gainsboro !important;
 }
 .my-form {
    transition:all linear 0.5s;
@@ -330,14 +343,16 @@ button.item.item-complex:hover{
   text-align:center;
 }
 .input-label {
-   margin-top: -8px !important;
-  /* margin-left: -5px !important;*/
-   font-size: 24px !important; 
+   margin-top: -2px !important;
+   margin-left: 18px !important;
+   font-size: 18px !important; 
 }
 .item-md-label {
     border: none;
 }
-
+.lbl-input-bottom {
+    border-bottom: 1px solid gainsboro !important;
+}
 .item {
     border: none;
 }
@@ -347,7 +362,7 @@ button.item.item-complex:hover{
     margin-bottom: -10px !important;
 }
 .item.item-input {
-   /* left: -18px;*/
+    left: -18px;
 }
 input:required {
     /*background-color: yellow;*/
@@ -360,18 +375,29 @@ input.ng-pristine {
     /*background-color:yellow;*/
 }
 input.ng-touched.ng-invalid {
-    background-color:white;
+    /*background-color:white;*/
 }
 input.ng-touched.ng-valid {
-    background-color:green;
+    /*background-color:green;*/
 }
 .item-input input, .item-input textarea {
     width: 93% !important;
 }
 .item-input input {
-    display: inline-block;
+    /*display: inline-block;*/
     position: relative;
-    right: -10px;
+    left: 19px;
+    right: -2px;
+    border-bottom: 1px solid gainsboro !important;
+}
+#profile-image {
+    display: block;
+    border-radius: 100px;
+    border: 1px solid #444;
+    width: 60px;
+    height: 60px;
+    margin: 0px auto 0;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
 }
 .item-md-label input {
     background-color: #F8F9FB !important;
@@ -390,10 +416,10 @@ input.ng-touched.ng-valid {
 .item-md-label .input-label {
     color: #444 !important;
     letter-spacing: 0px !important;
-    margin: 12px;
+    margin: 6px;
 }
 .slider-slide img{
-  height: 480px;
+  height: 495px;
   width: auto;
 }
 .date-time-select{
@@ -401,7 +427,7 @@ input.ng-touched.ng-valid {
     margin-top: -4px;
 }
 .row > span {
-    margin-left: 75px;
+    margin-left: 64px;
     margin-top: -18px;
     color: red;
     font-size: 16px;
@@ -417,7 +443,7 @@ input.ng-touched.ng-valid {
     margin-top: 15px;
 }
 .signUp-page {
-    background-color: rgba(239, 241, 245, 0.44);
+    background-color: #f8f9fb;
 }
 .tmargin {
     margin-top: 15px !important;
@@ -430,7 +456,7 @@ input.ng-touched.ng-valid {
 .all_icon {
     color:grey; 
     font-size: 14px;
-    margin-top:41px;
+    margin-top:22px;
 }
 .lbl_span-field_text {
     font-size: 13px !important;
@@ -454,8 +480,8 @@ input.ng-touched.ng-valid {
 }
 .select-city {
     border: 1px solid gainsboro !important;
-    margin: 13px  5px !important;
-    padding: 8px !important;
+    margin: 7px 5px !important;
+    padding: 6px !important;
     width: 97% !important;
 }
 .cur-pointer {
@@ -508,4 +534,11 @@ input.ng-touched.ng-valid {
 }
 .ionic .item-radio input:checked + .radio-content .item-content{
     background-color: #e6e6e6 !important;
+}
+.item-thumbnail-left > img:first-child, 
+.item-thumbnail-left .item-image, 
+.item-thumbnail-left .item-content > img:first-child, 
+.item-thumbnail-left .item-content .item-image {
+    max-width: 50px !important;
+    max-height: 50px !important;
 }

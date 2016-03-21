@@ -1,8 +1,6 @@
 <ion-view view-title="Booking">
 	<ion-content class="signUp-page">
-		<div class="card">
-		</div>
-		<div class="card booking-box tmargin">
+		<div class="card booking-box">
 			<!-- City Section -->
 			<div class="item select-city cur-pointer" ng-click="showCityPopUP()">
 			   <i class="ion-ios-search-strong"></i>
@@ -21,7 +19,7 @@
 		    		<span ng-hide="booking.pickupDetail.street">Select Street/Landmark</span> <span ng-show="booking.pickupDetail.street">{{booking.pickupDetail.street.name}} / {{booking.pickupDetail.substreet.name}}</span>
 	     		</span>
 			</div>
-			<div class="col">
+			<div class="col" style="float: left; margin-bottom: 15px;">
 				<span style="font-size:100%; color: #444; margin-left: 5px;"> Select Number of Items</span>
 				<ion-list>
 				  <ion-radio ng-model="booking.itemCount" ng-value="1">1</ion-radio>
@@ -31,28 +29,30 @@
 				  <ion-radio ng-model="booking.itemCount" ng-value="5">5</ion-radio>
 				</ion-list>
 			</div>
-			<div class="col cur-pointer">
-	            <formly-form model="pickupFormData" fields="pickupFormFields" form="mainInputForm">
-		        
-		        </formly-form>
+			<div class="col cur-pointer" ng-click="showPickupDatePicker()" style="margin-bottom:12px">
+				<i class="icon ion-ios-calendar-outline" style="color:#444;margin-left:6px;font-size:21px;"></i>
+		        <label class="cur-pointer" type="text" ng-model="booking.pickupDetail.date"
+		         style="font-size:100%; color: #444; margin-left: 5px;">Select Date & Time</label>
+		         <span style="font-size:100%; color: #444; margin-left: 5px;">{{booking.pickupDetail.date | date:'medium'}}
+		         </span>
 			</div>
-		  
 			<!-- Drop Point Section -->
 			<div class="item-divider" style="padding-left:16px;">
 			   <i class="ion-ios-location" style="color:blue; font-size: 18px;"></i> 
 			   <span style="font-size: 16px;">Drop Point</span>
 			</div>
-			<div class="item select-city cur-pointer pickup-drop-details" ng-click="showDropStreetPopUP()">
+			<div class="item select-city cur-pointer pickup-drop-details" ng-click="showDropStreetPopUP()" style="margin-bottom: 12px;">
 			   <i class="ion-ios-search-strong"></i>
 		    	<span class="cur-pointer" style="margin-left: 10px;">
-		    		<span ng-hide="booking.dropDetail.street">Search by Street/Landmark</span> <span ng-show="booking.dropDetail.street">{{booking.dropDetail.street.name}} / {{booking.dropDetail.substreet.name}}</span>
+		    		<span ng-hide="booking.dropDetail.street">Select Street/Landmark</span> <span ng-show="booking.dropDetail.street">{{booking.dropDetail.street.name}} / {{booking.dropDetail.substreet.name}}</span>
 	     		</span>
 			</div>
-		  	<div class="item-input-inset date-time-select" style="margin-top:-33px;">
-				<div class="col cur-pointer">
-		            <formly-form model="dropFormData" fields="dropFormFields" form="mainInputForm">
-			        </formly-form>
-				</div>
+			<div class="col cur-pointer" ng-click="showDropDatePicker()" style="margin-bottom:15px">
+				<i class="icon ion-ios-calendar-outline" style="color:#444;margin-left:6px;font-size:21px;"></i>
+		        <label class="cur-pointer" type="text" ng-model="booking.dropDetail.date"
+		         style="font-size:100%; color: #444; margin-left: 5px;">Select Date & Time</label>
+		         <span style="font-size:100%; color: #444; margin-left: 5px;">{{booking.dropDetail.date | date:'medium'}}
+		         </span>
 			</div>
 			<div class="list mob-coupon-code">
 			  <label class="item item-input mob-coupon-code-label">
@@ -67,6 +67,7 @@
 	<div class="tabs tabs-dark">
 		<a class="tab-item" href="" ui-sref="main.estimatePrice">Estimated Charge</a>
 		<a class="tab-item" href="" ng-click="submitBookingForm()">Book Now</a>
+		<a class="tab-item" href="" ui-sref="main.pricing">Rate Card</a>
 	</div>
 </ion-view>
 

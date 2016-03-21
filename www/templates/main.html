@@ -2,10 +2,8 @@
 <ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content style="background-color: #f2f2f2;">
         <ion-nav-bar class="bar-positive head-effects">
-            <ion-nav-back-button>
-            </ion-nav-back-button>
             <ion-nav-buttons side="left">
-               <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+              <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
               </button>
             </ion-nav-buttons>
         </ion-nav-bar>
@@ -20,15 +18,14 @@
                 <img class="profile-box-thumb" src="img/userIcon.png">
                 <div class="profile-box-details">
                     <h4>Project X</h4>
-                    <h6></h6>
                 </div>
+                <i class="settings-icon icon ion-gear-a"></i>
             </div>
-            <ion-list>
-              <ion-item ng-repeat="menu in ::menuList" nav-clear menu-close ui-sref="{{menu.state}}"><img ng-src="{{menu.imagepath}}" style="width:22px;color:#757575;margin-top:-6px;">
-                </img>
-                    <span class="menu-name">{{menu.name}}</span>
+              <ion-item ng-repeat="menu in ::menuList" nav-clear menu-close ui-sref="{{menu.state}}" style="padding: 7px;">
+              <img class="menu-img" ng-src="{{menu.imagepath}}">
+              </img>
+              <span class="menu-name">{{menu.name}}</span>
               </ion-item>
-            </ion-list>
         </ion-content>
     </ion-side-menu>
 </ion-side-menus>

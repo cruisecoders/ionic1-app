@@ -20,7 +20,7 @@ angular.module('app.projectX').constant('menuConstant', {
 		name:"About Us", 
 		state: "main.aboutUs"
 	},{
-		imagepath:"img/icons/ic_account_box_black_24dp.png",
+		imagepath:"img/icons/ic_person_black_24dp.png",
 		name:"My Profile", 
 		state: "main.account"
 	}]
