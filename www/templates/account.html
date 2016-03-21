@@ -3,26 +3,37 @@
    	<div class="card booking-box tmargin">
    		<div class="item-input-inset date-time-select">
             <i class="ion-android-person all_icon"></i> 
-            <label class="item item-input item-md-label profile-text-label" placeholder="Name">
-               <input class="select-date-time" type="text"/>
-               <span class="input-label lbl_span-field">Name</span>
+            <label class="item item-input item-md-label profile-text-label" placeholder="First Name">
+               <input ng-disabled="true" class="select-date-time" ng-model="userInfo.firstName" type="text"/>
+               <span class="input-label lbl_span-field">First Name</span>
             </label>
-        </div> 
+      </div>
+      <div class="item-input-inset date-time-select">
+            <i class="ion-android-person all_icon"></i> 
+            <label class="item item-input item-md-label profile-text-label" placeholder="Last Name">
+               <input ng-disabled="true" class="select-date-time" ng-model="userInfo.lastName" type="text"/>
+               <span class="input-label lbl_span-field">Last Name</span>
+            </label>
+      </div> 
 	    <div class="item-input-inset date-time-select">
             <i class="ion-android-mail all_icon"></i>
             <label class="item item-input item-md-label profile-text-label" placeholder="Email ID">
-               <input class="select-date-time" type="email"/>
+               <input ng-disabled="true" class="select-date-time" ng-model="userInfo.emailId" type="email"/>
                <span class="input-label lbl_span-field">Email ID</span>
             </label>
-        </div>
+      </div>
 	    <div class="item-input-inset date-time-select">
             <i class="ion-android-phone-portrait all_icon"></i>
             <label class="item item-input item-md-label profile-text-label" placeholder="Mobile Number">
-               <input class="select-date-time" type="text"/>
+               <input ng-disabled="true" class="select-date-time" ng-model="userInfo.number" type="text"/>
                <span class="input-label lbl_span-field">
                   Mobile Number</span>
             </label>
-        </div>       
+      </div>
+      <!-- <div class="col">
+        <button class="button button-block button-calm" ng-click="submitOTP()">Generate OTP</button>
+        <button class="button button-block button-calm" ng-click="updateProfile()">Update Profile</button>
+      </div> -->       
    	</div>
   </ion-content>
 </ion-view>
