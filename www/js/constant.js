@@ -31,6 +31,22 @@ angular.module('app.projectX').constant('menuConstant', {
   notAuthorized: 'auth-not-authorized',
   httpNotFound:'http-not-found'
 })
+.constant('errorMsgs', {
+  invalidForm : 'Invalid Form',
+  cityIsEmpty:  'Please select city.',
+  itemCountIsEmpty: 'Please select number of Luggage.',
+  numberIsEmpty:'Please enter mobile number.',
+  pickupStreetIsEmpty:'Please select pickup street / landmark.',
+  pickupSubStreetIsEmpty:'Please select pickup street / landmark.',
+  dropStreetIsEmpty:'Please select drop street / landmark.',
+  dropSubStreetIsEmpty:'Please select drop street / landmark.',
+  pickupDateIsEmpty:'Please select pickup date.',
+  dropDateIsEmpty:'Please select drop date.',
+
+  invalidSelection : 'Invalid Selection',
+  selectCityFirst : 'Please select city first'
+})
+
 /*.constant('CONTEXT_URL', {
   url: 'http://localhost:8080/web-service/api/'
 })*/

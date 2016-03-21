@@ -7,7 +7,7 @@
 			<div class="item select-city cur-pointer" ng-click="showCityPopUP()">
 			   <i class="ion-ios-search-strong"></i>
 		    	<span class="cur-pointer" style="margin-left: 10px;">
-		    		<span ng-hide="booking.city">Search by City</span> <span ng-show="booking.city">{{booking.city.name}}</span>
+		    		<span ng-hide="booking.city">Select City</span> <span ng-show="booking.city">{{booking.city.name}}</span>
 	     		</span>
 			</div>
 		  	<!-- Pick Up Point Section -->
@@ -18,7 +18,7 @@
 			<div class="item select-city cur-pointer pickup-drop-details" ng-click="showPickupStreetPopUP()">
 			    <i class="ion-ios-search-strong"></i>
 		    	<span class="cur-pointer" style="margin-left: 10px;">
-		    		<span ng-hide="booking.pickupDetail.street">Search by Street/Landmark</span> <span ng-show="booking.pickupDetail.street">{{booking.pickupDetail.street.name}} / {{booking.pickupDetail.substreet.name}}</span>
+		    		<span ng-hide="booking.pickupDetail.street">Select Street/Landmark</span> <span ng-show="booking.pickupDetail.street">{{booking.pickupDetail.street.name}} / {{booking.pickupDetail.substreet.name}}</span>
 	     		</span>
 			</div>
 			<div class="col">
@@ -116,7 +116,7 @@
 	<ion-content>
   		<div class="list">
   			<div ng-repeat="street in refData.streets">
-  				<span ng-repeat="substreet in street.substreets" ng-click="closeGenericPopup(); booking.	dropDetail.street=street;booking.dropDetail.substreet=substreet;">
+  				<span ng-repeat="substreet in street.substreets" ng-click="closeGenericPopup(); booking.dropDetail.street=street;booking.dropDetail.substreet=substreet;">
   					<label class="item item-input item-stacked-label subStreets">
   				 		<span class="col input-label cur-pointer"><h3 class="streets-h3"> {{street.name}} </h3></span>
   						<span class="col cur-pointer"><h5>{{substreet.name}}</h5></span>

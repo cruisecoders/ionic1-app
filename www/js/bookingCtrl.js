@@ -1,6 +1,6 @@
 angular.module('app.projectX')
   .controller('bookingCtrl', function($scope, $http, $state, store, jwtHelper, projectApi, 
-    formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $rootScope){
+    formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $rootScope, errorMsgs){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
  $scope.booking = {};
  $scope.booking.pickupDetail = {};
@@ -11,6 +11,9 @@ $scope.userInfo = store.get('userInfo');
 $scope.booking.number = $scope.userInfo.number;
 
  $scope.submitBookingForm = function(){
+     if(!$scope.isValidated()){
+        return false;
+     }
      $rootScope.showLoader();
      $scope.booking.userId = $scope.userInfo.id;
     projectApi.submitBookingForm($scope.booking).then(function(response){
@@ -30,6 +33,65 @@ $scope.booking.number = $scope.userInfo.number;
        }
     })
  }
+
+ $scope.isValidated= function(){
+    if(!$scope.booking.city || !$scope.booking.city.name){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.cityIsEmpty);
+      return false;
+    }
+
+    if($scope.booking.itemCount =="" || $scope.booking.itemCount == undefined || $scope.booking.itemCount==null){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.itemCountIsEmpty);
+      return false;
+    }
+
+    if($scope.booking.number =="" || $scope.booking.number == undefined || $scope.booking.number==null){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.numberIsEmpty);
+      return false;
+    }
+
+    if(!$scope.booking.pickupDetail.street || !$scope.booking.pickupDetail.street.name){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.pickupStreetIsEmpty);
+      return false;
+    }
+
+    if(!$scope.booking.pickupDetail.substreet || !$scope.booking.pickupDetail.substreet.name){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.pickupSubStreetIsEmpty);
+      return false;
+    }
+ 
+    if(!$scope.booking.dropDetail.street || !$scope.booking.dropDetail.street.name){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.dropStreetIsEmpty);
+      return false;
+    }
+
+    if(!$scope.booking.dropDetail.substreet || !$scope.booking.dropDetail.substreet.name){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.dropSubStreetIsEmpty);
+      return false;
+    }
+
+    if($scope.booking.pickupDetail.date =="" || $scope.booking.pickupDetail.date == undefined || $scope.booking.pickupDetail.date==null){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.pickupDateIsEmpty);
+      return false;
+    }
+    
+    if($scope.booking.dropDetail.date =="" || $scope.booking.dropDetail.date == undefined || $scope.booking.dropDetail.date==null){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.dropDateIsEmpty);
+      return false;
+    }
+
+    return true;
+
+ }
   
   $scope.getCities = function(id, exp){
     projectApi.getResource('cities', id, exp).then(function(response){
@@ -47,6 +109,8 @@ $scope.booking.number = $scope.userInfo.number;
 
   $scope.getStreets = function(cityId, exp){
     $rootScope.showLoader();
+    $scope.booking.pickupDetail.street = undefined;
+    $scope.booking.dropDetail.street = undefined;
     projectApi.getResource('streets', cityId, exp).then(function(response){
         $rootScope.hideLoader();
         console.log("Suuccess Handler");
@@ -96,15 +160,17 @@ $scope.booking.number = $scope.userInfo.number;
   }
  
   $scope.pickupFormData = {
-    startDateTime : new Date()
+    //startDateTime : new Date()
   };
  
   $scope.dropFormData = {
-    startDateTime : new Date()
+    //startDateTime : new Date()
   };
 
   $scope.booking.pickupDetail.date = $scope.pickupFormData.startDateTime;
   $scope.booking.dropDetail.date = $scope.dropFormData.startDateTime;
+
+  var minDate = ionic.Platform.isIOS() ? new Date() : (new Date()).valueOf();
 
 
   $scope.pickupFormFields = [{
@@ -116,7 +182,7 @@ $scope.booking.number = $scope.userInfo.number;
         var options = {
           date: new Date(),
           mode: 'datetime', // 'date' or 'time'
-          minDate: new Date(),
+          minDate: minDate,
           allowOldDates: false,
           allowFutureDates: true,
           doneButtonLabel: 'DONE',
@@ -143,7 +209,7 @@ $scope.booking.number = $scope.userInfo.number;
         var options = {
           date: new Date(),
           mode: 'datetime', // 'date' or 'time'
-          minDate: new Date(),
+          minDate: minDate,
           allowOldDates: false,
           allowFutureDates: true,
           doneButtonLabel: 'DONE',
@@ -195,10 +261,21 @@ $scope.booking.number = $scope.userInfo.number;
   };
 
   $scope.showPickupStreetPopUP = function(){
+
+    if(!$scope.booking.city || !$scope.booking.city.name){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidSelection , errorMsgs.selectCityFirst);
+      return false;
+    }
     $scope.genericPopup('Select Street/Landmark','Select City', 'pickupStreet.html');
   };
 
    $scope.showDropStreetPopUP = function(){
+    if(!$scope.booking.city || !$scope.booking.city.name){
+      //Error Msg
+      $rootScope.showAlertBox(errorMsgs.invalidSelection , errorMsgs.selectCityFirst);
+      return false;
+    }
     $scope.genericPopup('Select Street/Landmark','Select City', 'dropStreet.html');
   };
 
