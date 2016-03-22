@@ -1,4 +1,4 @@
-angular.module('app.projectX').service('projectApi', function ($http, $q, EnvironmentConfig, $resource) {
+angular.module('app.projectX').service('projectApi', [ '$http', '$q', 'EnvironmentConfig', '$resource', function ($http, $q, EnvironmentConfig, $resource) {
 
   var genResource = $resource(EnvironmentConfig.api + ':type/:id', {id:'@id'});
 
@@ -23,4 +23,4 @@ angular.module('app.projectX').service('projectApi', function ($http, $q, Enviro
     submitBookingForm : submitBookingForm
   };
 
-});
+}]);

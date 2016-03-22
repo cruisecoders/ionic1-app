@@ -1,4 +1,12 @@
 {
   "name": "projectX",
-  "app_id": ""
+  "app_id": "",
+  "gulpStartupTasks": [
+  	"watch"
+  ],
+  "watchPatterns": [
+  	"./scss/**/*.scss",
+  	"./www/js/**/*.js",
+  	"./www/build/index.html"
+  ]
 }

@@ -1,4 +1,4 @@
-angular.module('app.projectX').controller('yourBookingCtrl', function($scope, store, projectApi, $state,$rootScope){
+angular.module('app.projectX').controller('yourBookingCtrl', ['$scope', 'store', 'projectApi', '$state', '$rootScope', function($scope, store, projectApi, $state,$rootScope){
 	
 	$scope.yourBooking = {};
 
@@ -29,4 +29,4 @@ angular.module('app.projectX').controller('yourBookingCtrl', function($scope, st
 
 	$scope.getBookingsByUserId($scope.userInfo.id);
 
-});
+}]);

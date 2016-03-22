@@ -1,5 +1,9 @@
 angular.module('app.projectX')
-  .controller('estimateCtrl', function($scope, $http, store, projectApi, $rootScope, errorMsgs, $ionicPopup){
+  .controller('estimateCtrl',[
+
+    '$scope', '$http', 'store', 'projectApi', '$rootScope', 'errorMsgs', '$ionicPopup',
+
+  function($scope, $http, store, projectApi, $rootScope, errorMsgs, $ionicPopup){
 	
   $scope.refData = {};
   $scope.estimate = {};
@@ -67,4 +71,4 @@ angular.module('app.projectX')
     $scope.genericPopup('Select City','Select City', 'city.html');
   };
   
-});
+}]);

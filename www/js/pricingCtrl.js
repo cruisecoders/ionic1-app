@@ -1,4 +1,4 @@
-angular.module('app.projectX').controller('pricingCtrl', function($rootScope, projectApi, $scope){
+angular.module('app.projectX').controller('pricingCtrl',['$rootScope', 'projectApi', '$scope', function($rootScope, projectApi, $scope){
 		$scope.refData = {};	
 
 		$scope.getAllRates = function(id, exp){
@@ -16,4 +16,4 @@ angular.module('app.projectX').controller('pricingCtrl', function($rootScope, pr
   		}
 
   $scope.getAllRates();
-});
+}]);

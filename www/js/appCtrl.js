@@ -1,4 +1,6 @@
-angular.module('app.projectX').controller('appCtrl', function($scope, $ionicPopup, loginService, $state, store, AUTH_EVENTS){
+angular.module('app.projectX').controller('appCtrl', [ 
+  '$scope', '$ionicPopup', 'loginService', '$state', 'store', 'AUTH_EVENTS', 
+  function($scope, $ionicPopup, loginService, $state, store, AUTH_EVENTS){
   $scope.app = {};
   $scope.$on(AUTH_EVENTS.notAuthorized, function(event) {
 
@@ -51,4 +53,4 @@ angular.module('app.projectX').controller('appCtrl', function($scope, $ionicPopu
   }
 
 
-});
+}]);

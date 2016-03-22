@@ -1,4 +1,6 @@
-angular.module('app.projectX').controller('loginCtrl', function($scope, loginService, $state, store, $ionicPopup, $rootScope){
+angular.module('app.projectX').controller('loginCtrl',
+['$scope', 'loginService', '$state', 'store', '$ionicPopup', '$rootScope',
+ function($scope, loginService, $state, store, $ionicPopup, $rootScope){
 	
   $scope.user = {};
 
@@ -47,9 +49,9 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
         });
   }
 
-})
+}])
 
-.service('loginService', function ($http, $q, EnvironmentConfig) {
+.service('loginService', [ '$http', '$q', 'EnvironmentConfig', function ($http, $q, EnvironmentConfig) {
 
   var userCredentials = {};
   var isAuthenticated = false;
@@ -109,4 +111,4 @@ angular.module('app.projectX').controller('loginCtrl', function($scope, loginSer
     destroyUserCredentials : destroyUserCredentials
   };
 
-});
+}]);

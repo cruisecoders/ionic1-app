@@ -1,4 +1,6 @@
-angular.module('app.projectX').controller('mainCtrl', function($scope, menuConstant, projectApi, $rootScope, store){
+angular.module('app.projectX').controller('mainCtrl',
+['$scope', 'menuConstant', 'projectApi', '$rootScope', 'store',
+ function($scope, menuConstant, projectApi, $rootScope, store){
 	$scope.menuList = menuConstant.menuList;
 	$scope.mainData = {};
 
@@ -18,4 +20,4 @@ angular.module('app.projectX').controller('mainCtrl', function($scope, menuConst
   }
 
   $scope.getCities();
-});
+}]);

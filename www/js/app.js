@@ -6,7 +6,7 @@
   angular.module('app.projectX', ['ionic', 'ui.router','ngAnimate', 'angular-jwt', 'ion-autocomplete',
   'angular-storage', 'ngResource','ionMdInput', 'app.env.config' , 'formlyIonic','ngCordova'])
 
-      .run(function($ionicPlatform, $ionicPopup) {
+      .run([ '$ionicPlatform', '$ionicPopup' , function($ionicPlatform, $ionicPopup) {
         $ionicPlatform.ready(function() {
           if(window.cordova && window.cordova.plugins.Keyboard) {
               // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -36,13 +36,16 @@
               }
           }
     });
-  })
+  }])
 
-  .config(function($stateProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider) {
+  .config([
+    '$stateProvider', '$urlRouterProvider', '$httpProvider', 'jwtInterceptorProvider',
+
+    function($stateProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider) {
 
     //$urlRouterProvider.otherwise("/main/booking");
 
-    $urlRouterProvider.otherwise( function($injector, $location) {
+    $urlRouterProvider.otherwise(function($injector, $location) {
             var $state = $injector.get("$state");
             $state.go("main.booking");
         });
@@ -207,9 +210,11 @@
         }
    })
    
-  })
+  }])
 
-.run(function($rootScope, $state, store, jwtHelper, $ionicLoading, $ionicPopup) {
+.run([
+  '$rootScope', '$state', 'store', 'jwtHelper', '$ionicLoading', '$ionicPopup' ,
+  function($rootScope, $state, store, jwtHelper, $ionicLoading, $ionicPopup) {
 
   $rootScope.showLoader = function() {
     $ionicLoading.show({
@@ -245,9 +250,9 @@
   $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     $rootScope.hideLoader();
   });
-})
+}])
 
-.factory('AuthInterceptor', function ($rootScope, $q, AUTH_EVENTS) {
+.factory('AuthInterceptor', [ '$rootScope', '$q', 'AUTH_EVENTS', function ($rootScope, $q, AUTH_EVENTS) {
   return {
     responseError: function (response) {
       console.error("error");
@@ -259,10 +264,10 @@
       return $q.reject(response);
     }
   };
-})
+}])
 
-.config(function ($httpProvider) {
+.config(['$httpProvider', function ($httpProvider) {
   $httpProvider.interceptors.push('AuthInterceptor');
-});
+}]);
 
 

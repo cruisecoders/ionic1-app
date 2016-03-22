@@ -18,55 +18,27 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/> -->
-    <link href="lib/ionic-material/dist/ionic.material.css" rel="stylesheet" type="text/css"/>
-    <link href="lib/ion-autocomplete/dist/ion-autocomplete.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="lib/ion-md-input/css/ion-md-input.css"/>
-    <!-- <link rel="stylesheet" type="text/css" href="lib/ngTimepicker/src/css/ngTimepicker.css"/>
-    <link rel="stylesheet" href="css/ion-md-input.css"/>-->
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">-->
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-   <!-- <script src="lib/material-design-lite/material.js" type="text/javascript"></script>
-    <script src="lib/datepicker-for-ionic/dist/templates.min.js"></script>
-    <script src="lib/datepicker-for-ionic/dist/ionic-datepicker.min.js"></script> -->
-    <script src="lib/ion-md-input/js/ion-md-input.js">
-    </script>
-    <script src="lib/ionic-material/dist/ionic.material.js" type="text/javascript"></script>
-    <script src="lib/a0-angular-storage/dist/angular-storage.js" type="text/javascript"> </script>
-    <script src="lib/angular-jwt/dist/angular-jwt.js" type="text/javascript"> </script>
-    <script src="lib/angular-resource/angular-resource.js" type="text/javascript"> </script>
-    <script src="lib/ion-autocomplete/dist/ion-autocomplete.js" type="text/javascript"></script>
-    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
 
-    <script src="lib/api-check/dist/api-check.js"></script>
-    <script src="lib/angular-formly/dist/formly.js"></script>
-    <script src="lib/angular-formly-templates-ionic/dist/angular-formly-templates-ionic.js"></script>
-    <!--<script src="lib/onezone-datepicker/dist/onezone-datepicker.min.js"></script>    
-    <script src="lib/ngTimepicker/src/js/ngTimepicker.min.js"></script>
-    <script src="lib/ionic-multi-date-picker/dist/ionic-multi-date-picker.bundle.min.js"></script>-->
-    <!--<script src="js/ion-md-input.js"></script>-->
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/appCtrl.js"></script>
-    <script src="js/loginCtrl.js"></script>
-    <script src="js/mainCtrl.js"></script>
-    <script src="js/bookingCtrl.js"></script>
-    <script src="js/constant.js"></script>
-    <script src="js/pricingCtrl.js"></script>
-    <script src="js/contactCtrl.js"></script>
-    <script src="js/confirmationCtrl.js"></script>
-    <script src="js/yourBookingCtrl.js"></script>
-     <script src="js/estimateCtrl.js"></script>
-    <script src="js/account.js"></script>
-    <script src="js/config.js"></script>
+    <link href="css/ionic.app.min.css" rel="stylesheet">
+    <link href="css/ionic-autocomplete.min.css" rel="stylesheet">
+    <link href="css/ionic.material.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+    <script src="js/bundles/vendor.min.js"></script>
+
+     <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- Production JS-->
+    <script src="js/bundles/app.bundle.min.js"></script>
+
+    <!-- Development JS-->
+    <!--<script src="js/bundles/app.bundle.js"></script>-->
+
+
 
   </head>
   <body ng-app="app.projectX" ng-controller="appCtrl">
