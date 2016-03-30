@@ -1,74 +1,116 @@
 <ion-view view-title="Booking">
 	<ion-content class="signUp-page">
-		<div class="card booking-box">
-			<!-- City Section -->
-			<div class="item select-city cur-pointer" ng-click="showCityPopUP()">
-			   <i class="ion-ios-search-strong"></i>
-		    	<span class="cur-pointer" style="margin-left: 10px;">
-		    		<span ng-hide="booking.city">Select City</span> <span ng-show="booking.city">{{booking.city.name}}</span>
-	     		</span>
+		<div class="card">
+			<ion-slide-box class="slides" auto-play="true" show-pager="true" does-continue="true" on-slide-changed="slideHasChanged($index)">
+		   	   	<ion-slide>
+			        <img class="slide-img" src="img/bng_palace.jpg" style="height:100px; width:360px;"/>
+			    </ion-slide>
+			   	<ion-slide>
+			        <img class="slide-img" src="img/bnrgattaNtnlPark.png" style="height:100px; width:360px;"/>
+			    </ion-slide>
+		    	<ion-slide>
+			        <img class="slide-img" src="img/ITPark.jpg" style="height:100px; width:360px;"/>
+			    </ion-slide>
+		    	<ion-slide>
+			        <img class="slide-img" src="img/tirupati4.jpg" style="height:100px; width:360px;"/>
+			    </ion-slide>
+		    	<ion-slide>
+			        <img class="slide-img" src="img/Nandi-Hills.jpg" style="height:100px; width:360px;"/>
+			    </ion-slide>
+		    </ion-slide-box>
+		</div>
+		<div class="select-city cur-pointer" ng-click="showCityPopUP()">
+			<i class="ion-android-locate secondary-text-color"></i>
+    		<label class="text-booking-page" ng-hide="booking.city">
+    			Select City</label> 
+    		<span style="color: #727272;margin-left:21px;margin-top:-25px;font-size: 15px;" ng-show="booking.city"><strong>{{booking.city.name}}</strong>
+    		</span>
+		</div>
+	  	<div class="item-divider">
+		   <i class="ion-home text-primary-color booking_icon"></i> 
+		   <span class="booking_text_divider">Pick Up Point</span>
+		</div>
+		<div class="select-city cur-pointer" ng-click="showPickupStreetPopUP()">
+		    <i class="ion-android-locate secondary-text-color"></i>
+	    	<label class="text-booking-page" ng-hide="booking.pickupDetail.street">
+	    		Select Street/Landmark</label>
+	    	 <h5 style="color: #727272;margin-left:21px;margin-top:-18px;font-weight: normal;" ng-show="booking.pickupDetail.street">
+	    	 	<strong>{{booking.pickupDetail.street.name}} / {{booking.pickupDetail.substreet.name}}</strong>
+	    	 </h5>
+		</div>
+		<div class="row pickup-row">
+			<div class="col col-50 pickUp_line50">
+				<div style="float: left; margin-bottom: 15px;">
+					<span class="text-booking-page" style="font-size:12px;margin-left:2px;">Select Number of Items</span>
+					<ion-list>
+					  <ion-radio ng-model="booking.itemCount" ng-value="1" style="width:18%!important">
+					  1</ion-radio>
+					  <ion-radio ng-model="booking.itemCount" ng-value="2" style="width:18%!important">
+					  2</ion-radio>
+					  <ion-radio ng-model="booking.itemCount" ng-value="3" style="width:18%!important">
+					  3</ion-radio>
+					  <ion-radio ng-model="booking.itemCount" ng-value="4" style="width:18%!important">
+					  4</ion-radio>
+					  <ion-radio ng-model="booking.itemCount" ng-value="5" style="width:18%!important">
+					  5</ion-radio>
+					</ion-list>
+				</div>
 			</div>
-		  	<!-- Pick Up Point Section -->
-		  	<div class="item-divider" style="padding-left:16px;">
-			   <i class="ion-home" style="color:blue; font-size: 18px;"></i> 
-			   <span style="font-size: 16px;">Pick Up Point</span>
+			<div class="col col-50 cur-pointer" ng-click="showPickupDatePicker()" style="margin-top: -5px;">
+				<i class="icon ion-ios-calendar-outline secondary-text-color" style="margin-left:6px;font-size:21px;"></i>
+		        <label class="text-booking-page" type="text" ng-model="booking.pickupDetail.date">
+		         Select Date & Time</label>
+		         <span class="text-booking-page" style="margin-left: 30px; float:left;">
+			         <strong style="font-size: 18px;">{{booking.pickupDetail.date | date:'medium'}}</strong>
+			    </span>
 			</div>
-			<div class="item select-city cur-pointer pickup-drop-details" ng-click="showPickupStreetPopUP()">
-			    <i class="ion-ios-search-strong"></i>
-		    	<span class="cur-pointer" style="margin-left: 10px;">
-		    		<span ng-hide="booking.pickupDetail.street">Select Street/Landmark</span> <span ng-show="booking.pickupDetail.street">{{booking.pickupDetail.street.name}} / {{booking.pickupDetail.substreet.name}}</span>
-	     		</span>
+		</div>
+		<div class="item-divider">
+		   <i class="ion-ios-location text-primary-color booking_icon"></i> 
+		   <span class="booking_text_divider">Drop Point</span>
+		</div>
+		<div class="select-city cur-pointer pickup-drop-details" ng-click="showDropStreetPopUP()" style="margin-bottom: 12px;">
+		    <i class="ion-android-locate secondary-text-color"></i>
+     		<label class="text-booking-page" ng-hide="booking.dropDetail.street">Select Street/Landmark</label>
+	    	 <h5 style="color: #727272;margin-left:21px;margin-top:-18px;font-weight: normal;" ng-show="booking.dropDetail.street">
+	    	 	<strong>{{booking.dropDetail.street.name}} / {{booking.dropDetail.substreet.name}}</strong>
+	    	 </h5>
+		</div>
+		<div class="row">
+			<div class="col col-50 cur-pointer dropUp_line50" ng-click="showDropDatePicker()" style="margin-   top: -5px;">
+				<i class="icon ion-ios-calendar-outline secondary-text-color" style="margin-left:6px;font-size:21px;"></i>
+		        <label type="text" ng-model="booking.dropDetail.date" class="text-booking-page">
+		         Select Date & Time</label>
+		         <span class="text-booking-page" style="margin-left: 30px;float:left;">
+			         <strong style="font-size: 18px;">{{booking.dropDetail.date | date:'medium'}}</strong>
+			    </span>
 			</div>
-			<div class="col" style="float: left; margin-bottom: 15px;">
-				<span style="font-size:100%; color: #444; margin-left: 5px;"> Select Number of Items</span>
-				<ion-list>
-				  <ion-radio ng-model="booking.itemCount" ng-value="1">1</ion-radio>
-				  <ion-radio ng-model="booking.itemCount" ng-value="2">2</ion-radio>
-				  <ion-radio ng-model="booking.itemCount" ng-value="3">3</ion-radio>
-				  <ion-radio ng-model="booking.itemCount" ng-value="4">4</ion-radio>
-				  <ion-radio ng-model="booking.itemCount" ng-value="5">5</ion-radio>
-				</ion-list>
+			<div class="col col-50" style="margin-top:-4px;">
+				<label class="item item-input mob-coupon-code-label" style="margin-top: -18px;">
+				   <i class="ion-android-phone-portrait secondary-text-color" style="font-size:18px;"></i>
+				   <input ng-model="booking.number" class="mob-coupon-code-input" type="text" placeholder="Mobile Number" style="left:7px;"/> 
+				</label>
 			</div>
-			<div class="col cur-pointer" ng-click="showPickupDatePicker()" style="margin-bottom:12px">
-				<i class="icon ion-ios-calendar-outline" style="color:#444;margin-left:6px;font-size:21px;"></i>
-		        <label class="cur-pointer" type="text" ng-model="booking.pickupDetail.date"
-		         style="font-size:100%; color: #444; margin-left: 5px;">Select Date & Time</label>
-		         <span style="font-size:100%; color: #444; margin-left: 5px;">{{booking.pickupDetail.date | date:'medium'}}
-		         </span>
-			</div>
-			<!-- Drop Point Section -->
-			<div class="item-divider" style="padding-left:16px;">
-			   <i class="ion-ios-location" style="color:blue; font-size: 18px;"></i> 
-			   <span style="font-size: 16px;">Drop Point</span>
-			</div>
-			<div class="item select-city cur-pointer pickup-drop-details" ng-click="showDropStreetPopUP()" style="margin-bottom: 12px;">
-			   <i class="ion-ios-search-strong"></i>
-		    	<span class="cur-pointer" style="margin-left: 10px;">
-		    		<span ng-hide="booking.dropDetail.street">Select Street/Landmark</span> <span ng-show="booking.dropDetail.street">{{booking.dropDetail.street.name}} / {{booking.dropDetail.substreet.name}}</span>
-	     		</span>
-			</div>
-			<div class="col cur-pointer" ng-click="showDropDatePicker()" style="margin-bottom:15px">
-				<i class="icon ion-ios-calendar-outline" style="color:#444;margin-left:6px;font-size:21px;"></i>
-		        <label class="cur-pointer" type="text" ng-model="booking.dropDetail.date"
-		         style="font-size:100%; color: #444; margin-left: 5px;">Select Date & Time</label>
-		         <span style="font-size:100%; color: #444; margin-left: 5px;">{{booking.dropDetail.date | date:'medium'}}
-		         </span>
-			</div>
-			<div class="list mob-coupon-code">
-			  <label class="item item-input mob-coupon-code-label">
-			    <input ng-model="booking.number" class="mob-coupon-code-input" type="text" placeholder="Mobile Number"/> 
-			  </label>
+		</div>
+		<div class="row" style="margin-top:-6px;border-top:1px solid gainsboro;">
+			<div class="col">
 			  <label class="item item-input mob-coupon-code-label">
 			    <input ng-model="booking.coupon" class="mob-coupon-code-input" type="text" placeholder="Enter Coupon Code here"/>
 			  </label>
 			</div>
 		</div>
+		<div class="item-divider">
+			<a class="section_estimated" href="#" ui-sref="main.estimatePrice">
+				<span style="font-size:100%; color: white;">Estimated Charge</span>
+			</a>
+			<a class="section_all_btn" href="#" ng-click="submitBookingForm()">
+				<span class="booking-box-text">Book Now</span>
+			</a>
+			<a class="section_all_btn" href="#" ui-sref="main.pricing">
+				<span class="booking-box-text">Rate Card</span>
+			</a>
+		</div>
 	</ion-content>
-	<div class="tabs tabs-dark">
-		<a class="tab-item" href="" ui-sref="main.estimatePrice">Estimated Charge</a>
-		<a class="tab-item" href="" ng-click="submitBookingForm()">Book Now</a>
-		<a class="tab-item" href="" ui-sref="main.pricing">Rate Card</a>
-	</div>
 </ion-view>
 
 <script type="text/ng-template" id="inputDatePicker.html">

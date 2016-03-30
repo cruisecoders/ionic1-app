@@ -1,4 +1,6 @@
-angular.module('app.projectX').controller('yourBookingCtrl', ['$scope', 'store', 'projectApi', '$state', '$rootScope', function($scope, store, projectApi, $state,$rootScope){
+angular.module('app.projectX').controller('yourBookingCtrl', ['$scope', 'store', 'projectApi', 
+	'$state', '$rootScope',
+	function($scope, store, projectApi, $state  ,$rootScope){
 	
 	$scope.yourBooking = {};
 

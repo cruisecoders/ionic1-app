@@ -1,5 +1,5 @@
 <ion-modal-view class="signUp-page">
-   <ion-header-bar class="bar-positive head-effects">
+   <ion-header-bar class="bar-balanced-900">
    		<h1 class="title">Login</h1>
 	</ion-header-bar>
 	<ion-content class="padding">		
@@ -18,7 +18,7 @@
 		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.required">This field is required!</span>
 		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.minlength">This field is minlength!</span>
 		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.maxlength">This field is maxlength!</span>
-		    <button class="button button-fab ink-dark button-calm login_btn" ng-disabled="loginForm.$invalid || loginForm.$pristine" ng-click="login()">
+		    <button class="button button-fab ink-dark button-balanced login_btn" ng-disabled="loginForm.$invalid || loginForm.$pristine" ng-click="login()">
 				<svg style="width:33px;height:56px" viewBox="0 0 24 24">
 				  <path fill="#000000" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
 				</svg>

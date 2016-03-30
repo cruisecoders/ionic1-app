@@ -3,7 +3,7 @@
   // angular.module is a global place for creating, registering and retrieving Angular modules
   // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
   // the 2nd parameter is an array of 'requires'
-  angular.module('app.projectX', ['ionic', 'ui.router','ngAnimate', 'angular-jwt', 'ion-autocomplete',
+  angular.module('app.projectX', ['ionic', 'ui.router','ngAnimate', 'angular-jwt','ionic-material',
   'angular-storage', 'ngResource','ionMdInput', 'app.env.config' , 'formlyIonic','ngCordova'])
 
       .run([ '$ionicPlatform', '$ionicPopup' , function($ionicPlatform, $ionicPopup) {
@@ -268,6 +268,21 @@
 
 .config(['$httpProvider', function ($httpProvider) {
   $httpProvider.interceptors.push('AuthInterceptor');
+}])
+
+.directive('onFinishRender', ['$timeout', 'ionicMaterialMotion', 'ionicMaterialInk', 
+function ($timeout, ionicMaterialMotion, ionicMaterialInk) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+            if (scope.$last === true) {
+                $timeout(function () {
+                    ionicMaterialMotion.fadeSlideInRight();
+                    ionicMaterialInk.displayEffect();
+                });
+            }
+        }
+    }
 }]);
 
 

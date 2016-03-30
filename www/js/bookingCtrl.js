@@ -206,6 +206,8 @@ angular.module('app.projectX')
           });
       }
 
+      
+
       $scope.showDropDatePicker = function(){
         $ionicPlatform.ready(function () {
                   $cordovaDatePicker.show(options).then(function (date) {
