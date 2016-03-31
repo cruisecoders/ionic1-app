@@ -116,7 +116,7 @@ gulp.task('replaceConfig', function () {
   console.log('replaceConfig STARTED');
   gulp.src('config.json')
   .pipe(gulpNgConfig('app.env.config', {
-    environment: 'dev'
+    environment: 'local'
     }))
   .pipe(gulp.dest('./www/js'))
   .on('end', function(){
@@ -353,7 +353,7 @@ gulp.task('version-increase', function() {
  * Watch task. Development only.
  * **********************************************************************************/
 gulp.task('watch', function() {
-  gulp.watch(['./scss/**/*.scss', './www/js/**/*.js', paths.html], ['build-css', 'build-templatecache', 'build-js', 'build-html']);
+  gulp.watch(['./scss/**/*.scss', './www/js/**/*.js', paths.html], ['build-css', 'replaceConfig', 'build-templatecache', 'build-js', 'build-html']);
 });
 
 gulp.task('default', ['build-css', 'replaceConfig', 'build-templatecache', 'build-js', 'uglify', 'build-vendor', 'build-html']);

@@ -192,6 +192,7 @@
         }
    })
    .state('main.bookingDetail',{
+     cache: false,
      url: "/detail",
      views: {
             "mainContent": {

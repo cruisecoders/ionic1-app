@@ -8,6 +8,7 @@ angular.module('app.projectX').controller('appCtrl', [
 
   	store.remove('jwt');
     store.remove('userInfo');
+    store.remove('cities');
 
   	$state.go('login.form', {}, {reload : true});
 
@@ -23,6 +24,7 @@ angular.module('app.projectX').controller('appCtrl', [
 
   	store.remove('jwt');
     store.remove('userInfo');
+    store.remove('cities');
     
     $state.go('login.form', {}, {reload : true});
     
