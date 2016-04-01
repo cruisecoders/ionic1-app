@@ -197,6 +197,7 @@
      views: {
             "mainContent": {
               templateUrl: "templates/yourBookingDetail.html",
+              controller : 'yourBookingDetailCtrl'
             }
         }
    })

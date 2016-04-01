@@ -131,8 +131,11 @@ button.item.item-complex{
     margin: 2px 12px;
 }
 .StreetSubstreetName {
-    color: #575757;
+    color: #212121;
     margin-left: 12px;
+}
+.yourbookingfont {
+    font-weight: 600;   
 }
 .ionicons-icons {
     color:black !important; 

@@ -50,7 +50,8 @@ var paths = {
                 './www/js/yourBookingCtrl.js',
                  './www/js/estimateCtrl.js',
                 './www/js/account.js',
-                './www/js/config.js'
+                './www/js/config.js',
+                './www/js/yourBookingDetailCtrl.js'
               ]
 };
 

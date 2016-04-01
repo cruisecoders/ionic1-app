@@ -3,39 +3,105 @@
     <div class="card">
 		<div class="list">
 		  <div class="col bookingConfirmation">
-		    <h5><strong>{{mainData.selectedBooking.bookingDate | date:'medium'}}</strong></h5>
-		    <h6>Your Mobile Number: <strong>{{mainData.selectedBooking.number}}</strong></h6>
-		    <h6>Booking ID:  <strong>{{mainData.selectedBooking.id}}</strong></h6>
-		    <h6>Status: <strong>{{mainData.selectedBooking.bookingStatus.activity}}-{{mainData.selectedBooking.bookingStatus.status}}</strong></h6>
+		    <h5>
+		    	<i class="ion-ios-calendar-outline"></i>
+		    	<span class="yourbookingfont">{{mainData.selectedBooking.bookingDate | date:'medium'}}</span>
+			</h5>
+		    <h6>
+		    	<i class="ion-android-phone-portrait"></i>
+		    	<span class="yourbookingfont" style="margin-left:5px;">{{mainData.selectedBooking.number}}</span>
+		    </h6>
+		    <h6>
+		    	Reference or #:  
+		    	<span class="yourbookingfont">{{mainData.selectedBooking.id}}</span>
+		    </h6>
+		    <h6>
+		    	Status: 
+		    	<span class="yourbookingfont">
+		    		{{mainData.selectedBooking.bookingStatus.activity}}-{{mainData.selectedBooking.bookingStatus.status}}
+		    	</span>
+		    </h6>
 		  </div>
 		  <div class="pickup-details">
 		  	<i class="icon ion-ios-location-outline" style="float: left;"></i>
-		  	<h5 class="pickup-details-h5"><strong>PickUp Details</strong></h5>
-		  		<span class="StreetSubstreetName">{{mainData.selectedBooking.pickup.street.city.name}}</span><br>
-		  		<span class="StreetSubstreetName">{{mainData.selectedBooking.pickup.street.name}}</span><br>
-		  		<span class="StreetSubstreetName">{{mainData.selectedBooking.pickup.substreet.name}}</span><br>
-		  		<span style="color: #575757;margin-left: 12px;">{{mainData.selectedBooking.pickup.pickupDate  | date:'medium'}}
+		  	<h5 class="pickup-details-h5"><span>PickUp Details</span></h5>
+		  		<span class="StreetSubstreetName">
+		  			<i class="ion-android-locate"></i> 
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.pickup.street.city.name}}</span>
 		  		</span><br>
-		  		<span class="StreetSubstreetName">No. of Items: {{mainData.selectedBooking.itemCount}}</span><br>
+		  		<span class="StreetSubstreetName">
+		  			<i class="ion-android-map"></i>  
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.pickup.street.name}}</span>
+		  		</span><br>
+		  		<span class="StreetSubstreetName">
+		  			<i class="ion-android-map"></i> 
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.pickup.substreet.name}}</span>
+		  		</span><br>
+		  		<span class="StreetSubstreetName" style="margin-left: 12px;">
+		  			<i class="ion-ios-calendar-outline"></i> 
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.pickup.pickupDate  | date:'medium'}}</span>
+		  		</span><br>
+		  		<span class="StreetSubstreetName">
+		  			No. of Items: <span class="yourbookingfont">{{mainData.selectedBooking.itemCount}}</span>
+		  		</span><br>
+
+		  		<span class="StreetSubstreetName">
+		  			<span class="yourbookingfont">{{pickupUserInfo}}</span>
+		  		</span><br>
 		  </div>
 		  <div class="col pickup-details">
 		  	<i class="icon ion-ios-location-outline" style="float: left;"></i>
-		  	<h5 class="pickup-details-h5"><strong>Drop Details</strong></h5>
-		  		<span class="StreetSubstreetName">{{mainData.selectedBooking.drop.street.city.name}}</span><br>
-		  		<span class="StreetSubstreetName">{{mainData.selectedBooking.drop.street.name}}</span><br>
-		  		<span class="StreetSubstreetName">{{mainData.selectedBooking.drop.substreet.name}}</span><br>
-		  		<span style="color: #575757;margin-left: 12px;">{{mainData.selectedBooking.drop.dropDate  | date:'medium'}}
+		  	<h5 class="pickup-details-h5"><span>Drop Details</span></h5>
+		  		<span class="StreetSubstreetName">
+		  			<i class="ion-android-locate"></i>
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.drop.street.city.name}}</span>
+		  		</span><br>
+		  		<span class="StreetSubstreetName">
+		  			<i class="ion-android-map"></i>
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.drop.street.name}}</span>
+		  		</span><br>
+		  		<span class="StreetSubstreetName">
+		  			<i class="ion-android-map"></i>
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.drop.substreet.name}}</span>
+		  		</span><br>
+		  		<span class="StreetSubstreetName" style="margin-left: 12px;">
+		  			<i class="ion-ios-calendar-outline"></i>
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.drop.dropDate  | date:'medium'}}</span>
 		  		</span>
+
+		  		<span class="StreetSubstreetName" style="margin-left: 12px;">
+		  			<span class="yourbookingfont">{{dropUserInfo}}</span>
+		  		</span>
+		  </div>
+		  <div class="col pickup-details">
+		  	<i class="icon ion-ios-location-outline" style="float: left;"></i>
+		  	<h5 class="pickup-details-h5"><span>Luggage Information</span></h5>
+		  		<span class="StreetSubstreetName">
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.luggageInfo.zeroToFifCount}}</span>
+		  			<i class="ion-ios-briefcase"></i> (0 to 15Kg)
+		  		</span><br>
+		  		<span class="StreetSubstreetName">
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.luggageInfo.fifToThirCount}}</span>
+		  			<i class="ion-ios-briefcase"></i> (15 to 30Kg) 
+		  		</span><br>
+		  		<span class="StreetSubstreetName">
+		  			<span class="yourbookingfont">{{mainData.selectedBooking.luggageInfo.aboveThirty}}</span>
+		  			<i class="ion-ios-briefcase"></i> (30Kg)
+		  		</span><br>
 		  </div>
 		  <div class="col">
 		  	<h5 class="pickup-details-h5">Payment Details</h5>
-		  		<span class="StreetSubstreetName">Payment mode is: {{mainData.selectedBooking.payment.payMode}}
+		  		<span class="StreetSubstreetName">
+		  			Payment mode: <span class="yourbookingfont">{{mainData.selectedBooking.payment.payMode}}</span>
 		  		</span>
-		  		<span class="StreetSubstreetName" ng-show="mainData.selectedBooking.payment.payAmount">Total Payment is: {{mainData.selectedBooking.payment.payAmount}}
+		  		<span class="StreetSubstreetName" ng-show="mainData.selectedBooking.payment.payAmount">
+		  			Total Payment: <span class="yourbookingfont">{{mainData.selectedBooking.payment.payAmount}}</span>
 		  		</span>
-		  		<span class="StreetSubstreetName" ng-show="mainData.selectedBooking.payment.payAmount">Payment Status is: {{mainData.selectedBooking.payment.payStatus}}
+		  		<span class="StreetSubstreetName" ng-show="mainData.selectedBooking.payment.payAmount">
+		  			Payment Status: <span class="yourbookingfont">{{mainData.selectedBooking.payment.payStatus}}</span>
 		  		</span><br>
-		  		<span class="StreetSubstreetName" ng-hide="mainData.selectedBooking.payment.payAmount">Final Cost will get Confirmed at the time of pick up.
+		  		<span class="StreetSubstreetName" ng-hide="mainData.selectedBooking.payment.payAmount">
+		  			 	Final Cost will get Confirmed at the time of pick up.
 		  		</span><br>
 		  </div>
 		</div>  
