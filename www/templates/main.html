@@ -26,6 +26,11 @@
                 <img class="menu-img" ng-src="{{menu.imagepath}}"></img>
                 <span class="menu-name">{{menu.name}}</span>
               </ion-item>
+
+              <ion-item  menu-close style="padding:10px;" ng-click="logout()">
+                <img class="menu-img" ng-src="{{menu.imagepath}}"></img>
+                <span class="menu-name">Logout</span>
+              </ion-item>
         </ion-content>
     </ion-side-menu>
 </ion-side-menus>

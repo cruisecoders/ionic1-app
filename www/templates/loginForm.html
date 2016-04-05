@@ -10,14 +10,23 @@
 		        <div class="item-input-inset date-time-select">
 			        <img src="img/India_flat.png" style="margin-top: 25px;" width="auto" height="35px">
 			        <ion-md-input type="text" name="userNumber" ng-model="user.number" ng-required="true"
-			         placeholder="Mobile Number">
+			         placeholder="Mobile Number" ng-maxlength="10" 	ng-minlength="10" ng-pattern="/^\d+$/">
 			     	</ion-md-input>
 		    	</div>
 		    </div>
-		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.pattern">Not a valid phone number!</span>
-		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.required">This field is required!</span>
-		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.minlength">This field is minlength!</span>
-		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.maxlength">This field is maxlength!</span>
+		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.pattern">
+		    	Not a valid phone number!
+		    </span>
+		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.required">
+		    	This field is required!
+		    </span>
+		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.minlength">
+		    	This field is minlength!
+		    </span>
+		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.maxlength">
+		    	This field is maxlength!
+		    </span>
+
 		    <button class="button button-fab ink-dark button-balanced login_btn" ng-disabled="loginForm.$invalid || loginForm.$pristine" ng-click="login()">
 				<svg style="width:33px;height:56px" viewBox="0 0 24 24">
 				  <path fill="#000000" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>

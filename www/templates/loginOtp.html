@@ -14,6 +14,8 @@
 			     	</ion-md-input> -->
 		    	</div>
 		    </div>
+
+		    If you don't get OTP then please click <a href="" ng-click="regenerateOTP()">here</a> to generate again.
 		    <span ng-show="otpForm.otp.$touched && otpForm.otp.$error.required">
 				This field is required!</span>
 			<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.pattern">
@@ -22,7 +24,7 @@
 				This field is minlength!</span>
 		    <div class="col">
 	            <button class="button button-block button-balanced" ng-disabled="otpForm.$invalid || otpForm.$pristine" ng-click="submitOTP()">
-	            Register</button>
+	            Submit OTP</button>
 	        </div>
 		</form>
 	</ion-content>

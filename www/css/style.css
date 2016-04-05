@@ -115,7 +115,7 @@ button.item.item-complex{
 }
 .bookingConfirmation {
     background: #F4F8F9;
-    padding: 10px;
+    padding: 14px;
 }
 .pickup-details {
     padding: 10px;
@@ -133,9 +133,12 @@ button.item.item-complex{
 .StreetSubstreetName {
     color: #212121;
     margin-left: 12px;
+    font-family: "Roboto", sans-serif !important;
+
 }
 .yourbookingfont {
-    font-weight: 600;   
+    font-weight: 300;   
+    font-size: 12px;
 }
 .ionicons-icons {
     color:black !important; 
@@ -627,33 +630,60 @@ textarea[readonly]:not(.cloned-text-input) {
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-/* Menu
-==================================*/
-.menu .bar.bar-header.expanded {
-    transition: all .5s ease-in-out;
+input[type='checkbox'] {
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  margin: 20px;
 }
 
-.menu-open .bar.bar-header.expanded {
-    background-color: #222;
+.status-box {
+  /*margin: 20px auto;*/
+  background: white;
+  border-radius: 50%;
+  border: 1px solid grey;
+  width: 20px;
+  height: 20px;
 }
-.menu h2 {
-    bottom: 0;
-    font-size: 18px;
-    left: 16px;
-    position: absolute;
+
+.circle {
+  -webkit-transform: rotate(360deg);
+  background: #9351A6;
+  border-radius: 50%;
+  /*margin: 20px auto;*/
+  width: 20px;
+  height: 20px;
 }
-.menu .avatar {
-    height: 88px;
-    width: 88px;
+
+.rotate {
+  -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
-.menu.menu-left * {
-    font-weight: bold;
+.status-textUp-value{
+    width:5em!important;
+    float:left!important;
+    margin-left:-64px!important;
+    word-wrap:break-word!important;
+    font-size:12px!important;
+    margin-top:10px!important;
+    /*margin-left: -58px;
+    position: relative;
+    display: inline-block;
+    top: -53px; */
 }
-.menu-open .ion-navicon {
-    transform: rotate(-360deg);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+.status-textDown-value{
+    width:5em!important;
+    float:left!important;
+    margin-left: -66px!important;
+    word-wrap:break-word!important;
+    font-size:12px!important;
+    margin-top:-50px!important;
 }
-.menu-open .ion-navicon:before {
-    content: "\f2ca";
-}
+.div_status{
+    float:left;
+    margin-top:-10px;
+    margin-right: 40px;
+    }

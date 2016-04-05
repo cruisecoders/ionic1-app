@@ -1,6 +1,6 @@
 angular.module('app.projectX').controller('appCtrl', [ 
-  '$scope', '$ionicPopup', 'loginService', '$state', 'store', 'AUTH_EVENTS', 
-  function($scope, $ionicPopup, loginService, $state, store, AUTH_EVENTS){
+  '$scope', '$ionicPopup', 'loginService', '$state', 'store', 'AUTH_EVENTS', '$rootScope',
+  function($scope, $ionicPopup, loginService, $state, store, AUTH_EVENTS, $rootScope){
   $scope.app = {};
   $scope.$on(AUTH_EVENTS.notAuthorized, function(event) {
 
@@ -29,8 +29,8 @@ angular.module('app.projectX').controller('appCtrl', [
     $state.go('login.form', {}, {reload : true});
     
     var alertPopup = $ionicPopup.alert({
-      title: 'Session Lost!',
-      template: 'Sorry, You have to login again.'
+      title: 'Message!',
+      template: 'Please Login again.'
     });
   });
 
@@ -52,6 +52,11 @@ angular.module('app.projectX').controller('appCtrl', [
     if($scope.app.userCredentials.id == "" || $scope.app.userCredentials.id == null || $scope.app.userCredentials.id == undefined){
       $scope.app.userCredentials = store.get('userInfo');
     }
+  }
+
+
+  $scope.logout = function(){
+    $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated, "Logout done");
   }
 
 
