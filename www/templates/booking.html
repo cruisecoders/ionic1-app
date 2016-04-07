@@ -3,19 +3,19 @@
 		<div class="card">
 			<ion-slide-box class="slides" auto-play="true" show-pager="true" does-continue="true" on-slide-changed="slideHasChanged($index)">
 		   	   	<ion-slide>
-			        <img class="slide-img" src="img/bng_palace.jpg" style="height:100px; width:360px;"/>
+			        <img class="slide-img" src="img/bng_palace.jpg" style="height:100px; width:100%;"/>
 			    </ion-slide>
 			   	<ion-slide>
-			        <img class="slide-img" src="img/bnrgattaNtnlPark.png" style="height:100px; width:360px;"/>
+			        <img class="slide-img" src="img/bnrgattaNtnlPark.png" style="height:100px; width:100%;"/>
 			    </ion-slide>
 		    	<ion-slide>
-			        <img class="slide-img" src="img/ITPark.jpg" style="height:100px; width:360px;"/>
+			        <img class="slide-img" src="img/ITPark.jpg" style="height:100px; width:100%;"/>
 			    </ion-slide>
 		    	<ion-slide>
-			        <img class="slide-img" src="img/tirupati4.jpg" style="height:100px; width:360px;"/>
+			        <img class="slide-img" src="img/tirupati4.jpg" style="height:100px; width:100%;"/>
 			    </ion-slide>
 		    	<ion-slide>
-			        <img class="slide-img" src="img/Nandi-Hills.jpg" style="height:100px; width:360px;"/>
+			        <img class="slide-img" src="img/Nandi-Hills.jpg" style="height:100px; width:100%;"/>
 			    </ion-slide>
 		    </ion-slide-box>
 		</div>
@@ -99,7 +99,7 @@
 			  </label>
 			</div>
 		</div>
-		<div class="item-divider">
+		<!-- <div class="item-divider">
 			<a class="section_estimated" href="#" ui-sref="main.estimatePrice">
 				<span style="font-size:100%; color: white;">Estimated Charge</span>
 			</a>
@@ -109,8 +109,29 @@
 			<a class="section_all_btn" href="#" ui-sref="main.pricing">
 				<span class="booking-box-text">Rate Card</span>
 			</a>
-		</div>
+		</div> -->
+		<!-- <div class="bar bar-footer bar-balanced" style="position: static;">
+	        <div class="title">Footer - Fab Right</div>
+	        <div class="buttons buttons-right">
+	            <button class="button button-energized-900 button-fab">
+	                <i class="icon ion-code light"></i>
+	            </button>
+	        </div>
+	    </div> -->
 	</ion-content>
+	<ion-footer-bar align-title="left" class="bar-balanced-900">
+	  <div class="col col-50">
+	    <span class="footer_estimate_price">Estimate Price</span>
+	  </div>
+	  <div class="col col-50" ng-click="doSomething()">
+	    <span class="footer_booknow">Book Now</span>
+	  </div>
+	  <div class="buttons buttons-right">
+	    <button class="button button-balanced button-fab">
+	        <i class="fa fa-inr fabinr"></i>
+	    </button>
+	  </div>
+	</ion-footer-bar>
 </ion-view>
 
 <script type="text/ng-template" id="inputDatePicker.html">

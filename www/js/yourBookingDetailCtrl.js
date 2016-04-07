@@ -60,13 +60,43 @@ angular.module('app.projectX').controller('yourBookingDetailCtrl', ['$scope', 's
 	      }, function(error){
 	      	 $rootScope.hideLoader();
 	         console.log("Failure Handler");
-	         if(error.data.errorMsg){
+	         if(error.data !=undefined && error.data.errorMsg !=undefined){
 	             $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
 	          }else{
 	            //showAlertBox('Please try again' , error.data);
 	          }
 	      })
 	}
+
+	$scope.cancelBooking = function(){
+
+        $rootScope.showLoader();
+          
+        projectApi.cancelBooking($scope.mainData.selectedBooking.id).then(function(response){
+            $rootScope.hideLoader();
+            console.log("booking Cancel successful");
+            $scope.mainData.selectedBooking = response.data.data;
+        }, function(error){
+            $rootScope.hideLoader();
+            console.log("booking cancel failed");
+            if(error.data !=undefined && error.data.errorMsg !=undefined){
+                $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
+              }else{
+                  //showAlertBox('Please try again' , error.data);
+             }
+        })
+    }
+
+    $scope.showCancelBookingButton =  function(){
+    	if($scope.mainData.selectedBooking.bookingStatus.status == 'NA'){
+    		return true;
+    	}
+    	if($scope.mainData.selectedBooking.bookingStatus.status == 'pick up assigned'){
+    		return true;
+    	}
+    	return false;
+    }
+
 
 	$scope.getPickupAndDropUserInfo($scope.mainData.selectedBooking.id);
 

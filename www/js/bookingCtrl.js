@@ -20,7 +20,7 @@ angular.module('app.projectX')
            }
            $rootScope.showLoader();
            $scope.booking.userId = $scope.userInfo.id;
-          projectApi.submitBookingForm($scope.booking).then(function(response){
+            projectApi.submitBookingForm($scope.booking).then(function(response){
             $rootScope.hideLoader();
             console.log("booking successful");
             store.set('bookingModel', response.data.data);
@@ -30,7 +30,7 @@ angular.module('app.projectX')
           }, function(error){
             $rootScope.hideLoader();
             console.log("booking failed");
-            if(error.data.errorMsg){
+            if(error.data !=undefined && error.data.errorMsg !=undefined){
                 $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
               }else{
                   //showAlertBox('Please try again' , error.data);
@@ -104,7 +104,7 @@ angular.module('app.projectX')
               store.set('cities', response.data);
             }, function(error){
               console.log("Failure Handler");
-               if(error.data.errorMsg){
+               if(error.data !=undefined && error.data.errorMsg !=undefined){
                    $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
                 }else{
                   //showAlertBox('Please try again' , error.data);
@@ -130,7 +130,7 @@ angular.module('app.projectX')
             }, function(error){
               $rootScope.hideLoader();
               console.log("Failure Handler");
-               if(error.data.errorMsg){
+               if(error.data !=undefined && error.data.errorMsg !=undefined){
                    $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
                 }else{
                   //showAlertBox('Please try again' , error.data);
@@ -144,7 +144,7 @@ angular.module('app.projectX')
               $scope.refData.subStreets = response.data;
             }, function(error){
               console.log("Failure Handler");
-               if(error.data.errorMsg){
+               if(error.data !=undefined && error.data.errorMsg !=undefined){
                    $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
                 }else{
                   //showAlertBox('Please try again' , error.data);
@@ -184,17 +184,17 @@ angular.module('app.projectX')
 
         var minDate = ionic.Platform.isIOS() ? new Date() : (new Date()).valueOf();
 
-         var options = {
-                date: new Date(),
-                mode: 'datetime', // 'date' or 'time'
-                minDate: minDate,
-                allowOldDates: false,
-                allowFutureDates: true,
-                doneButtonLabel: 'DONE',
-                doneButtonColor: '#F2F3F4',
-                cancelButtonLabel: 'CANCEL',
-                cancelButtonColor: '#000000'
-              };
+        var options = {
+              date: new Date(),
+              mode: 'datetime', // 'date' or 'time'
+              minDate: minDate,
+              allowOldDates: false,
+              allowFutureDates: true,
+              doneButtonLabel: 'DONE',
+              doneButtonColor: '#F2F3F4',
+              cancelButtonLabel: 'CANCEL',
+              cancelButtonColor: '#000000'
+            };
 
       $scope.showPickupDatePicker = function() {
        $ionicPlatform.ready(function () {
@@ -257,7 +257,7 @@ angular.module('app.projectX')
           $scope.genericPopup('Select Street/Landmark','Select City', 'pickupStreet.html');
         };
 
-         $scope.showDropStreetPopUP = function(){
+        $scope.showDropStreetPopUP = function(){
           if(!$scope.booking.city || !$scope.booking.city.name){
             //Error Msg
             $rootScope.showAlertBox(errorMsgs.invalidSelection , errorMsgs.selectCityFirst);

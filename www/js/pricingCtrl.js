@@ -7,7 +7,7 @@ angular.module('app.projectX').controller('pricingCtrl',['$rootScope', 'projectA
 		        $scope.refData.rates = response.data;
 		      }, function(error){
 		        console.log("Failure Handler");
-		         if(error.data.errorMsg){
+		         if(error.data !=undefined && error.data.errorMsg !=undefined){
 		             $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
 		          }else{
 		            //showAlertBox('Please try again' , error.data);

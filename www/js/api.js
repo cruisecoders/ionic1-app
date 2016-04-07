@@ -17,10 +17,15 @@ angular.module('app.projectX').service('projectApi', [ '$http', '$q', 'Environme
       return $http.post(EnvironmentConfig.api + "submitBooking", booking , {});
    }
 
+   function cancelBooking(id){
+      return $http.post(EnvironmentConfig.api + "cancelBooking/"+id, {} , {});
+   }
+
   return {
     createResource : createResource,
     getResource : getResource,
-    submitBookingForm : submitBookingForm
+    submitBookingForm : submitBookingForm,
+    cancelBooking : cancelBooking
   };
 
 }]);

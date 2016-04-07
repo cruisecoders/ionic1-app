@@ -686,4 +686,18 @@ input[type='checkbox'] {
     float:left;
     margin-top:-10px;
     margin-right: 40px;
-    }
+}
+
+.footer_estimate_price{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+.footer_booknow {
+    position: absolute;
+    margin-top: 5px;
+}
+.fabinr {
+    font-size:1.1rem!important; 
+    margin-top:8px!important;
+}

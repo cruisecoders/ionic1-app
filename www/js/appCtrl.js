@@ -40,7 +40,7 @@ angular.module('app.projectX').controller('appCtrl', [
 
     var alertPopup = $ionicPopup.alert({
       title: 'I am Sorry!',
-      template: 'Service not found.'
+      template: 'Service not found. Please call customer care!'
     });
   });
 

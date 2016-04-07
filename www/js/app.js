@@ -168,6 +168,7 @@
       }
    })
    .state('confirmation',{
+      cache: false,
       url:"/confirmation",
       templateUrl: "templates/confirmation.html",
       controller : "confirmationCtrl"
@@ -258,6 +259,11 @@
   return {
     responseError: function (response) {
       console.error("error");
+      if(response.status <= 0){
+         $rootScope.$broadcast(AUTH_EVENTS.httpNotFound, "Services are offline");
+         return $q.reject(response);
+      }
+
       $rootScope.$broadcast({
         401: AUTH_EVENTS.notAuthenticated,
         403: AUTH_EVENTS.notAuthorized,

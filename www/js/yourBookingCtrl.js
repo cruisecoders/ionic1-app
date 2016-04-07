@@ -16,7 +16,7 @@ angular.module('app.projectX').controller('yourBookingCtrl', ['$scope', 'store',
 	      }, function(error){
 	      	 $rootScope.hideLoader();
 	         console.log("Failure Handler");
-	         if(error.data.errorMsg){
+	         if(error.data !=undefined && error.data.errorMsg !=undefined){
 	             $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
 	          }else{
 	            //showAlertBox('Please try again' , error.data);

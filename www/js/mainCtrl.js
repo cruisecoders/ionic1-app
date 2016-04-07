@@ -11,7 +11,7 @@ angular.module('app.projectX').controller('mainCtrl',
         store.set('cities', response.data);
       }, function(error){
         console.log("Failure Handler");
-         if(error.data.errorMsg){
+         if(error.data !=undefined && error.data.errorMsg !=undefined){
              $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
           }else{
             //showAlertBox('Please try again' , error.data);
