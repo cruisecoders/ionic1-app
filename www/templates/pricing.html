@@ -1,11 +1,20 @@
 <ion-view view-title="Pricing">
   <ion-content class="signUp-page">
     <div class="card booking-box tmargin" ng-repeat="rate in refData.rates">
-    	<span class="col pricing-span select-city">City : <strong>{{rate.city.name}}</strong></span>
-  		<span class="col estimate-pricing-span">Charges for 0-15Kg: <strong>{{rate.zeroToFifCount}} Rs.</strong>
-  		</span>
-		<span class="col estimate-pricing-span">Charges for 15-30Kg: <strong>{{rate.fifToThirCount}} Rs.</strong></span>
-		<span class="col estimate-pricing-span">Charges for above 30Kg: <strong>{{rate.aboveThirty}} Rs.</strong></span>
+    	<div class="list">
+    		<span class="col pricing-span select-city">
+    			City : <strong>{{rate.city.name}}</strong>
+    		</span>
+	  		<span class="col estimate-pricing-span">
+	  			Charges for 0-15Kg: <strong>{{rate.zeroToFifCount}} Rs.</strong>
+	  		</span>
+			<span class="col estimate-pricing-span">
+				Charges for 15-30Kg: <strong>{{rate.fifToThirCount}} Rs.</strong>
+			</span>
+			<span class="col estimate-pricing-span">
+				Charges for above 30Kg: <strong>{{rate.aboveThirty}} Rs.</strong>
+			</span>
+    	</div>
 	</div>
   </ion-content>
 </ion-view>

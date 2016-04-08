@@ -25,9 +25,10 @@ var paths = {
               ],
   html:       ['./www/build/index.html'],
   templates:  ['./www/js/**/*.html', './www/templates/**/*.html'],
-  vendor:     ['./www/lib/ionic/js/ionic.bundle.js',
+  vendor:     ['./www/lib/ionic/release/js/ionic.bundle.js',
                 './www/lib/ion-md-input/js/ion-md-input.js',
                 './www/lib/ionic-material/dist/ionic.material.js',
+                './www/lib/angular-cookies/angular-cookies.js',
                 './www/lib/a0-angular-storage/dist/angular-storage.js',
                 './www/lib/angular-jwt/dist/angular-jwt.js',
                 './www/lib/angular-resource/angular-resource.js',
@@ -117,7 +118,7 @@ gulp.task('replaceConfig', function () {
   console.log('replaceConfig STARTED');
   gulp.src('config.json')
   .pipe(gulpNgConfig('app.env.config', {
-    environment: 'local'
+    environment: 'dev'
     }))
   .pipe(gulp.dest('./www/js'))
   .on('end', function(){
@@ -196,11 +197,12 @@ gulp.task('delete-files', function() {
       'platforms/android/assets/www/lib/**',
       '!platforms/android/assets/www/lib',
       '!platforms/android/assets/www/lib/ionic',
-      '!platforms/android/assets/www/lib/ionic/fonts',
-      '!platforms/android/assets/www/lib/ionic/fonts/ionicons.eot',
-      '!platforms/android/assets/www/lib/ionic/fonts/ionicons.svg',
-      '!platforms/android/assets/www/lib/ionic/fonts/ionicons.ttf',
-      '!platforms/android/assets/www/lib/ionic/fonts/ionicons.woff',
+      '!platforms/android/assets/www/lib/ionic/release',
+      '!platforms/android/assets/www/lib/ionic/release/fonts',
+      '!platforms/android/assets/www/lib/ionic/release/fonts/ionicons.eot',
+      '!platforms/android/assets/www/lib/ionic/release/fonts/ionicons.svg',
+      '!platforms/android/assets/www/lib/ionic/release/fonts/ionicons.ttf',
+      '!platforms/android/assets/www/lib/ionic/release/fonts/ionicons.woff',
       'platforms/android/assets/www/js/**/*.js',
       'platforms/android/assets/www/js/**/*.html',
       '!platforms/android/assets/www/js/bundles/app.bundle.min.js',

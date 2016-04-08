@@ -1,122 +1,121 @@
 <ion-view view-title="Your Booking Detail">
   <ion-content class="signUp-page yourbookingdetail-page">
-		<div class="list animate-fade-slide-in-right">
-		  <div class="bookingConfirmation">
-		    <div class="col" style="margin-left:-1px;margin-bottom:-12px;">
-		    	<h5><i class="ion-ios-clock"></i>
-		    		<span><strong>{{mainData.selectedBooking.bookingDate | date:'medium'}}</strong></span>
-		    	</h5>
-			</div>
-			<div class="row">
-				<div class="col-50"><i class="ion-android-phone-portrait" style="font-size:15px;"></i>
-			    	<span class="yourbookingfont" style="margin-left:5px;">
-			    		<strong>{{mainData.selectedBooking.number}}</strong>
-			    	</span>
-			    </div>
-			    <div class="col-50">
-			    	<span class="yourbookingfont">
-			    		Reference or #:<strong> {{mainData.selectedBooking.id}}</strong>
-			    	</span>
-			    </div>
-			</div>
-		  </div>
-		  <div class="list" style="margin-left:2px;">
-	  		<h4 style="margin-left:17px;">Booking Status </h4>
-	  		<div class="item item-text-wrap" style="margin-left:3px;margin-top:38px;">
-			    <span class="yourbookingfont">
-		    		<div style="border-top:1px solid gainsboro;border-width:90%;" ng-hide="mainData.selectedBooking.bookingStatus.status == 'cancelled'">
-		    			<span class="col-33" ng-repeat="refStatus in ref.statusList">
-					    	<span class="status-box rotate div_status" ng-class="{'status-box': !refStatus.isVisible, 'circle': refStatus.isVisible}">
+		<div class="list">
+			  <div class="bookingConfirmation">
+				    <div class="col" style="margin-left:-1px;margin-bottom:-12px;">
+				    	<h5><i class="ion-ios-clock"></i>
+				    		<span><strong>{{mainData.selectedBooking.bookingDate | date:'medium'}}</strong></span>
+				    	</h5>
+					</div>
+					<div class="row">
+						<div class="col-50"><i class="ion-android-phone-portrait" style="font-size:15px;"></i>
+					    	<span class="yourbookingfont" style="margin-left:5px;">
+					    		<strong>{{mainData.selectedBooking.number}}</strong>
 					    	</span>
-					    	<span ng-class="{'status-textUp-value': !refStatus.isUp, 'status-textDown-value': refStatus.isUp}" class="col-25">
-					    		{{refStatus.display}}
+					    </div>
+					    <div class="col-50">
+					    	<span class="yourbookingfont">
+					    		Reference or #:<strong> {{mainData.selectedBooking.id}}</strong>
 					    	</span>
-					    </span>	
-				    </div>
-				    <div ng-show="mainData.selectedBooking.bookingStatus.status == 'cancelled'">
-				    	<h1>{{mainData.selectedBooking.bookingStatus.status}} </h1>
-				    </div>
-		    	</span>
-			</div>
-		  </div>
-		  <div class="pickup-details">
-	  		<h4 class="" style="margin-left:17px;">Pickup Details</h4>
-	  		<a class="item item-avatar item-icon-right" ng-show="pickupUserInfo">
-                <img src="img/driverIcon.png" style="width:70px; height:70px;">
-                <h2>Pickup Boy: {{pickupUserInfo.user.firstName}}  &nbsp;{{pickupUserInfo.user.lastName}}</h2>
-                <p>Mobile: {{pickupUserInfo.user.mobile}}</p>
-            </a>
-            <a class="item item-avatar item-icon-right StreetSubstreetName">
-				<h2>City: {{mainData.selectedBooking.pickup.street.city.name}}</h2>
-	  		</a>
-	  		<a class="item item-avatar item-icon-right StreetSubstreetName">
-				<h2>Street: {{mainData.selectedBooking.pickup.street.name}}</h2>
-      		    <p>Landmark: {{mainData.selectedBooking.pickup.substreet.name}}</p>
-	  		</a>
-	  		<a class="item item-avatar item-icon-right StreetSubstreetName">
-				<h2>Pickup Date & Time:</h2>
-      		    <p>{{mainData.selectedBooking.pickup.pickupDate  | date:'medium'}}</p>
-	  		</a>
-		  </div>
-		  <div class="col pickup-details">
-	  	    <h4 class="" style="margin-left:17px;">Drop Details</h4>
-	  	    <a class="item item-avatar item-icon-right" ng-show="dropUserInfo">
-                <img src="img/driverIcon.png" style="width:70px; height:70px;">
-                <h2>Drop Boy: {{dropUserInfo.user.firstName}} &nbsp;{{dropUserInfo.user.lastName}}</h2>
-                <p>Mobile: {{dropUserInfo.user.mobile}}</p>
-            </a>
-            <a class="item item-avatar item-icon-right StreetSubstreetName">
-				<h2>City: {{mainData.selectedBooking.drop.street.city.name}}</h2>
-	  		</a>
-	  		<a class="item item-avatar item-icon-right StreetSubstreetName">
-				<h2>Street: {{mainData.selectedBooking.drop.street.name}}</h2>
-      		    <p>Landmark: {{mainData.selectedBooking.drop.substreet.name}}</p>
-	  		</a>
-	  		<a class="item item-avatar item-icon-right StreetSubstreetName">
-				<h2>Drop Date & Time:</h2>
-      		    <p>{{mainData.selectedBooking.drop.dropDate  | date:'medium'}}</p>
-	  		</a>
-		  </div>
-		  <div class="col pickup-details">
-		  	<h4 class="" style="margin-left:17px;">Luggage Informations</h4>
-	  		<a class="item item-avatar item-icon-right StreetSubstreetName">
-				<h2>Total: {{mainData.selectedBooking.itemCount}}</h2>
-	  		</a>
-	  		<a class="item item-avatar item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
-				<h2>{{mainData.selectedBooking.luggageInfo.zeroToFifCount}}
-					<i class="ion-ios-briefcase"></i> (0 to 15Kg)
-				</h2>
-	  		</a>
-	  		<a class="item item-avatar item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
-				<h2>{{mainData.selectedBooking.luggageInfo.fifToThirCount}}
-					<i class="ion-ios-briefcase"></i> (15 to 30Kg)
-				</h2>
-	  		</a>
-	  		<a class="item item-avatar item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
-				<h2>{{mainData.selectedBooking.luggageInfo.aboveThirty}}
-					<i class="ion-ios-briefcase"></i> (Above 30Kg)
-				</h2>
-	  		</a>
-		  </div>
-		  	<h4 style="margin-left:17px;">Bill Details</h4>
-	  		<a class="item item primary-text-color" ng-show="mainData.selectedBooking.payment.payAmount">
-			    Total Fare:
-			    <span class="item-note primary-text-color">
-			      <i class="fa fa-inr" style="font-size:14px;"></i>	
-			      {{mainData.selectedBooking.payment.payAmount}}
-			    </span>
-			</a>
-			<a class="item item primary-text-color">
-			    Payment mode: {{mainData.selectedBooking.payment.payMode}}
-			    <span class="item-note primary-text-color">
-			    	Payment Status: {{mainData.selectedBooking.payment.payStatus}}
-			    </span>
-			</a>	  		
-	  		<span class="StreetSubstreetName" ng-hide="mainData.selectedBooking.payment.payAmount">
-	  			Final Cost will get Confirmed at the time of pick up.
-	  		</span>
+					    </div>
+					</div>
+			  </div>
+			  <div class="list" style="margin-left:2px;">
+			  		<h4 style="margin-left:17px;">Booking Status </h4>
+			  		<div class="item item-text-wrap" style="margin-left:3px;margin-top:38px;">
+					    <span class="yourbookingfont">
+				    		<div style="border-top:1px solid gainsboro;border-width:90%;" ng-hide="mainData.selectedBooking.bookingStatus.status == 'cancelled'">
+				    			<span class="col-33" ng-repeat="refStatus in ref.statusList">
+							    	<span class="status-box rotate div_status" ng-class="{'status-box': !refStatus.isVisible, 'circle': refStatus.isVisible}">
+							    	</span>
+							    	<span ng-class="{'status-textUp-value': !refStatus.isUp, 'status-textDown-value': refStatus.isUp}" class="col-25">
+							    		{{refStatus.display}}
+							    	</span>
+							    </span>	
+						    </div>
+						    <div ng-show="mainData.selectedBooking.bookingStatus.status == 'cancelled'">
+						    	<h1>{{mainData.selectedBooking.bookingStatus.status}}</h1>
+						    </div>
+				    	</span>
+					</div>
+			  </div>
+			  <div class="pickup-details">
+			  		<h4 class="" style="margin-left:17px;">Pickup Details</h4>
+			  		<a class="item item-avatar item-icon-right" ng-show="pickupUserInfo">
+		                <img src="img/driverIcon.png" style="width:70px; height:70px;">
+		                <h2>Pickup Boy: {{pickupUserInfo.user.firstName}}  &nbsp;{{pickupUserInfo.user.lastName}}</h2>
+		                <p>Mobile: {{pickupUserInfo.user.mobile}}</p>
+		            </a>
+		            <a class="item item-avatar item-icon-right StreetSubstreetName">
+						<h2>City: {{mainData.selectedBooking.pickup.street.city.name}}</h2>
+			  		</a>
+			  		<a class="item item-avatar item-icon-right StreetSubstreetName">
+						<h2>Street: {{mainData.selectedBooking.pickup.street.name}}</h2>
+		      		    <p>Landmark: {{mainData.selectedBooking.pickup.substreet.name}}</p>
+			  		</a>
+			  		<a class="item item-avatar item-icon-right StreetSubstreetName">
+						<h2>Pickup Date & Time:</h2>
+		      		    <p>{{mainData.selectedBooking.pickup.pickupDate  | date:'medium'}}</p>
+			  		</a>
+			  </div>
+			  <div class="col pickup-details">
+			  	    <h4 class="" style="margin-left:17px;">Drop Details</h4>
+			  	    <a class="item item-avatar item-icon-right" ng-show="dropUserInfo">
+		                <img src="img/driverIcon.png" style="width:70px; height:70px;">
+		                <h2>Drop Boy: {{dropUserInfo.user.firstName}} &nbsp;{{dropUserInfo.user.lastName}}</h2>
+		                <p>Mobile: {{dropUserInfo.user.mobile}}</p>
+		            </a>
+		            <a class="item item-avatar item-icon-right StreetSubstreetName">
+						<h2>City: {{mainData.selectedBooking.drop.street.city.name}}</h2>
+			  		</a>
+			  		<a class="item item-avatar item-icon-right StreetSubstreetName">
+						<h2>Street: {{mainData.selectedBooking.drop.street.name}}</h2>
+		      		    <p>Landmark: {{mainData.selectedBooking.drop.substreet.name}}</p>
+			  		</a>
+			  		<a class="item item-avatar item-icon-right StreetSubstreetName">
+						<h2>Drop Date & Time:</h2>
+		      		    <p>{{mainData.selectedBooking.drop.dropDate  | date:'medium'}}</p>
+			  		</a>
+			  </div>
+			  <div class="col pickup-details">
+				  	<h4 class="" style="margin-left:17px;">Luggage Informations</h4>
+			  		<a class="item item-avatar item-icon-right StreetSubstreetName">
+						<h2>Total: {{mainData.selectedBooking.itemCount}}</h2>
+			  		</a>
+			  		<a class="item item-avatar item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
+						<h2>{{mainData.selectedBooking.luggageInfo.zeroToFifCount}}
+							<i class="ion-ios-briefcase"></i> (0 to 15Kg)
+						</h2>
+			  		</a>
+			  		<a class="item item-avatar item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
+						<h2>{{mainData.selectedBooking.luggageInfo.fifToThirCount}}
+							<i class="ion-ios-briefcase"></i> (15 to 30Kg)
+						</h2>
+			  		</a>
+			  		<a class="item item-avatar item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
+						<h2>{{mainData.selectedBooking.luggageInfo.aboveThirty}}
+							<i class="ion-ios-briefcase"></i> (Above 30Kg)
+						</h2>
+			  		</a>
+			  </div>
+			  	<h4 style="margin-left:17px;">Bill Details</h4>
+		  		<a class="item item primary-text-color" ng-show="mainData.selectedBooking.payment.payAmount">
+				    Total Fare:
+				    <span class="item-note primary-text-color">
+				      <i class="fa fa-inr" style="font-size:14px;"></i>	
+				      {{mainData.selectedBooking.payment.payAmount}}
+				    </span>
+				</a>
+				<a class="item item primary-text-color">
+				    Payment mode: {{mainData.selectedBooking.payment.payMode}}
+				    <span class="item-note primary-text-color">
+				    	Payment Status: {{mainData.selectedBooking.payment.payStatus}}
+				    </span>
+				</a>	  		
+		  		<span class="StreetSubstreetName" ng-hide="mainData.selectedBooking.payment.payAmount">
+		  			Final Cost will get Confirmed at the time of pick up.
+		  		</span>
 		</div>
-
 		<div class="item-divider" ng-show="showCancelBookingButton()">
 			<a class="section_estimated" href="" ng-click="cancelBooking()">
 				<span style="font-size:100%; color: white;">Cancel Booking</span>

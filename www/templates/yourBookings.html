@@ -6,7 +6,7 @@
 	  </ion-refresher>
   	<div class="card">
 		<div class="list animate-fade-slide-in-right">
-			<div ng-show="yourBooking.List.length==0">
+			<div class="booking_history_empty" ng-show="yourBooking.List.length==0">
 				Booking history is empty.
 			</div>
             <a ng-repeat = "booking in yourBooking.List" ng-click="selectBooking(booking)" class="item item-thumbnail-left" on-finish-render="ngRepeatFinished">

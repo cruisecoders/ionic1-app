@@ -1,10 +1,9 @@
 <ion-view view-title="Register">
   <ion-content class="signUp-page">
-
    	<div class="card booking-box tmargin" ng-hide="isSignUpSubmit">
       <form name="signupForm">
-         <div class="bar bar-header bar-balanced-900" style="position: static;">
-            <div class="h1 title">Sign Up</div>
+         <div class="bar bar-header bar-balanced" style="position: static;">
+            <div class="h1 title text-primary-color">Sign Up</div>
          </div>
          <div class="item item-body">
             <div class="item-input-inset date-time-select">
@@ -23,13 +22,9 @@
               </ion-md-input>
             </div>
             <div class="item-input-inset date-time-select">
-             <!--  <i class="ion-android-phone-portrait" style="color:grey; font-size: 14px; margin-top:32px;"></i> -->
               <label class="item item-input">
-                <input type="text" ng-model="user.number" placeholder="Mobile Number" ng-disabled="true" ng-required="true"
-                 ng-maxlength="10"   ng-minlength="10" ng-pattern="/^\d+$/"/>
+                <input type="text" ng-model="user.number" placeholder="Mobile Number" ng-disabled="true" ng-required="true" ng-maxlength="10" ng-minlength="10" ng-pattern="/^\d+$/"/>
               </label>
-              <!-- <ion-md-input ng-model="user.number" class="select-date-time" placeholder="Mobile Number" 
-              type="text"></ion-md-input> -->
             </div>
             <div class="item-input-inset date-time-select">
               <ion-md-input ng-model="user.otp" ng-required="true" class="select-date-time" placeholder="OTP" type="text" 

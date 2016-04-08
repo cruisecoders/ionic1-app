@@ -119,16 +119,21 @@
 	        </div>
 	    </div> -->
 	</ion-content>
-	<ion-footer-bar align-title="left" class="bar-balanced-900">
+	<ion-footer-bar align-title="left" class="bar-balanced">
 	  <div class="col col-50">
-	    <span class="footer_estimate_price">Estimate Price</span>
+	    <span class="footer_estimate_price">
+	    	<a class="text-primary-color text_underline" href="" ui-sref="main.estimatePrice">Estimate Price</a>
+	    </span>
 	  </div>
-	  <div class="col col-50" ng-click="doSomething()">
-	    <span class="footer_booknow">Book Now</span>
+	  <div class="col col-50">
+	    <span class="footer_booknow">
+	    	<a class="text-primary-color text_underline" href="" ng-click="submitBookingForm()">Book Now</a>
+	    </span>
 	  </div>
 	  <div class="buttons buttons-right">
-	    <button class="button button-balanced button-fab">
-	        <i class="fa fa-inr fabinr"></i>
+	    <button class="button button-fab button-balanced icon ion-leaf">
+	        <a class="text-primary-color text_underline" href="" ui-sref="main.pricing">
+	        </a>
 	    </button>
 	  </div>
 	</ion-footer-bar>

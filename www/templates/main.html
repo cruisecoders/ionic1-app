@@ -1,6 +1,6 @@
 <ion-side-menus enable-menu-with-back-views="true">
-    <ion-side-menu-content style="background-color: #f2f2f2;">
-        <ion-nav-bar class="bar-balanced-900">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-balanced">
             <ion-nav-buttons side="left">
               <button angular-ripple class="button button-icon button-clear ion-navicon" menu-toggle="left">
               </button>
@@ -10,8 +10,8 @@
         <ion-nav-view name="mainContent"></ion-nav-view>    
     </ion-side-menu-content>
     <ion-side-menu side="left">
-        <ion-header-bar class="bar-balanced-900">
-            <h5 style="color:#fff;margin-left:24px;margin-top:14px;">Menu</h5>
+        <ion-header-bar class="bar-balanced">
+            <h5 class="menu_name">Menu</h5>
         </ion-header-bar>
         <ion-content class="stable-bg">
             <div class="profile-box default-primary-color">
@@ -22,15 +22,10 @@
                 <button menu-close class="button button-fab button-balanced settings-icon ion-ios-paperplane-outline" ui-sref="main.account">
                 </button>
             </div>
-              <ion-item  menu-close ng-repeat="menu in ::menuList" ui-sref="{{menu.state}}"style="padding:10px;">
+            <ion-item menu-close ng-repeat="menu in ::menuList" ui-sref="{{menu.state}}"style="padding:10px;">
                 <img class="menu-img" ng-src="{{menu.imagepath}}"></img>
                 <span class="menu-name">{{menu.name}}</span>
-              </ion-item>
-
-              <ion-item  menu-close style="padding:10px;" ng-click="logout()">
-                <img class="menu-img" ng-src="{{menu.imagepath}}"></img>
-                <span class="menu-name">Logout</span>
-              </ion-item>
+            </ion-item>
         </ion-content>
     </ion-side-menu>
 </ion-side-menus>

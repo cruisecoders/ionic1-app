@@ -34,7 +34,7 @@ button.item.item-complex{
 	border: none;
 }
 .item-complex:hover {
-    background-color:rgba(139,195,74,0.6);
+    background-color:#21B11E;
 }
 
 .head-effects {
@@ -80,7 +80,7 @@ button.item.item-complex{
     cursor: pointer;
 }
 .stable-bg {
-    background: #C8E6C9 !important;
+    background: #F1F5F8 !important;
 }
 .stable-bg-contact {
     background-color: #E0E0E0 !important;
@@ -176,7 +176,7 @@ button.item.item-complex{
     url('../assets/demos/dog.png') no-repeat ;
 }
 .item-divider {
-    background-color: #4CAF50 !important;
+    background-color: #64DD17 !important;
     padding-left: 16px;
 }
 .i > .application-icon {
@@ -614,7 +614,7 @@ textarea[readonly]:not(.cloned-text-input) {
     max-height: 50px !important;
 }
 .dark-primary-color    { background: #388E3C; }
-.default-primary-color { background: #4CAF50; }
+.default-primary-color { background: #64DD17; }
 .light-primary-color   { background: #C8E6C9; }
 .text-primary-color    { color: #FFFFFF; }
 .accent-color          { background: #8BC34A; }
@@ -700,4 +700,38 @@ input[type='checkbox'] {
 .fabinr {
     font-size:1.1rem!important; 
     margin-top:8px!important;
+}
+.text_underline {
+    text-decoration: none;
+}
+.item .item-content.activated, 
+.item .item-content.active, 
+.item-complex.activated .item-content, 
+.item-complex.active .item-content, 
+.item.activated, .item.active {
+    background-color: rgba(51,205,95,0.5);
+}
+.menu .avatar {
+    height: 88px;
+    width: 88px;
+}
+.menu.menu-left * {
+    font-weight: bold;
+}
+.menu-open .ion-navicon {
+    transform: rotate(-360deg);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.menu-open .ion-navicon:before {
+    content: "\f2ca";
+}
+.bar.bar-balanced {
+    background-color: #21B11E!important;
+    border-color: #21B11E!important;
+}
+.menu_name{
+    color:#fff;
+    margin-left:24px;
+    margin-top:14px;
 }
