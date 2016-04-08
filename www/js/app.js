@@ -4,7 +4,7 @@
   // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
   // the 2nd parameter is an array of 'requires'
   angular.module('app.projectX', ['ionic', 'ui.router','ngAnimate', 'angular-jwt','ionic-material',
-  'angular-storage', 'ngResource','ionMdInput', 'app.env.config' , 'formlyIonic','ngCordova', 'ngCookies'])
+  'angular-storage', 'ngResource','ionMdInput', 'app.env.config' ,'ngCordova', 'ngCookies'])
 
       .run([ '$ionicPlatform', '$ionicPopup' , function($ionicPlatform, $ionicPopup) {
         $ionicPlatform.ready(function() {

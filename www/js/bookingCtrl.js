@@ -1,9 +1,9 @@
 angular.module('app.projectX')
   .controller('bookingCtrl', 
     ['$scope', '$http', '$state', 'store', 'jwtHelper', 'projectApi', 
-    'formlyConfig', '$cordovaDatePicker', '$window', '$ionicPlatform', '$ionicPopup', '$location', '$rootScope', 'errorMsgs',
+    '$cordovaDatePicker', '$window', '$ionicPlatform', '$ionicPopup', '$location', '$rootScope', 'errorMsgs',
     function($scope, $http, $state, store, jwtHelper, projectApi, 
-    formlyConfig, $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $rootScope, errorMsgs){
+    $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $rootScope, errorMsgs){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
        $scope.booking = {};
        $scope.booking.pickupDetail = {};
@@ -163,13 +163,13 @@ angular.module('app.projectX')
           alert(JSON.stringify($scope.formData, null, 2));
         }
        
-        function createFormlyType() {
+       /* function createFormlyType() {
           formlyConfig.setType({
             name: 'inputDatePicker',
             templateUrl: 'inputDatePicker.html',
             defaultOptions: {}
           });
-        }
+        }*/
        
         /*$scope.pickupFormData = {
           //startDateTime : new Date()
@@ -266,7 +266,7 @@ angular.module('app.projectX')
           $scope.genericPopup('Select Street/Landmark','Select City', 'dropStreet.html');
         };
 
-        createFormlyType();
+       // createFormlyType();
 
         //$scope.getCities();
 
