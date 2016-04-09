@@ -99,6 +99,22 @@
 			  </label>
 			</div>
 		</div>
+		<md-input-container>
+            <label>Start Date/Time</label>
+            <input mdc-datetime-picker date="true" time="true" type="text"
+                   placeholder="Date"
+                   max-date="dateTimeEnd"
+                   ng-model="dateTimeStart"
+            />
+        </md-input-container>
+        <md-input-container>
+            <label>End Date/Time</label>
+            <input mdc-datetime-picker date="true" time="true" type="text"
+                   placeholder="Date"
+                   min-date="dateTimeStart"
+                   ng-model="dateTimeEnd"
+            />
+        </md-input-container>
 		<!-- <div class="item-divider">
 			<a class="section_estimated" href="#" ui-sref="main.estimatePrice">
 				<span style="font-size:100%; color: white;">Estimated Charge</span>

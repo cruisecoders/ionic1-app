@@ -22,19 +22,30 @@ var paths = {
   sass:       ['./scss/**/*.scss',
                './www/lib/ionic-material/dist/ionic.material.css',
                './www/lib/ion-autocomplete/dist/ion-autocomplete.css',
+               //'./www/lib/angular-material/angular-material.css',
+               './www/lib/angular-material-datetimepicker/css/material-datetimepicker.css'
               ],
   html:       ['./www/build/index.html'],
   templates:  ['./www/js/**/*.html', './www/templates/**/*.html'],
-  vendor:     ['./www/lib/ionic/js/ionic.bundle.min.js',
-                './www/lib/ion-md-input/js/ion-md-input.min.js',
-                './www/lib/ionic-material/dist/ionic.material.min.js',
-                './www/lib/angular-cookies/angular-cookies.min.js',
-                './www/lib/a0-angular-storage/dist/angular-storage.min.js',
-                './www/lib/angular-jwt/dist/angular-jwt.min.js',
-                './www/lib/angular-resource/angular-resource.min.js',
-                './www/lib/ion-autocomplete/dist/ion-autocomplete.min.js',
-                './www/lib/ngCordova/dist/ng-cordova.min.js',
-                './www/lib/api-check/dist/api-check.min.js'
+  vendor:     ['./www/lib/ionic/release/js/ionic.bundle.js',
+                './www/lib/ion-md-input/js/ion-md-input.js',
+                './www/lib/ionic-material/dist/ionic.material.js',
+                './www/lib/angular-cookies/angular-cookies.js',
+                './www/lib/a0-angular-storage/dist/angular-storage.js',
+                './www/lib/angular-jwt/dist/angular-jwt.js',
+                './www/lib/angular-resource/angular-resource.js',
+                './www/lib/ion-autocomplete/dist/ion-autocomplete.js',
+                './www/lib/ngCordova/dist/ng-cordova.js',
+                './www/lib/api-check/dist/api-check.js',
+                './www/lib/angular-material/angular-material.js',
+                './www/lib/angular-aria/angular-aria.js',
+                './www/lib/momentjs/min/moment-with-locales.js',
+                './www/lib/angular-material-datetimepicker/js/angular-material-datetimepicker.js'
+                //'./www/lib/moment/min/moment.js',
+                //'./www/lib/angular-material-datetimepicker/js/angular-material-datetimepicker.js'
+                
+
+
                // './www/lib/angular-formly/dist/formly.min.js',
                 //'./www/lib/angular-formly-templates-ionic/dist/angular-formly-templates-ionic.min.js'
               ],
@@ -118,7 +129,7 @@ gulp.task('replaceConfig', function () {
   console.log('replaceConfig STARTED');
   gulp.src('config.json')
   .pipe(gulpNgConfig('app.env.config', {
-    environment: 'local'
+    environment: 'dev'
     }))
   .pipe(gulp.dest('./www/js'))
   .on('end', function(){
@@ -197,12 +208,12 @@ gulp.task('delete-files', function() {
       'platforms/android/assets/www/lib/**',
       '!platforms/android/assets/www/lib',
       '!platforms/android/assets/www/lib/ionic',
-      //'!platforms/android/assets/www/lib/ionic/release',
-      '!platforms/android/assets/www/lib/ionic/fonts',
-      '!platforms/android/assets/www/lib/ionic/fonts/ionicons.eot',
-      '!platforms/android/assets/www/lib/ionic/fonts/ionicons.svg',
-      '!platforms/android/assets/www/lib/ionic/fonts/ionicons.ttf',
-      '!platforms/android/assets/www/lib/ionic/fonts/ionicons.woff',
+      '!platforms/android/assets/www/lib/ionic/release',
+      '!platforms/android/assets/www/lib/ionic/release/fonts',
+      '!platforms/android/assets/www/lib/ionic/release/fonts/ionicons.eot',
+      '!platforms/android/assets/www/lib/ionic/release/fonts/ionicons.svg',
+      '!platforms/android/assets/www/lib/ionic/release/fonts/ionicons.ttf',
+      '!platforms/android/assets/www/lib/ionic/release/fonts/ionicons.woff',
       'platforms/android/assets/www/js/**/*.js',
       'platforms/android/assets/www/js/**/*.html',
       '!platforms/android/assets/www/js/bundles/app.bundle.min.js',
