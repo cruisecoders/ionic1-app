@@ -2,13 +2,61 @@ angular.module('app.projectX')
   .controller('bookingCtrl', 
     ['$scope', '$http', '$state', 'store', 'jwtHelper', 'projectApi', 
     '$cordovaDatePicker', '$window', '$ionicPlatform', '$ionicPopup', '$location', '$rootScope', 'errorMsgs',
+    '$timeout' , '$mdSidenav' , '$log' ,
     function($scope, $http, $state, store, jwtHelper, projectApi, 
-    $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $rootScope, errorMsgs){
+    $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $rootScope, errorMsgs, $timeout, $mdSidenav, $log){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
        $scope.booking = {};
        $scope.booking.pickupDetail = {};
        $scope.booking.dropDetail = {};
        $scope.refData = {};
+
+       $scope.isDropDateDisabled = true;
+
+       $scope.myDate = new Date();
+
+      $scope.refData.pickupMinDate = new Date();
+
+      $scope.refData.dropMinDate = new Date();
+
+      $scope.refData.pickupMaxDate = new Date(
+          $scope.myDate.getFullYear(),
+          $scope.myDate.getMonth() + 2,
+          $scope.myDate.getDate()
+        );
+
+      $scope.refData.dropMaxDate = new Date(
+          $scope.myDate.getFullYear(),
+          $scope.myDate.getMonth() + 3,
+          $scope.myDate.getDate()
+        );
+
+      $scope.isDatePlaceholder = true;
+      $scope.isDropDatePlaceholder = true;
+
+      $scope.$watch('booking.pickupDetail.date', function(newValue, oldValue) {
+        console.log("date changed ");
+        console.log(newValue);
+        if(newValue != undefined){
+          $scope.refData.dropMinDate = angular.copy(newValue);
+          $scope.refData.dropMinDate.setHours($scope.refData.dropMinDate.getHours() + 2);
+          $scope.isDropDateDisabled = false;
+          $scope.isDatePlaceholder = false;
+        }else{
+          $scope.isDropDateDisabled = true;
+          $scope.isDatePlaceholder = true;
+        }
+      });
+
+      $scope.$watch('booking.dropDetail.date', function(newValue, oldValue) {
+        console.log("date changed ");
+        console.log(newValue);
+        if(newValue != undefined){
+          $scope.isDropDatePlaceholder = false;
+        }else{
+          $scope.isDropDatePlaceholder = true;
+        }
+      });
 
       $scope.userInfo = store.get('userInfo');
       $scope.booking.number = $scope.userInfo.number;
@@ -152,122 +200,64 @@ angular.module('app.projectX')
             })
         }
 
-         // Date and Time Picker Start
-        if (!$window.navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/i)) {
-            $window.datePicker = {
-                show: function(options, callback) { callback(new Date());}
-            };
-        }
-           // ONLY SUBMIT IF I HAVE VALID DATA
-        $scope.doSubmit = function() {
-          alert(JSON.stringify($scope.formData, null, 2));
-        }
-       
-       /* function createFormlyType() {
-          formlyConfig.setType({
-            name: 'inputDatePicker',
-            templateUrl: 'inputDatePicker.html',
-            defaultOptions: {}
+    $scope.cityComponentId = "cityRight";
+    $scope.streetComponentId = "streetRight";
+    $scope.dropStreetComponentId = "dropStreetRight";
+
+    $scope.toggleCityRight = buildToggler('cityRight');
+    $scope.togglePickupStreetRight = buildToggler('streetRight');
+    $scope.toggleDropStreetRight = buildToggler('dropStreetRight');
+   
+    $scope.isOpenRight = function(componentId){
+      return $mdSidenav(componentId).isOpen();
+    };
+    
+    function debounce(func, wait, context) {
+      var timer;
+      return function debounced() {
+        var context = $scope,
+            args = Array.prototype.slice.call(arguments);
+        $timeout.cancel(timer);
+        timer = $timeout(function() {
+          timer = undefined;
+          func.apply(context, args);
+        }, wait || 10);
+      };
+    }
+    
+    function buildDelayedToggler(navID) {
+      return debounce(function() {
+        $mdSidenav(navID)
+          .toggle()
+          .then(function () {
+            $log.debug("toggle " + navID + " is done");
           });
-        }*/
-       
-        /*$scope.pickupFormData = {
-          //startDateTime : new Date()
-        };*/
-       
-        $scope.dropFormData = {
-          //startDateTime : new Date()
-        };
-
-        $scope.booking.pickupDetail.date = undefined;
-        $scope.booking.dropDetail.date = $scope.dropFormData.startDateTime;
-
-        var minDate = ionic.Platform.isIOS() ? new Date() : (new Date()).valueOf();
-
-        var options = {
-              date: new Date(),
-              mode: 'datetime', // 'date' or 'time'
-              minDate: minDate,
-              allowOldDates: false,
-              allowFutureDates: true,
-              doneButtonLabel: 'DONE',
-              doneButtonColor: '#F2F3F4',
-              cancelButtonLabel: 'CANCEL',
-              cancelButtonColor: '#000000'
-            };
-
-      $scope.showPickupDatePicker = function() {
-       $ionicPlatform.ready(function () {
-              $cordovaDatePicker.show(options).then(function (date) {
-                  //$modelValue[$options.key] = date;
-                  $scope.booking.pickupDetail.date = date;
-                  //alert(date);
-              });
+      }, 200);
+    }
+    function buildToggler(navID) {
+      return function() {
+        $mdSidenav(navID)
+          .toggle()
+          .then(function () {
+            $log.debug("toggle " + navID + " is done");
           });
       }
+    }
 
-      
+    $scope.close = function (componentId) {
+      $mdSidenav(componentId).close()
+        .then(function () {
+          $log.debug("close RIGHT is done");
+        });
+    };
 
-      $scope.showDropDatePicker = function(){
-        $ionicPlatform.ready(function () {
-                  $cordovaDatePicker.show(options).then(function (date) {
-                      //$modelValue[$options.key] = date;
-                      $scope.booking.dropDetail.date = date;
-                      //alert(date);
-                  });
-              });
-      }
-
-        // Date and Time Picker End
-
-        var genericPopup;
-
-         $scope.genericPopup = function(title, subTitle, templateURL) {
-            //$scope.data = {}
-          
-            // Custom popup
-            genericPopup = $ionicPopup.show({
-               templateUrl: templateURL,
-               title: title,
-               cssClass : 'booking-popup',
-              // subTitle: subTitle,
-               scope: $scope,
-            });
-
-            genericPopup.then(function(res) {
-               console.log('Tapped!', res);
-            });    
-         };
-
-        $scope.closeGenericPopup = function(){
-          genericPopup.close();
-        };
-
-        $scope.showCityPopUP = function(){
-          $scope.genericPopup('Select City','Select City', 'city.html');
-        };
-
-        $scope.showPickupStreetPopUP = function(){
-
-          if(!$scope.booking.city || !$scope.booking.city.name){
-            //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidSelection , errorMsgs.selectCityFirst);
-            return false;
-          }
-          $scope.genericPopup('Select Street/Landmark','Select City', 'pickupStreet.html');
-        };
-
-        $scope.showDropStreetPopUP = function(){
-          if(!$scope.booking.city || !$scope.booking.city.name){
-            //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidSelection , errorMsgs.selectCityFirst);
-            return false;
-          }
-          $scope.genericPopup('Select Street/Landmark','Select City', 'dropStreet.html');
-        };
-
-       // createFormlyType();
-
-        //$scope.getCities();
-
-}]);
+}]).filter('ordinal', function() {
+  return function(input) {
+    if (input == undefined) {
+      return;
+    };
+    var s=["th","st","nd","rd"],
+    v=input%100;
+    return input+(s[(v-20)%10]||s[v]||s[0]);
+  }
+});

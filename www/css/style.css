@@ -204,38 +204,8 @@ button.item.item-complex{
 	color: #fff;
     margin: 10px;
 }
-.get-started {
-	/*background: url("../img/getstarted.jpg") no-repeat center center fixed;*/
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-}
-.booking-page{
-    background: url("../img/getstarted2.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-}
-.login-form {
-	background: url("../img/getstarted.jpg") no-repeat fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-}
-.pricing-page{
-    background: url("../img/pricing-page.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-}
 .aboutUs-page{
     background: url("../img/about-us.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-}
-.contact-page{
-    /*background: url("../img/getstarted2.jpg") no-repeat center center fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -248,18 +218,11 @@ button.item.item-complex{
 .profile-box {
     padding: 28px 16px;
     position: relative;
-    /*background: url("../img/wallpaper-material-design-5.jpg") repeat;*/
-	/*-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;*/
 }
 .profile-box-info {
     padding: 28px 16px;
     position: relative;
     background: url("../img/ds.png") repeat;
-    /*-webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;*/
 }
 .profile-box-thumb {
     width: 65px;
@@ -411,7 +374,7 @@ input.ng-touched.ng-valid {
 input[disabled], input[readonly]:not(.cloned-text-input), 
 select[disabled], select[readonly], textarea[disabled], 
 textarea[readonly]:not(.cloned-text-input) {
-    background-color: #FFFFFF !important; 
+    background-color: #EFF1F5 !important; 
 }
 .profile_label_box {
     margin-left: 10px !important;
@@ -439,7 +402,7 @@ textarea[readonly]:not(.cloned-text-input) {
     box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
 }
 .item-md-label input {
-    background-color: #FFFFFF !important;
+    background-color: #EFF1F5 !important;
     padding:1px !important;
     letter-spacing: 0px !important;
     color: black !important;
@@ -492,7 +455,7 @@ textarea[readonly]:not(.cloned-text-input) {
     margin-top: 15px;
 }
 .signUp-page {
-    background-color: #FFFFFF;
+    background-color:rgb(239, 241, 245)
 }
 .tmargin {
     margin-top: 15px !important;
@@ -532,9 +495,6 @@ textarea[readonly]:not(.cloned-text-input) {
     padding: 12px !important;
     width: 100% !important;
 }
-/*.select-city:hover {
-    background-color: rgba(60,74,85,0.6); 
-}*/
 .cur-pointer {
     cursor: pointer!important;
 }
@@ -555,16 +515,10 @@ textarea[readonly]:not(.cloned-text-input) {
 .footer_tabs {
     background-color: #F8F9FB!important;
 }
-/*.popup {
-  width: 400px;
-  height: 430px !important;
-}*/
-
 .booking-popup .popup {
       /*width: auto;*/
       height: 430px !important;
 }
-
 .subStreets {
     border-bottom: 1px solid gainsboro !important;
 }
@@ -623,13 +577,12 @@ textarea[readonly]:not(.cloned-text-input) {
 .divider-color         { border-color: #B6B6B6; }
 
 .text-booking-page {
-    color: #212121;
-    font-size:12px; 
-    text-transform:uppercase; 
+    color: #121111;
+    font-size:14px; 
     margin-left: 5px;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 500;
 }
-
 input[type='checkbox'] {
   -ms-transform: scale(2); /* IE */
   -moz-transform: scale(2); /* FF */
@@ -637,25 +590,20 @@ input[type='checkbox'] {
   -o-transform: scale(2); /* Opera */
   margin: 20px;
 }
-
 .status-box {
-  /*margin: 20px auto;*/
   background: white;
   border-radius: 50%;
   border: 1px solid grey;
   width: 20px;
   height: 20px;
 }
-
 .circle {
   -webkit-transform: rotate(360deg);
   background: #9351A6;
-  border-radius: 50%;
-  /*margin: 20px auto;*/
+  border-radius: 50%;  
   width: 20px;
   height: 20px;
 }
-
 .rotate {
   -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
@@ -669,10 +617,6 @@ input[type='checkbox'] {
     word-wrap:break-word!important;
     font-size:12px!important;
     margin-top:10px!important;
-    /*margin-left: -58px;
-    position: relative;
-    display: inline-block;
-    top: -53px; */
 }
 .status-textDown-value{
     width:5em!important;
@@ -687,7 +631,6 @@ input[type='checkbox'] {
     margin-top:-10px;
     margin-right: 40px;
 }
-
 .footer_estimate_price{
     position: absolute;
     top: 10px;
@@ -710,6 +653,12 @@ input[type='checkbox'] {
 .item-complex.active .item-content, 
 .item.activated, .item.active {
     background-color: rgba(51,205,95,0.5);
+}
+a.md-button.md-default-theme.md-focused:not([disabled]), 
+a.md-button.md-focused:not([disabled]), 
+.md-button.md-default-theme.md-focused:not([disabled]), 
+.md-button.md-focused:not([disabled]){
+    background-color: rgba(33, 177, 30, 0.3)!important;
 }
 .menu .avatar {
     height: 88px;
@@ -734,4 +683,47 @@ input[type='checkbox'] {
     color:#fff;
     margin-left:24px;
     margin-top:14px;
+}
+md-radio-group md-radio-button:not(:first-child) {
+  margin-top: 0px!important; 
+}
+.datetime-label{
+    font-size: 18px;
+    color: #000;
+    font-family: "-apple-system","Helvetica Neue",Roboto,"Segoe UI",sans-serif;
+    font-weight: 500;
+}
+.md-datetime-input{
+    margin-bottom: -12px;
+}
+.label-city-text{
+    color: #000;
+    margin-left: -20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    margin-top: 10px;
+    letter-spacing:0;
+    font-size: 12px;
+}
+.border-bottom-div{
+    width: 300px;
+    border-bottom: 1px solid gainsboro;
+    margin-left: 15px;
+    margin-bottom: 16px;
+}
+.placeholder-date-input-tag{
+    font-size:15px;
+    color:#777;
+    font-family: "Roboto",sans-serif;
+    margin-top:5px;
+}
+.date-input-tag{
+    font-size:15px;
+    color:#777;
+    font-family: "Roboto",sans-serif;
+    margin-top:5px!important;
+    margin-left:63px;
+}
+.md_sidenav {
+    border-bottom: 1px solid gainsboro;
 }
