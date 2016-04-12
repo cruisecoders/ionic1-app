@@ -6,6 +6,7 @@ angular.module('app.projectX')
     function($scope, $http, $state, store, jwtHelper, projectApi, 
     $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $rootScope, errorMsgs, $timeout, $mdSidenav, $log){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
+      
        $scope.booking = {};
        $scope.booking.pickupDetail = {};
        $scope.booking.dropDetail = {};
@@ -79,7 +80,7 @@ angular.module('app.projectX')
             $rootScope.hideLoader();
             console.log("booking failed");
             if(error.data !=undefined && error.data.errorMsg !=undefined){
-                $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
+                $rootScope.showAlert('Please try again' , error.data.errorMsg);
               }else{
                   //showAlertBox('Please try again' , error.data);
              }
@@ -89,55 +90,55 @@ angular.module('app.projectX')
        $scope.isValidated= function(){
           if(!$scope.booking.city || !$scope.booking.city.name){
             //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.cityIsEmpty);
+            $rootScope.showAlert(errorMsgs.invalidForm , errorMsgs.cityIsEmpty);
             return false;
           }
 
           if($scope.booking.itemCount =="" || $scope.booking.itemCount == undefined || $scope.booking.itemCount==null){
             //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.itemCountIsEmpty);
+            $rootScope.showAlert(errorMsgs.invalidForm , errorMsgs.itemCountIsEmpty);
             return false;
           }
 
           if($scope.booking.number =="" || $scope.booking.number == undefined || $scope.booking.number==null){
             //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.numberIsEmpty);
+            $rootScope.showAlert(errorMsgs.invalidForm , errorMsgs.numberIsEmpty);
             return false;
           }
 
           if(!$scope.booking.pickupDetail.street || !$scope.booking.pickupDetail.street.name){
             //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.pickupStreetIsEmpty);
+            $rootScope.showAlert(errorMsgs.invalidForm , errorMsgs.pickupStreetIsEmpty);
             return false;
           }
 
           if(!$scope.booking.pickupDetail.substreet || !$scope.booking.pickupDetail.substreet.name){
             //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.pickupSubStreetIsEmpty);
+            $rootScope.showAlert(errorMsgs.invalidForm , errorMsgs.pickupSubStreetIsEmpty);
             return false;
           }
        
           if(!$scope.booking.dropDetail.street || !$scope.booking.dropDetail.street.name){
             //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.dropStreetIsEmpty);
+            $rootScope.showAlert(errorMsgs.invalidForm , errorMsgs.dropStreetIsEmpty);
             return false;
           }
 
           if(!$scope.booking.dropDetail.substreet || !$scope.booking.dropDetail.substreet.name){
             //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.dropSubStreetIsEmpty);
+            $rootScope.showAlert(errorMsgs.invalidForm , errorMsgs.dropSubStreetIsEmpty);
             return false;
           }
 
           if($scope.booking.pickupDetail.date =="" || $scope.booking.pickupDetail.date == undefined || $scope.booking.pickupDetail.date==null){
             //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.pickupDateIsEmpty);
+            $rootScope.showAlert(errorMsgs.invalidForm , errorMsgs.pickupDateIsEmpty);
             return false;
           }
           
           if($scope.booking.dropDetail.date =="" || $scope.booking.dropDetail.date == undefined || $scope.booking.dropDetail.date==null){
             //Error Msg
-            $rootScope.showAlertBox(errorMsgs.invalidForm , errorMsgs.dropDateIsEmpty);
+            $rootScope.showAlert(errorMsgs.invalidForm , errorMsgs.dropDateIsEmpty);
             return false;
           }
 
@@ -153,7 +154,7 @@ angular.module('app.projectX')
             }, function(error){
               console.log("Failure Handler");
                if(error.data !=undefined && error.data.errorMsg !=undefined){
-                   $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
+                   $rootScope.showAlert('Please try again' , error.data.errorMsg);
                 }else{
                   //showAlertBox('Please try again' , error.data);
                 }
@@ -179,7 +180,7 @@ angular.module('app.projectX')
               $rootScope.hideLoader();
               console.log("Failure Handler");
                if(error.data !=undefined && error.data.errorMsg !=undefined){
-                   $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
+                   $rootScope.showAlert('Please try again' , error.data.errorMsg);
                 }else{
                   //showAlertBox('Please try again' , error.data);
                 }
@@ -193,7 +194,7 @@ angular.module('app.projectX')
             }, function(error){
               console.log("Failure Handler");
                if(error.data !=undefined && error.data.errorMsg !=undefined){
-                   $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
+                   $rootScope.showAlert('Please try again' , error.data.errorMsg);
                 }else{
                   //showAlertBox('Please try again' , error.data);
                 }

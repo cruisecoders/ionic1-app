@@ -41,17 +41,6 @@
 				</md-list flex>
 			</md-whiteframe>
 		</div>
-		<!-- <md-whiteframe class="md-whiteframe-2dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
-		    <span>.md-whiteframe-2dp</span>
-		</md-whiteframe> -->
-		<!-- <md-list flex>
-			<md-list-item class="md-1-line" ng-click="null;toggleCityRight()">
-			    <i class="ion-android-locate secondary-text-color"></i>&nbsp;
-	            <div class="md-list-item-text col-offset-33" layout="column" ng-hide="isOpenRight(cityComponentId)">
-	            	<span ng-hide="booking.city">Select City</span><span ng-show="booking.city">{{booking.city.name}}</span>
-	            </div>
-	        </md-list-item>
-		</md-list flex> -->
 		<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="cityRight">
 	      <md-content layout-padding>
 	        <form>
@@ -64,55 +53,48 @@
 	      </md-content>
 	    </md-sidenav>
 	    <div class="card" style="margin-top:16px;">
-		    <md-whiteframe class="md-whiteframe-2dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" 
-		    	layout layout-align="center center">
-				<md-list flex>					
-					<md-list-item class="md-1-line" ng-click="null;togglePickupStreetRight()" ng-hide="isOpenRight(streetComponentId)" ng-disabled="!booking.city">
-					    <i class="ion-ios-home-outline secondary-text-color" style="font-size:20px; color:#000; margin-top:15px;"></i>&nbsp;
-			            <div class="md-list-item-text" layout="column" ng-hide="isOpenRight(cityComponentId)" style="margin-bottom:10px;">
-			            	<label class="label-city-text">Pickup Street / Landmark</label>
-			            	<span class="text-booking-page" ng-hide="booking.pickupDetail.street">Select Street/Landmark</span>
-			            	<span class="text-booking-page" ng-show="booking.pickupDetail.street">{{booking.pickupDetail.street.name}} / {{booking.pickupDetail.substreet.name}}</span>
-			            </div>
-			        </md-list-item>	
-			        <div class="border-bottom-div"></div>
+			<md-list flex>					
+				<md-list-item class="md-1-line" ng-click="null;togglePickupStreetRight()" ng-hide="isOpenRight(streetComponentId)" ng-disabled="!booking.city">
+				    <i class="ion-ios-home-outline secondary-text-color" style="font-size:20px; color:#000; margin-top:15px;"></i>&nbsp;
+		            <div class="md-list-item-text" layout="column" ng-hide="isOpenRight(cityComponentId)" style="margin-bottom:10px;">
+		            	<label class="label-city-text">Pickup Street / Landmark</label>
+		            	<span class="text-booking-page" ng-hide="booking.pickupDetail.street">Select Street/Landmark</span>
+		            	<span class="text-booking-page" ng-show="booking.pickupDetail.street">{{booking.pickupDetail.street.name}} / {{booking.pickupDetail.substreet.name}}</span>
+		            </div>
+		        </md-list-item>	
+		        <div class="border-bottom-div"></div>
 
-			        <div style="margin-left:15px;padding-bottom:35px;">
-						<h5>Select No. of Bags</h5>
-						<md-radio-group ng-model="booking.itemCount">
-						    <md-radio-button value="1" style="float:left;margin-right:10px;">1</md-radio-button>
-						    <md-radio-button value="2" style="float:left;margin-right:10px;">2</md-radio-button>
-						    <md-radio-button value="3" style="float:left;margin-right:10px;">3</md-radio-button>
-						    <md-radio-button value="4" style="float:left;margin-right:10px;">4</md-radio-button>
-						    <md-radio-button value="5" style="float:left;margin-right:10px;">5</md-radio-button>
-					    </md-radio-group>
-					</div>
-					<div class="border-bottom-div"></div>
-					<div class="row" style="margin-left:15px;">
-						<md-input-container class="md-datetime-input">
-					        <label class="datetime-label">Pickup Date/Time</label>
-					        	<span style="font-size:25px;color: #777;font-family: roboto,sans-serif;position:absolute;top:9px;">
-					        	{{booking.pickupDetail.date | date:'dd' | ordinal}}</span>
-						        <span style="font-size:14px;color:#777;font-family:roboto,sans-serif;text-transform:uppercase;position:absolute;top:2px;left:65px;">{{booking.pickupDetail.date | date:'MMM'}}</span> 
-						        <span class="col-offset-33" style="font-size:22px;color:#777;font-family: roboto,sans-serif;position:absolute;top:7px;left:44px;">{{booking.pickupDetail.date | date:'HH:mm a'}}</span>
-						        <input mdc-datetime-picker date = "true" time = "true" type = "text"
-						            placeholder = "Select Date & Time"
-						            min-date = "refData.pickupMinDate"
-						            max-date = "refData.pickupMaxDate"
-						            ng-model = "booking.pickupDetail.date"
-						            short-time = "true"
-						            format = "YYYY" ng-class="{'date-input-tag': !isDatePlaceholder,'placeholder-date-input-tag': isDatePlaceholder}" class="md-input"/>
-					    </md-input-container>
-					</div>
-				</md-list flex>
-			</md-whiteframe>
+		        <div style="margin-left:15px;padding-bottom:35px;">
+					<h5>Select No. of Bags</h5>
+					<md-radio-group ng-model="booking.itemCount">
+					    <md-radio-button value="1" style="float:left;margin-right:10px;">1</md-radio-button>
+					    <md-radio-button value="2" style="float:left;margin-right:10px;">2</md-radio-button>
+					    <md-radio-button value="3" style="float:left;margin-right:10px;">3</md-radio-button>
+					    <md-radio-button value="4" style="float:left;margin-right:10px;">4</md-radio-button>
+					    <md-radio-button value="5" style="float:left;margin-right:10px;">5</md-radio-button>
+				    </md-radio-group>
+				</div>
+				<div class="border-bottom-div"></div>
+				<md-list-item class="md-1-line">
+					<md-input-container class="md-datetime-input">
+				        <label class="col datetime-label">Pickup Date/Time</label>
+					        <input mdc-datetime-picker date = "true" time = "true" type = "text"
+					            placeholder = "Select Date & Time"
+					            min-date = "refData.pickupMinDate"
+					            max-date = "refData.pickupMaxDate"
+					            ng-model = "booking.pickupDetail.date"
+					            short-time = "true"
+					            format = "dddd, DD-MMM-YYYY, hh:mm a" ng-class="{'date-input-tag': !isDatePlaceholder,'placeholder-date-input-tag': isDatePlaceholder}" class="md-input cur-pointer" style="margin-bottom:10px;"/>
+				    </md-input-container>
+				</md-list-item>
+			</md-list flex>
 	    </div>
 	    
-		<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="streetRight">
+		<md-sidenav class="md-sidenav-right md-whiteframe-4dp md_sidenav" md-component-id="streetRight">
 	      <md-content layout-padding>
 	        <form>
 	          <md-list flex>
-	             <div class="md-primary md_sidenav" ng-repeat="street in refData.streets">
+	             <div class="md-primary" ng-repeat="street in refData.streets">
 	          		<md-list-item ng-repeat="substreet in street.substreets" ng-click="close(streetComponentId);booking.pickupDetail.street=street;booking.pickupDetail.substreet=substreet;" >
 	      				<label class="item item-input item-stacked-label subStreets">
 	      				 	<span class="col input-label cur-pointer"><h3 class="streets-h3"> {{street.name}} </h3></span>
@@ -139,13 +121,9 @@
 			        </md-list-item>
 			       
 					<div class="border-bottom-div"></div>
-					<div class="row" style="margin-left:15px;">
+					<md-list-item class="md-1-line">
 						<md-input-container class="md-datetime-input">
-					        <label class="datetime-label">Drop Date/Time</label>
-					        	<span style="font-size:25px;color: #777;font-family: roboto,sans-serif;position:absolute;top:9px;">
-					        	{{booking.dropDetail.date | date:'dd' | ordinal}}</span>
-						        <span style="font-size:14px;color:#777;font-family:roboto,sans-serif;text-transform:uppercase;position:absolute;top:2px;left:66px;">{{booking.dropDetail.date | date:'MMM'}}</span> 
-						        <span class="col-offset-33" style="font-size:22px;color:#777;font-family: roboto,sans-serif;position:absolute;top:7px;left:44px;">{{booking.dropDetail.date | date:'HH:mm a'}}</span>
+					        <label class="col datetime-label">Drop Date/Time</label>
 						        <input mdc-datetime-picker date = "true" time = "true" type = "text"
 						            placeholder = "Select Date & Time"
 						            min-date = "refData.dropMinDate"
@@ -153,27 +131,9 @@
 						            ng-model = "booking.dropDetail.date"
 						            short-time = "true"
 						            ng-disabled = "isDropDateDisabled"
-						            format = "YYYY" ng-class="{'date-input-tag': !isDropDatePlaceholder,'placeholder-date-input-tag': isDropDatePlaceholder}" class="md-input"/>
+						            format = "dddd, DD-MMM-YYYY hh:mm a" ng-class="{'date-input-tag': !isDropDatePlaceholder,'placeholder-date-input-tag': isDropDatePlaceholder}" class="md-input cur-pointer" style="margin-bottom:10px;"/>
 					    </md-input-container>
-					</div>
-					
-					<!-- <div class="row" style="margin-left:15px;">
-						<md-input-container class="md-datetime-input">
-					        <label class="datetime-label">Drop Date/Time</label>
-					        	<span style="font-size:25px;color: #777;font-family: roboto,sans-serif;position:absolute;top:9px;">
-					        	{{booking.dropDetail.date | date:'dd' | ordinal}}</span>
-						        <span style="font-size:14px;color:#777;font-family:roboto,sans-serif;text-transform:uppercase;position:absolute;top:2px;left:52px;">{booking.dropDetail.date | date:'MMM'}}</span> 
-						        <span class="col-offset-33" style="font-size:22px;color:#777;font-family: roboto,sans-serif;position:absolute;top:7px;left:44px;">{{booking.dropDetail.date | date:'HH:mm a'}}</span>
-						        <input mdc-datetime-picker date = "true" time = "true" type = "text"
-						            placeholder = "Select Date & Time"
-						            min-date = "refData.dropMinDate"
-	                  				max-date = "refData.dropMaxDate"
-	                   				ng-model="booking.dropDetail.date"
-						            short-time = "true"
-						            ng-disabled = "isDropDateDisabled"
-						            format = "YYYY" ng-class="{'date-input-tag': !isDatePlaceholder,'placeholder-date-input-tag': isDatePlaceholder}" class="md-input"/>
-					    </md-input-container>
-					</div> -->
+					</md-list-item>
 				</md-list flex>
 			</md-whiteframe>
 	    </div>
@@ -188,13 +148,13 @@
 						   <input ng-model="booking.number" class="mob-coupon-code-input" type="text" placeholder="Mobile Number" style="left:7px;"/> 
 						</label>
 	    			</md-list-item>
-	    			<md-list-item class="md-1-line">
+	    			<!-- <md-list-item class="md-1-line">
 	    				<div class="col">
 						  <label class="item item-input mob-coupon-code-label">
 						    <input ng-model="booking.coupon" class="mob-coupon-code-input" type="text" placeholder="Enter Coupon Code here"/>
 						  </label>
 						</div>
-	    			</md-list-item>
+	    			</md-list-item> -->
 	    		</md-list flex>
 		    </md-whiteframe>	
 	    </div>
@@ -253,65 +213,27 @@
             <span ng-hide="booking.dropDetail.street">Select Street/Landmark</span><span ng-show="booking.dropDetail.street">{{booking.dropDetail.street.name}} / {{booking.dropDetail.substreet.name}}</span>
         </md-button> -->
 
-		<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="dropStreetRight">
+		<md-sidenav class="md-sidenav-right md-whiteframe-4dp md_sidenav" md-component-id="dropStreetRight">
 	      <md-content layout-padding>
 	        <form>
 	          <md-list flex>
-	            <div class="md-primary md_sidenav" 
-	            	ng-repeat="street in refData.streets">
-		          		<md-list-item ng-repeat="substreet in street.substreets" ng-click="close(dropStreetComponentId);booking.dropDetail.street=street;booking.dropDetail.substreet=substreet;" >
-		      				<label class="item item-input item-stacked-label subStreets">
-		      				 	<span class="col input-label cur-pointer"><h3 class="streets-h3"> {{street.name}} </h3></span>
-		      					<span class="col cur-pointer"><h5>{{substreet.name}}</h5></span>
-		      				</label>	
-		      			</md-list-item>
+	            <div class="md-primary" ng-repeat="street in refData.streets">
+	          		<md-list-item ng-repeat="substreet in street.substreets" ng-click="close(dropStreetComponentId);booking.dropDetail.street=street;booking.dropDetail.substreet=substreet;" >
+	      				<label class="item item-input item-stacked-label subStreets">
+	      				 	<span class="col input-label cur-pointer"><h3 class="streets-h3"> {{street.name}} </h3></span>
+	      					<span class="col cur-pointer"><h5>{{substreet.name}}</h5></span>
+	      				</label>	
+	      			</md-list-item>
 		        </div>
 	           </md-list>
 	        </form>
 	      </md-content>
-	    </md-sidenav>
-	    <!-- <div style="margin-left:15px;">
-			<md-input-container class="md-datetime-input">
-		        <label class="datetime-label">Drop Date/Time</label>
-		        <input mdc-datetime-picker date = "true" time = "true" type = "text"
-		               placeholder = "Select Date & Time"
-		               min-date = "refData.dropMinDate"
-	                   max-date = "refData.dropMaxDate"
-	                   ng-model="booking.dropDetail.date"     
-	                   short-time = "true"
-	                   ng-disabled = "isDropDateDisabled"
-	                   format = "DD-MMM-YYYY hh:mm a"/>
-		    </md-input-container>
-		</div> -->
-		<div class="row">
-			 <!-- <md-input-container>
-	            <label>Drop Date/Time</label>
-	            <input mdc-datetime-picker date="true" time="true" type="text"
-	                   placeholder="Date"
-	                   min-date = "refData.dropMinDate"
-	                   max-date = "refData.dropMaxDate"
-	                   ng-model="booking.dropDetail.date"     
-	                   short-time = "true"
-	                   ng-disabled = "isDropDateDisabled"
-	                   format = "DD-MMM-YYYY hh:mm a"
-	            />
-	        </md-input-container> -->
-			<!-- <div class="col col-50" style="margin-top:-4px;">
-				
-			</div>
-		</div>
-		<div class="row" style="margin-top:-6px;border-top:1px solid gainsboro;">
-			<div class="col">
-			  <label class="item item-input mob-coupon-code-label">
-			    <input ng-model="booking.coupon" class="mob-coupon-code-input" type="text" placeholder="Enter Coupon Code here"/>
-			  </label>
-			</div>-->
-		</div> 
+	    </md-sidenav>	   
 	</ion-content>
 	<ion-footer-bar align-title="left" class="bar-balanced">
 	  <div class="col col-50">
 	    <span class="footer_estimate_price">
-	    	<a class="text-primary-color text_underline" href="" ui-sref="main.estimatePrice">Estimate Price</a>
+	    	<a class="text-primary-color text_underline" ui-sref="main.estimatePrice">Estimate Rate</a>
 	    </span>
 	  </div>
 	  <div class="col col-50">
@@ -320,9 +242,8 @@
 	    </span>
 	  </div>
 	  <div class="buttons buttons-right">
-	    <button class="button button-fab button-balanced icon ion-leaf">
-	        <a class="text-primary-color text_underline" href="" ui-sref="main.pricing">
-	        </a>
+	    <button class="button button-fab button-bar-balanced" ui-sref="main.pricing">
+	    	<i class="fa fa-inr font-inr"></i>
 	    </button>
 	  </div>
 	</ion-footer-bar>

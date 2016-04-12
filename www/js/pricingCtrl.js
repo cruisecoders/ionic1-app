@@ -8,7 +8,7 @@ angular.module('app.projectX').controller('pricingCtrl',['$rootScope', 'projectA
 		      }, function(error){
 		        console.log("Failure Handler");
 		         if(error.data !=undefined && error.data.errorMsg !=undefined){
-		             $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
+		             $rootScope.showAlert('Please try again' , error.data.errorMsg);
 		          }else{
 		            //showAlertBox('Please try again' , error.data);
 		          }

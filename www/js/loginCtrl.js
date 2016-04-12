@@ -4,6 +4,8 @@ angular.module('app.projectX').controller('loginCtrl',
 	
   $scope.user = {};
 
+  $scope.loginShowHints = true;
+
   $scope.login = function() {
     	$rootScope.showLoader();
     	loginService.login($scope.user).then(
@@ -21,9 +23,9 @@ angular.module('app.projectX').controller('loginCtrl',
           console.log("Login failed");
          //$scope.error = error.data.data;
          if(error.data !=undefined && error.data.errorMsg !=undefined){
-          $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
+          $rootScope.showAlert('Please try again' , error.data.errorMsg);
         }else{
-          $rootScope.showAlertBox('Please try again' , error);
+          $rootScope.showAlert('Please try again' , error);
         }
     		});
   }
@@ -45,9 +47,9 @@ angular.module('app.projectX').controller('loginCtrl',
            //$scope.error = error.data.data;
           
            if(error.data !=undefined && error.data.errorMsg !=undefined){
-               $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
+               $rootScope.showAlert('Please try again' , error.data.errorMsg);
             }else{
-              $rootScope.showAlertBox('Please try again' , error);
+              $rootScope.showAlert('Please try again' , error);
             }
            
         });
@@ -63,9 +65,9 @@ angular.module('app.projectX').controller('loginCtrl',
           console.log("OTP generation failed");
          //$scope.error = error.data.data;
          if(error.data !=undefined && error.data.errorMsg !=undefined){
-            $rootScope.showAlertBox('Please try again' , error.data.errorMsg);
+            $rootScope.showAlert('Please try again' , error.data.errorMsg);
           }else{
-            $rootScope.showAlertBox('Please try again' , error);
+            $rootScope.showAlert('Please try again' , error);
           }
         });
   }

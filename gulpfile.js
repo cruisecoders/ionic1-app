@@ -24,7 +24,8 @@ var paths = {
                './www/lib/ion-autocomplete/dist/ion-autocomplete.css',
                //'./www/lib/angular-material/angular-material.min.css',
                './www/lib/angular-material-datetimepicker/css/material-datetimepicker.css',
-               './www/lib/ion-md-input/css/ion-md-input.css'
+               './www/lib/ion-md-input/css/ion-md-input.css',
+               './www/lib/font-awesome/css/font-awesome.css'
               ],
   html:       ['./www/build/index.html'],
   templates:  ['./www/js/**/*.html', './www/templates/**/*.html'],
@@ -41,7 +42,8 @@ var paths = {
                 './www/lib/angular-material/angular-material.js',
                 './www/lib/angular-aria/angular-aria.js',
                 './www/lib/momentjs/min/moment-with-locales.js',
-                './www/lib/angular-material-datetimepicker/js/angular-material-datetimepicker.js'
+                './www/lib/angular-material-datetimepicker/js/angular-material-datetimepicker.js',
+                './www/lib/angular-messages/angular-messages.js',
                 //'./www/lib/moment/min/moment.js',
                 //'./www/lib/angular-material-datetimepicker/js/angular-material-datetimepicker.js'
                 
@@ -130,7 +132,7 @@ gulp.task('replaceConfig', function () {
   console.log('replaceConfig STARTED');
   gulp.src('config.json')
   .pipe(gulpNgConfig('app.env.config', {
-    environment: 'dev'
+    environment: 'local'
     }))
   .pipe(gulp.dest('./www/js'))
   .on('end', function(){
@@ -226,6 +228,15 @@ gulp.task('delete-files', function() {
       'platforms/android/assets/_where-is-www.txt',
       '!platforms/android/assets/www/lib/angular-material',
       '!platforms/android/assets/www/lib/angular-material/angular-material.min.css',
+      '!platforms/android/assets/www/lib/font-awesome',
+      '!platforms/android/assets/www/lib/font-awesome/fonts',
+      '!platforms/android/assets/www/lib/font-awesome/fonts/fontawesome-webfont.eot',
+      '!platforms/android/assets/www/lib/font-awesome/fonts/fontawesome-webfont.svg',
+      '!platforms/android/assets/www/lib/font-awesome/fonts/fontawesome-webfont.ttf',
+      '!platforms/android/assets/www/lib/font-awesome/fonts/fontawesome-webfont.woff',
+      '!platforms/android/assets/www/lib/font-awesome/fonts/fontawesome-webfont.woff2',
+      '!platforms/android/assets/www/lib/font-awesome/fonts/FontAwesome.otf',
+      
 
       'platforms/ios/www/lib/**',
       '!platforms/ios/www/lib',

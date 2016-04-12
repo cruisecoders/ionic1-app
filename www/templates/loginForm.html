@@ -2,9 +2,9 @@
    <ion-header-bar class="bar-balanced">
    		<h1 class="title text-primary-color">Login</h1>
 	</ion-header-bar>
-	<ion-content class="padding">		
+	<ion-content class="bg-white padding">		
 		<form name="loginForm" class="row responsive-sm my-form">
-			<div class="item item-body">
+			<!-- <div class="item item-body">
 				<img class="full-image" src="img/Capture1.png" width="100px" height="100px"
 				 style="margin-left:75px;">
 		        <div class="item-input-inset date-time-select">
@@ -25,7 +25,21 @@
 		    </span>
 		    <span ng-show="loginForm.userNumber.$touched && loginForm.userNumber.$error.maxlength">
 		    	This field is maxlength!
-		    </span>
+		    </span> -->
+
+		     <md-input-container class="md-icon-float md-block" flex-gt-sm>
+	          <label>Mobile Number</label>
+	          <md-icon class="fa fa-phone name"></md-icon>
+	          <input name="userNumber" ng-model="user.number" required ng-pattern="/^\d+$/" minlength="10" maxlength="10" class="input_loginform_mobile"/>
+	          <!-- <div class="hint">(###) ###-####</div> -->
+	          <div ng-messages="loginForm.userNumber.$error" rmd-auto-hide="false" ng-if="loginForm.userNumber.$touched">
+	          	<div ng-message-exp="['minlength', 'maxlength']">
+	              Number should be of 10 digits
+	            </div>
+	            <div ng-message="required">This field is required.</div>
+	            <div ng-message="pattern">Please enter a valid phone number.</div>
+	          </div>
+	        </md-input-container>
 
 		    <button class="button button-fab ink-dark button-balanced login_btn" ng-disabled="loginForm.$invalid || loginForm.$pristine" ng-click="login()">
 				<svg style="width:33px;height:56px" viewBox="0 0 24 24">

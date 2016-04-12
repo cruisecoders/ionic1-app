@@ -1,11 +1,12 @@
 <ion-view view-title="Register">
-  <ion-content class="signUp-page">
-   	<div class="card booking-box tmargin" ng-hide="isSignUpSubmit">
+  <ion-header-bar class="bar-balanced">
+    <a ui-sref="login.form" class="button icon-left ion-arrow-left-c button-clear button-dark back-icon"></a>
+      <h1 class="title text-primary-color">Sign Up</h1>
+  </ion-header-bar>
+  <ion-content class="bg-white signUp-page">
+   	<div class=" booking-box tmargin" ng-hide="isSignUpSubmit">
       <form name="signupForm">
-         <div class="bar bar-header bar-balanced" style="position: static;">
-            <div class="h1 title text-primary-color">Sign Up</div>
-         </div>
-         <div class="item item-body">
+         <!-- <div class="item item-body">
             <div class="item-input-inset date-time-select">
                <i class="ion-android-person" style="color:grey; font-size: 14px; margin-top:32px;"></i> 
                <ion-md-input ng-required="true" ng-model="user.firstName" class="select-date-time" placeholder="First Name" 
@@ -32,11 +33,83 @@
               </ion-md-input>
             </div>
          </div>
-         If you don't get OTP then please click <a href="" ng-click="regenerateOTP()">here</a> to generate again.
+
+         If you don't get OTP then please click <a href="" ng-click="regenerateOTP()">here</a> to generate again. -->
+
+         <md-input-container class="md-icon-float md-block" >
+            <label>First Name</label>
+            <md-icon class="fa fa-user name"></md-icon>
+            <input name="firstName" ng-model="user.firstName" required minlength="2" maxlength="30" ng-pattern="/^[a-z ,.'-]+$/i" />
+            <div ng-messages="signupForm.firstName.$error" rmd-auto-hide="false" ng-if="signupForm.firstName.$touched">
+              <div ng-message-exp="['minlength', 'maxlength']">
+                Your name must be between 2 and 30 characters long. 
+              </div>
+              <div ng-message="required">This field is required.</div>
+              <div ng-message="pattern">Not a valid name.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="md-icon-float md-block" >
+            <label>Last Name</label>
+            <md-icon class="fa fa-user name"></md-icon>
+            <input name="lastName" ng-model="user.lastName" required minlength="2" maxlength="30" ng-pattern="/^[a-z ,.'-]+$/i" />
+            <div ng-messages="signupForm.lastName.$error" rmd-auto-hide="false" ng-if="signupForm.lastName.$touched">
+              <div ng-message-exp="['minlength', 'maxlength']">
+                Your name must be between 2 and 30 characters long. 
+              </div>
+              <div ng-message="required">This field is required.</div>
+              <div ng-message="pattern">Not a valid name.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="md-icon-float md-block" >
+            <label>Email</label>
+            <md-icon class="fa fa-envelope name"></md-icon>
+            <input name="emailId" ng-model="user.emailId" required minlength="4" maxlength="50" ng-pattern="/^.+@.+\..+$/" />
+            <div ng-messages="signupForm.emailId.$error" rmd-auto-hide="false" ng-if="signupForm.emailId.$touched">
+              <div ng-message-exp="['minlength', 'maxlength']">
+                Your email id must be between 4 and 50 characters long. 
+              </div>
+              <div ng-message="required">This field is required.</div>
+              <div ng-message="pattern">Not a valid email id.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="md-icon-float md-block" >
+            <label>Mobile Number</label>
+            <md-icon class="fa fa-phone name"></md-icon>
+            <input ng-disabled="true" name="number" ng-model="user.number" required minlength="10" maxlength="10" ng-pattern="/^\d+$/" />
+            <div ng-messages="signupForm.number.$error" rmd-auto-hide="false" ng-if="signupForm.number.$touched">
+              <div ng-message-exp="['minlength', 'maxlength']">
+                Number should be of 10 digits.
+              </div>
+              <div ng-message="required">This field is required.</div>
+              <div ng-message="pattern">Not a valid number.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container class="md-icon-float md-block">
+            <label>OTP</label>
+            <md-icon class="fa fa-pencil name"></md-icon>
+            <input name="otp" ng-model="user.otp" required ng-pattern="/^\d+$/" minlength="6" maxlength="6" />
+            <!-- <div class="hint">(###) ###-####</div> -->
+            <div ng-messages="signupForm.otp.$error" rmd-auto-hide="false" ng-if="signupForm.otp.$touched">
+              <div ng-message-exp="['minlength', 'maxlength']">
+                OTP should be of 6 digits
+              </div>
+              <div ng-message="required">This field is required.</div>
+              <div ng-message="pattern">Please enter a valid OTP.</div>
+            </div>
+          </md-input-container>
+
+          <div class="row">
+              <span>If you don't get OTP then please click <a href="" ng-click="regenerateOTP()">here</a> to generate again.</span>
+          </div>
+          
          <div class="col">
             <button class="button button-block button-calm" ng-click="submitOTP()"  ng-disabled="signupForm.$invalid || signupForm.$pristine">Register</button>
          </div>
-       </form>
+      </form>
    	</div>
    	<!-- <div class="list" ng-show="isSignUpSubmit">
          <div class="item-input-inset date-time-select">

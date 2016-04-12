@@ -352,13 +352,12 @@ button.item.item-complex{
 .item.item-input {
     left: -14px;
 }
-input:required {
-    /*background-color: yellow;*/
+/*input:required {
     border-color: blue !important;
 }
 :required.required {
     border: none !important;
-}
+}*/
 input.ng-pristine {
     /*background-color:yellow;*/
 }
@@ -374,7 +373,7 @@ input.ng-touched.ng-valid {
 input[disabled], input[readonly]:not(.cloned-text-input), 
 select[disabled], select[readonly], textarea[disabled], 
 textarea[readonly]:not(.cloned-text-input) {
-    background-color: #EFF1F5 !important; 
+    background-color: transparent!important; 
 }
 .profile_label_box {
     margin-left: 10px !important;
@@ -439,10 +438,9 @@ textarea[readonly]:not(.cloned-text-input) {
     margin-right: 10px;
 }
 .row > span {
-    margin-left: 77px;
-    margin-top: -18px;
-    color: red;
-    font-size: 16px;
+    margin-top: -10px;
+    color: black;
+    font-size: 12px;
 }
 .select-date-time {
     background-color: transparent !important;
@@ -494,6 +492,7 @@ textarea[readonly]:not(.cloned-text-input) {
     border: 1px solid gainsboro !important;
     padding: 12px !important;
     width: 100% !important;
+    background-color: #FFF;
 }
 .cur-pointer {
     cursor: pointer!important;
@@ -531,8 +530,8 @@ textarea[readonly]:not(.cloned-text-input) {
 .estimate-pricing-span {
     font-size: 100%;
     color: #444;
-    margin-left: 5px;
-    float: left;
+    font-size: 20px;
+    font-weight: 500;
 }
 .estimate-ion_row{
     border-bottom: 1px solid gainsboro;
@@ -540,9 +539,7 @@ textarea[readonly]:not(.cloned-text-input) {
 }
 .estimate-ion_list {
     float: left !important;
-    background-color: #FFFFFF !important;
-    margin-bottom: 20px;
-    /*padding-bottom: 17px;*/
+    background-color: transparent!important;
 }
 .pricing-span {
     border-bottom: 1px solid gainsboro!important;
@@ -634,7 +631,7 @@ input[type='checkbox'] {
 .footer_estimate_price{
     position: absolute;
     top: 10px;
-    left: 40px;
+    left: 25px;
 }
 .footer_booknow {
     position: absolute;
@@ -646,6 +643,8 @@ input[type='checkbox'] {
 }
 .text_underline {
     text-decoration: none;
+    font-size: 14px!important;
+    font-family: "Roboto", sans-serif;
 }
 .item .item-content.activated, 
 .item .item-content.active, 
@@ -688,10 +687,10 @@ md-radio-group md-radio-button:not(:first-child) {
   margin-top: 0px!important; 
 }
 .datetime-label{
-    font-size: 18px;
-    color: #000;
-    font-family: "-apple-system","Helvetica Neue",Roboto,"Segoe UI",sans-serif;
-    font-weight: 500;
+    font-size: 18px!important;
+    color: #000!important;
+    font-family: "-apple-system","Helvetica Neue",Roboto,"Segoe UI",sans-serif!important;
+    font-weight: 500!important;
 }
 .md-datetime-input{
     margin-bottom: -12px;
@@ -712,18 +711,62 @@ md-radio-group md-radio-button:not(:first-child) {
     margin-bottom: 16px;
 }
 .placeholder-date-input-tag{
-    font-size:15px;
+    font-size:15px!important;
     color:#777;
     font-family: "Roboto",sans-serif;
     margin-top:5px;
 }
 .date-input-tag{
-    font-size:15px;
-    color:#777;
-    font-family: "Roboto",sans-serif;
-    margin-top:5px!important;
-    margin-left:63px;
+    font-size:18px!important;
+    color:#777!important;
+    font-family: "Roboto",sans-serif!important;
+    width: 300px!important;
 }
 .md_sidenav {
     border-bottom: 1px solid gainsboro;
+}
+.font-inr{
+    font-size: 20px!important;
+    margin-top: 13px!important;
+    margin-left: 5px!important;
+}
+.estimatefirst_table{
+    background-color:transparent;
+    font-size: 13px;
+    /*border: 1px solid gainsboro;*/
+    padding:10px;
+}
+.estimatefirst_table1{
+    background-color:#8bc34a;
+    border: 1px solid #8bc34a;
+}
+.estimatefirst_table2{
+    background-color:transparent;
+    font-size: 13px;
+    /*border: 1px solid gainsboro;*/
+    padding:10px;
+}
+.estimatefirst_table3{
+    background-color:transparent;
+    font-size: 13px;
+    /*border: 1px solid gainsboro;*/
+    padding:9px;
+}
+.estimate_table_border{
+    border: 1px solid gainsboro;
+}
+
+md-input-container.md-icon-float > md-icon {
+    top: 13px!important;
+    left: 14px!important;
+    color: #777!important;
+    font-size: 14px!important;
+}
+input {
+  font-family: Roboto, sans-serif!important;
+  font-size: 14px!important;
+  color: #000!important;
+}
+.bg-white{
+    background-color: white!important;
 }

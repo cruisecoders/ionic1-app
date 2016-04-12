@@ -16,7 +16,10 @@
     "angular-formly-templates-ionic": "^1.2.2",
     "ion-md-input": "^1.0.4",
     "angular-cookies": "^1.5.3",
-    "angular-material-datetimepicker": "^1.4.0"
+    "angular-material-datetimepicker": "^1.4.0",
+    "font-awesome": "fontawesome#^4.5.0",
+    "components-font-awesome": "^4.5.0",
+    "angular-messages": "^1.5.3"
   },
   "resolutions": {
     "angular": "1.5.3",

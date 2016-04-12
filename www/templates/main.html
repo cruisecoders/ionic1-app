@@ -23,8 +23,13 @@
                 </button>
             </div>
             <ion-item menu-close ng-repeat="menu in ::menuList" ui-sref="{{menu.state}}"style="padding:10px;">
-                <img class="menu-img" ng-src="{{menu.imagepath}}"></img>
+                <!-- <img class="menu-img" ng-src="{{menu.imagepath}}"></img> -->
+                <i class="{{menu.icon}} menu-img" aria-hidden="true"></i>
                 <span class="menu-name">{{menu.name}}</span>
+            </ion-item>
+            <ion-item menu-close ng-click="logout()" ng-href="" style="padding:10px;">
+                <i class="fa fa-sign-out menu-img" aria-hidden="true"></i>
+                <span class="menu-name">Logout</span>
             </ion-item>
         </ion-content>
     </ion-side-menu>

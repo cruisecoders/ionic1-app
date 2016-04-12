@@ -4,7 +4,8 @@
   // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
   // the 2nd parameter is an array of 'requires'
   angular.module('app.projectX', ['ionic', 'ui.router','ngAnimate', 'angular-jwt','ionic-material',
-  'angular-storage', 'ngResource','ionMdInput', 'app.env.config' ,'ngCordova', 'ngCookies', 'ngMaterial', 'ngMaterialDatePicker'])
+  'angular-storage', 'ngResource','ionMdInput', 'app.env.config' ,'ngCordova', 'ngCookies', 'ngMaterial', 'ngMaterialDatePicker',
+   'ngMessages'])
 
       .run([ '$ionicPlatform', '$ionicPopup' , function($ionicPlatform, $ionicPopup) {
         $ionicPlatform.ready(function() {
@@ -216,19 +217,19 @@
   }])
 
 .run([
-  '$rootScope', '$state', 'store', 'jwtHelper', '$ionicLoading', '$ionicPopup' ,
-  function($rootScope, $state, store, jwtHelper, $ionicLoading, $ionicPopup) {
+  '$rootScope', '$state', 'store', 'jwtHelper', '$ionicLoading','$mdDialog',
+  function($rootScope, $state, store, jwtHelper, $ionicLoading, $mdDialog) {
 
   $rootScope.showLoader = function() {
     $ionicLoading.show({
-      template: 'Loading...'
+      templateUrl: "templates/loading.html"
     });
   };
   $rootScope.hideLoader = function(){
     $ionicLoading.hide();
   };
 
-  $rootScope.showAlertBox = function(title, msg){
+/*  $rootScope.showAlertBox = function(title, msg){
     var alertPopup = $ionicPopup.alert({
        title: title,
        cssClass: 'error-alert-popup',
@@ -237,6 +238,22 @@
      alertPopup.then(function(res) {
        console.log('Please try again later ');
      });
+  };*/
+
+  $rootScope.showAlert = function(title, msg) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    // Modal dialogs should fully cover application
+    // to prevent interaction outside of dialog
+    $mdDialog.show(
+      $mdDialog.alert()
+        .parent(angular.element(document.querySelector('#popupContainer')))
+        .clickOutsideToClose(true)
+        .title(title)
+        .textContent(msg)
+        .ariaLabel('Alert Box')
+        .ok('OK')
+        /*.targetEvent(ev)*/
+    );
   };
 
   $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
