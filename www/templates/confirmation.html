@@ -3,49 +3,46 @@
 		<a ui-sref="main.booking" class="button icon-left ion-arrow-left-c button-clear button-dark back-icon"></a>
    		<h1 class="title text-primary-color">Confirmation</h1>
 	</ion-header-bar>
-	<ion-content class="confirmation-page signUp-page padding">
-		<!-- <div class="bar bar-header bar-positive">
-		  <h1 class="title">Confirmation</h1>
-		</div> -->
-		<div class="card">
-			<div class="list">
-				    <!-- {{bookingModel}} -->
-			  <div class="bookingConfirmation">
-			    <b>Confirmed</b>, <strong>{{bookingModel.bookingDate | date:'medium'}}</strong><br>
-			    <span>Your Mobile Number: <strong>{{bookingModel.number}}</strong></span><br>
-			    <div class="col col-50">
-			    	<span>Booking ID: <strong>{{bookingModel.id}}</strong></span>
-			    </div>
-			    <div class="col">
-			    	<span>Status: <strong>{{bookingModel.bookingStatus.activity}}-{{bookingModel.bookingStatus.status}}</strong></span>
-			    </div>
-			  </div>
-			  <div class="pickup-details">
-			  	<i class="icon ion-ios-location-outline" style="float: left;"></i>
-			  	<h5 class="pickup-details-h5"><strong>PickUp Details</strong></h5>
-			  		<span class="StreetSubstreetName">{{bookingModel.pickup.street.city.name}}</span><br>
-			  		<span class="StreetSubstreetName">{{bookingModel.pickup.street.name}}</span><br>
-			  		<span class="StreetSubstreetName">{{bookingModel.pickup.substreet.name}}</span><br>
-			  		<span style="color: #575757;margin-left: 12px;">{{bookingModel.pickup.pickupDate  | date:'medium'}}
-			  		</span><br>
-			  		<span class="StreetSubstreetName">No. of Items: {{bookingModel.itemCount}}</span><br>
-			  </div>
-			  <div class="col pickup-details">
-			  	<i class="icon ion-ios-location-outline" style="float: left;"></i>
-			  	<h5 class="pickup-details-h5"><strong>Drop Details</strong></h5>
-			  		<span class="StreetSubstreetName">{{bookingModel.drop.street.city.name}}</span><br>
-			  		<span class="StreetSubstreetName">{{bookingModel.drop.street.name}}</span><br>
-			  		<span class="StreetSubstreetName">{{bookingModel.drop.substreet.name}}</span><br>
-			  		<span style="color: #575757;margin-left: 12px;">{{bookingModel.drop.dropDate  | date:'medium'}}
-			  		</span>
-			  		
-			  </div>
-			  <div class="col">
-			  	<h5 class="pickup-details-h5">Estimated Price</h5>
-			  	<h5 style="color: #575757;margin-left: 12px;">Final Cost will get Confirmed at the time of pick up.</h5>
-			  </div>
-			</div>  
+	<ion-content class="confirmation-page signUp-page">
+		<div class="bookingConfirmation">
+		    <b>Confirmed</b>, <strong>{{bookingModel.bookingDate | date:'medium'}}</strong><br>
+		    <span>Your Mobile Number: <strong>{{bookingModel.number}}</strong></span><br>
+		    <div class="col col-50">
+		    	<span>Booking ID: <strong>{{bookingModel.id}}</strong></span>
+		    </div>
+		    <div class="col">
+		    	<span>Status: <strong>{{bookingModel.bookingStatus.activity}}-{{bookingModel.bookingStatus.status}}</strong></span>
+		    </div>
 		</div>
-
+		<md-list flex>
+			<md-list-item ng-click="null">
+				<div class="list">
+				    <div class="pickup-details">
+				  		<i class="icon ion-ios-location-outline" style="float: left;margin-top:-7px;"></i>
+				  		<h5 class="pickup-details-h5"><strong>PickUp Details</strong></h5>
+				  		<span class="StreetSubstreetName">City: {{bookingModel.pickup.street.city.name}}</span>
+				  		<br>
+				  		<span class="StreetSubstreetName1">Street: {{bookingModel.pickup.street.name}}</span><br>
+				  		<span class="StreetSubstreetName1">Landmark: {{bookingModel.pickup.substreet.name}}</span><br>
+				  		<span class="StreetSubstreetName1">Date: {{bookingModel.pickup.pickupDate  | date:'medium'}}
+				  		</span><br>
+				  		<span class="StreetSubstreetName1">No. of Items: {{bookingModel.itemCount}}</span><br>
+				  	</div>
+				  	<div class="col pickup-details">
+				  		<i class="icon ion-ios-location-outline" style="float: left;margin-top:-7px;"></i>
+				  		<h5 class="pickup-details-h5"><strong>Drop Details</strong></h5>
+				  		<span class="StreetSubstreetName">City: {{bookingModel.drop.street.city.name}}</span><br>
+				  		<span class="StreetSubstreetName1">Street: {{bookingModel.drop.street.name}}</span><br>
+				  		<span class="StreetSubstreetName1">Landmark: {{bookingModel.drop.substreet.name}}</span><br>
+				  		<span class="StreetSubstreetName1">Date: {{bookingModel.drop.dropDate  | date:'medium'}}
+				  		</span>
+				  	</div>
+				  	<div class="col">
+				  		<h5 class="pickup-details-h5">Estimated Price</h5>
+				  		<h5 style="color: #575757;margin-left: 12px;">Final Cost will get Confirmed at the time of pick up.</h5>
+				  	</div>
+				</div> 
+			</md-list-item>	
+		</md-list flex>
 	</ion-content>
 </ion-view>

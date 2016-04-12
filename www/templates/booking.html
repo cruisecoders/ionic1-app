@@ -1,5 +1,5 @@
 <ion-view view-title="Booking">
-	<ion-content class="signUp-page">
+	<ion-content class="bg_booking_page">
 		<div class="card" style="margin-top:16px;">
 			<ion-slide-box class="slides" auto-play="true" show-pager="true" does-continue="true" on-slide-changed="slideHasChanged($index)">
 		   	   	<ion-slide>
@@ -28,18 +28,15 @@
     		</span>
 		</div> -->
 		<div class="card" style="margin-top:16px;">
-			<md-whiteframe class="md-whiteframe-2dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" 
-				layout layout-align="center center">
-			    <md-list flex>
-					<md-list-item class="md-1-line" ng-click="null;toggleCityRight()">
-					    <i class="ion-ios-home-outline secondary-text-color" style="font-size:20px; color:#000; margin-top:24px;"></i>&nbsp;
-			            <div class="md-list-item-text" layout="column" ng-hide="isOpenRight(cityComponentId)">
-			            	<label class="label-city-text">Pickup / Drop City</label>
-			            	<span class="text-booking-page" ng-hide="booking.city">Select City</span><span class="text-booking-page" ng-show="booking.city">{{booking.city.name}}</span>
-			            </div>
-			        </md-list-item>
-				</md-list flex>
-			</md-whiteframe>
+		    <md-list flex>
+				<md-list-item class="md-1-line" ng-click="null;toggleCityRight()">
+				    <i class="ion-ios-home-outline secondary-text-color" style="font-size:20px; color:#000; margin-top:24px;"></i>&nbsp;
+		            <div class="md-list-item-text" layout="column" ng-hide="isOpenRight(cityComponentId)">
+		            	<label class="label-city-text">Pickup / Drop City</label>
+		            	<span class="text-booking-page" ng-hide="booking.city">Select City</span><span class="text-booking-page" ng-show="booking.city">{{booking.city.name}}</span>
+		            </div>
+		        </md-list-item>
+			</md-list flex>
 		</div>
 		<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="cityRight">
 	      <md-content layout-padding>
@@ -108,55 +105,47 @@
 	    </md-sidenav>
 
 	    <div class="card" style="margin-top:16px;">
-		    <md-whiteframe class="md-whiteframe-2dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" 
-		    	layout layout-align="center center">
-				<md-list flex>					
-					<md-list-item class="md-1-line" ng-click="null;toggleDropStreetRight()" ng-hide="isOpenRight(streetComponentId)" ng-disabled="!booking.city">
-					    <i class="ion-ios-home-outline secondary-text-color" style="font-size:20px; color:#000; margin-top:15px;"></i>&nbsp;
-			            <div class="md-list-item-text" layout="column" ng-hide="isOpenRight(cityComponentId)" style="margin-bottom:10px;">
-			            	<label class="label-city-text">Drop Street / Landmark</label>
-			            	<span class="text-booking-page" ng-hide="booking.dropDetail.street">Select Drop Street/Landmark</span>
-			            	<span class="text-booking-page" ng-show="booking.dropDetail.street">{{booking.dropDetail.street.name}} / {{booking.dropDetail.substreet.name}}</span>
-			            </div>
-			        </md-list-item>
-			       
-					<div class="border-bottom-div"></div>
-					<md-list-item class="md-1-line">
-						<md-input-container class="md-datetime-input">
-					        <label class="col datetime-label">Drop Date/Time</label>
-						        <input mdc-datetime-picker date = "true" time = "true" type = "text"
-						            placeholder = "Select Date & Time"
-						            min-date = "refData.dropMinDate"
-						            max-date = "refData.dropMaxDate"
-						            ng-model = "booking.dropDetail.date"
-						            short-time = "true"
-						            ng-disabled = "isDropDateDisabled"
-						            format = "dddd, DD-MMM-YYYY hh:mm a" ng-class="{'date-input-tag': !isDropDatePlaceholder,'placeholder-date-input-tag': isDropDatePlaceholder}" class="md-input cur-pointer" style="margin-bottom:10px;"/>
-					    </md-input-container>
-					</md-list-item>
-				</md-list flex>
-			</md-whiteframe>
+			<md-list flex>					
+				<md-list-item class="md-1-line" ng-click="null;toggleDropStreetRight()" ng-hide="isOpenRight(streetComponentId)" ng-disabled="!booking.city">
+				    <i class="ion-ios-home-outline secondary-text-color" style="font-size:20px; color:#000; margin-top:15px;"></i>&nbsp;
+		            <div class="md-list-item-text" layout="column" ng-hide="isOpenRight(cityComponentId)" style="margin-bottom:10px;">
+		            	<label class="label-city-text">Drop Street / Landmark</label>
+		            	<span class="text-booking-page" ng-hide="booking.dropDetail.street">Select Drop Street/Landmark</span>
+		            	<span class="text-booking-page" ng-show="booking.dropDetail.street">{{booking.dropDetail.street.name}} / {{booking.dropDetail.substreet.name}}</span>
+		            </div>
+		        </md-list-item>
+				<div class="border-bottom-div"></div>
+				<md-list-item class="md-1-line">
+					<md-input-container class="md-datetime-input">
+				        <label class="col datetime-label">Drop Date/Time</label>
+					        <input mdc-datetime-picker date = "true" time = "true" type = "text"
+					            placeholder = "Select Date & Time"
+					            min-date = "refData.dropMinDate"
+					            max-date = "refData.dropMaxDate"
+					            ng-model = "booking.dropDetail.date"
+					            short-time = "true"
+					            ng-disabled = "isDropDateDisabled"
+					            format = "dddd, DD-MMM-YYYY hh:mm a" ng-class="{'date-input-tag': !isDropDatePlaceholder,'placeholder-date-input-tag': isDropDatePlaceholder}" class="md-input cur-pointer" style="margin-bottom:10px;"/>
+				    </md-input-container>
+				</md-list-item>
+			</md-list flex>
 	    </div>
-
 	    <div class="card">
-	    	<md-whiteframe class="md-whiteframe-2dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" 
-	    	layout layout-align="center center">
-	    		<md-list flex>
-	    			<md-list-item class="md-1-line">
-	    				<label class="item item-input mob-coupon-code-label" style="margin-top: -18px;">
-						   <i class="ion-android-phone-portrait secondary-text-color" style="font-size:18px;"></i>
-						   <input ng-model="booking.number" class="mob-coupon-code-input" type="text" placeholder="Mobile Number" style="left:7px;"/> 
-						</label>
-	    			</md-list-item>
-	    			<!-- <md-list-item class="md-1-line">
-	    				<div class="col">
-						  <label class="item item-input mob-coupon-code-label">
-						    <input ng-model="booking.coupon" class="mob-coupon-code-input" type="text" placeholder="Enter Coupon Code here"/>
-						  </label>
-						</div>
-	    			</md-list-item> -->
-	    		</md-list flex>
-		    </md-whiteframe>	
+    		<md-list flex>
+    			<md-list-item class="md-1-line">
+    				<label class="item item-input mob-coupon-code-label" style="margin-top: -18px;">
+					   <i class="ion-android-phone-portrait secondary-text-color" style="font-size:18px;"></i>
+					   <input ng-model="booking.number" class="mob-coupon-code-input" type="text" placeholder="Mobile Number" style="left:7px;"/> 
+					</label>
+    			</md-list-item>
+    			<!-- <md-list-item class="md-1-line">
+    				<div class="col">
+					  <label class="item item-input mob-coupon-code-label">
+					    <input ng-model="booking.coupon" class="mob-coupon-code-input" type="text" placeholder="Enter Coupon Code here"/>
+					  </label>
+					</div>
+    			</md-list-item> -->
+    		</md-list flex>
 	    </div>
 
 		<!-- <div style="margin-left:15px;">

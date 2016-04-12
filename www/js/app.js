@@ -241,6 +241,7 @@
   };*/
 
   $rootScope.showAlert = function(title, msg) {
+    console.log("show alert");
     // Appending dialog to document.body to cover sidenav in docs app
     // Modal dialogs should fully cover application
     // to prevent interaction outside of dialog

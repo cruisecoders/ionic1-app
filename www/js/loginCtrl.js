@@ -25,7 +25,7 @@ angular.module('app.projectX').controller('loginCtrl',
          if(error.data !=undefined && error.data.errorMsg !=undefined){
           $rootScope.showAlert('Please try again' , error.data.errorMsg);
         }else{
-          $rootScope.showAlert('Please try again' , error);
+          //$rootScope.showAlert('Please try again' , error);
         }
     		});
   }
@@ -49,7 +49,7 @@ angular.module('app.projectX').controller('loginCtrl',
            if(error.data !=undefined && error.data.errorMsg !=undefined){
                $rootScope.showAlert('Please try again' , error.data.errorMsg);
             }else{
-              $rootScope.showAlert('Please try again' , error);
+              //$rootScope.showAlert('Please try again' , error);
             }
            
         });
@@ -67,7 +67,7 @@ angular.module('app.projectX').controller('loginCtrl',
          if(error.data !=undefined && error.data.errorMsg !=undefined){
             $rootScope.showAlert('Please try again' , error.data.errorMsg);
           }else{
-            $rootScope.showAlert('Please try again' , error);
+            //$rootScope.showAlert('Please try again' , error);
           }
         });
   }
