@@ -5,47 +5,35 @@
             <div class="item item-image">
               <img src="img/Contact-Us__1_2.png" style="width:290px;margin:15px 35px;">
             </div>
-
-
-          <!-- <div ng-repeat="newContact in refData.contacts">
-              phone is : {{newContact.phone}}
-              address is : {{newContact.address}}
-              emailid is : {{newContact.emailId}}
-            </div> -->
-            <!-- <md-list flex>
-              <md-list-item class="md-3-line" ng-repeat="newContact in refData.contacts" ng-click="null">
+            <md-list flex ng-repeat="newContact in refData.contacts">
+              <md-list-item class="md-3-line" ng-click="null">
+                   <img src="img/phone-symbol-icon-66698.png" class="md-avatar" alt="phone" />
                   <div class="md-list-item-text" layout="column"> 
-                    <div class="col-offset-10 contact_address">
-                        <span><i class="fa fa-phone"></i> {{newContact.phone}}</span><br>
-                        <span><i class="fa fa-inbox"></i> {{newContact.emailId}}</span>                  
+                    <div class="contact_address md-button-contact">
+                      <span><strong>Call Us: We're available 24hours a day.</strong></span><br>
+                        <span>{{newContact.phone}}</span>
                     </div> 
-                    <div class="col-offset-10" style="padding:10px;border-top:1px solid gainsboro;">
-                        <h4><strong>Address:</strong></h4>
-                        <span>{{newContact.address}}</span>
-                    </div>
                   </div>
               </md-list-item>
-            </md-list flex> -->
-            <div class="col-offset-10 list" ng-repeat="newContact in refData.contacts">
-              <div class="col-offset-10 contact_address">
-                <span><i class="fa fa-phone"></i> {{newContact.phone}}</span><br>
-                <span><i class="fa fa-inbox"></i> {{newContact.emailId}}</span>
-              </div>
-              <div class="col-offset-10" style="padding:10px;border-top:1px solid gainsboro;">
-                <strong>Address:</strong> 
-                <span>{{newContact.address}}</span>
-              </div>
-                 <!-- <div class="card-footer text-right">
-                    <i class="icon ion-chatbubbles positive"></i> 6
-                    <i class="icon ion-heart assertive"></i> 23
-                    <div class="pull-left" style="padding-bottom:10px;">
-                      
-                    </div>
-                    <div class="pull-left" style="padding-bottom:10px;">
-                      
-                    </div>
-                  </div> -->
-            </div> 
+              <md-list-item class="md-3-line" ng-click="null">
+                   <img src="img/email.png" class="md-avatar" alt="email" />
+                  <div class="md-list-item-text" layout="column"> 
+                    <div class="contact_address md-button-contact">
+                      <span><strong>Mail Us: We're available 24hours a day.</strong></span><br>
+                        <span> {{newContact.emailId}}</span>                  
+                    </div> 
+                  </div>
+              </md-list-item>
+              <md-list-item class="md-3-line" ng-click="null">
+                   <img src="img/office-icon.png" class="md-avatar img_address" alt="address " />
+                  <div class="md-list-item-text" layout="column"> 
+                    <div class="md-button-contact">
+                        <span class="contact_address"><strong>Address:</strong></span><br>
+                        <span class="contact_address_phone">{{newContact.address}}</span>                  
+                    </div> 
+                  </div>
+              </md-list-item>
+            </md-list flex> 
           </div>
         </div>
         <!-- <section id="cd-timeline" class="cd-container" style="width:94%;">

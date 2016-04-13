@@ -779,15 +779,20 @@ input {
     background-color: white!important;
 }
 .contact_address{
-    padding:10px!important;
-    font-size:16px!important;
-    font-family:"Roboto",sans-serif!important;
-    padding-bottom: 10px;
-    color: #777;
+    font-size:13px!important;
+    font-family:inherit!important;
+    font-weight: 500!important;
 }
 .contact_address_phone{
-    padding-left: 5px;
-    padding-top: 18px;
-    border-top: 1px solid gainsboro;
-    
+    font-size: smaller!important;
+    font-family:inherit!important;
+    font-weight: 500!important;
+
+}
+.md-button-contact{
+    line-height: 17px!important;
+    margin-top: 6px!important;
+}
+.img_address{
+    margin-top: -47px!important;
 }
