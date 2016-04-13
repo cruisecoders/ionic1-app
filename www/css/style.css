@@ -654,13 +654,13 @@ input[type='checkbox'] {
     font-size: 14px!important;
     font-family: "Roboto", sans-serif;
 }
-.item .item-content.activated, 
+/*.item .item-content.activated, 
 .item .item-content.active, 
 .item-complex.activated .item-content, 
 .item-complex.active .item-content, 
 .item.activated, .item.active {
     background-color: rgba(51,205,95,0.5);
-}
+}*/
 a.md-button.md-default-theme.md-focused:not([disabled]), 
 a.md-button.md-focused:not([disabled]), 
 .md-button.md-default-theme.md-focused:not([disabled]), 

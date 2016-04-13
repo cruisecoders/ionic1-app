@@ -46,58 +46,58 @@
 			  </div>
 			  <div class="pickup-details">
 			  		<h4 class="" style="margin-left:17px;">Pickup Details</h4>
-			  		<a class="item item-avatar item-icon-right" ng-show="pickupUserInfo">
+			  		<a class="item item-icon-right" ng-show="pickupUserInfo">
 		                <img src="img/driverIcon.png" style="width:70px; height:70px;">
 		                <h2>Pickup Boy: {{pickupUserInfo.user.firstName}}  &nbsp;{{pickupUserInfo.user.lastName}}</h2>
 		                <p>Mobile: {{pickupUserInfo.user.mobile}}</p>
 		            </a>
-		            <a class="item item-avatar item-icon-right StreetSubstreetName">
-						<h2>City: {{mainData.selectedBooking.pickup.street.city.name}}</h2>
+		            <a class="item item-icon-right StreetSubstreetName">
+						<h2 style="padding-bottom:10px;">City: {{mainData.selectedBooking.pickup.street.city.name}}</h2>
 			  		</a>
-			  		<a class="item item-avatar item-icon-right StreetSubstreetName">
+			  		<a class="item item-icon-right StreetSubstreetName">
 						<h2>Street: {{mainData.selectedBooking.pickup.street.name}}</h2>
 		      		    <p>Landmark: {{mainData.selectedBooking.pickup.substreet.name}}</p>
 			  		</a>
-			  		<a class="item item-avatar item-icon-right StreetSubstreetName">
+			  		<a class="item item-icon-right StreetSubstreetName">
 						<h2>Pickup Date & Time:</h2>
 		      		    <p>{{mainData.selectedBooking.pickup.pickupDate  | date:'medium'}}</p>
 			  		</a>
 			  </div>
 			  <div class="col pickup-details">
 			  	    <h4 class="" style="margin-left:17px;">Drop Details</h4>
-			  	    <a class="item item-avatar item-icon-right" ng-show="dropUserInfo">
+			  	    <a class="item item-icon-right" ng-show="dropUserInfo">
 		                <img src="img/driverIcon.png" style="width:70px; height:70px;">
 		                <h2>Drop Boy: {{dropUserInfo.user.firstName}} &nbsp;{{dropUserInfo.user.lastName}}</h2>
 		                <p>Mobile: {{dropUserInfo.user.mobile}}</p>
 		            </a>
-		            <a class="item item-avatar item-icon-right StreetSubstreetName">
-						<h2>City: {{mainData.selectedBooking.drop.street.city.name}}</h2>
+		            <a class="item item-icon-right StreetSubstreetName">
+						<h2 style="padding-bottom:10px;">City: {{mainData.selectedBooking.drop.street.city.name}}</h2>
 			  		</a>
-			  		<a class="item item-avatar item-icon-right StreetSubstreetName">
+			  		<a class="item item-icon-right StreetSubstreetName">
 						<h2>Street: {{mainData.selectedBooking.drop.street.name}}</h2>
 		      		    <p>Landmark: {{mainData.selectedBooking.drop.substreet.name}}</p>
 			  		</a>
-			  		<a class="item item-avatar item-icon-right StreetSubstreetName">
+			  		<a class="item item-icon-right StreetSubstreetName">
 						<h2>Drop Date & Time:</h2>
 		      		    <p>{{mainData.selectedBooking.drop.dropDate  | date:'medium'}}</p>
 			  		</a>
 			  </div>
 			  <div class="col pickup-details">
 				  	<h4 class="" style="margin-left:17px;">Luggage Informations</h4>
-			  		<a class="item item-avatar item-icon-right StreetSubstreetName">
+			  		<a class="item item-icon-right StreetSubstreetName">
 						<h2>Total: {{mainData.selectedBooking.itemCount}}</h2>
 			  		</a>
-			  		<a class="item item-avatar item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
+			  		<a class="item item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
 						<h2>{{mainData.selectedBooking.luggageInfo.zeroToFifCount}}
 							<i class="ion-ios-briefcase"></i> (0 to 15Kg)
 						</h2>
 			  		</a>
-			  		<a class="item item-avatar item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
+			  		<a class="item item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
 						<h2>{{mainData.selectedBooking.luggageInfo.fifToThirCount}}
 							<i class="ion-ios-briefcase"></i> (15 to 30Kg)
 						</h2>
 			  		</a>
-			  		<a class="item item-avatar item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
+			  		<a class="item item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo">
 						<h2>{{mainData.selectedBooking.luggageInfo.aboveThirty}}
 							<i class="ion-ios-briefcase"></i> (Above 30Kg)
 						</h2>
