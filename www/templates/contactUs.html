@@ -1,25 +1,51 @@
 <ion-view view-title="Contact">
   <ion-content class="contact-page animate-ripple">
-    <div class="list">
         <div class="card">
           <div class="stable-bg-contact ink ink-dark">
             <div class="item item-image">
               <img src="img/Contact-Us__1_2.png" style="width:290px;margin:15px 35px;">
             </div>
-            <div class="item item-avatar item-text-wrap">
-                <i class="avatar icon ion-home timelineIcon"></i>
-                <strong>Address:</strong> Plot no. 23/4, Pink Apartment, Opposite Hdfc ATM, 16th main, BTM 2nd stage.
-                <div class="card-footer text-right">
-                    <!-- <i class="icon ion-chatbubbles positive"></i> 6
-                    <i class="icon ion-heart assertive"></i> 23 -->
+
+
+          <!-- <div ng-repeat="newContact in refData.contacts">
+              phone is : {{newContact.phone}}
+              address is : {{newContact.address}}
+              emailid is : {{newContact.emailId}}
+            </div> -->
+            <!-- <md-list flex>
+              <md-list-item class="md-3-line" ng-repeat="newContact in refData.contacts" ng-click="null">
+                  <div class="md-list-item-text" layout="column"> 
+                    <div class="col-offset-10 contact_address">
+                        <span><i class="fa fa-phone"></i> {{newContact.phone}}</span><br>
+                        <span><i class="fa fa-inbox"></i> {{newContact.emailId}}</span>                  
+                    </div> 
+                    <div class="col-offset-10" style="padding:10px;border-top:1px solid gainsboro;">
+                        <h4><strong>Address:</strong></h4>
+                        <span>{{newContact.address}}</span>
+                    </div>
+                  </div>
+              </md-list-item>
+            </md-list flex> -->
+            <div class="col-offset-10 list" ng-repeat="newContact in refData.contacts">
+              <div class="col-offset-10 contact_address">
+                <span><i class="fa fa-phone"></i> {{newContact.phone}}</span><br>
+                <span><i class="fa fa-inbox"></i> {{newContact.emailId}}</span>
+              </div>
+              <div class="col-offset-10" style="padding:10px;border-top:1px solid gainsboro;">
+                <strong>Address:</strong> 
+                <span>{{newContact.address}}</span>
+              </div>
+                 <!-- <div class="card-footer text-right">
+                    <i class="icon ion-chatbubbles positive"></i> 6
+                    <i class="icon ion-heart assertive"></i> 23
                     <div class="pull-left" style="padding-bottom:10px;">
-                      <h2><i class="fa fa-phone"></i> 080-42060689</h2>
+                      
                     </div>
                     <div class="pull-left" style="padding-bottom:10px;">
-                      <h2><i class="fa fa-inbox"></i> info@wedealnow.com</h2>
+                      
                     </div>
-                </div>
-            </div>
+                  </div> -->
+            </div> 
           </div>
         </div>
         <!-- <section id="cd-timeline" class="cd-container" style="width:94%;">
@@ -51,6 +77,5 @@
             </div>
           </div>
         </section> -->
-    </div>
   </ion-content>
 </ion-view>
