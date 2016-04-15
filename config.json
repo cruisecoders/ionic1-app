@@ -1,12 +1,12 @@
 {
   "local": {
     "EnvironmentConfig": {
-      "api": "http://localhost:8080/web-service/api/"
+      "api": "http://localhost:8080/api/"
     }
   },
   "dev": {
     "EnvironmentConfig": {
-      "api": "http://ec2-52-36-173-21.us-west-2.compute.amazonaws.com:8080/web-service/api/"
+      "api": "http://yourluggage.in/api/"
     }
   },
   "production": {
