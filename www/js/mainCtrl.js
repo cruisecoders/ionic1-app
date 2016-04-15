@@ -1,6 +1,6 @@
 angular.module('app.projectX').controller('mainCtrl',
-['$scope', 'menuConstant', 'projectApi', '$rootScope', 'store',
- function($scope, menuConstant, projectApi, $rootScope, store){
+['$scope', 'menuConstant', 'projectApi', '$rootScope', 'store', '$mdDialog', '$ionicPlatform','$state', '$ionicHistory',
+ function($scope, menuConstant, projectApi, $rootScope, store, $mdDialog, $ionicPlatform , $state, $ionicHistory){
 	$scope.menuList = menuConstant.menuList;
 	$scope.mainData = {};
 
@@ -20,4 +20,31 @@ angular.module('app.projectX').controller('mainCtrl',
   }
 
   $scope.getCities();
+
+   $scope.showConfirm = function() {
+        // Appending dialog to document.body to cover sidenav in docs app
+        var confirm = $mdDialog.confirm()
+              .title('Would you like to close ?')
+              .textContent('')
+              .ariaLabel('Lucky day')
+              //.targetEvent(ev)
+              .ok('Yes')
+              .cancel('No');
+        $mdDialog.show(confirm).then(function() {
+          //$scope.status = 'You decided to get rid of your debt.';
+          ionic.Platform.exitApp();
+        }, function() {
+          //$scope.status = 'You decided to keep your debt.';
+        });
+      };
+      
+      $ionicPlatform.registerBackButtonAction(function() {
+
+        if($state.is('main.booking')){
+          $scope.showConfirm();
+        }else{
+          $ionicHistory.goBack();
+        }
+        
+      }, 100);
 }]);

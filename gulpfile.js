@@ -132,7 +132,7 @@ gulp.task('replaceConfig', function () {
   console.log('replaceConfig STARTED');
   gulp.src('config.json')
   .pipe(gulpNgConfig('app.env.config', {
-    environment: 'local'
+    environment: 'dev'
     }))
   .pipe(gulp.dest('./www/js'))
   .on('end', function(){

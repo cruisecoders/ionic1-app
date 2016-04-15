@@ -292,8 +292,9 @@
   };
 }])
 
-.config(['$httpProvider', function ($httpProvider) {
+.config(['$httpProvider', '$mdGestureProvider', function ($httpProvider, $mdGestureProvider) {
   $httpProvider.interceptors.push('AuthInterceptor');
+     $mdGestureProvider.skipClickHijack();
 }])
 
 .directive('onFinishRender', ['$timeout', 'ionicMaterialMotion', 'ionicMaterialInk', 
