@@ -3,30 +3,42 @@
 		<a ui-sref="login.form" class="button icon-left ion-ios-arrow-thin-left button-clear button-dark back-icon"></a>
    		<h1 class="title text-primary-color">OTP</h1>
 	</ion-header-bar>
-	<ion-content class="bg-white padding">		
-		<form name="otpForm" class="row responsive-sm my-form">
-			<!-- <div class="item item-body">
-		        <div class="item-input-inset date-time-select">
-		        	<img src="img/India_flat.png" style="margin-top: 25px;" width="auto" height="35px">
-			    	<ion-md-input ng-model="user.otp" placeholder="OTP" type="text" type="text" ng-required="true" ng-pattern="/^[0-9]{1,6}$/" ng-minlength="6">
-			    	</ion-md-input>
-		    	</div>
-		    </div>
+	<ion-content class="bg-white padding">
+		<form name="otpForm">
+            <div class="row responsive-md">
+                <div class="col col-50 col-offset-25">
+                    <div class="header padding text-center">
+                        <!-- <img src="img/logo.png" alt="Your logo here"/> -->
+                        <img src="img/Capture1.png" width="100px" height="100px" alt="Logo"/>
+                    </div>
+                    <div class="list">
+                        <md-input-container class="md-block" flex-gt-sm>
+					          <label>OTP</label>
+					          <input name="otp" ng-model="user.otp" required ng-pattern="/^\d+$/" minlength="6" maxlength="6" />
+					          <!-- <div class="hint">(###) ###-####</div> -->
+					          <div ng-messages="otpForm.otp.$error" rmd-auto-hide="false" ng-if="otpForm.otp.$touched">
+					          	<div ng-message-exp="['minlength', 'maxlength']">
+					              OTP should be of 6 digits
+					            </div>
+					            <div ng-message="required">This field is required.</div>
+					            <div ng-message="pattern">Please enter a valid OTP.</div>
+					          </div>
+					    </md-input-container>
+					    <span>If you don't get OTP then please click 
+					    	<a href="" ng-click="regenerateOTP()">here</a> 
+					    to generate again.</span>
+                    </div>
+                    <button class="button button-block button-balanced" ng-disabled="otpForm.$invalid || otpForm.$pristine" ng-click="submitOTP()">
+                        Submit OTP
+                    </button>
+                </div>
+            </div>
+        </form>
 
-		    <span>If you don't get OTP then please click <a href="" ng-click="regenerateOTP()">here</a> to generate again.</span>
-		    <span ng-show="otpForm.otp.$touched && otpForm.otp.$error.required">
-				This field is required!</span>
-			<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.pattern">
-				Not a valid OTP! Only Numeric</span>
-			<span ng-show="otpForm.otp.$touched && otpForm.otp.$error.minlength">
-				This field is minlength!</span>
-
- -->
-
+		<!-- <form name="otpForm" class="row responsive-sm my-form">
  			<md-input-container class="md-block" flex-gt-sm>
 	          <label>OTP</label>
 	          <input name="otp" ng-model="user.otp" required ng-pattern="/^\d+$/" minlength="6" maxlength="6" />
-	          <!-- <div class="hint">(###) ###-####</div> -->
 	          <div ng-messages="otpForm.otp.$error" rmd-auto-hide="false" ng-if="otpForm.otp.$touched">
 	          	<div ng-message-exp="['minlength', 'maxlength']">
 	              OTP should be of 6 digits
@@ -42,6 +54,6 @@
 	            <button class="button button-block button-balanced" ng-disabled="otpForm.$invalid || otpForm.$pristine" ng-click="submitOTP()">
 	            Submit OTP</button>
 	        </div>
-		</form>
+		</form> -->
 	</ion-content>
 </ion-view>

@@ -1,39 +1,43 @@
 <ion-view view-title="My Profile">
   <ion-content class="signUp-page">
-   	<div class="card booking-box tmargin">  
-      <div class="profile-box-info slide-up">
-        <img id="profile-image" src="img/avatar_2x.png">
+    <div class="row responsive-md">
+      <div class="col col-50 col-offset-25">
+       	<div class="card booking-box tmargin">  
+          <div class="profile-box-info slide-up">
+            <img id="profile-image" src="img/avatar_2x.png">
+          </div>
+          <div class="list animate-fade-slide-in">   
+         		<div class="item-input-inset date-time-select">
+              <i class="ion-android-person all_icon"></i> 
+              <label class="item item-input item-stacked-label profile_label_box">
+                <span class="input-label">First Name</span>
+                <input type="text" ng-disabled="true" name="FirstName" ng-model="userInfo.firstName">
+              </label>
+            </div>
+            <div class="item-input-inset date-time-select">
+              <i class="ion-android-person all_icon"></i> 
+              <label class="item item-input item-stacked-label profile_label_box">
+                <span class="input-label">Last Name</span>
+                <input type="text" ng-disabled="true" name="LastName" ng-model="userInfo.lastName">
+              </label>
+            </div> 
+      	    <div class="item-input-inset date-time-select">
+              <i class="ion-android-mail all_icon"></i>
+              <label class="item item-input item-stacked-label profile_label_box">
+                <span class="input-label">Email</span>
+                <input type="text" ng-disabled="true" name="Email" ng-model="userInfo.emailId">
+              </label>
+            </div>
+      	    <div class="item-input-inset date-time-select">
+              <i class="ion-android-phone-portrait all_icon"></i>
+              <label class="item item-input item-stacked-label profile_label_box">
+                <span class="input-label">Mobile</span>
+                <input type="text" ng-disabled="true" name="MobileNumber" ng-model="userInfo.number">
+              </label>
+            </div>
+          </div>
+       	</div>
       </div>
-      <div class="list animate-fade-slide-in">   
-     		<div class="item-input-inset date-time-select">
-          <i class="ion-android-person all_icon"></i> 
-          <label class="item item-input item-stacked-label profile_label_box">
-            <span class="input-label">First Name</span>
-            <input type="text" ng-disabled="true" name="FirstName" ng-model="userInfo.firstName">
-          </label>
-        </div>
-        <div class="item-input-inset date-time-select">
-          <i class="ion-android-person all_icon"></i> 
-          <label class="item item-input item-stacked-label profile_label_box">
-            <span class="input-label">Last Name</span>
-            <input type="text" ng-disabled="true" name="LastName" ng-model="userInfo.lastName">
-          </label>
-        </div> 
-  	    <div class="item-input-inset date-time-select">
-          <i class="ion-android-mail all_icon"></i>
-          <label class="item item-input item-stacked-label profile_label_box">
-            <span class="input-label">Email</span>
-            <input type="text" ng-disabled="true" name="Email" ng-model="userInfo.emailId">
-          </label>
-        </div>
-  	    <div class="item-input-inset date-time-select">
-          <i class="ion-android-phone-portrait all_icon"></i>
-          <label class="item item-input item-stacked-label profile_label_box">
-            <span class="input-label">Mobile</span>
-            <input type="text" ng-disabled="true" name="MobileNumber" ng-model="userInfo.number">
-          </label>
-        </div>
-      </div>
-   	</div>
+    </div>    
   </ion-content>
 </ion-view>

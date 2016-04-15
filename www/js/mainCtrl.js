@@ -40,10 +40,10 @@ angular.module('app.projectX').controller('mainCtrl',
       
       $ionicPlatform.registerBackButtonAction(function() {
 
-        if($state.is('main.booking')){
-          $scope.showConfirm();
+        if($state.is('main.bookingDetail') || $state.is('confirmation')){
+          $ionicHistory.goBack();    
         }else{
-          $ionicHistory.goBack();
+           $scope.showConfirm();
         }
         
       }, 100);

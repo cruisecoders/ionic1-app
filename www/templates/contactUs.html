@@ -1,9 +1,11 @@
 <ion-view view-title="Contact">
   <ion-content class="contact-page animate-ripple">
+    <div class="row responsive-md">
+      <div class="col col-50 col-offset-25">
         <div class="card">
           <div class="stable-bg-contact ink ink-dark">
             <div class="item item-image">
-              <img src="img/Contact-Us__1_2.png" style="width:290px;margin:15px 35px;">
+              <img src="img/Contact-Us__1_2.png" style="width:290px;margin:15px 17px;">
             </div>
             <md-list flex ng-repeat="newContact in refData.contacts">
               <md-list-item class="md-3-line" ng-click="null">
@@ -65,5 +67,7 @@
             </div>
           </div>
         </section> -->
+      </div>  
+    </div>    
   </ion-content>
 </ion-view>

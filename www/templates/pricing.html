@@ -1,45 +1,49 @@
 <ion-view view-title="Pricing">
   <ion-content class="signUp-page">    
-	<div ng-repeat="rate in refData.rates">
-		<span class="col pricing-span select-city estimatefirst_table1">
-			City : <strong>{{rate.city.name}}</strong>
-		</span>
-		<div layout="row">
-			  <div flex flex-order="-1" class="estimatefirst_table">
-			    <span hide-gt-md style="padding-left:5px;">Weight</span>
-			    <span show-gt-md style="padding-left:5px;">in</span>
-			    <span show-gt-md style="padding-left:5px;">(kg)</span>
-			  </div>
-			  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table">
-			    <span hide-gt-md>Charges</span>
-			    <span show-gt-md>in</span>
-			    <span show-gt-md>(Rs)</span>
-			  </div>
+  	<div class="row responsive-md">
+      <div class="col col-50 col-offset-25">
+			<div ng-repeat="rate in refData.rates">
+				<span class="col pricing-span select-city estimatefirst_table1">
+					City : <strong>{{rate.city.name}}</strong>
+				</span>
+				<div layout="row" class="estimate_table_border">
+					  <div flex flex-order="-1" class="estimatefirst_table">
+					    <span hide-gt-md style="padding-left:5px;">Weight</span>
+					    <span show-gt-md style="padding-left:5px;">in</span>
+					    <span show-gt-md style="padding-left:5px;">(kg)</span>
+					  </div>
+					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table">
+					    <span hide-gt-md>Charges</span>
+					    <span show-gt-md>in</span>
+					    <span show-gt-md>(Rs)</span>
+					  </div>
+				</div>
+				<div layout="row" class="estimate_table_border">
+					  <div flex flex-order="-1" class="estimatefirst_table">
+					    <span>0-15</span>
+					  </div>
+					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table">
+					    <span hide-gt-md>{{rate.zeroToFifCount}}</span>
+					  </div>
+				</div>
+				<div layout="row" class="estimate_table_border">
+					  <div flex flex-order="-1" class="estimatefirst_table2">
+					    <span>15-30</span>
+					  </div>
+					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table2">
+					    <span hide-gt-md>{{rate.fifToThirCount}}</span>
+					  </div>
+				</div>
+				<div layout="row" class="estimate_table_border">
+					  <div flex flex-order="-1" class="estimatefirst_table3">
+					    <p>Above 30</p>
+					  </div>
+					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table3">
+					    <p hide-gt-md>{{rate.aboveThirty}}</p>
+					  </div>
+				</div>
+			</div>
 		</div>
-		<div layout="row" class="estimate_table_border">
-			  <div flex flex-order="-1" class="estimatefirst_table">
-			    <span>0-15</span>
-			  </div>
-			  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table">
-			    <span hide-gt-md>{{rate.zeroToFifCount}}</span>
-			  </div>
-		</div>
-		<div layout="row" class="estimate_table_border">
-			  <div flex flex-order="-1" class="estimatefirst_table2">
-			    <span>15-30</span>
-			  </div>
-			  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table2">
-			    <span hide-gt-md>{{rate.fifToThirCount}}</span>
-			  </div>
-		</div>
-		<div layout="row" class="estimate_table_border">
-			  <div flex flex-order="-1" class="estimatefirst_table3">
-			    <p>Above 30</p>
-			  </div>
-			  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table3">
-			    <p hide-gt-md>{{rate.aboveThirty}}</p>
-			  </div>
-		</div>
-	</div>
+	</div>		
   </ion-content>
 </ion-view>

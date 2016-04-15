@@ -201,9 +201,6 @@ button.item.item-complex{
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     margin-left:5px;
 }
-.full-image {
-    width: 45% !important;
-}
 .booking-box {
 	background-color: transparent;
 	color: #fff;
@@ -429,10 +426,6 @@ textarea[readonly]:not(.cloned-text-input) {
   height: 495px !important;
   width: auto!important;
 }
-.date-time-select{
-    margin-left: 2px;
-    margin-top: -4px;
-}
 .section_all_btn {
     padding: 8px;
     border-left: 1px solid #B6B6B6;
@@ -489,9 +482,6 @@ textarea[readonly]:not(.cloned-text-input) {
     margin-top: 7px;
     height: 110px;
 }
-.login_btn {
-    margin: 30px 120px !important;
-}
 .text_input {
     color: black !important;
     letter-spacing: 0 !important;
@@ -509,16 +499,15 @@ textarea[readonly]:not(.cloned-text-input) {
     border-bottom: 1px solid  gainsboro;
     margin-bottom: -7px;
 }
-.pickUp_line50 {
+/*.pickUp_line50 {
     border-right:1px solid gainsboro !important;
     margin-top: -5px !important;
-    /*border-bottom: 1px solid gainsboro !important;*/
+    border-bottom: 1px solid gainsboro !important;
 }
 .dropUp_line50 {
     border-right:1px solid gainsboro !important;
     margin-top: -17px !important;
-    /*border-bottom: 1px solid gainsboro;*/
-}
+}*/
 .footer_tabs {
     background-color: #F8F9FB!important;
 }
@@ -716,7 +705,7 @@ md-radio-group md-radio-button:not(:first-child) {
     width: 300px;
     border-bottom: 1px solid gainsboro;
     margin-left: 15px;
-    margin-bottom: 16px;
+    margin-bottom: 30px;
 }
 .placeholder-date-input-tag{
     font-size:15px!important;
@@ -792,7 +781,12 @@ input {
 .md-button-contact{
     line-height: 17px!important;
     margin-top: 6px!important;
+    font-family:inherit!important;
+    font-weight: 500!important;
 }
 .img_address{
     margin-top: -47px!important;
+}
+.about-heading{
+   /* margin-bottom: -23px;*/
 }

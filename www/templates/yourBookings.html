@@ -1,10 +1,10 @@
 <ion-view view-title="Your Booking">
   <ion-content class="signUp-page yourbooking-page">
-  	 <ion-refresher
-	    pulling-text="Pull to refresh..."
-	    on-refresh="getBookingsByUserId(userInfo.id);">
-	  </ion-refresher>
-		<div class="list animate-fade-slide-in-right">
+  	<div class="row responsive-md">
+      <div class="col col-50 col-offset-25">
+	  	 	<ion-refresher pulling-text="Pull to refresh..." on-refresh="getBookingsByUserId(userInfo.id);">
+		 	</ion-refresher>
+			<div class="list animate-fade-slide-in-right">
 			<div class="booking_history_empty" ng-show="yourBooking.List.length==0">
 				Booking history is empty.
 			</div>
@@ -19,6 +19,8 @@
 	              <h4>Your Mobile Number: <strong>{{booking.number}}</strong></h4>
               </div>
             </a>
-		</div>  
+			</div>  
+		</div>	
+	</div>
   </ion-content>
 </ion-view>
