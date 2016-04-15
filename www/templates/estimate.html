@@ -24,7 +24,7 @@
 			</md-list-item>	
 		</md-list flex>	 -->				
 		<md-list-item class="md-3-line" ng-click="null">
-			<div class="col-offset-10" style="border-bottom:1px solid gainsboro;" 
+			<div class="" style="border-bottom:1px solid gainsboro;" 
 				ng-show="refData.rate">
 				<h5>Select Number of Items between<strong>1kg - 15kg </strong></h5>
 				<md-radio-group  ng-model="estimate.zeroToFif">
@@ -44,7 +44,7 @@
 			</div>
         </md-list-item>	
 		<md-list-item class="md-3-line" ng-click="null">
-			<div class="col-offset-10" style="border-bottom:1px solid gainsboro;" 
+			<div class="" style="border-bottom:1px solid gainsboro;" 
 				ng-show="refData.rate">
 				<h5> Select Number of Items between <strong>15kg - 30kg</strong></h5>
 				<md-radio-group ng-model="estimate.fitToThirty">
@@ -64,7 +64,7 @@
 			</div>
 		</md-list-item>
 		<md-list-item class="md-3-line" ng-click="null">
-			<div class="col-offset-10" style="border-bottom:1px solid gainsboro;"
+			<div class="" style="border-bottom:1px solid gainsboro;"
 			    ng-show="refData.rate">
 				<h5> Select Number of Items above <strong>30kg</strong></h5>
 				<md-radio-group ng-model="estimate.aboveThirty">
@@ -83,8 +83,7 @@
 			    </md-radio-group>
 			</div>
 		</md-list-item>	
-		
-		<div layout="row" ng-show="refData.rate">
+		<div layout="row" ng-show="refData.rate" style="margin-top:25px;">
 			  <div flex flex-order="-1" class="estimatefirst_table1">
 			    <span hide-gt-md style="padding-left:5px;">Weight</span><br>
 			    <span show-gt-md style="padding-left:5px;">in</span>
