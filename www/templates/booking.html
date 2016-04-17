@@ -89,15 +89,15 @@
 					</md-list flex>
 			    </div>
 			    
-				<md-sidenav class="md-sidenav-right md-whiteframe-4dp md_sidenav" md-component-id="streetRight">
+				<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="streetRight">
 			      <md-content layout-padding>
 			        <form>
 			          <md-list flex>
 			             <div class="md-primary" ng-repeat="street in refData.streets">
-			          		<md-list-item ng-repeat="substreet in street.substreets" ng-click="close(streetComponentId);booking.pickupDetail.street=street;booking.pickupDetail.substreet=substreet;" >
+			          		<md-list-item class="md_sidenav" ng-repeat="substreet in street.substreets" ng-click="close(streetComponentId);booking.pickupDetail.street=street;booking.pickupDetail.substreet=substreet;" >
 			      				<label class="item item-input item-stacked-label subStreets">
-			      				 	<span class="col input-label cur-pointer"><h3 class="streets-h3"> {{street.name}} </h3></span>
-			      					<span class="col cur-pointer"><h5>{{substreet.name}}</h5></span>
+			      				 	<span class="col col-pickupStreet input-label cur-pointer"><h3 class="streets-h3"> {{street.name}} </h3></span>
+			      					<span class="col col-pickupStreet cur-pointer"><h5>{{substreet.name}}</h5></span>
 			      				</label>	
 			      			</md-list-item>
 				        </div>
@@ -204,15 +204,15 @@
 		            <span ng-hide="booking.dropDetail.street">Select Street/Landmark</span><span ng-show="booking.dropDetail.street">{{booking.dropDetail.street.name}} / {{booking.dropDetail.substreet.name}}</span>
 		        </md-button> -->
 
-				<md-sidenav class="md-sidenav-right md-whiteframe-4dp md_sidenav" md-component-id="dropStreetRight">
+				<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="dropStreetRight">
 			      <md-content layout-padding>
 			        <form>
 			          <md-list flex>
 			            <div class="md-primary" ng-repeat="street in refData.streets">
-			          		<md-list-item ng-repeat="substreet in street.substreets" ng-click="close(dropStreetComponentId);booking.dropDetail.street=street;booking.dropDetail.substreet=substreet;" >
+			          		<md-list-item class="md_sidenav" ng-repeat="substreet in street.substreets" ng-click="close(dropStreetComponentId);booking.dropDetail.street=street;booking.dropDetail.substreet=substreet;" >
 			      				<label class="item item-input item-stacked-label subStreets">
-			      				 	<span class="col input-label cur-pointer"><h3 class="streets-h3"> {{street.name}} </h3></span>
-			      					<span class="col cur-pointer"><h5>{{substreet.name}}</h5></span>
+			      				 	<span class="col col-pickupStreet input-label cur-pointer"><h3 class="streets-h3"> {{street.name}} </h3></span>
+			      					<span class="col col-pickupStreet cur-pointer"><h5>{{substreet.name}}</h5></span>
 			      				</label>	
 			      			</md-list-item>
 				        </div>

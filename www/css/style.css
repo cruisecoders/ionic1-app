@@ -2,41 +2,6 @@
 .row .login-field{
 	margin-top: 60px;
 }
-@media all and (orientation:portrait) {
-    .row .col-offset-33 {
-        margin-left: 110px;
-        margin-top: 4px;
-    }
-}
-@media all and (orientation:landscape) {
-    .row .col-offset-33 {
-        margin-left: 224px;
-        margin-top: 4px;
-    }
-}
-For Tablet
-@media screen (max-width:1024px){
-    .row .col-offset-33 {
-        margin-left: 75px;
-        margin-top: 4px;
-    }
-}
-.box {
-	background-color:#f2f2f2;
-	margin-bottom:15px;
-	margin-top: 30px;
-	border-radius: 3px;
-	box-shadow: 0 1px 1px #777;
-}
-.item-complex, a.item.item-complex, 
-button.item.item-complex{
-	background-color: transparent;
-	border: none;
-}
-.item-complex:hover {
-    background-color:#21B11E;
-}
-
 .head-effects {
 	box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.14), 
 	0 1px 3px 0 rgba(0, 0, 0, 0.12), 
@@ -46,6 +11,9 @@ button.item.item-complex{
 	margin-left: 10px;
     position: absolute;
     top: 2px;
+}
+.item{
+    border: none!important;
 }
 .item-select select {
     right: 84px; 
@@ -60,9 +28,6 @@ button.item.item-complex{
 }
 .list {
     padding-top: 5px !important;
-}
-.subStreets {
-    width: 100% !important;
 }
 .mob-coupon-code {
     margin-top: -28px !important;
@@ -85,20 +50,6 @@ button.item.item-complex{
 .stable-bg-contact {
     background-color: #fff !important;
 }
-.item.item-radio.ng-valid {
-    float: left !important;
-    width: 14% !important;
-    border: 1px solid gainsboro;
-    margin-left: 3px;
-    border-radius: 3px !important;
-}
-.item-complex .item-content, 
-.item-radio .item-content {
-    padding: 3px 29px 5px 6px !important;
-}
-.item-radio .radio-icon {
-    font-size: 14px !important;
-}
 .ion-checkmark:before {
     content: "";
     top: 8px !important;
@@ -106,19 +57,15 @@ button.item.item-complex{
     position: absolute !important;
     left: 17px !important;
 }
-.item-icon-right .icon {
-    left: 3px !important;
-    font-size: 20px!important;
-}
-.item-icon-right.item.ng-binding{
-    padding-left: 46px !important;
-}
 .bookingConfirmation {
     background: #F4F8F9;
     padding: 14px;
 }
 .pickup-details {
     padding: 10px;
+}
+.subStreets {
+    border-bottom: 1px solid gainsboro !important;
 }
 .back-icon {
     margin-left: 12px !important;
@@ -151,7 +98,6 @@ button.item.item-complex{
     margin-top:32px !important;
 }
 .yourbooking-all {
-   /* margin-left: 16px;*/
     font-size: 13px;
     border-bottom: 1px solid gainsboro;
 }
@@ -187,31 +133,6 @@ button.item.item-complex{
 .i > .application-icon {
 	color: #777;
 }
-.booking_icon {
-    font-size: 18px;
-}
-.booking_text_divider {
-    font-size: 16px;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    color: white; 
-}
-.booking-box-text {
-    color: #fff;
-    font-size: 100%;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    margin-left:5px;
-}
-.booking-box {
-	background-color: transparent;
-	color: #fff;
-    margin: 10px;
-}
-/*.aboutUs-page{
-    background: url("../img/about-us.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-}*/
 .slide-img {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -244,85 +165,8 @@ button.item.item-complex{
     font-size: 26px !important;
     color: white !important;
 }
-.my-form {
-   transition:all linear 0.5s;
-   background: transparent;
- }
- .my-form.ng-invalid {
-   background: transparent!important;
- }
- .royal, a.royal {
-    color: rgb(136, 106, 234);
-}
-.royal {
-    border-color: #8a6de9;
-}
-.royal i {
-    color: #8a6de9;
-}
-.cd-timeline-block {
-    position: relative;
-    margin: 2em 0;
-}
-.cd-timeline-content {
-    position: relative;
-    margin-left: 48px;
-    background: white;
-    border-radius: 0.25em;
-  /*  border-color: #BDDFB3;*/
-    border-style: solid;
-    border-width: 2px;
-    margin-bottom: 10px;
-}
-.timelineIcon {
-    font-size: 25px;
-    color: white;
-}
 .text-center{
     text-align: center;
-}
-.cd-timeline-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border-color: #8a6de9;
-    border-style: solid;
-    border-width: 2px;
-    padding-top: 5px;
-    background: white;
-}
-.cd-container {
-    width: 93%;
-    max-width: 1132px;
-    margin: 0 auto;
-}
-.cd-timeline {
-    position: relative;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 10px !important;
-}
-.cd-timeline::before {
-    content: '';
-    position: absolute;
-    top: 39px;
-    left: 18px;
-    height: 100%;
-    width: 4px;
-    background: gray;
-}
-.cd-timeline-content::before {
-    content: '';
-    position: absolute;
-    right: 100%;
-    height: 0;
-    width: 0;
-    border: 7px solid transparent;
-    border-right: 7px solid white;
-    border-right-color: inherit;
 }
 .container {
   margin: 0 auto;
@@ -334,54 +178,13 @@ button.item.item-complex{
 }
 .input-label {
    margin-top: -2px !important;
-   margin-left: 3px !important;
+   margin-left: 0px !important;
    font-size: 18px !important; 
-}
-.item-md-label {
-    border: none;
-}
-.lbl-input-bottom {
-    border-bottom: 1px solid gainsboro !important;
-}
-.item {
-    border: none;
-}
-.all-input-field {
-    width: 100%;
-    margin-top: -15px !important;
-    margin-bottom: -10px !important;
-}
-.item.item-input {
-    left: -14px;
-}
-/*input:required {
-    border-color: blue !important;
-}
-:required.required {
-    border: none !important;
-}*/
-input.ng-pristine {
-    /*background-color:yellow;*/
-}
-input.ng-touched.ng-invalid {
-    /*background-color:white;*/
-}
-input.ng-touched.ng-valid {
-    /*background-color:green;*/
-}
-.item-input input, .item-input textarea {
-    width: 93% !important;
-}
-input[disabled], input[readonly]:not(.cloned-text-input), 
-select[disabled], select[readonly], textarea[disabled], 
-textarea[readonly]:not(.cloned-text-input) {
-    background-color: transparent!important; 
 }
 .profile_label_box {
     margin-left: 10px !important;
 }
 .item-input input {
-    /*display: inline-block;*/
     position: relative;
     left: 1px;
     right: -2px;
@@ -389,9 +192,6 @@ textarea[readonly]:not(.cloned-text-input) {
 }
 .item-md-label .highlight {
     left: 1px !important;
-}
-.tabs-striped .tabs {
-    background-color: #886aea!important;
 }
 #profile-image {
     display: block;
@@ -402,34 +202,9 @@ textarea[readonly]:not(.cloned-text-input) {
     margin: 0px auto 0;
     box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
 }
-.item-md-label input {
-    background-color: #EFF1F5 !important;
-    padding:1px !important;
-    letter-spacing: 0px !important;
-    color: black !important;
-    border-bottom: 1px solid silver;
-}
-.item-md-label input:focus 
-~ .input-label, .item-md-label input.used ~ 
-.input-label {
-    font-weight: normal !important;
-    text-transform: none !important;
-    color: #444 !important;
-}
-.item-md-label .input-label {
-    color: #444 !important;
-    letter-spacing: 0px !important;
-    margin: 6px;
-    padding: 0px !important;
-}
 .slider-slide_img{
   height: 495px !important;
   width: auto!important;
-}
-.section_all_btn {
-    padding: 8px;
-    border-left: 1px solid #B6B6B6;
-    text-decoration: none;
 }
 .section_estimated {
     text-decoration: none;
@@ -440,16 +215,6 @@ textarea[readonly]:not(.cloned-text-input) {
     color: black;
     font-size: 12px;
 }
-.select-date-time {
-    background-color: transparent !important;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid #f2f2f2;
-}
-.profile-text-label {
-    margin-top: 15px;
-}
 .signUp-page {
     background-color:rgb(255, 255, 255);
 }
@@ -459,20 +224,10 @@ textarea[readonly]:not(.cloned-text-input) {
 .tmargin {
     margin-top: 15px !important;
 }
-.lbl_span-field {
-    font-size:13px !important; 
-    letter-spacing: 0 !important;
-    color:#777 !important;
-}
 .all_icon {
     color:grey; 
     font-size: 14px;
     margin-top:22px;
-}
-.lbl_span-field_text {
-    font-size: 13px !important;
-    letter-spacing: 0 !important;
-    color: white !important;
 }
 .col-getStarted {
     padding: 16px !important;
@@ -482,77 +237,27 @@ textarea[readonly]:not(.cloned-text-input) {
     margin-top: 7px;
     height: 110px;
 }
-.text_input {
-    color: black !important;
-    letter-spacing: 0 !important;
-}
-.select-city {
-    border: 1px solid gainsboro !important;
-    padding: 12px !important;
-    width: 100% !important;
-    background-color: #FFF;
-}
 .cur-pointer {
     cursor: pointer!important;
-}
-.pickup-row {
-    border-bottom: 1px solid  gainsboro;
-    margin-bottom: -7px;
-}
-/*.pickUp_line50 {
-    border-right:1px solid gainsboro !important;
-    margin-top: -5px !important;
-    border-bottom: 1px solid gainsboro !important;
-}
-.dropUp_line50 {
-    border-right:1px solid gainsboro !important;
-    margin-top: -17px !important;
-}*/
-.footer_tabs {
-    background-color: #F8F9FB!important;
 }
 .booking-popup .popup {
       /*width: auto;*/
       height: 430px !important;
 }
-.subStreets {
-    border-bottom: 1px solid gainsboro !important;
-}
 .streets-h3 {
-    margin-left: 5px !important;
+    /*margin-left: 5px !important;*/
 }
+input[disabled], input[readonly]:not(.cloned-text-input), 
+select[disabled], select[readonly], textarea[disabled], 
+textarea[readonly]:not(.cloned-text-input)
 .error-alert-popup {
-   
+   background-color: transparent!important;
 }
 .estimate-pricing-span {
     font-size: 100%;
     color: #444;
     font-size: 20px;
     font-weight: 500;
-}
-.estimate-ion_row{
-    border-bottom: 1px solid gainsboro;
-    margin-bottom: 8px;
-}
-.estimate-ion_list {
-    float: left !important;
-    background-color: transparent!important;
-}
-.pricing-span {
-    border-bottom: 1px solid gainsboro!important;
-    padding: 10px;
-    color: #444!important;
-}
-.estimate-ion-radio {
-    background-color: #F8F9FB !important;
-}
-.estimate-ion-radio:hover,
-.estimate-ion-radio:active,
-.estimate-ion-radio.active {
-    background-color: #e6e6e6 !important;
-}
-.ionic .item-radio input:checked + .radio-content .item-content{
-    background-color: #e6e6e6 !important;
 }
 .item-thumbnail-left > img:first-child, 
 .item-thumbnail-left .item-image, 
@@ -634,22 +339,11 @@ input[type='checkbox'] {
     position: absolute;
     margin-top: 5px;
 }
-.fabinr {
-    font-size:1.1rem!important; 
-    margin-top:8px!important;
-}
 .text_underline {
     text-decoration: none;
     font-size: 14px!important;
     font-family: "Roboto", sans-serif;
 }
-/*.item .item-content.activated, 
-.item .item-content.active, 
-.item-complex.activated .item-content, 
-.item-complex.active .item-content, 
-.item.activated, .item.active {
-    background-color: rgba(51,205,95,0.5);
-}*/
 a.md-button.md-default-theme.md-focused:not([disabled]), 
 a.md-button.md-focused:not([disabled]), 
 .md-button.md-default-theme.md-focused:not([disabled]), 
@@ -734,8 +428,8 @@ md-radio-group md-radio-button:not(:first-child) {
     padding:10px;
 }
 .estimatefirst_table1{
-    background-color:#8bc34a;
-    border: 1px solid #8bc34a;
+    background-color:#8bc34a!important;
+    border: 1px solid #8bc34a!!important;
 }
 .estimatefirst_table2{
     background-color:transparent;
@@ -780,13 +474,24 @@ input {
 }
 .md-button-contact{
     line-height: 17px!important;
-    margin-top: 6px!important;
+    margin-top: -16px!important;
     font-family:inherit!important;
     font-weight: 500!important;
 }
 .img_address{
     margin-top: -47px!important;
 }
-.about-heading{
-   /* margin-bottom: -23px;*/
+.col-pickupStreet{
+    margin-bottom: 0px!important;
 }
+.select-city {
+    border: 1px solid gainsboro !important;
+    padding: 12px !important;
+    width: 100% !important;
+    background-color: #FFF;
+}
+.item-complex .item-content, 
+.item-radio .item-content {
+    padding: 3px 29px 5px 6px !important;
+}
+

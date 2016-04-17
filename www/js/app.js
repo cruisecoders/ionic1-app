@@ -7,8 +7,29 @@
   'angular-storage', 'ngResource','ionMdInput', 'app.env.config' ,'ngCordova', 'ngCookies', 'ngMaterial', 'ngMaterialDatePicker',
    'ngMessages'])
 
-      .run([ '$ionicPlatform', '$ionicPopup' , function($ionicPlatform, $ionicPopup) {
+      .run([ '$ionicPlatform', '$ionicPopup', '$timeout', function($ionicPlatform, $ionicPopup, $timeout) {
         $ionicPlatform.ready(function() {
+
+          document.addEventListener("resume", function(){
+            console.log("resume event fired");
+            navigator.splashscreen.hide();
+          })
+
+          document.addEventListener("pause", function(){
+            console.log("pause event fired");
+            navigator.splashscreen.show();
+          })
+
+          document.addEventListener("online", function(){
+            console.log("online event fired");
+            //navigator.splashscreen.show();
+          })
+
+          document.addEventListener("offline", function(){
+            console.log("offline event fired");
+            //navigator.splashscreen.show();
+          })
+
           if(window.cordova && window.cordova.plugins.Keyboard) {
               // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
               // for form inputs)
