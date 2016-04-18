@@ -203,8 +203,11 @@
     box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
 }
 .slider-slide_img{
-  height: 495px !important;
-  width: auto!important;
+  height: 508px !important;
+  width: 100%!important;
+}
+.btn-getStarted{
+    background-color: #003445!important;
 }
 .section_estimated {
     text-decoration: none;
@@ -233,8 +236,8 @@
     padding: 16px !important;
 }
 .getstarted-row {
-    background-color: #B71C1C;
-    margin-top: 7px;
+    background-color: #259B24;
+    margin-top: -12px;
     height: 110px;
 }
 .cur-pointer {
