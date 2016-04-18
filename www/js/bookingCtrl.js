@@ -39,6 +39,7 @@ angular.module('app.projectX')
         console.log("date changed ");
         console.log(newValue);
         if(newValue != undefined){
+          $scope.booking.dropDetail.date = undefined;
           $scope.refData.dropMinDate = angular.copy(newValue);
           $scope.refData.dropMinDate.setHours($scope.refData.dropMinDate.getHours() + 2);
           $scope.isDropDateDisabled = false;
