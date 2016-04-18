@@ -1,7 +1,7 @@
 {
-  "name": "projectx",
+  "name": "Bag2Bag",
   "version": "1.1.1",
-  "description": "projectX: An Ionic project",
+  "description": "Bag2Bag: A Service App",
   "dependencies": {
     "angular-ui-router": "^0.2.18",
     "gulp": "^3.5.6",

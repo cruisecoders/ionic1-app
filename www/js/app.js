@@ -10,9 +10,9 @@
       .run([ '$ionicPlatform', '$ionicPopup', '$timeout', function($ionicPlatform, $ionicPopup, $timeout) {
         $ionicPlatform.ready(function() {
 
-          document.addEventListener("resume", function(){
+          /*document.addEventListener("resume", function(){
             console.log("resume event fired");
-            navigator.splashscreen.hide();
+            navigator.splashscreen.show();
           })
 
           document.addEventListener("pause", function(){
@@ -28,7 +28,7 @@
           document.addEventListener("offline", function(){
             console.log("offline event fired");
             //navigator.splashscreen.show();
-          })
+          })*/
 
           if(window.cordova && window.cordova.plugins.Keyboard) {
               // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
