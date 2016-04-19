@@ -16,7 +16,7 @@ angular.module('app.projectX').constant('menuConstant', {
 		icon: "fa fa-inr"
 	},{
 		//imagepath:"img/icons/phone-in-talk.png",
-		name:"ContactUs", 
+		name:"Customer Support", 
 		state: "main.contactUs",
 		icon: "fa fa-phone"
 	},{

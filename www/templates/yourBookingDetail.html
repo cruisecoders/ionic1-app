@@ -26,24 +26,26 @@
 						    </div>
 						</div>
 				</div>
-				<div class="list" style="margin-left:2px;">
-				  		<h4 style="margin-left:17px;">Booking Status </h4>
-				  		<div class="item item-text-wrap" style="margin-left:3px;margin-top:38px;">
-						    <span class="yourbookingfont">
-					    		<div style="border-top:1px solid gainsboro;border-width:90%;" ng-hide="mainData.selectedBooking.bookingStatus.status == 'cancelled'">
-					    			<span class="col-33" ng-repeat="refStatus in ref.statusList">
-								    	<span class="status-box rotate div_status" ng-class="{'status-box': !refStatus.isVisible, 'circle': refStatus.isVisible}">
-								    	</span>
-								    	<span ng-class="{'status-textUp-value': !refStatus.isUp, 'status-textDown-value': refStatus.isUp}" class="col-25">
-								    		{{refStatus.display}}
-								    	</span>
-								    </span>	
-							    </div>
-							    <div ng-show="mainData.selectedBooking.bookingStatus.status == 'cancelled'">
-							    	<h1>{{mainData.selectedBooking.bookingStatus.status}}</h1>
-							    </div>
-					    	</span>
-						</div>
+				<div style="margin-left:7px;">
+			  		<h4 style="margin-left:17px;">Booking Status </h4>
+			  		<div class="item item-text-wrap booking_status">
+					    <span class="yourbookingfont">
+				    		<div style="border-top:1px solid gainsboro;border-width:90%;" ng-hide="mainData.selectedBooking.bookingStatus.status == 'cancelled'">
+				    			<span class="col-33" ng-repeat="refStatus in ref.statusList">
+							    	<span class="status-box rotate div_status" ng-class="{'status-box': !refStatus.isVisible, 'circle': refStatus.isVisible}">
+							    	</span>
+							    	<span ng-class="{'status-textUp-value': !refStatus.isUp, 'status-textDown-value': refStatus.isUp}" class="col-25">
+							    		{{refStatus.display}}
+							    	</span>
+							    </span>	
+						    </div>
+						    <div id="booking_status" ng-show="mainData.selectedBooking.bookingStatus.status == 'cancelled'">
+						    	<span class="cancel_span">
+						    		{{mainData.selectedBooking.bookingStatus.status}}
+						    	</span>
+						    </div>
+				    	</span>
+					</div>
 				</div>
 				<div class="pickup-details">
 				  		<h4 class="" style="margin-left:17px;">Pickup Details</h4>
@@ -104,7 +106,7 @@
 							</h2>
 				  		</a>
 				</div>
-					<h4 style="margin-left:17px;">Bill Details</h4>
+					<h4 class="bill-details">Bill Details</h4>
 			  		<a class="item item primary-text-color" ng-show="mainData.selectedBooking.payment.payAmount">
 					    Total Fare:
 					    <span class="item-note primary-text-color">

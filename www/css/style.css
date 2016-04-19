@@ -63,6 +63,23 @@
 }
 .pickup-details {
     padding: 10px;
+    float: left;
+}
+.confirmation_booking{
+    border: 1px solid gainsboro;
+    padding: 10px;
+}
+.confirmz_h5{
+    color: #575757;
+    margin-left: 12px;
+}
+.contact_span{
+    display: inline-block;
+    margin-top: 23px;
+}
+.bill-details{
+    margin-left:28px!important;
+    float: left!important;
 }
 .subStreets {
     border-bottom: 1px solid gainsboro !important;
@@ -205,6 +222,10 @@
 .slider-slide_img{
   height: 508px !important;
   width: 100%!important;
+}
+.list{
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
 }
 .btn-getStarted{
     background-color: #003445!important;
@@ -496,5 +517,18 @@ input {
 .item-complex .item-content, 
 .item-radio .item-content {
     padding: 3px 29px 5px 6px !important;
+}
+.cancel_span{
+    font-size: 18px!important;
+    font-family: inherit;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-left: 10px;
+}
+.booking_status{
+    margin-top: 35px!important;
+}
+#booking_status{
+    margin-top: -20px;
 }
 

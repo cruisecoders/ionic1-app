@@ -17,7 +17,7 @@
 		<md-list flex>
 			<md-list-item ng-click="null">
 				<div class="list">
-				    <div class="pickup-details">
+				    <div class="col pickup-details">
 				  		<i class="icon ion-ios-location-outline" style="float: left;margin-top:-7px;"></i>
 				  		<h5 class="pickup-details-h5"><strong>PickUp Details</strong></h5>
 				  		<span class="StreetSubstreetName">City: {{bookingModel.pickup.street.city.name}}</span>
@@ -39,9 +39,13 @@
 				  	</div>
 				  	<div class="col">
 				  		<h5 class="pickup-details-h5">Estimated Price</h5>
-				  		<h5 style="color: #575757;margin-left: 12px;">Final Cost will get Confirmed at the time of pick up.</h5>
+				  		<h5 class="confirmz_h5">Final Cost will get Confirmed at the time of pick up.</h5>
 				  	</div>
-				</div> 
+				  	<div class="col confirmation_booking">
+		  				<h5 class="pickup-details-h5">For Further Booking Information</h5>
+		  				<h5 class="confirmz_h5">Please check your Booking History.</h5>
+				  	</div>
+				</div>
 			</md-list-item>	
 		</md-list flex>
 	</ion-content>

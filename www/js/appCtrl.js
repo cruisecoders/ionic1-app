@@ -10,7 +10,7 @@ angular.module('app.projectX').controller('appCtrl', [
     store.remove('userInfo');
     store.remove('cities');
 
-  	$state.go('login.form', {}, {reload : true});
+  	$state.go('login.getStarted', {}, {reload : true});
 
     $rootScope.showAlert('Unauthorized!', 'You are not allowed to access this resource.');
   });
@@ -23,14 +23,13 @@ angular.module('app.projectX').controller('appCtrl', [
     store.remove('userInfo');
     store.remove('cities');
     
-    $state.go('login.form', {}, {reload : true});
+    $state.go('login.getStarted', {}, {reload : true});
 
     $rootScope.showAlert('Message!', 'Please Login again.');
     
   });
 
   
-
   $scope.$on(AUTH_EVENTS.httpNotFound, function(event) {
 
     $rootScope.showAlert('I am Sorry !!!', 'Service not found. Please call customer care.');

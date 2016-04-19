@@ -8,11 +8,13 @@
               <img src="img/Contact-Us__1_2.png" style="width:290px;margin:15px 17px;">
             </div>
             <md-list flex ng-repeat="newContact in refData.contacts">
-              <md-list-item class="md-3-line" ng-click="null">
+              <md-list-item class="md-3-line" ng-href="tel:+91-{{newContact.phone}}" ng-click="null">
                    <img src="img/phone-symbol-icon-66698.png" class="md-avatar" alt="phone" />
                   <div class="md-list-item-text" layout="column"> 
                     <div class="contact_address md-button-contact">
-                      <span><strong>Call Us: We're available 24hours a day.</strong></span><br>
+                      <span class="contact_span">
+                        <strong>Call Us: We're available 24hours a day.</strong>
+                      </span><br>
                         <span>{{newContact.phone}}</span>
                     </div> 
                   </div>
@@ -36,6 +38,7 @@
                   </div>
               </md-list-item>
             </md-list flex> 
+            <!-- <a href="tel:+91-8042060689" class="col-offset-33 button buttton-balanced">Call Me</a> -->
           </div>
         </div>
         <!-- <section id="cd-timeline" class="cd-container" style="width:94%;">
