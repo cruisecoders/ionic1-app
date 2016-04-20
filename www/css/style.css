@@ -531,4 +531,13 @@ input {
 #booking_status{
     margin-top: -20px;
 }
+.driver_icon{
+    width:70px!important; 
+    height:70px!important; 
+    float:left!important;
+}
+.driver_name{
+    display:inline-block!important; 
+    margin-top:5px!important;
+}
 

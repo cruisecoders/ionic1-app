@@ -48,10 +48,10 @@
 					</div>
 				</div>
 				<div class="pickup-details">
-				  		<h4 class="" style="margin-left:17px;">Pickup Details</h4>
-				  		<a class="item item-icon-right" ng-show="pickupUserInfo">
-			                <img src="img/driverIcon.png" style="width:70px; height:70px;">
-			                <h2>Pickup Boy: {{pickupUserInfo.user.firstName}}  &nbsp;{{pickupUserInfo.user.lastName}}</h2>
+				  		<h4 style="margin-left:17px;">Pickup Details</h4>
+				  		<a class="item item-icon-right" ng-href="tel:+91-{{pickupUserInfo.user.mobile}}" ng-show="pickupUserInfo">
+			                <img  class="driver_icon" src="img/driverIcon.png">
+			                <h2 class="driver_name">Pickup Boy: {{pickupUserInfo.user.firstName}} {{pickupUserInfo.user.lastName}}</h2>
 			                <p>Mobile: {{pickupUserInfo.user.mobile}}</p>
 			            </a>
 			            <a class="item item-icon-right StreetSubstreetName">
@@ -65,12 +65,23 @@
 							<h2>Pickup Date & Time:</h2>
 			      		    <p>{{mainData.selectedBooking.pickup.pickupDate  | date:'medium'}}</p>
 				  		</a>
+				  		<!-- <md-list-item class="md-3-line" ng-href="tel:+91-{{newContact.phone}}" ng-click="null">
+			                <img src="img/phone-symbol-icon-66698.png" class="md-avatar" alt="phone" />
+			                  <div class="md-list-item-text" layout="column"> 
+			                    <div class="contact_address md-button-contact">
+			                      <span class="contact_span">
+			                        <strong>Call Us: We're available 24hours a day.</strong>
+			                      </span><br>
+			                        <span>{{newContact.phone}}</span>
+			                    </div> 
+			                  </div>
+			            </md-list-item> -->
 				</div>
 				<div class="col pickup-details">
 				  	    <h4 class="" style="margin-left:17px;">Drop Details</h4>
-				  	    <a class="item item-icon-right" ng-show="dropUserInfo">
-			                <img src="img/driverIcon.png" style="width:70px; height:70px;">
-			                <h2>Drop Boy: {{dropUserInfo.user.firstName}} &nbsp;{{dropUserInfo.user.lastName}}</h2>
+				  	    <a class="item item-icon-right" ng-href="tel:+91-{{dropUserInfo.user.mobile}}" ng-show="dropUserInfo">
+			                <img class="driver_icon" src="img/driverIcon.png">
+			                <h2 class="driver_name">Drop Boy: {{dropUserInfo.user.firstName}} {{dropUserInfo.user.lastName}}</h2>
 			                <p>Mobile: {{dropUserInfo.user.mobile}}</p>
 			            </a>
 			            <a class="item item-icon-right StreetSubstreetName">
