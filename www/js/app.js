@@ -48,7 +48,7 @@
               if(navigator.connection.type == Connection.NONE) {
                   $ionicPopup.confirm({
                       title: "Internet Disconnected",
-                      content: "The internet is disconnected on your device."
+                      content: "Internet is disconnected on your device."
                   })
                   .then(function(result) {
                       if(!result) {
