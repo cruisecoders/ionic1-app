@@ -98,7 +98,11 @@
     color: #212121;
     margin-left: 7px;
     font-family: "Roboto", sans-serif !important;
-
+}
+#StreetSubstreetName{
+    color: #212121;
+    margin-left: 15px;
+    font-family: "Roboto", sans-serif !important;
 }
 .StreetSubstreetName1{
     color: #212121;
@@ -144,7 +148,7 @@
     url('../assets/demos/dog.png') no-repeat ;
 }
 .item-divider {
-    background-color: #64DD17 !important;
+    background-color: #21B11E !important;
     padding-left: 16px;
 }
 .i > .application-icon {
@@ -256,6 +260,9 @@
 .col-getStarted {
     padding: 16px !important;
 }
+.get_Started{
+    background-color: #259B24!important;
+}
 .getstarted-row {
     background-color: #259B24;
     margin-top: -12px;
@@ -305,6 +312,7 @@ textarea[readonly]:not(.cloned-text-input)
     margin-left: 5px;
     font-family: "Roboto", sans-serif !important;
     font-weight: 500;
+    line-height: 30px;
 }
 input[type='checkbox'] {
   -ms-transform: scale(2); /* IE */
@@ -332,6 +340,11 @@ input[type='checkbox'] {
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
+}
+.select_no_bags{
+    margin-left:15px!important;
+    padding-bottom:35px!important;
+    margin-top:-20px!important;
 }
 .status-textUp-value{
     width:5em!important;
@@ -412,10 +425,9 @@ md-radio-group md-radio-button:not(:first-child) {
 }
 .label-city-text{
     color: #000;
-    margin-left: -20px;
+    margin-left: 0px;
     font-family: "Roboto", sans-serif;
     font-weight: 600;
-    margin-top: 10px;
     letter-spacing:0;
     font-size: 12px;
 }
@@ -498,7 +510,12 @@ input {
 }
 .md-button-contact{
     line-height: 17px!important;
-    margin-top: -16px!important;
+    font-family:inherit!important;
+    font-weight: 500!important;
+}
+.md-button-email{
+    line-height: 17px!important;
+    margin-top: 15px!important;
     font-family:inherit!important;
     font-weight: 500!important;
 }
@@ -539,5 +556,10 @@ input {
 .driver_name{
     display:inline-block!important; 
     margin-top:5px!important;
+}
+.home_icon{
+    font-size:20px!important;
+    color:#000!important;
+    margin-top:15px!important;
 }
 
