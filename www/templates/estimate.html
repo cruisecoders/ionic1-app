@@ -11,203 +11,185 @@
 			     		</span>
 					</div>
 				</div>
-					<!-- <md-list flex>					
-						<md-list-item class="md-1-line" ng-click="null">
-							<div class="row md-list-item-text">
-								<div class="col col-offset-10">
-									<span class="col estimate-pricing-span" ng-show="refData.rate">
-										Charges for 0-15Kg: <strong>{{refData.rate.zeroToFifCount}} Rs.</strong></span>
-									<span class="col estimate-pricing-span" ng-show="refData.rate">
-										Charges for 15-30Kg: <strong>{{refData.rate.fifToThirCount}} Rs.</strong></span>
-									<span class="col estimate-ion_list" ng-show="refData.rate">
-										Charges for above 30Kg: <strong>{{refData.rate.aboveThirty}} Rs.</strong></span>
-								</div>
-							</div>
-						</md-list-item>	
-					</md-list flex>	 -->				
-				<md-list-item class="md-3-line" ng-click="null">
-					<div class="" style="border-bottom:1px solid gainsboro;" 
-						ng-show="refData.rate">
-						<h5>Select Number of Items between<strong>1kg - 15kg </strong></h5>
-						<md-radio-group  ng-model="estimate.zeroToFif">
-						    <md-radio-button ng-value="0" style="float:left;margin-right:10px;">
-						    0</md-radio-button>
-						    <md-radio-button ng-value="1" style="float:left;margin-right:10px;">
-						    1</md-radio-button>
-						    <md-radio-button ng-value="2" style="float:left;margin-right:10px;">
-						    2</md-radio-button>
-						    <md-radio-button ng-value="3" style="float:left;margin-right:10px;">
-						    3</md-radio-button>
-						    <md-radio-button ng-value="4" style="float:left;margin-right:10px;">
-						    4</md-radio-button>
-						    <md-radio-button ng-value="5" style="float:left;margin-right:10px;">
-						    5</md-radio-button>
-					    </md-radio-group>
+				<div ng-show="refData.rate && !refData.rate.customerBase">					
+					<md-list-item class="md-3-line" ng-click="null">
+						<div class="" style="border-bottom:1px solid gainsboro;">
+							<h5>Select Number of Items between<strong>1kg - 15kg </strong></h5>
+							<md-radio-group  ng-model="estimate.zeroToFif">
+							    <md-radio-button ng-value="0" style="float:left;margin-right:10px;">
+							    0</md-radio-button>
+							    <md-radio-button ng-value="1" style="float:left;margin-right:10px;">
+							    1</md-radio-button>
+							    <md-radio-button ng-value="2" style="float:left;margin-right:10px;">
+							    2</md-radio-button>
+							    <md-radio-button ng-value="3" style="float:left;margin-right:10px;">
+							    3</md-radio-button>
+							    <md-radio-button ng-value="4" style="float:left;margin-right:10px;">
+							    4</md-radio-button>
+							    <md-radio-button ng-value="5" style="float:left;margin-right:10px;">
+							    5</md-radio-button>
+						    </md-radio-group>
+						</div>
+			        </md-list-item>	
+					<md-list-item class="md-3-line" ng-click="null">
+						<div class="" style="border-bottom:1px solid gainsboro;">
+							<h5> Select Number of Items between <strong>15kg - 30kg</strong></h5>
+							<md-radio-group ng-model="estimate.fitToThirty">
+							    <md-radio-button ng-value="0" style="float:left;margin-right:10px;">
+							    0</md-radio-button>
+							    <md-radio-button ng-value="1" style="float:left;margin-right:10px;">
+							    1</md-radio-button>
+							    <md-radio-button ng-value="2" style="float:left;margin-right:10px;">
+							    2</md-radio-button>
+							    <md-radio-button ng-value="3" style="float:left;margin-right:10px;">
+							    3</md-radio-button>
+							    <md-radio-button ng-value="4" style="float:left;margin-right:10px;">
+							    4</md-radio-button>
+							    <md-radio-button ng-value="5" style="float:left;margin-right:10px;">
+							    5</md-radio-button>
+						    </md-radio-group>
+						</div>
+					</md-list-item>
+					<md-list-item class="md-3-line" ng-click="null">
+						<div class="" style="border-bottom:1px solid gainsboro;">
+							<h5> Select Number of Items above <strong>30kg</strong></h5>
+							<md-radio-group ng-model="estimate.aboveThirty">
+							    <md-radio-button ng-value="0" style="float:left;margin-right:10px;">
+							    0</md-radio-button>
+							    <md-radio-button ng-value="1" style="float:left;margin-right:10px;">
+							    1</md-radio-button>
+							    <md-radio-button ng-value="2" style="float:left;margin-right:10px;">
+							    2</md-radio-button>
+							    <md-radio-button ng-value="3" style="float:left;margin-right:10px;">
+							    3</md-radio-button>
+							    <md-radio-button ng-value="4" style="float:left;margin-right:10px;">
+							    4</md-radio-button>
+							    <md-radio-button ng-value="5" style="float:left;margin-right:10px;">
+							    5</md-radio-button>
+						    </md-radio-group>
+						</div>
+					</md-list-item>	
+					<div layout="row" style="margin-top:25px;">
+						  <div flex flex-order="-1" class="estimatefirst_table1">
+						    <span hide-gt-md style="padding-left:5px;">Weight</span><br>
+						    <span show-gt-md style="padding-left:5px;">in</span>
+						    <span show-gt-md style="padding-left:5px;">(kg)</span>
+						  </div>
+						  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table1">
+						    <span hide-gt-md>Charges</span>
+						    <span show-gt-md>in</span>
+						    <span show-gt-md>(Rs)</span>
+						  </div>
+						  <div flex flex-order="2" class="estimatefirst_table1">
+						    <span>No. of Bags</span>
+						  </div>
+						  <div flex flex-order="3" flex-order-gt-md="1" class="estimatefirst_table1">
+						    <span hide-gt-md>Total</span>
+						    <!-- <p hide show-gt-md>[flex-order-gt-md="1"]</p> -->
+						  </div>
 					</div>
-		        </md-list-item>	
-				<md-list-item class="md-3-line" ng-click="null">
-					<div class="" style="border-bottom:1px solid gainsboro;" 
-						ng-show="refData.rate">
-						<h5> Select Number of Items between <strong>15kg - 30kg</strong></h5>
-						<md-radio-group ng-model="estimate.fitToThirty">
-						    <md-radio-button ng-value="0" style="float:left;margin-right:10px;">
-						    0</md-radio-button>
-						    <md-radio-button ng-value="1" style="float:left;margin-right:10px;">
-						    1</md-radio-button>
-						    <md-radio-button ng-value="2" style="float:left;margin-right:10px;">
-						    2</md-radio-button>
-						    <md-radio-button ng-value="3" style="float:left;margin-right:10px;">
-						    3</md-radio-button>
-						    <md-radio-button ng-value="4" style="float:left;margin-right:10px;">
-						    4</md-radio-button>
-						    <md-radio-button ng-value="5" style="float:left;margin-right:10px;">
-						    5</md-radio-button>
-					    </md-radio-group>
+					<div layout="row" class="estimate_table_border">
+						  <div flex flex-order="-1" class="estimatefirst_table">
+						    <span>0-15</span>
+						  </div>
+						  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table">
+						    <span hide-gt-md>{{refData.rate.zeroToFifCount}}</span>
+						    <!-- <p hide show-gt-md>[flex-order-gt-md="3"]</p> -->
+						  </div>
+						  <div flex flex-order="2" class="estimatefirst_table">
+						    <span>{{estimate.zeroToFif}}</span>
+						  </div>
+						  <div flex flex-order="3" flex-order-gt-md="1" class="estimatefirst_table">
+						    <span hide-gt-md>{{refData.rate.zeroToFifCount * estimate.zeroToFif}}</span>
+						    <!-- <p hide show-gt-md>[flex-order-gt-md="1"]</p> -->
+						  </div>
 					</div>
-				</md-list-item>
-				<md-list-item class="md-3-line" ng-click="null">
-					<div class="" style="border-bottom:1px solid gainsboro;"
-					    ng-show="refData.rate">
-						<h5> Select Number of Items above <strong>30kg</strong></h5>
-						<md-radio-group ng-model="estimate.aboveThirty">
-						    <md-radio-button ng-value="0" style="float:left;margin-right:10px;">
-						    0</md-radio-button>
-						    <md-radio-button ng-value="1" style="float:left;margin-right:10px;">
-						    1</md-radio-button>
-						    <md-radio-button ng-value="2" style="float:left;margin-right:10px;">
-						    2</md-radio-button>
-						    <md-radio-button ng-value="3" style="float:left;margin-right:10px;">
-						    3</md-radio-button>
-						    <md-radio-button ng-value="4" style="float:left;margin-right:10px;">
-						    4</md-radio-button>
-						    <md-radio-button ng-value="5" style="float:left;margin-right:10px;">
-						    5</md-radio-button>
-					    </md-radio-group>
+					<div layout="row" class="estimate_table_border">
+						  <div flex flex-order="-1" class="estimatefirst_table2">
+						    <span>15-30</span>
+						  </div>
+						  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table2">
+						    <span hide-gt-md>{{refData.rate.fifToThirCount}}</span>
+						    <!-- <p hide show-gt-md>[flex-order-gt-md="3"]</p> -->
+						  </div>
+						  <div flex flex-order="2" class="estimatefirst_table2">
+						    <span>{{estimate.fitToThirty}}</span>
+						  </div>
+						  <div flex flex-order="3" flex-order-gt-md="1" class="estimatefirst_table2">
+						    <span hide-gt-md>{{refData.rate.fifToThirCount * estimate.fitToThirty}}</span>
+						    <!-- <p hide show-gt-md>[flex-order-gt-md="1"]</p> -->
+						  </div>
 					</div>
-				</md-list-item>	
-				<div layout="row" ng-show="refData.rate" style="margin-top:25px;">
-					  <div flex flex-order="-1" class="estimatefirst_table1">
-					    <span hide-gt-md style="padding-left:5px;">Weight</span><br>
-					    <span show-gt-md style="padding-left:5px;">in</span>
-					    <span show-gt-md style="padding-left:5px;">(kg)</span>
-					  </div>
-					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table1">
-					    <span hide-gt-md>Charges</span>
-					    <span show-gt-md>in</span>
-					    <span show-gt-md>(Rs)</span>
-					  </div>
-					  <div flex flex-order="2" class="estimatefirst_table1">
-					    <span>No. of Bags</span>
-					  </div>
-					  <div flex flex-order="3" flex-order-gt-md="1" class="estimatefirst_table1">
-					    <span hide-gt-md>Total</span>
-					    <!-- <p hide show-gt-md>[flex-order-gt-md="1"]</p> -->
-					  </div>
+					<div layout="row" class="estimate_table_border">
+						  <div flex flex-order="-1" class="estimatefirst_table3">
+						    <p>Above 30</p>
+						  </div>
+						  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table3">
+						    <p hide-gt-md>{{refData.rate.aboveThirty}}</p>
+						    <!-- <p hide show-gt-md>[flex-order-gt-md="3"]</p> -->
+						  </div>
+						  <div flex flex-order="2" class="estimatefirst_table3">
+						    <p>{{estimate.aboveThirty}}</p>
+						  </div>
+						  <div flex flex-order="3" flex-order-gt-md="1" class="estimatefirst_table3">
+						    <p hide-gt-md>{{refData.rate.aboveThirty * estimate.aboveThirty}}</p>
+						    <!-- <p hide show-gt-md>[flex-order-gt-md="1"]</p> -->
+						  </div>
+					</div>
+					
+					<div class="col col-offset-10">
+						<span class="col estimate-pricing-span">
+						Approximate Charges: <strong>{{getApproximateRate()}}</strong></span>
+					</div>
 				</div>
-				<div layout="row" class="estimate_table_border" ng-show="refData.rate">
-					  <div flex flex-order="-1" class="estimatefirst_table">
-					    <span>0-15</span>
-					  </div>
-					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table">
-					    <span hide-gt-md>{{refData.rate.zeroToFifCount}}</span>
-					    <!-- <p hide show-gt-md>[flex-order-gt-md="3"]</p> -->
-					  </div>
-					  <div flex flex-order="2" class="estimatefirst_table">
-					    <span>{{estimate.zeroToFif}}</span>
-					  </div>
-					  <div flex flex-order="3" flex-order-gt-md="1" class="estimatefirst_table">
-					    <span hide-gt-md>{{refData.rate.zeroToFifCount * estimate.zeroToFif}}</span>
-					    <!-- <p hide show-gt-md>[flex-order-gt-md="1"]</p> -->
-					  </div>
+
+				<div ng-show="refData.rate && refData.rate.customerBase">
+						{{refData.rate.zeroToFifCount}} Rs only <br>
+						Number of bags upto : {{refData.rate.luggageLimit}}<br> 
+						Weight Limit : {{refData.rate.luggageLimitInKgs}} Kg.<br>
+						Extra Luggage Charges : {{refData.rate.amountPerLuggage}} Rs / Luggage<br>
+						Extra Weight Charges : {{refData.rate.amountPerKgs}} Rs / Kg.<br>
+
+					<md-list-item class="md-3-line" ng-click="null">
+						<div class="" style="border-bottom:1px solid gainsboro;">
+							<h5>Select Number of Luggage </h5>
+							<md-radio-group  ng-model="estimate.numberOfLuggages">
+							    <md-radio-button ng-value="refData.rate.luggageLimit" style="float:left;margin-right:10px;">
+							    upto {{refData.rate.luggageLimit}}</md-radio-button>
+							    <md-radio-button ng-value="refData.rate.luggageLimit + 1" style="float:left;margin-right:10px;">
+							    {{refData.rate.luggageLimit + 1}}</md-radio-button>
+							    <md-radio-button ng-value="refData.rate.luggageLimit + 2" style="float:left;margin-right:10px;">
+							    {{refData.rate.luggageLimit + 2}}</md-radio-button>
+							    <md-radio-button ng-value="refData.rate.luggageLimit + 3" style="float:left;margin-right:10px;">
+							    {{refData.rate.luggageLimit + 3}}</md-radio-button>
+							    <md-radio-button ng-value="refData.rate.luggageLimit + 4" style="float:left;margin-right:10px;">
+							    {{refData.rate.luggageLimit + 4}}</md-radio-button>
+						    </md-radio-group>
+						</div>
+			        </md-list-item>
+			        <md-list-item class="md-3-line" ng-click="null">
+						<div class="" style="border-bottom:1px solid gainsboro;">
+							<h5>Approximate Weight of Luggages in Kg </h5>
+							<md-radio-group  ng-model="estimate.approxWeight">
+							    <md-radio-button ng-value="refData.rate.luggageLimitInKgs" style="float:left;margin-right:10px;">
+							    upto {{refData.rate.luggageLimitInKgs}}</md-radio-button>
+							    <md-radio-button ng-value="refData.rate.luggageLimitInKgs + 10" style="float:left;margin-right:10px;">
+							    upto {{refData.rate.luggageLimitInKgs + 10}}</md-radio-button>
+							    <md-radio-button ng-value="refData.rate.luggageLimitInKgs + 20" style="float:left;margin-right:10px;">
+							    upto {{refData.rate.luggageLimitInKgs + 20}}</md-radio-button>
+							    <md-radio-button ng-value="refData.rate.luggageLimitInKgs + 30" style="float:left;margin-right:10px;">
+							    upto {{refData.rate.luggageLimitInKgs + 30}}</md-radio-button>
+						    </md-radio-group>
+						</div>
+</br></br></br></br>
+						Base Charge upto {{refData.rate.luggageLimit}} Luggage and upto {{refData.rate.luggageLimitInKgs}} Kg : {{refData.rate.zeroToFifCount}} Rs</br>
+						Extra Luggage / Extra per Luggage : {{getExtraLuggage()}} / {{getExtraPerLuggage()}}</br>
+						Extra Kg / Extra per Kg : {{getExtraKg()}} / {{getExtraPerKg()}}</br>
+						Approximate Total Charges : {{getApproximateTotalForCustomerBase()}}</br>
+
+			        </md-list-item>
 				</div>
-				<div layout="row" class="estimate_table_border" ng-show="refData.rate">
-					  <div flex flex-order="-1" class="estimatefirst_table2">
-					    <span>15-30</span>
-					  </div>
-					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table2">
-					    <span hide-gt-md>{{refData.rate.fifToThirCount}}</span>
-					    <!-- <p hide show-gt-md>[flex-order-gt-md="3"]</p> -->
-					  </div>
-					  <div flex flex-order="2" class="estimatefirst_table2">
-					    <span>{{estimate.fitToThirty}}</span>
-					  </div>
-					  <div flex flex-order="3" flex-order-gt-md="1" class="estimatefirst_table2">
-					    <span hide-gt-md>{{refData.rate.fifToThirCount * estimate.fitToThirty}}</span>
-					    <!-- <p hide show-gt-md>[flex-order-gt-md="1"]</p> -->
-					  </div>
-				</div>
-				<div layout="row" class="estimate_table_border" ng-show="refData.rate">
-					  <div flex flex-order="-1" class="estimatefirst_table3">
-					    <p>Above 30</p>
-					  </div>
-					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table3">
-					    <p hide-gt-md>{{refData.rate.aboveThirty}}</p>
-					    <!-- <p hide show-gt-md>[flex-order-gt-md="3"]</p> -->
-					  </div>
-					  <div flex flex-order="2" class="estimatefirst_table3">
-					    <p>{{estimate.aboveThirty}}</p>
-					  </div>
-					  <div flex flex-order="3" flex-order-gt-md="1" class="estimatefirst_table3">
-					    <p hide-gt-md>{{refData.rate.aboveThirty * estimate.aboveThirty}}</p>
-					    <!-- <p hide show-gt-md>[flex-order-gt-md="1"]</p> -->
-					  </div>
-				</div>
-				<!-- <div class="row estimate-ion_row" ng-show="refData.rate">
-					<div class="col">
-						<span class="estimate-pricing-span"> Select Number of Items between <strong>1kg - 15kg</strong>
-						</span>
-						<ion-list class="estimate-ion_list">
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="0">0</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="1">1</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="2">2</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="3">3</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="4">4</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.zeroToFif" ng-value="5">5</ion-radio>
-						</ion-list>
-					</div>
-				</div> -->
-				<!-- <div class="row estimate-ion_row" ng-show="refData.rate">
-					<div class="col">
-						<span class="estimate-pricing-span"> Select Number of Items between <strong>15kg - 30kg</strong></span>
-						<ion-list class="estimate-ion_list">
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="0">
-						  0</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="1">
-						  1</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="2">
-						  2</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="3">
-						  3</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="4">
-						  4</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.fitToThirty" ng-value="5">
-						  5</ion-radio>
-						</ion-list>
-					</div>
-				</div> -->
-				<!-- <div class="row estimate-ion_row" ng-show="refData.rate">
-					<div class="col">
-						<span class="estimate-pricing-span"> Select Number of Items above <strong>30kg</strong></span>
-						<ion-list class="estimate-ion_list">
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="0">
-						  0</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="1">
-						  1</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="2">
-						  2</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="3">
-						  3</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="4">
-						  4</ion-radio>
-						  <ion-radio class="estimate-ion-radio" ng-model="estimate.aboveThirty" ng-value="5">
-						  5</ion-radio>
-						</ion-list>
-					</div>
-				</div> -->
-				<div class="col col-offset-10">
-					<span class="col estimate-pricing-span" ng-show="refData.rate">
-					Approximate Charges: <strong>{{getApproximateRate()}}</strong></span>
-				</div>
+
 			</div>
 		</div>		
 	</ion-content> 

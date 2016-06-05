@@ -11,6 +11,12 @@ angular.module('app.projectX')
   $scope.estimate.zeroToFif = 0;
   $scope.estimate.fitToThirty = 0;
   $scope.estimate.aboveThirty = 0;
+  $scope.extraLuggageCount = 0;
+  $scope.extraLuggageCountCharges = 0;
+  $scope.estimate.numberOfLuggages = 0;
+
+  $scope.extraKgCount = 0;
+  $scope.extraKgCountCharges = 0;
 
    $scope.refData.cities = store.get("cities");
 
@@ -43,6 +49,85 @@ angular.module('app.projectX')
 
     return 0;
   }
+
+  $scope.getExtraLuggage = function(){
+
+    if($scope.refData.rate){
+
+      $scope.extraLuggageCount = $scope.estimate.numberOfLuggages - $scope.refData.rate.luggageLimit;
+
+      if($scope.extraLuggageCount > 0){
+        return $scope.extraLuggageCount;
+      }
+    }
+
+    $scope.extraLuggageCount = 0;
+
+    return $scope.extraLuggageCount;
+  }
+
+  $scope.getExtraPerLuggage = function(){
+
+    console.log("inside extra per luggage");
+
+    if($scope.refData.rate){
+
+      console.log("inside extra per luggage");
+
+      $scope.extraLuggageCountCharges = $scope.extraLuggageCount * $scope.refData.rate.amountPerLuggage;
+
+      console.log(" $scope.extraLuggageCountCharges "+ $scope.extraLuggageCountCharges);
+
+      
+      return $scope.extraLuggageCountCharges;
+
+    }
+    
+    $scope.extraLuggageCountCharges = 0; 
+
+    return $scope.extraLuggageCountCharges;
+  }
+
+  $scope.getExtraKg = function(){
+
+    if($scope.refData.rate){
+
+      $scope.extraKgCount = $scope.estimate.approxWeight - $scope.refData.rate.luggageLimitInKgs;
+
+      if($scope.extraKgCount > 0){
+        return $scope.extraKgCount;
+      }
+    }
+
+    $scope.extraKgCount = 0;
+
+    return $scope.extraKgCount;
+  }
+
+  $scope.getExtraPerKg = function(){
+
+    if($scope.refData.rate){
+
+      $scope.extraKgCountCharges = $scope.extraKgCount * $scope.refData.rate.amountPerKgs;
+      
+      return $scope.extraKgCountCharges;
+
+    }
+    
+    $scope.extraKgCountCharges = 0; 
+
+    return $scope.extraKgCountCharges; 
+  }
+
+  $scope.getApproximateTotalForCustomerBase = function(){
+
+     if($scope.refData.rate && $scope.estimate.numberOfLuggages){
+
+      return $scope.extraKgCountCharges + $scope.extraLuggageCountCharges + $scope.refData.rate.zeroToFifCount;
+    }
+  }
+
+
 
    var genericPopup;
 
