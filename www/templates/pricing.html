@@ -3,44 +3,75 @@
   	<div class="row responsive-md">
       <div class="col col-50 col-offset-25">
 			<div ng-repeat="rate in refData.rates">
-				<span class="col pricing-span select-city estimatefirst_table1">
-					City : <strong>{{rate.city.name}}</strong>
-				</span>
-				<div layout="row" class="estimate_table_border">
-					  <div flex flex-order="-1" class="estimatefirst_table">
-					    <span hide-gt-md style="padding-left:5px;">Weight</span>
-					    <span show-gt-md style="padding-left:5px;">in</span>
-					    <span show-gt-md style="padding-left:5px;">(kg)</span>
-					  </div>
-					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table">
-					    <span hide-gt-md>Charges</span>
-					    <span show-gt-md>in</span>
-					    <span show-gt-md>(Rs)</span>
-					  </div>
+				<div ng-if="!rate.customerBase">
+					<span class="col pricing-span select-city estimatefirst_table1">
+						City : <strong>{{rate.city.name}}</strong>
+					</span>
+					<div layout="row" class="estimate_table_border">
+						  <div flex flex-order="-1" class="estimatefirst_table">
+						    <span hide-gt-md style="padding-left:5px;">Weight</span>
+						    <span show-gt-md style="padding-left:5px;">in</span>
+						    <span show-gt-md style="padding-left:5px;">(kg)</span>
+						  </div>
+						  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table">
+						    <span hide-gt-md>Charges</span>
+						    <span show-gt-md>in</span>
+						    <span show-gt-md>(Rs)</span>
+						  </div>
+					</div>
+					<div layout="row" class="estimate_table_border">
+						  <div flex flex-order="-1" class="estimatefirst_table">
+						    <span>0-15</span>
+						  </div>
+						  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table">
+						    <span hide-gt-md>{{rate.zeroToFifCount}}</span>
+						  </div>
+					</div>
+					<div layout="row" class="estimate_table_border">
+						  <div flex flex-order="-1" class="estimatefirst_table2">
+						    <span>15-30</span>
+						  </div>
+						  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table2">
+						    <span hide-gt-md>{{rate.fifToThirCount}}</span>
+						  </div>
+					</div>
+					<div layout="row" class="estimate_table_border">
+						  <div flex flex-order="-1" class="estimatefirst_table3">
+						    <p>Above 30</p>
+						  </div>
+						  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table3">
+						    <p hide-gt-md>{{rate.aboveThirty}}</p>
+						  </div>
+					</div>
 				</div>
-				<div layout="row" class="estimate_table_border">
-					  <div flex flex-order="-1" class="estimatefirst_table">
-					    <span>0-15</span>
-					  </div>
-					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table">
-					    <span hide-gt-md>{{rate.zeroToFifCount}}</span>
-					  </div>
-				</div>
-				<div layout="row" class="estimate_table_border">
-					  <div flex flex-order="-1" class="estimatefirst_table2">
-					    <span>15-30</span>
-					  </div>
-					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table2">
-					    <span hide-gt-md>{{rate.fifToThirCount}}</span>
-					  </div>
-				</div>
-				<div layout="row" class="estimate_table_border">
-					  <div flex flex-order="-1" class="estimatefirst_table3">
-					    <p>Above 30</p>
-					  </div>
-					  <div flex flex-order="1" flex-order-gt-md="3" class="estimatefirst_table3">
-					    <p hide-gt-md>{{rate.aboveThirty}}</p>
-					  </div>
+				<div ng-if="rate.customerBase" style="margin-top:14px;">
+					<span class="col pricing-span select-city estimatefirst_table1">
+						City : <strong>{{rate.city.name}}</strong>
+					</span>
+					<div class="col-offset-33 inset-rate">
+						<h3 class="inset-rate-h3">{{rate.zeroToFifCount}}</h3>
+						<h5 style="line-height:0.6;"><i class="fa fa-inr" aria-hidden="true"></i> only</h5>
+					</div>
+					<md-list-item class="md-3-line" ng-click="null">
+						<div class="col col-customerbase">
+							<span>
+								<i class="fa fa-suitcase" aria-hidden="true"></i>
+								Number of bags upto : {{rate.luggageLimit}}
+							</span><br> 
+							<span style="margin-left:-3px;">
+								<img src="img/weight-kg-icon.png" style="width:20px;height:20px;">
+								<span style="position:absolute;">
+									Weight Limit : {{rate.luggageLimitInKgs}} Kg.
+								</span>
+							</span><br>
+							<span>Extra Luggage Charges : {{rate.amountPerLuggage}} 
+								<i class="fa fa-inr" aria-hidden="true"></i> / Luggage
+							</span><br>
+							<span>Extra Weight Charges : {{rate.amountPerKgs}} 
+								<i class="fa fa-inr" aria-hidden="true"></i> / Kg.
+							</span><br>
+						</div>
+					</md-list-item>
 				</div>
 			</div>
 		</div>

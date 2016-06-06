@@ -144,18 +144,39 @@
 				</div>
 
 				<div ng-show="refData.rate && refData.rate.customerBase">
-						{{refData.rate.zeroToFifCount}} Rs only <br>
-						Number of bags upto : {{refData.rate.luggageLimit}}<br> 
-						Weight Limit : {{refData.rate.luggageLimitInKgs}} Kg.<br>
-						Extra Luggage Charges : {{refData.rate.amountPerLuggage}} Rs / Luggage<br>
-						Extra Weight Charges : {{refData.rate.amountPerKgs}} Rs / Kg.<br>
-
+					<div class="col-offset-33 inset-rate">
+						<h3 class="inset-rate-h3">{{refData.rate.zeroToFifCount}}</h3>
+						<h5 style="line-height:0.6;"><i class="fa fa-inr" aria-hidden="true"></i> only</h5>
+					</div>
 					<md-list-item class="md-3-line" ng-click="null">
-						<div class="" style="border-bottom:1px solid gainsboro;">
+						<div class="col col-customerbase">
+							<span>
+								<i class="fa fa-suitcase" aria-hidden="true"></i>
+								Number of bags upto : {{refData.rate.luggageLimit}}
+							</span><br> 
+							<span style="margin-left:-3px;">
+								<img src="img/weight-kg-icon.png" style="width:20px;height:20px;">
+								<span style="position:absolute;">
+									Weight Limit : {{refData.rate.luggageLimitInKgs}} Kg.
+								</span>
+							</span><br>
+							<span>Extra Luggage Charges : {{refData.rate.amountPerLuggage}} 
+								<i class="fa fa-inr" aria-hidden="true"></i> / Luggage
+							</span><br>
+							<span>Extra Weight Charges : {{refData.rate.amountPerKgs}} 
+								<i class="fa fa-inr" aria-hidden="true"></i> / Kg.
+							</span><br>
+						</div>
+					</md-list-item>
+					<md-list-item class="md-3-line" ng-click="null">
+						<div class="" style="border-bottom:1px solid gainsboro; width:100%;">
 							<h5>Select Number of Luggage </h5>
-							<md-radio-group  ng-model="estimate.numberOfLuggages">
-							    <md-radio-button ng-value="refData.rate.luggageLimit" style="float:left;margin-right:10px;">
-							    upto {{refData.rate.luggageLimit}}</md-radio-button>
+							<md-radio-group ng-model="estimate.numberOfLuggages">
+							    <md-radio-button ng-value="refData.rate.luggageLimit" style="float:left;">upto 
+							    	<span style="margin-right:10px!important;">
+							    		{{refData.rate.luggageLimit}}
+									</span>
+								</md-radio-button>
 							    <md-radio-button ng-value="refData.rate.luggageLimit + 1" style="float:left;margin-right:10px;">
 							    {{refData.rate.luggageLimit + 1}}</md-radio-button>
 							    <md-radio-button ng-value="refData.rate.luggageLimit + 2" style="float:left;margin-right:10px;">
@@ -168,7 +189,7 @@
 						</div>
 			        </md-list-item>
 			        <md-list-item class="md-3-line" ng-click="null">
-						<div class="" style="border-bottom:1px solid gainsboro;">
+						<div class="" style="border-bottom:1px solid gainsboro; width:100%;">
 							<h5>Approximate Weight of Luggages in Kg </h5>
 							<md-radio-group  ng-model="estimate.approxWeight">
 							    <md-radio-button ng-value="refData.rate.luggageLimitInKgs" style="float:left;margin-right:10px;">
@@ -181,13 +202,40 @@
 							    upto {{refData.rate.luggageLimitInKgs + 30}}</md-radio-button>
 						    </md-radio-group>
 						</div>
-</br></br></br></br>
-						Base Charge upto {{refData.rate.luggageLimit}} Luggage and upto {{refData.rate.luggageLimitInKgs}} Kg : {{refData.rate.zeroToFifCount}} Rs</br>
-						Extra Luggage / Extra per Luggage : {{getExtraLuggage()}} / {{getExtraPerLuggage()}}</br>
-						Extra Kg / Extra per Kg : {{getExtraKg()}} / {{getExtraPerKg()}}</br>
-						Approximate Total Charges : {{getApproximateTotalForCustomerBase()}}</br>
-
 			        </md-list-item>
+			        <md-list-item class="md-3-line" ng-click="null">
+			        	<div class="col col-customerbase">
+							<span class="base-charge">Base Charge upto {{refData.rate.luggageLimit}} Luggage and {{refData.rate.luggageLimitInKgs}} Kg : {{refData.rate.zeroToFifCount}} 
+								<i class="fa fa-inr" aria-hidden="true"></i>
+							</span></br>
+							<span class="base-charge">
+								<i class="fa fa-suitcase" aria-hidden="true"></i>
+								Extra Luggage : {{getExtraLuggage()}}
+							</span><br>
+							<span class="base-charge">
+								<i class="fa fa-inr" aria-hidden="true" style="margin-left:4px;"></i>
+								<span style="margin-left:3px;">
+									Charges of extra luggage : {{getExtraPerLuggage()}}
+									<i class="fa fa-inr" aria-hidden="true"></i>
+								</span>
+							</span><br>
+							<span class="base-charge" style="margin-left:-3px;">
+								<img src="img/weight-kg-icon.png" style="width:20px;height:20px;">
+								<span style="position:absolute;margin-left:-3px;">Extra Weight in Kg : {{getExtraKg()}}</span>
+							</span></br>
+							<span class="base-charge" style="margin-left:3px;">
+								<i class="fa fa-inr" aria-hidden="true"></i>
+								<span style="position:absolute;margin-left:4px;">
+									Charges of extra weight : {{getExtraPerKg()}}
+									<i class="fa fa-inr" aria-hidden="true"></i>
+								</span>
+							</span><br>
+							<span class="base-charge">
+								Approximate Total Charges : {{getApproximateTotalForCustomerBase()}}
+								<i class="fa fa-inr" aria-hidden="true"></i>
+							</span></br>
+						</div>
+					</md-list-item>
 				</div>
 
 			</div>

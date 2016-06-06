@@ -97,6 +97,15 @@ angular.module('app.projectX').controller('yourBookingDetailCtrl', ['$scope', 's
     	return false;
     }
 
+    $scope.getWeightList =  function(){
+    	if($scope.mainData.selectedBooking && $scope.mainData.selectedBooking.luggageInfo && $scope.mainData.selectedBooking.luggageInfo.luggageWeights){
+    		var arrString = new Array();
+        	arrString = $scope.mainData.selectedBooking.luggageInfo.luggageWeights.split(',');
+        	return arrString;
+    	}
+    	return [];
+    }
+
 
 	$scope.getPickupAndDropUserInfo($scope.mainData.selectedBooking.id);
 

@@ -64,6 +64,7 @@
 .pickup-details {
     padding: 10px;
     float: left;
+    width: 100%;
 }
 .confirmation_booking{
     border: 1px solid gainsboro;
@@ -98,11 +99,13 @@
     color: #212121;
     margin-left: 7px;
     font-family: "Roboto", sans-serif !important;
+    overflow: initial!important;
 }
 #StreetSubstreetName{
     color: #212121;
     margin-left: 15px;
     font-family: "Roboto", sans-serif !important;
+    float: left;
 }
 .StreetSubstreetName1{
     color: #212121;
@@ -238,6 +241,9 @@
     text-decoration: none;
     margin-right: 10px;
 }
+.section_cancelbooking{
+    text-decoration: none;
+}
 .row > span {
     margin-top: -10px;
     color: black;
@@ -372,6 +378,11 @@ input[type='checkbox'] {
     top: 10px;
     left: 25px;
 }
+.footer_cancel_booking{
+    position: absolute;
+    top: 8px;
+}
+
 .footer_booknow {
     position: absolute;
     margin-top: 5px;
@@ -562,4 +573,49 @@ input {
     color:#000!important;
     margin-top:15px!important;
 }
-
+.inset-rate{
+    display:block;
+    width:100px;
+    height:100px;
+    border-radius:50px;
+    font-size:15px;
+    color:#21B11E;
+    line-height:100px;
+   /* text-shadow:0 1px 0 #666;*/
+    text-align:center;
+    text-decoration:none;
+    box-shadow:1px 1px 2px #777;
+    background:white;
+    opacity:0.95;
+    margin-top:11px;
+}
+.inset-rate:hover{
+    color:#21B11E;
+    /*text-shadow:0 0 1px #666;*/
+    text-decoration:none;
+    box-shadow:0 0 4px #222 inset;
+    opacity:1
+}
+.inset-rate-h3{
+    font-size:30px!important;
+    padding-top:15px!important;
+    color:#21B11E!important;
+    margin-bottom: -10px;
+}
+.col-customerbase{
+    border-bottom:1px solid gainsboro;
+    line-height: 24px;
+}
+md-radio-button .md-label{
+   /* margin-left: 22px!important;*/
+}
+.base-charge{
+    font-size: 13px;
+}
+md-radio-button{
+    margin-bottom: 0px!important;
+}
+.item h2{
+    overflow: initial!important;
+    line-height: 15px;
+}
