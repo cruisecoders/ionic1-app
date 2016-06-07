@@ -381,6 +381,7 @@ input[type='checkbox'] {
 .footer_cancel_booking{
     position: absolute;
     top: 8px;
+    left: 25px;
 }
 
 .footer_booknow {

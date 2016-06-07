@@ -1,12 +1,15 @@
 angular.module('app.projectX').controller('loginCtrl',
 ['$scope', 'loginService', '$state', 'store', '$ionicPopup', '$rootScope',
  function($scope, loginService, $state, store, $ionicPopup, $rootScope){
+
+  mixpanel.track("Login Test called 4");
 	
   $scope.user = {};
 
   $scope.loginShowHints = true;
 
   $scope.login = function() {
+      mixpanel.track("Login event called 4");
     	$rootScope.showLoader();
     	loginService.login($scope.user).then(
     		function(response){
