@@ -29,6 +29,12 @@ angular.module('app.projectX').constant('menuConstant', {
 		name:"My Profile", 
 		state: "main.account",
 		icon: "fa fa-user"
+	},
+	{
+		//imagepath:"img/icons/ic_person_black_24dp.png",
+		name:"Terms & Conditions", 
+		state: "main.tc",
+		icon: "fa fa-pencil-square"
 	}]
 })
 

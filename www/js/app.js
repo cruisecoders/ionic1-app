@@ -234,6 +234,15 @@
             }
         }
    })
+
+   .state('main.tc',{
+      url:"/tc",
+      views:{
+        "mainContent":{
+          templateUrl: "templates/tc.html",
+        }
+      }
+   })
    
   }])
 
