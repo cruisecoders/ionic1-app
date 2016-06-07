@@ -136,6 +136,38 @@
 			<h4 class="bill-details">Bill Details</h4>
 			<div class="col pickup-details">
 				<div class="col">
+
+					<a class="item item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo && !mainData.selectedBooking.customerBase">
+						<span style="margin-left:5px;">Charges for (0-15) Kg  :</span>
+						<span class="item-note primary-text-color" style="font-size:21px;">
+				      		<i class="fa fa-inr" style="font-size:14px;"></i>  
+							{{mainData.selectedBooking.luggageInfo.zeroToFifCountCharge * mainData.selectedBooking.luggageInfo.zeroToFifCount}}
+						</span>
+			  		</a>
+			  		<a class="item item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo && !mainData.selectedBooking.customerBase">
+						<span style="margin-left:5px;">Charges for (15-30) Kg :</span>
+						<span class="item-note primary-text-color" style="font-size:21px;">
+				      		<i class="fa fa-inr" style="font-size:14px;"></i>  
+							{{mainData.selectedBooking.luggageInfo.fifToThirCountCharge * mainData.selectedBooking.luggageInfo.fifToThirCount}}
+						</span>
+			  		</a>
+			  		<a class="item item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo && !mainData.selectedBooking.customerBase">
+						<span style="margin-left:5px;">Charges above 30 Kg :</span>
+						<span class="item-note primary-text-color" style="font-size:21px;">
+				      		<i class="fa fa-inr" style="font-size:14px;"></i>  
+							{{mainData.selectedBooking.luggageInfo.aboveThirtyCharge * mainData.selectedBooking.luggageInfo.aboveThirty}}
+						</span>
+			  		</a>
+
+
+					<a class="item item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo && mainData.selectedBooking.customerBase">
+						<span style="margin-left:5px;">Base Fare :</span>
+						<span class="item-note primary-text-color" style="font-size:21px;">
+				      		<i class="fa fa-inr" style="font-size:14px;"></i>  
+							{{mainData.selectedBooking.luggageInfo.baseCharge}}
+						</span>
+			  		</a>
+
 					<a class="item item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo && mainData.selectedBooking.customerBase">
 						<span style="margin-left:5px;">Charges of Extra Kg :</span>
 						<span class="item-note primary-text-color" style="font-size:21px;">
