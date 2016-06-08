@@ -46,7 +46,7 @@
 				</div>
 			</div>
 			<div class="pickup-details">
-			  		<h4 style="margin-left:17px;">Pickup Details</h4>
+			  		<h4 class="pickup-details-h5" style="margin-left:17px;">Pickup Details</h4>
 			  		<a class="item item-icon-right" ng-href="tel:+91-{{pickupUserInfo.user.mobile}}" ng-show="pickupUserInfo">
 		                <img  class="driver_icon" src="img/driverIcon.png">
 		                <h2 class="driver_name">Pickup Boy: {{pickupUserInfo.user.firstName}} {{pickupUserInfo.user.lastName}}</h2>
@@ -81,7 +81,7 @@
 		            </md-list-item> -->
 			</div>
 			<div class="col pickup-details">
-			  	    <h4 class="" style="margin-left:17px;">Drop Details</h4>
+			  	    <h4 class="pickup-details-h5" style="margin-left:17px;">Drop Details</h4>
 			  	    <a class="item item-icon-right" ng-href="tel:+91-{{dropUserInfo.user.mobile}}" ng-show="dropUserInfo">
 		                <img class="driver_icon" src="img/driverIcon.png">
 		                <h2 class="driver_name">Drop Boy: {{dropUserInfo.user.firstName}} {{dropUserInfo.user.lastName}}</h2>
@@ -100,7 +100,7 @@
 			  		</a>
 			</div>
 			<div class="col pickup-details">
-				  	<h4 class="" style="margin-left:17px;">Luggage Informations</h4>
+				  	<h4 class="pickup-details-h5" style="margin-left:17px;">Luggage Informations</h4>
 			  		<a class="item item-icon-right StreetSubstreetName">
 						<h2>Total: {{mainData.selectedBooking.itemCount}}</h2>
 			  		</a>
@@ -133,10 +133,9 @@
 						</h2>
 			  		</a>
 			</div>
-			<h4 class="bill-details">Bill Details</h4>
 			<div class="col pickup-details">
+				<h4 class="pickup-details-h5" style="margin-left:17px;">Bill Details</h4>
 				<div class="col">
-
 					<a class="item item-icon-right StreetSubstreetName" ng-show="mainData.selectedBooking.luggageInfo && !mainData.selectedBooking.customerBase">
 						<span style="margin-left:5px;">Charges for (0-15) Kg  :</span>
 						<span class="item-note primary-text-color" style="font-size:21px;">
