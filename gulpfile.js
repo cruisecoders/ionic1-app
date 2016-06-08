@@ -44,7 +44,8 @@ var paths = {
                 './www/lib/momentjs/min/moment-with-locales.min.js',
                 './www/lib/angular-material-datetimepicker/js/angular-material-datetimepicker.min.js',
                 './www/lib/angular-messages/angular-messages.min.js',
-                './www/lib/mixpanel/mixpanel-jslib-snippet.min.js'
+                './www/lib/mixpanel/mixpanel-jslib-snippet.min.js',
+                './www/lib/angular-spinners/dist/angular-spinners.min.js'
                 //'./www/lib/moment/min/moment.js',
                 //'./www/lib/angular-material-datetimepicker/js/angular-material-datetimepicker.js'
                 
@@ -133,7 +134,7 @@ gulp.task('replaceConfig', function () {
   console.log('replaceConfig STARTED');
   gulp.src('config.json')
   .pipe(gulpNgConfig('app.env.config', {
-    environment: 'dev'
+    environment: 'local'
     }))
   .pipe(gulp.dest('./www/js'))
   .on('end', function(){
