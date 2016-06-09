@@ -19,6 +19,7 @@
     right: 84px; 
     background: transparent !important;
     border: 1px solid lightskyblue; 
+    
 }
 .item-select:after {
     right: 102px;
