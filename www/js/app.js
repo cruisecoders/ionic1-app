@@ -30,6 +30,12 @@
             //navigator.splashscreen.show();
           })*/
 
+        if (ionic.Platform.isIOS()){
+           setTimeout(function () {
+              navigator.splashscreen.hide();
+           }, 3000 - 1000);
+        }
+
           if(window.cordova && window.cordova.plugins.Keyboard) {
               // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
               // for form inputs)

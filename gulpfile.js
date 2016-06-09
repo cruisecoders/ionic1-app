@@ -29,7 +29,7 @@ var paths = {
               ],
   html:       ['./www/build/index.html'],
   templates:  ['./www/js/**/*.html', './www/templates/**/*.html'],
-  vendor:     ['./www/lib/ionic/js/ionic.bundle.min.js',
+  vendor:     ['./www/lib/ionic/release/js/ionic.bundle.min.js',
                 './www/lib/ion-md-input/js/ion-md-input.min.js',
                 './www/lib/ionic-material/dist/ionic.material.min.js',
                 './www/lib/angular-cookies/angular-cookies.min.js',
@@ -134,7 +134,7 @@ gulp.task('replaceConfig', function () {
   console.log('replaceConfig STARTED');
   gulp.src('config.json')
   .pipe(gulpNgConfig('app.env.config', {
-    environment: 'local'
+    environment: 'dev'
     }))
   .pipe(gulp.dest('./www/js'))
   .on('end', function(){
@@ -244,11 +244,12 @@ gulp.task('delete-files', function() {
       'platforms/ios/www/lib/**',
       '!platforms/ios/www/lib',
       '!platforms/ios/www/lib/ionic',
-      '!platforms/ios/www/lib/ionic/fonts',
-      '!platforms/ios/www/lib/ionic/fonts/ionicons.eot',
-      '!platforms/ios/www/lib/ionic/fonts/ionicons.svg',
-      '!platforms/ios/www/lib/ionic/fonts/ionicons.ttf',
-      '!platforms/ios/www/lib/ionic/fonts/ionicons.woff',
+      '!platforms/ios/www/lib/ionic/release',
+      '!platforms/ios/www/lib/ionic/release/fonts',
+      '!platforms/ios/www/lib/ionic/release/fonts/ionicons.eot',
+      '!platforms/ios/www/lib/ionic/release/fonts/ionicons.svg',
+      '!platforms/ios/www/lib/ionic/release/fonts/ionicons.ttf',
+      '!platforms/ios/www/lib/ionic/release/fonts/ionicons.woff',
       'platforms/ios/www/js/**/*.js',
       'platforms/ios/www/js/**/*.html',
       '!platforms/ios/www/js/bundles/app.bundle.min.js',
@@ -256,7 +257,20 @@ gulp.task('delete-files', function() {
       '!platforms/ios/www/js/utility/templates.js',
       'platforms/ios/www/build/**',
       '!platforms/ios/www/templates/**',
-      'platforms/ios/www/css/app.css'
+      'platforms/ios/www/css/app.css',
+      '!platforms/ios/www/lib/angular-material',
+      '!platforms/ios/www/lib/angular-material/angular-material.min.css',
+      '!platforms/ios/www/lib/font-awesome',
+      '!platforms/ios/www/lib/font-awesome/fonts',
+      '!platforms/ios/www/lib/font-awesome/fonts/fontawesome-webfont.eot',
+      '!platforms/ios/www/lib/font-awesome/fonts/fontawesome-webfont.svg',
+      '!platforms/ios/www/lib/font-awesome/fonts/fontawesome-webfont.ttf',
+      '!platforms/ios/www/lib/font-awesome/fonts/fontawesome-webfont.woff',
+      '!platforms/ios/www/lib/font-awesome/fonts/fontawesome-webfont.woff2',
+      '!platforms/ios/www/lib/font-awesome/fonts/FontAwesome.otf',
+      'platforms/ios/www/lib/mixpanel/**',
+      '!platforms/ios/www/lib/mixpanel',
+      '!platforms/ios/www/lib/mixpanel/mixpanel.min.js'
       ])
       .then(function() {
         console.log('delete-files DONE');
