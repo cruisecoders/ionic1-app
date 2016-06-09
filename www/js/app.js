@@ -5,7 +5,7 @@
   // the 2nd parameter is an array of 'requires'
   angular.module('app.projectX', ['ionic', 'ui.router','ngAnimate', 'angular-jwt','ionic-material',
   'angular-storage', 'ngResource','ionMdInput', 'app.env.config' ,'ngCordova', 'ngCookies', 'ngMaterial', 'ngMaterialDatePicker',
-   'ngMessages'])
+   'ngMessages', 'angularSpinners'])
 
       .run([ '$ionicPlatform', '$ionicPopup', '$timeout', function($ionicPlatform, $ionicPopup, $timeout) {
         $ionicPlatform.ready(function() {
@@ -247,16 +247,20 @@
   }])
 
 .run([
-  '$rootScope', '$state', 'store', 'jwtHelper', '$ionicLoading','$mdDialog',
-  function($rootScope, $state, store, jwtHelper, $ionicLoading, $mdDialog) {
+  '$rootScope', '$state', 'store', 'jwtHelper', '$ionicLoading','$mdDialog', 'spinnerService',
+  function($rootScope, $state, store, jwtHelper, $ionicLoading, $mdDialog, spinnerService) {
 
   $rootScope.showLoader = function() {
-    $ionicLoading.show({
+    /*$ionicLoading.show({
       templateUrl: "templates/loading.html"
-    });
+    });*/
+
+    spinnerService.show('html5spinner');
+
   };
   $rootScope.hideLoader = function(){
-    $ionicLoading.hide();
+    /*$ionicLoading.hide();*/
+   spinnerService.hide('html5spinner');
   };
 
 /*  $rootScope.showAlertBox = function(title, msg){
