@@ -10,7 +10,8 @@ angular.module('app.projectX').controller('loginCtrl',
 
   $scope.login = function() {
       //mixpanel.track("Login event called 4");
-      $rootScope.callMixPanel(MIX_PANEL_EVENTS.loginForm.key, MIX_PANEL_EVENTS.loginForm.value + $scope.user.number);
+      $rootScope.callMixPanel(MIX_PANEL_EVENTS.loginForm.key,
+       {"Attempt to Login " : "Attempt to login by " + $scope.user.number});
       
     	$rootScope.showLoader();
     	loginService.login($scope.user).then(
@@ -36,7 +37,8 @@ angular.module('app.projectX').controller('loginCtrl',
   }
 
   $scope.submitOTP = function() {
-    $rootScope.callMixPanel(MIX_PANEL_EVENTS.submitOTP.key, MIX_PANEL_EVENTS.submitOTP.value + $scope.user.number);
+    $rootScope.callMixPanel(MIX_PANEL_EVENTS.submitOTP.key,
+     {"Submit OTP" : "Submit OTP by " + $scope.user.number});
       $rootScope.showLoader();
       loginService.submitOTP($scope.user).then(
         function(response){
@@ -62,7 +64,8 @@ angular.module('app.projectX').controller('loginCtrl',
   }
 
   $scope.regenerateOTP = function() {
-    $rootScope.callMixPanel(MIX_PANEL_EVENTS.regenrateOTP.key, MIX_PANEL_EVENTS.regenrateOTP.value + $scope.user.number);
+    $rootScope.callMixPanel(MIX_PANEL_EVENTS.regenrateOTP.key,
+     {"Regenrate OTP" : "Regenrate OTP by " + $scope.user.number});
       $rootScope.showLoader();
       loginService.regenerateOTP($scope.user).then(
         function(response){

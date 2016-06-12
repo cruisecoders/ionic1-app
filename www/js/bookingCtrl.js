@@ -65,7 +65,9 @@ angular.module('app.projectX')
 
        $scope.submitBookingForm = function(){
 
-        $rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingDone.key, MIX_PANEL_EVENTS.bookingDone.value + $scope.booking.number);
+          $rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingDone.key, 
+            {"Booking Done " : "Booking Done by "+ $scope.booking.number});
+
            if(!$scope.isValidated()){
               return false;
            }

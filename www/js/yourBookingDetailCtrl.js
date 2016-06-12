@@ -69,7 +69,8 @@ angular.module('app.projectX').controller('yourBookingDetailCtrl', ['$scope', 's
 	}
 
 	$scope.cancelBooking = function(){
-		$rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingCancel.key, MIX_PANEL_EVENTS.bookingCancel.value + $scope.mainData.selectedBooking.number);
+		$rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingCancel.key, 
+			{"Booking Cancelled " : "Booking Cancelled by " + $scope.mainData.selectedBooking.number});
         $rootScope.showLoader();
           
         projectApi.cancelBooking($scope.mainData.selectedBooking.id).then(function(response){

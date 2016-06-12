@@ -116,22 +116,22 @@ angular.module('app.projectX').constant('menuConstant', {
 		value : {"Resource Name" : "Booking Detail Loaded"}
 	},bookingDone : {
 		key : "Booking Done",
-		value : "Booking Done by "
+		value : {"Booking Done by " : "Booking Done by "} 
 	},bookingCancel : {
 		key : "Booking cancelled",
-		value : "Booking cancelled by "
+		value : {"Booking cancelled by " : "Booking cancelled by "}
 	},loginForm : {
 		key : "Attempt to Login",
-		value : "Attempt to login by "
+		value : { "Attempt to login by " : "Attempt to login by " }
 	},submitOTP : {
 		key : "Submit OTP",
-		value : "Submit OTP by " 
+		value : {"Submit OTP by " : "Submit OTP by "}
 	},signUp : {
 		key : "Attemp to Register",
-		value : "Attemp to Register by " 
+		value : {"Attemp to Register by " : "Attemp to Register by "}
 	},regenrateOTP : {
 		key : "Regenrate OTP",
-		value : "Regenrate OTP by " 
+		value : {"Regenrate OTP by " : "Regenrate OTP by " }
 	}
 
 })
