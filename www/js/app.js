@@ -112,11 +112,11 @@
             "mainContent": {
               templateUrl: "templates/getStarted.html",
               resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.gettingStartedPageLoaded.key, MIX_PANEL_EVENTS.gettingStartedPageLoaded.value);
                   return true;
-                }
+                }]
               }
             }
         }
@@ -128,11 +128,11 @@
             "mainContent": {
               templateUrl: "templates/loginForm.html",
               resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.loginPageLoaded.key, MIX_PANEL_EVENTS.loginPageLoaded.value);
                   return true;
-                }
+                }]
               }
             }
         }
@@ -144,11 +144,11 @@
             "mainContent": {
               templateUrl: "templates/loginOtp.html",
               resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.submitOtpPageLoaded.key, MIX_PANEL_EVENTS.submitOtpPageLoaded.value);
                   return true;
-                }
+                }]
               }
             }
         }
@@ -160,11 +160,11 @@
             "mainContent": {
               templateUrl: "templates/signUp.html",
               resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.signupPageLoaded.key, MIX_PANEL_EVENTS.signupPageLoaded.value);
                   return true;
-                }
+                }]
               }
             }
         }
@@ -188,11 +188,11 @@
                 templateUrl: "templates/booking.html",
                 controller: 'bookingCtrl',
                 resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingPageLoaded.key, MIX_PANEL_EVENTS.bookingPageLoaded.value);
                   return true;
-                }
+                }]
               }
             },
 
@@ -208,11 +208,11 @@
                 templateUrl: "templates/pricing.html",
                 controller: 'pricingCtrl',
                 resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.ratecardPageLoaded.key, MIX_PANEL_EVENTS.ratecardPageLoaded.value);
                   return true;
-                }
+                }]
               }
             },
 
@@ -228,11 +228,11 @@
               templateUrl: "templates/contactUs.html",
               controller: 'contactCtrl',
               resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.contactusPageLoaded.key, MIX_PANEL_EVENTS.contactusPageLoaded.value);
                   return true;
-                }
+                }]
               }
             }
         }
@@ -243,11 +243,11 @@
         "mainContent":{
           templateUrl: "templates/aboutUs.html",
           resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.aboutusPageLoaded.key, MIX_PANEL_EVENTS.aboutusPageLoaded.value);
                   return true;
-                }
+                }]
               }
         }
       }
@@ -258,11 +258,11 @@
       templateUrl: "templates/confirmation.html",
       controller : "confirmationCtrl",
       resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingConfirmPageLoaded.key, MIX_PANEL_EVENTS.bookingConfirmPageLoaded.value);
                   return true;
-                }
+                }]
               }
    })
    .state('main.account',{
@@ -272,11 +272,11 @@
           templateUrl: "templates/account.html",
           controller: 'accountCtrl',
           resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.accountPageLoaded.key, MIX_PANEL_EVENTS.accountPageLoaded.value);
                   return true;
-                }
+                }]
               }
         }
       }
@@ -289,11 +289,11 @@
               templateUrl: "templates/yourBookings.html",
               controller: 'yourBookingCtrl',
               resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingHistoryPageLoaded.key, MIX_PANEL_EVENTS.bookingHistoryPageLoaded.value);
                   return true;
-                }
+                }]
               }
             }
         }
@@ -306,11 +306,11 @@
               templateUrl: "templates/yourBookingDetail.html",
               controller : 'yourBookingDetailCtrl',
               resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingDetailPageLoaded.key, MIX_PANEL_EVENTS.bookingDetailPageLoaded.value);
                   return true;
-                }
+                }]
               }
             }
         }
@@ -323,11 +323,11 @@
               templateUrl: "templates/estimate.html",
               controller : 'estimateCtrl',
               resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.estimatePageLoaded.key, MIX_PANEL_EVENTS.estimatePageLoaded.value);
                   return true;
-                }
+                }]
               }
             }
         }
@@ -339,11 +339,11 @@
         "mainContent":{
           templateUrl: "templates/tc.html",
           resolve : {
-                eventFunction : function($rootScope, MIX_PANEL_EVENTS){
+                eventFunction : ['$rootScope', 'MIX_PANEL_EVENTS', function($rootScope, MIX_PANEL_EVENTS){
                   console.log("event function called");
                   $rootScope.callMixPanel(MIX_PANEL_EVENTS.tcPageLoaded.key, MIX_PANEL_EVENTS.tcPageLoaded.value);
                   return true;
-                }
+                }]
               }
         }
       }
