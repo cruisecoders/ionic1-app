@@ -1,6 +1,6 @@
 angular.module('app.projectX').controller('yourBookingDetailCtrl', ['$scope', 'store', 'projectApi', 
-	'$state', '$rootScope','$timeout','ionicMaterialMotion', 'ionicMaterialInk',
-	function($scope, store, projectApi, $state  ,$rootScope,$timeout, ionicMaterialMotion, ionicMaterialInk){
+	'$state', '$rootScope','$timeout','ionicMaterialMotion', 'ionicMaterialInk', 'MIX_PANEL_EVENTS',
+	function($scope, store, projectApi, $state  ,$rootScope,$timeout, ionicMaterialMotion, ionicMaterialInk, MIX_PANEL_EVENTS){
 
 	$scope.ref = {};
 
@@ -69,7 +69,7 @@ angular.module('app.projectX').controller('yourBookingDetailCtrl', ['$scope', 's
 	}
 
 	$scope.cancelBooking = function(){
-
+		$rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingCancel.key, MIX_PANEL_EVENTS.bookingCancel.value + $scope.mainData.selectedBooking.number);
         $rootScope.showLoader();
           
         projectApi.cancelBooking($scope.mainData.selectedBooking.id).then(function(response){

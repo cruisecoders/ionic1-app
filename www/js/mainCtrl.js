@@ -1,10 +1,13 @@
 angular.module('app.projectX').controller('mainCtrl',
-['$scope', 'menuConstant', 'projectApi', '$rootScope', 'store', '$mdDialog', '$ionicPlatform','$state', '$ionicHistory',
- function($scope, menuConstant, projectApi, $rootScope, store, $mdDialog, $ionicPlatform , $state, $ionicHistory){
+['$scope', 'menuConstant', 'projectApi', '$rootScope', 'store', '$mdDialog', '$ionicPlatform','$state', '$ionicHistory', 'MIX_PANEL_EVENTS',
+ function($scope, menuConstant, projectApi, $rootScope, store, $mdDialog, $ionicPlatform , $state, $ionicHistory, MIX_PANEL_EVENTS){
 	$scope.menuList = menuConstant.menuList;
 	$scope.mainData = {};
 
 	$scope.getCities = function(id, exp){
+
+    $rootScope.callMixPanel(MIX_PANEL_EVENTS.citiesLoaded.key, MIX_PANEL_EVENTS.citiesLoaded.value);
+
     projectApi.getResource('cities', id, exp).then(function(response){
         console.log("Suuccess Handler");
         //$scope.refData.cities = response.data;

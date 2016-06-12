@@ -59,6 +59,83 @@ angular.module('app.projectX').constant('menuConstant', {
   selectCityFirst : 'Please select city first'
 })
 
+.constant('MIX_PANEL_EVENTS', {
+	loginPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Login Form Page"}
+	},gettingStartedPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Getting Started"}
+	},submitOtpPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Submit OTP Page"}
+	},signupPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Sign up Page"}
+	},bookingPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Booking Page"}
+	},bookingHistoryPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Booking History Page"}
+	},bookingDetailPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Booking Detail Page"}
+	},bookingConfirmPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Booking Confirmation Page"}
+	},aboutusPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "About Us Page"}
+	},contactusPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Contact Us Page"}
+	},accountPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "My Profile Page"}
+	},estimatePageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Estimate Page"}
+	},ratecardPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Rate Card Page"}
+	},tcPageLoaded : {
+		key : "Page Loaded",
+		value : {"Page Name" : "Terms and Condition Page"}
+	},citiesLoaded : {
+		key : "Resource Loaded",
+		value : {"Resource Name" : "Cities Loaded"}
+	},streetsLoaded : {
+		key : "Resource Loaded",
+		value : {"Resource Name" : "Streets Loaded"}
+	},bookingsLoaded : {
+		key : "Resource Loaded",
+		value : {"Resource Name" : "Bookings Loaded"}
+	},bookingDetailLoaded : {
+		key : "Resource Loaded",
+		value : {"Resource Name" : "Booking Detail Loaded"}
+	},bookingDone : {
+		key : "Booking Done",
+		value : "Booking Done by "
+	},bookingCancel : {
+		key : "Booking cancelled",
+		value : "Booking cancelled by "
+	},loginForm : {
+		key : "Attempt to Login",
+		value : "Attempt to login by "
+	},submitOTP : {
+		key : "Submit OTP",
+		value : "Submit OTP by " 
+	},signUp : {
+		key : "Attemp to Register",
+		value : "Attemp to Register by " 
+	},regenrateOTP : {
+		key : "Regenrate OTP",
+		value : "Regenrate OTP by " 
+	}
+
+})
+
 /*.constant('CONTEXT_URL', {
   url: 'http://localhost:8080/web-service/api/'
 })*/

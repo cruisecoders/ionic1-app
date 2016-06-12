@@ -1,15 +1,17 @@
 angular.module('app.projectX').controller('loginCtrl',
-['$scope', 'loginService', '$state', 'store', '$ionicPopup', '$rootScope',
- function($scope, loginService, $state, store, $ionicPopup, $rootScope){
+['$scope', 'loginService', '$state', 'store', '$ionicPopup', '$rootScope', 'MIX_PANEL_EVENTS',
+ function($scope, loginService, $state, store, $ionicPopup, $rootScope, MIX_PANEL_EVENTS){
 
-  mixpanel.track("Login Test called 4");
+  //mixpanel.track("Login Test called 4");
 	
   $scope.user = {};
 
   $scope.loginShowHints = true;
 
   $scope.login = function() {
-      mixpanel.track("Login event called 4");
+      //mixpanel.track("Login event called 4");
+      $rootScope.callMixPanel(MIX_PANEL_EVENTS.loginForm.key, MIX_PANEL_EVENTS.loginForm.value + $scope.user.number);
+      
     	$rootScope.showLoader();
     	loginService.login($scope.user).then(
     		function(response){
@@ -34,6 +36,7 @@ angular.module('app.projectX').controller('loginCtrl',
   }
 
   $scope.submitOTP = function() {
+    $rootScope.callMixPanel(MIX_PANEL_EVENTS.submitOTP.key, MIX_PANEL_EVENTS.submitOTP.value + $scope.user.number);
       $rootScope.showLoader();
       loginService.submitOTP($scope.user).then(
         function(response){
@@ -59,6 +62,7 @@ angular.module('app.projectX').controller('loginCtrl',
   }
 
   $scope.regenerateOTP = function() {
+    $rootScope.callMixPanel(MIX_PANEL_EVENTS.regenrateOTP.key, MIX_PANEL_EVENTS.regenrateOTP.value + $scope.user.number);
       $rootScope.showLoader();
       loginService.regenerateOTP($scope.user).then(
         function(response){

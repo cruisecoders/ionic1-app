@@ -2,9 +2,9 @@ angular.module('app.projectX')
   .controller('bookingCtrl', 
     ['$scope', '$http', '$state', 'store', 'jwtHelper', 'projectApi', 
     '$cordovaDatePicker', '$window', '$ionicPlatform', '$ionicPopup', '$location', '$rootScope', 'errorMsgs',
-    '$timeout' , '$mdSidenav' , '$log' ,
+    '$timeout' , '$mdSidenav' , '$log' , 'MIX_PANEL_EVENTS' ,
     function($scope, $http, $state, store, jwtHelper, projectApi, 
-    $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $rootScope, errorMsgs, $timeout, $mdSidenav, $log){
+    $cordovaDatePicker, $window, $ionicPlatform, $ionicPopup, $location, $rootScope, errorMsgs, $timeout, $mdSidenav, $log, MIX_PANEL_EVENTS){
 	//$scope.validTokenObj = jwtHelper.decodeToken(store.get('jwt'));
       
        $scope.booking = {};
@@ -65,6 +65,7 @@ angular.module('app.projectX')
 
        $scope.submitBookingForm = function(){
 
+        $rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingDone.key, MIX_PANEL_EVENTS.bookingDone.value + $scope.booking.number);
            if(!$scope.isValidated()){
               return false;
            }
@@ -148,6 +149,7 @@ angular.module('app.projectX')
        }
 
         $scope.reInitializeCities = function(id, exp){
+          $rootScope.callMixPanel(MIX_PANEL_EVENTS.citiesLoaded.key, MIX_PANEL_EVENTS.citiesLoaded.value);
           projectApi.getResource('cities', id, exp).then(function(response){
               console.log("Suuccess Handler");
               $scope.refData.cities = response.data;
@@ -170,6 +172,7 @@ angular.module('app.projectX')
        }
 
         $scope.getStreets = function(cityId, exp){
+          $rootScope.callMixPanel(MIX_PANEL_EVENTS.streetsLoaded.key, MIX_PANEL_EVENTS.streetsLoaded.value);
           $rootScope.showLoader();
           $scope.booking.pickupDetail.street = undefined;
           $scope.booking.dropDetail.street = undefined;

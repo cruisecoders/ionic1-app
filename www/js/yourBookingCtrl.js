@@ -1,12 +1,13 @@
 angular.module('app.projectX').controller('yourBookingCtrl', ['$scope', 'store', 'projectApi', 
-	'$state', '$rootScope',
-	function($scope, store, projectApi, $state  ,$rootScope){
+	'$state', '$rootScope', 'MIX_PANEL_EVENTS',
+	function($scope, store, projectApi, $state  ,$rootScope, MIX_PANEL_EVENTS){
 	
 	$scope.yourBooking = {};
 
 	$scope.userInfo = store.get('userInfo');
 
 	$scope.getBookingsByUserId = function(userId, exp){
+		$rootScope.callMixPanel(MIX_PANEL_EVENTS.bookingsLoaded.key, MIX_PANEL_EVENTS.bookingsLoaded.value);
 		$rootScope.showLoader();
 		projectApi.getResource('getBookings', userId, exp).then(function(response){
 			$rootScope.hideLoader();
