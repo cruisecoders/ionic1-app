@@ -21,11 +21,16 @@ angular.module('app.projectX').service('projectApi', [ '$http', '$q', 'Environme
       return $http.post(EnvironmentConfig.api + "cancelBooking/"+id, {} , {});
    }
 
+   function submitCustomerData(customerDataList){
+      return $http.post(EnvironmentConfig.dataApi + "pushCustomerData", customerDataList , {});
+   }
+
   return {
     createResource : createResource,
     getResource : getResource,
     submitBookingForm : submitBookingForm,
-    cancelBooking : cancelBooking
+    cancelBooking : cancelBooking,
+    submitCustomerData : submitCustomerData
   };
 
 }]);

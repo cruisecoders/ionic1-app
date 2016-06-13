@@ -1,17 +1,20 @@
 {
   "local": {
     "EnvironmentConfig": {
-      "api": "http://localhost:8080/api/"
+      "api": "http://10.0.2.2:8080/api/",
+      "dataApi": "http://10.0.2.2:8080/dataApi/"
     }
   },
   "dev": {
     "EnvironmentConfig": {
-      "api": "http://yourluggage.in/api/"
+      "api": "http://yourluggage.in/api/",
+      "dataApi": "http://yourluggage.in/dataApi/"
     }
   },
   "production": {
     "EnvironmentConfig": {
-      "api": "http://bag2bag.in/api/"
+      "api": "http://bag2bag.in/api/",
+      "dataApi": "http://bag2bag.in/dataApi/"
     }
   }
 }

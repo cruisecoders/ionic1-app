@@ -1,6 +1,8 @@
 angular.module('app.projectX').controller('mainCtrl',
-['$scope', 'menuConstant', 'projectApi', '$rootScope', 'store', '$mdDialog', '$ionicPlatform','$state', '$ionicHistory', 'MIX_PANEL_EVENTS',
- function($scope, menuConstant, projectApi, $rootScope, store, $mdDialog, $ionicPlatform , $state, $ionicHistory, MIX_PANEL_EVENTS){
+['$scope', 'menuConstant', 'projectApi', '$rootScope', 'store', '$mdDialog', '$ionicPlatform','$state', 
+'$ionicHistory', 'MIX_PANEL_EVENTS',
+ function($scope, menuConstant, projectApi, $rootScope, store, $mdDialog, 
+  $ionicPlatform , $state, $ionicHistory, MIX_PANEL_EVENTS){
 	$scope.menuList = menuConstant.menuList;
 	$scope.mainData = {};
 
@@ -21,8 +23,6 @@ angular.module('app.projectX').controller('mainCtrl',
           }
       })
   }
-
-  $scope.getCities();
 
    $scope.showConfirm = function() {
         // Appending dialog to document.body to cover sidenav in docs app
@@ -50,4 +50,24 @@ angular.module('app.projectX').controller('mainCtrl',
         }
         
       }, 100);
+
+/*    $scope.getContactList = function() {
+
+      var options = {};
+       options.filter = "";
+       options.multiple = true;
+
+      $cordovaContacts.find(options).then(function(result) {
+          $scope.contacts = result;
+          console.log("fetching contacts ");
+          console.log($scope.contacts);
+      }, function(error) {
+          console.log("ERROR: " + error);
+      });
+    }*/
+
+
+    $scope.getCities();
+//    $scope.getContactList();
+
 }]);

@@ -35,7 +35,8 @@
     "cordova-plugin-datepicker",
     "ionic-plugin-keyboard",
     "cordova-plugin-whitelist",
-    "cordova-plugin-network-information"
+    "cordova-plugin-network-information",
+    "https://git-wip-us.apache.org/repos/asf/cordova-plugin-contacts.git"
   ],
   "cordovaPlatforms": [
     "android",
